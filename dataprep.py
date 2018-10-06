@@ -11,7 +11,7 @@ import pathlib
 from datetime import datetime, timedelta
 from calendar import monthrange
 
-
+# change to make_df_year()
 def create_df_rain(year):
     """ Creating dataframe with index of date in single year """
 
@@ -29,7 +29,7 @@ def create_df_rain(year):
     df.set_index('date', inplace=True)
     return df
 
-
+# change to conv_to_singlecol()
 def get_list_rain(tabledf, year):
     """ transform table to single column """
     month = 1
@@ -48,7 +48,7 @@ def get_list_rain(tabledf, year):
 
     return list_of_rain
 
-
+# change conv_rawdf_to_maindf()
 def transform_raw_data(raw_data, year, name='ch'):
     """ Transforming raw data to dataframe for analysis"""
 
@@ -59,7 +59,7 @@ def transform_raw_data(raw_data, year, name='ch'):
     main_df[name] = data_rain
     return main_df
 
-
+# change to check_sheetname()
 def check_name_sheet(string):
     string = string.replace(' ', '')
     if string.isdigit() and (len(string) == 4):
@@ -69,7 +69,7 @@ def check_name_sheet(string):
               'please change sheet name to 4 digit year')
         return 2002
 
-
+# change to read_excel_singlefile()
 def read_data_excel(file, name="ch"):
     """ Reading data single excel file to dataframe"""
     try:
@@ -84,7 +84,7 @@ def read_data_excel(file, name="ch"):
     except Exception as e:
         print(e)
 
-
+# change to read_excel_multifile()
 def multi_read_data(dirpath):
     pathdir = pathlib.Path(dirpath)
     list_stat = []
@@ -94,6 +94,9 @@ def multi_read_data(dirpath):
     df_main = pd.concat(list_stat, axis=1, sort=False)
     return df_main
 
+
+# new def for future
+# create class for better use
 
 if __name__ == "__main__":
     #    a = pathlib.Path('./testdata/xls/spam_singlesheet.xlsx')
