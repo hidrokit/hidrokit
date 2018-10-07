@@ -6,8 +6,8 @@ Created on Sun Sep  9 17:58:18 2018
 """
 
 import pandas as pd
-import os
 import pathlib
+from prepkit import tf_emptydf, tf_column
 from datetime import datetime, timedelta
 from calendar import monthrange
 
@@ -52,9 +52,11 @@ def get_list_rain(tabledf, year):
 def transform_raw_data(raw_data, year, name='ch'):
     """ Transforming raw data to dataframe for analysis"""
 
-    main_df = create_df_rain(year)
-    # Cleaning Raw Data
-    data_rain = get_list_rain(raw_data, year)
+#    main_df = create_df_rain(year)
+#    # Cleaning Raw Data
+#    data_rain = get_list_rain(raw_data, year)
+    main_df = tf_emptydf(year)
+    data_rain = tf_column(raw_data, year)
 
     main_df[name] = data_rain
     return main_df
@@ -89,6 +91,7 @@ def multi_read_data(dirpath):
     pathdir = pathlib.Path(dirpath)
     list_stat = []
     for file in pathdir.rglob('*.xls*'):
+        print(file)
         df = read_data_excel(file, name=file.stem)
         list_stat.append(df)
     df_main = pd.concat(list_stat, axis=1, sort=False)
@@ -110,7 +113,7 @@ if __name__ == "__main__":
     #        df = read_data_excel(file, name=file.stem)
     #        list_stat.append(df)
     #    print(list_stat)
-    df_main = multi_read_data('./testdata/xls/multi_station')
+    df_main = multi_read_data('../testdata/xls/multi_station')
     print(df_main.shape)
 
 #    pass
