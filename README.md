@@ -16,7 +16,7 @@ Rencana berikutnya:
 ## Demo Penggunaan
 
 Demo penggunaan dapat dilihat di:
-- [Demo Pos Hujan](./src/Demo Pos Hujan.ipynb)
+- [Demo Pos Hujan](src/Demo%20Pos%20Hujan.ipynb)
 
 ## Catatan
 
