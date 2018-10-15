@@ -13,9 +13,14 @@ Saat ini, module yang sudah dibuat:
 Rencana berikutnya:
 - `hidrokit.calckit` : module analisis.
 
+## Demo Penggunaan
+
+Demo penggunaan dapat dilihat di:
+- [Demo Pos Hujan](./src/Demo Pos Hujan.ipynb)
+
 ## Catatan
 
-Rencana _repo_ ini adalah membuat module/package yang dapat digunakan saat melakukan analisis hidrologi. Per 20181006, baru sampai _dataprep_ sebagai persiapan mengubah data mentah menjadi data siap analisis (ke dalam bentuk _dataframe pandas_). Dan selesainya _dateprep_ akan dilanjutkan fungsi analisis hidrologi lainnya (saat ini masih tidak ada yang terpikirkan). 
+Rencana _repo_ ini adalah membuat module/package yang dapat digunakan saat melakukan analisis hidrologi serta menampilkan penggunaan Python untuk analisis data. Per 20181006, baru sampai _dataprep_ sebagai persiapan mengubah data mentah menjadi data siap analisis (ke dalam bentuk _dataframe pandas_). Dan selesainya _dateprep_ akan dilanjutkan fungsi analisis hidrologi lainnya (saat ini masih tidak ada yang terpikirkan). 
 
 _repo_ ini dibuat oleh Taruma, yang kebetulan lagi studi di bidang teknik sumber daya air (lihat _repo_ __[belajar-tsa](https://github.com/taruma/belajar-tsa)__). 
 
