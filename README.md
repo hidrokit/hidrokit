@@ -20,7 +20,7 @@ Demo penggunaan dapat dilihat di:
 
 ## Catatan
 
-Rencana _repo_ ini adalah membuat module/package yang dapat digunakan saat melakukan analisis hidrologi serta menampilkan penggunaan Python untuk analisis data. Per 20181006, baru sampai _dataprep_ sebagai persiapan mengubah data mentah menjadi data siap analisis (ke dalam bentuk _dataframe pandas_). Dan selesainya _dateprep_ akan dilanjutkan fungsi analisis hidrologi lainnya (saat ini masih tidak ada yang terpikirkan). 
+Untuk folder `./testdata/`, untuk sementara tidak akan disertakan dalam repo ini, tapi pada saat demo akan saya coba tampilkan dalam file testdatanya. Hal ini dikarenakan informasi terkait testdata belum tentu pantas terbuka di internet, baik dari sisi legal maupun etika. 
 
 _repo_ ini dibuat oleh Taruma, yang kebetulan lagi studi di bidang teknik sumber daya air (lihat _repo_ __[belajar-tsa](https://github.com/taruma/belajar-tsa)__). 
 
