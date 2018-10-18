@@ -5,4 +5,5 @@ Created on Sat Oct  6 08:46:18 2018
 @author: tarum
 """
 
-from . import dataprep
+from . import prepkit
+from . import viewkit
