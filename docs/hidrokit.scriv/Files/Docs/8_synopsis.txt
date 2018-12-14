@@ -1,0 +1,1 @@
+Blogpost tentang bagaimana cara berkontribusi di Open Source Project.

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchIndexes Version="1.0">
+    <Documents>
+        <Document ID="3">
+            <Title>README</Title>
+            <Synopsis>Readme untuk project hidrokit</Synopsis>
+        </Document>
+        <Document ID="4">
+            <Title>To Do</Title>
+        </Document>
+        <Document ID="5">
+            <Title>Starting an Open Source Project</Title>
+            <Synopsis>Berisikan sumber-sumber yang dapat membantu dalam project Hidrokit</Synopsis>
+            <Text>Zotero: Starting an Open Source Project [WWW Document], n.d. . Open Source Guides. URL https://opensource.guide/starting-a-project/ (accessed 12.12.18).
+
+Note:
+Answer this question:Why am I open sourcing this project?
+Invest time into clear documentation and making newcomers feel welcome.
+“… it’s important to make sure that your management processes take into consideration the contributions and abilities of the community around your project.”
+ Contributing to a project can be as simple as fixing typos or updating documentation.
+
+SECTION 3 LAUNCHING YOUR OWN OPEN SOURCE PROJECT
+There is no perfect time to open source your work. You can open source an idea, a work in progress, or after years of being closed source.
+Include:
+Open Source License
+README
+Contributing guidelines
+Code of Conduct
+README Guide
+What does this project do?
+Why is this project useful?
+How do I get started?
+Where can I get more help, if I need it?
+How you handle contributions?
+What the goals of the project are? 
+Information about licenses and attribution
+Template README: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+CONTRIBUTING FILE:
+How to file a bug report (try using issue and pull request templates)
+How to suggest a new feature
+How to set up your environment and run tests
+The types of contributions you’re looking for
+Your roadmap or vision for the project
+How contributors should (or should not) get in touch with you
+CONTRIBUTING TEMPLATE:
+https://github.com/nayafia/contributing-template/blob/master/CONTRIBUTING-template.md
+Establishing a code of conduct
+CODE OF CONDUCT file: https://www.contributor-covenant.org/id/version/1/4/code-of-conduct.md
+Read this later CODE OF CONDUCT: https://www.contributor-covenant.org
+
+SECTION 4: NAMING AND BRANDING YOUR PROJECT
+Branding is more than a flashy logo or catchy project name. It’s about how you talk about your project, and who you reach with your message.
+Choosing the right name: Pick a name that is easy to remember
+Avoiding name conflict
+
+SECTION 5: YOUR PRE-LAUNCH CHECKLIST
+Documentation
+Project has a LICENSE file with an open source license
+Project has basic documentation (README, CONTRIBUTING, CODE_OF_CONDUCT)
+The name is easy to remember, gives some idea of what the project does, and does not conflict with an existing project or infringe on trademarks
+The issue queue is up-to-date, with issues clearly organized and labeled
+
+Code
+Project uses consistent code conventions and clear function/method/variable names
+The code is clearly commented, documenting intentions and edge cases
+There are no sensitive materials in the revision history, issues, or pull requests (for example, passwords or other non-public information)
+
+People
+If you’re an individual:
+You've talked to the legal department and/or understand the IP and open source policies of your company (if you're an employee somewhere)</Text>
+        </Document>
+        <Document ID="6">
+            <Title>Web Pages</Title>
+        </Document>
+        <Document ID="7">
+            <Title>Brainstorming Name</Title>
+            <Text>Hidrokit 
+PuSDA (Python untuk Sumberdaya Air)
+Anhid (analisis hidrologi)
+
+KATA KUNCI:
+PYTHON
+HIDROLOGI
+ANALISIS
+SUMBERDAYA AIR
+AIR</Text>
+        </Document>
+        <Document ID="8">
+            <Title>How to Start Contributing to Open Source Projects</Title>
+            <Synopsis>Blogpost tentang bagaimana cara berkontribusi di Open Source Project.</Synopsis>
+            <Text>Zotero: Lester, A., pwpadmin, 2018. How to Start Contributing to Open Source Projects [WWW Document]. New Relic Blog. URL https://blog.newrelic.com/engineering/open-source_gettingstarted/ (accessed 12.12.18).
+
+Note:
+GET STARTED WITH OPEN SOURCE ON  YOUR OWN
+Report a bug  to the project’s issue tracker
+Submit suggestions for features 
+Answer a question publicly
+Blog and tweet about what you do
+Attend a meet up
+
+GET STARTED WITH OPEN SOURCE WITH OTHER DEVELOPERS
+Verify and document bugs
+Find a bug or add a feature
+Write an example for the documentation
+Ask the project what you can do for them</Text>
+        </Document>
+        <Document ID="9"/>
+        <Document ID="10">
+            <Title>CONTRIBUTING</Title>
+            <Synopsis>Dokumen panduan untuk berkontribusi</Synopsis>
+        </Document>
+        <Document ID="11">
+            <Title>LICENSE</Title>
+            <Synopsis>Dokumen terkait lisensi hidrokit</Synopsis>
+            <Text>MIT License
+
+Copyright (c) 2018 Taruma Megariansyah
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</Text>
+        </Document>
+        <Document ID="12">
+            <Title>CODE_OF_CONDUCT</Title>
+            <Text># Kode Etik Contributor Covenant
+
+## Janji Kami
+
+Sesuai minat kami untuk membuat lingkungan yang terbuka dan ramah, kami sebagai 
+kontributor dan pengelola berjanji untuk membuat partisipasi dalam proyek kami
+dan komunitas kami bebas dari pelecehan untuk semua orang, tanpa memandang usia,
+ukuran tubuh, disabilitas, kelompok etnis, identitas gender dan ekspresinya, tingkat pengalaman, pendidikan, status sosial ekonomi, kewarganegaraan, penampilan pribadi, ras, agama, atau identitas dan orientasi seksual.
+
+## Standar Kami
+
+Kejadian perilaku yang berkontribusi untuk menciptakan sebuah lingkungan
+yang positif meliputi :
+
+* Memakai bahasa yang ramah dan inklusif
+* Menghormati sudut pandang dan pengalaman yang berbeda
+* Menerima kritik konstruktif dengan baik
+* Fokus terhadap apa yang terbaik bagi komunitas
+* Menunjukkan empati kepada anggota komunitas yang lain
+
+Contoh perilaku yang tidak dapat diterima oleh partisipan meliputi :
+
+* Penggunaan bahasa atau citra seksual dan perhatian seksual yang tidak diinginkan.
+* Trolling, komentar menghina, dan serangan terhadap individual atau pandangan politik.
+* Pelecahan umum atau pribadi
+* Menerbitkan informasi pribadi orang lain, seperti alamat fisik atau elektronik,
+tanpa izin.
+* Perilaku lain yang dapat dianggap tidak sesuai dalam lingkungan profesional
+
+## Tanggung Jawab Kami
+
+Pengelola proyek bertanggung jawab untuk mengklarifikasi standar perilaku yang dapat diterima dan diharapkan untuk melakukan tindakan korektif yang tepat dan adil dalam menanggapi kasus perilaku yang tidak dapat diterima.
+
+Pengelola proyek mempunyai hak dan tanggung jawab untuk menghapus, mengedit, atau
+menolak komentar, commit, kode, suntingan wiki, masalah, dan kontribusi lainnya
+yang tidak sesuai dengan Kode Etik ini, atau untuk melarang sementara
+atau secara permanen kontributor untuk perilaku lain yang mereka anggap tidak tepat, mengancam, menyinggung, atau berbahaya.
+
+## Cakupan
+
+Kode Etik ini berlaku baik di dalam proyek maupun di ruang publik
+ketika seseorang mewakili proyek atau komunitasnya. Contoh dari
+mewakili sebuah proyek atau komunitas termasuk menggunakan alamat email resmi proyek, posting melalui akun media sosial resmi, atau bertindak sebagai orang yang ditunjuk menjadi perwakilan di acara online atau offline. Representasi proyek mungkin selanjutnya didefinisikan dan diklarifikasi oleh pengelola proyek.
+
+## Penegakan
+
+Kejadian perilaku kasar, pelecehan, atau tidak dapat diterima yang terjadi
+dapat dilaporkan kepada tim inti proyek di hi@taruma.info. Semua keluhan
+akan ditinjau dan diselidiki dan akan menghasilkan tanggapan yang dianggap perlu 
+dan sesuai dengan keadaan. Tim inti proyek berkewajiban menjaga kerahasiaan pelapor berkenaan dengan pelapor suatu insiden. 
+Rincian lebih lanjut tentang kebijakan penegakan khusus akan dipublikasikan secara terpisah.
+
+Pengelola proyek yang tidak mengikuti atau melaksanakan Kode Etik dengan itikad
+baik mungkin akan menghadapi dampak sementara atau permanen seperti yang ditentukan
+oleh para anggota lain dari pimpinan proyek.
+
+## Atribut
+
+Kode Etik ini diadaptasi dari [Contributor Covenant][homepage], versi 1.4,
+tersedia di https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+
+[homepage]: https://www.contributor-covenant.org
+</Text>
+        </Document>
+    </Documents>
+</SearchIndexes>
