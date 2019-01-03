@@ -31,7 +31,7 @@ Contoh penggunaan dapat lihat di demo notebook berikut:
 
 ## Untuk KONTRIBUTOR
 
-Tertarik menjadi kontributor? Baca [CONTRIBUTING.md](contributing.md) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dan siapapun bisa berkontribusi.
+Tertarik menjadi kontributor? Baca [CONTRIBUTING](CONTRIBUTING.md) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dan siapapun bisa berkontribusi.
 
 Punya keahlian atau ketertarikan di bidang hidrologi atau python tapi masih bingung memulai berkontribusi, kunjungi isu #2 untuk diskusi lebih lanjut. 
 
@@ -43,4 +43,4 @@ Lihat juga daftar para [kontributor](https://github.com/taruma/hidrokit/contribu
 
 ## Lisensi
 
-Proyek ini berlisensi MIT - lihat [LICENSE.md](LICENSE.md) untuk lebih jelasnya.
+Proyek ini berlisensi MIT - lihat [LICENSE](LICENSE) untuk lebih jelasnya.
