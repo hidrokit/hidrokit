@@ -21,8 +21,6 @@ def sc_getname(file, format='phderi', ixn=-2):
     return None
 
 ## STAGE GET
-
-
 def get_indextable(rawxl, format='phderi'):
     targetdict = {'phderi': ['Jan', 'Feb'], 
                   'pdderi': ['JAN', 'FEB']}
@@ -55,8 +53,6 @@ def get_rawdf(singlefile, format='phderi'):
 
 
 ## STAGE TRANSFORM
-
-
 def tf_emptydf(year):
     """ Creating emptydf with index of date in single year """
     start, end = map(pd.Timestamp, f'{year}0101 {year}1231'.split())

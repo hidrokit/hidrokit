@@ -1,27 +1,46 @@
-Note: This repository will be in Indonesian Language (documentation). The reason is I'm not fluent in English (It will takes time to write documentation in another language). But, I do accept question in English. 
+# Hidrokit
 
-# hidrokit
+Hidrokit adalah package/module python yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data mentah, analisis, dan visualisasi. 
 
-## Deskripsi
+## Memulai
 
-`hidrokit` merupakan package/module python yang dapat digunakan untuk memulai analisis hidrologi. 
+Saat ini, hidrokit belum dirilis dalam package/module yang langsung dapat digunakan dan dilakukan instalasi ataupun update. Untuk mulai menggunakan module hidrokit, _download_ folder `hidrokit` pada `./src/` dan simpan folder tersebut di folder proyek yang akan digunakan.
 
-Saat ini, module yang sudah dibuat:
-- `hidrokit.prepkit` : module untuk membaca data mentah, baik dalam bentuk excel ataupun format lainnya.
-- `hidrokit.viewkit` : module untuk menampilkan informasi lebih mudah (plotting).
+## Module dalam hidrokit
 
-Rencana berikutnya:
-- `hidrokit.calckit` : module analisis.
+Untuk sementara, hidrokit hanya memiliki dua module yaitu:
+- `prepkit`: module ini digunakan untuk membaca dan mengolah data mentah untuk dilanjutkan ke proses pengolahan data
+- `viewkit`: module ini berisikan fungsi yang membantu menampilkan data dalam bentuk grafik atau bentuk lainnya
 
-## Demo Penggunaan
+### Persiapan
 
-Demo penggunaan dapat dilihat di:
-- [Demo Pos Hujan](src/Demo%20Pos%20Hujan.ipynb)
+Untuk memudahkan penggunaan, pengguna disarankan menggunakan Anaconda3 sebagai distribusi Python karena sudah memiliki standar paket yang biasa digunakan dalam _data science_. Download Anaconda [disini](https://www.anaconda.com/download/).
 
-## Catatan
+### Instalasi dan Penggunaan
 
-Untuk folder `./testdata/`, untuk sementara tidak akan disertakan dalam repo ini, tapi pada saat demo akan saya coba tampilkan dalam file testdatanya. Hal ini dikarenakan informasi terkait testdata belum tentu pantas terbuka di internet, baik dari sisi legal maupun etika. 
+Saat ini, instalasi hanya berupa meng-_copy_ folder `hidrokit` ke dalam folder proyek yang akan digunakan. 
 
-_repo_ ini dibuat oleh Taruma, yang kebetulan lagi studi di bidang teknik sumber daya air (lihat _repo_ __[belajar-tsa](https://github.com/taruma/belajar-tsa)__). 
+Contoh penggunaan dapat lihat di demo notebook berikut:
+- [Demo Pos Hujan](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/src/Demo%20Pos%20Hujan.ipynb)
 
-Sedikit cerita, saya tidak memiliki latar belakang formal dalam pemrograman, jadi struktur pemrograman, penggunaan variabel/fungsi yang tidak optimal, dll dipastikan ada dalam _repo_ ini. Jika Anda memiliki ide, kritik, dan saran, jangan sungkan menyampaikan idenya. 
+## Struktur folder
+
+- `./src/` berisi folder `hidrokit` beserta demo ataupun _notebook_ percobaan penggunaan hidrokit
+- `./docs/` berisikan berkas dokumentasi
+- `./testdata/` berisikan berkas data uji berupa berkas excel curah hujan, debit. Catatan: **folder ini tidak tersedia untuk publik, hubungi @taruma untuk memperoleh data uji**
+
+## Untuk KONTRIBUTOR
+
+Tertarik menjadi kontributor? Baca [CONTRIBUTING.md](contributing.md) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dan siapapun bisa berkontribusi.
+
+Punya keahlian atau ketertarikan di bidang hidrologi atau python tapi masih bingung memulai berkontribusi, kunjungi isu #2 untuk diskusi lebih lanjut. 
+
+## Penyusun
+
+* **Taruma** - *Initial work* - [taruma](https://github.com/taruma)
+
+Lihat juga daftar para [kontributor](https://github.com/taruma/hidrokit/contributors) yang berpartisipasi dalam proyek ini.
+
+## Lisensi
+
+Proyek ini berlisensi MIT - lihat [LICENSE.md](LICENSE.md) untuk lebih jelasnya.
