@@ -1,3 +1,7 @@
+[![Gitter chat](https://badges.gitter.im/hidrokit/gitter.png)](https://gitter.im/hidrokit/gitter)
+
+![github](docs/logo/facebook_cover_photo_1.png)
+
 # Hidrokit
 
 Hidrokit adalah package python yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data mentah, analisis, dan visualisasi. 
