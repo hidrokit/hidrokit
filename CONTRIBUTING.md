@@ -39,12 +39,12 @@ Segala komunikasi harus mengikuti [Kode Etik](CODE_OF_CONDUCT.md).
 # Kontribusi Pertamamu
 
 Untuk memulai kontribusi pertama kamu bisa mengunjungi diskusi di issue berikut terkait pengembangan proyek ini.
-- Terkait non-teknis dan umum (ide, saran, kritik) terkait pengembangan proyek Hidrokit, kunjungi (#2)
-- Terkait teknis dalam bidang keahlian keairan/sumberdaya air, kunjungi (#3)
-- Terkait teknis dalam bidang komputer dan/atau informatika, bisa mengunjungi isu (#4)
+- Terkait non-teknis dan umum (ide, saran, kritik) terkait pengembangan proyek Hidrokit, kunjungi [#2](https://github.com/taruma/hidrokit/issues/2)
+- Terkait teknis dalam bidang keahlian keairan/sumberdaya air, kunjungi [#3](https://github.com/taruma/hidrokit/issues/3)
+- Terkait teknis dalam bidang komputer dan/atau informatika, bisa mengunjungi isu [#4](https://github.com/taruma/hidrokit/issues/4)
 
 Saat ini label yang tersedia dalam proyek ini antara lain:
-- Pemula: Isu mengenai hal non-teknis dan umum
+- Idea: Isu mengenai diskusi ide
 - Python: Isu mengenai hal implementasi teori (Hidro) ke dalam bentuk Python, dapat berupa perbaikan kode (struktur maupun dokumentasi)
 - Hidro: Isu mengenai hal sumberdaya air seperti teori yang digunakan, paper/jurnal referensi
 
@@ -60,7 +60,7 @@ Jangan ragu untuk bertanya dan mendiskusikan jika mengalami kesulitan (baik pert
 
 Jika anda tidak menggunakan distribusi python Anaconda, berikut library yang digunakan:
 - numpy, pandas, matplotlib, seaborn, xlrd, xlwt, openpyxl
-(paket ini harus ada untuk dapat menjalankan demo [Pos Hujan](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/src/Demo%20Pos%20Hujan.ipynb)
+(paket ini harus ada untuk dapat menjalankan demo [Pos Hujan](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_pos_hujan.ipynb)
 
 # Filosofi hidrokit
 
