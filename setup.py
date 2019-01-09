@@ -1,4 +1,4 @@
-# Setup files from from https://github.com/kennethreitz/setup.py
+# Setup files from https://github.com/kennethreitz/setup.py
 
 import io
 import os
@@ -105,9 +105,7 @@ setup(
     include_package_data=True,
     license='MIT',
     classifiers=[
-        'Intended Audience :: Science/Research',
 		'License :: OSI Approved :: MIT License',
-		'Natural Language :: Indonesian', 
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6'

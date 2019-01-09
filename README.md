@@ -11,17 +11,6 @@ Hidrokit adalah paket python yang dapat digunakan untuk membantu proses analisis
 
 Untuk memudahkan penggunaan, pengguna disarankan menggunakan Anaconda3 sebagai distribusi Python karena sudah memiliki standar paket saintifik. Download Anaconda3 [disini](https://www.anaconda.com/download/).
 
-### Persiapan
-
-Berikut beberapa library yang harus terpasang (jika tidak menggunakan distribusi Anaconda):
-
-```
-- numpy
-- matplotlib 
-- pandas (openpyxl, xlrd, xlwt)
-- seaborn
-```
-
 ### Instalasi
 
 Instalasi hidrokit menggunakan perintah `pip` melalui (Anaconda) command prompt:
