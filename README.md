@@ -1,46 +1,48 @@
+![](https://img.shields.io/github/release-pre/taruma/hidrokit.svg) ![](https://img.shields.io/github/release-date-pre/taruma/hidrokit.svg) ![](https://img.shields.io/github/last-commit/taruma/hidrokit.svg) [![](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github/taruma/hidrokit/blob/master/LICENSE) ![](https://img.shields.io/github/contributors/taruma/hidrokit.svg)
+
+[![](https://img.shields.io/github/issues/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/issues) ![](https://img.shields.io/github/issues-pr/taruma/hidrokit.svg)
+
+
 # Hidrokit
 
-Hidrokit adalah package/module python yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data mentah, analisis, dan visualisasi. 
+Hidrokit adalah paket python yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data mentah, analisis, dan visualisasi. Perlu diingat, paket ini masih pada tahap pengembangan dan belum bisa digunakan secara praktis.
 
 ## Memulai
 
-Saat ini, hidrokit belum dirilis dalam package/module yang langsung dapat digunakan dan dilakukan instalasi ataupun update. Untuk mulai menggunakan module hidrokit, _download_ folder `hidrokit` pada `./src/` dan simpan folder tersebut di folder proyek yang akan digunakan.
+Untuk memudahkan penggunaan, pengguna disarankan menggunakan Anaconda3 sebagai distribusi Python karena sudah memiliki standar paket saintifik. Download Anaconda3 [disini](https://www.anaconda.com/download/).
 
-## Module dalam hidrokit
+### Instalasi
 
-Untuk sementara, hidrokit hanya memiliki dua module yaitu:
-- `prepkit`: module ini digunakan untuk membaca dan mengolah data mentah untuk dilanjutkan ke proses pengolahan data
-- `viewkit`: module ini berisikan fungsi yang membantu menampilkan data dalam bentuk grafik atau bentuk lainnya
+Instalasi hidrokit menggunakan perintah `pip` melalui (Anaconda) command prompt:
 
-### Persiapan
+```
+pip install hidrokit
+```
 
-Untuk memudahkan penggunaan, pengguna disarankan menggunakan Anaconda3 sebagai distribusi Python karena sudah memiliki standar paket yang biasa digunakan dalam _data science_. Download Anaconda [disini](https://www.anaconda.com/download/).
+### Penggunaan
 
-### Instalasi dan Penggunaan
+Untuk memulai penggunaan, import paket hidrokit atau import modul secara spesifik.
 
-Saat ini, instalasi hanya berupa meng-_copy_ folder `hidrokit` ke dalam folder proyek yang akan digunakan. 
+```python
+import hidrokit
+from hidrokit import prepkit, viewkit
+```
 
-Contoh penggunaan dapat lihat di demo notebook berikut:
-- [Demo Pos Hujan](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/src/Demo%20Pos%20Hujan.ipynb)
+Lihat _notebook_ untuk melihat penggunaan `hidrokit.prepkit`.
 
-## Struktur folder
+### Notebook
+Berikut _notebook_ yang telah tersedia: 
 
-- `./src/` berisi folder `hidrokit` beserta demo ataupun _notebook_ percobaan penggunaan hidrokit
-- `./docs/` berisikan berkas dokumentasi
-- `./testdata/` berisikan berkas data uji berupa berkas excel curah hujan, debit. Catatan: **folder ini tidak tersedia untuk publik, hubungi @taruma untuk memperoleh data uji**
+- [Demo Pos Hujan](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_pos_hujan.ipynb): Penggunaan dan penjelasan fungsi dalam modul `prepkit` (disinggung juga penggunaan `viewkit`)
+- [Demo Jawa Barat](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_jawa_barat.ipynb): Penggunaan _pandas_ untuk mengolah data harian dari bmkg online untuk satu provinsi. Dalam _notebook_ ini fokus dalam eksplorasi data di Jawa Barat.
+- [Demo Metadata BMKG](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_metadata_bmkg.ipynb): Dilakukan eksplorasi metadata (informasi stasiun) untuk seluruh wilayah Indonesia yang diperoleh dari BMKG online. 
 
-## Untuk KONTRIBUTOR
+## Untuk Kontributor
 
-Tertarik menjadi kontributor? Baca [CONTRIBUTING](CONTRIBUTING.md) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dan siapapun bisa berkontribusi.
+Tertarik menjadi kontributor? Baca [Berkontribusi](https://github.com/taruma/hidrokit/wiki/Berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dan siapapun bisa berkontribusi.
 
-Punya keahlian atau ketertarikan di bidang hidrologi atau python tapi masih bingung memulai berkontribusi, kunjungi isu #2 untuk diskusi lebih lanjut. 
+Jangan lupa bergabung di [![Gitter chat](https://badges.gitter.im/hidrokit/gitter.png)](https://gitter.im/hidrokit/gitter).
 
-## Penyusun
+## Catatan
 
-* **Taruma** - *Initial work* - [taruma](https://github.com/taruma)
-
-Lihat juga daftar para [kontributor](https://github.com/taruma/hidrokit/contributors) yang berpartisipasi dalam proyek ini.
-
-## Lisensi
-
-Proyek ini berlisensi MIT - lihat [LICENSE](LICENSE) untuk lebih jelasnya.
+Ide proyek ini bukanlah sesuatu yang baru, sudah tersedia paket bernama [Hydrostats](https://github.com/BYU-hydroinformatics/Hydrostats) yang dikembangkan oleh BYU Hidroinformatics.
