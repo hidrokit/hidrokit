@@ -9,12 +9,13 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = 'hidrokit'
-DESCRIPTION = 'Analisis Hidrologi dengan python'
+NAME_PACKAGE = 'hidrokit'
+DESCRIPTION = 'analisis hidrologi dengan python'
 URL = 'https://github.com/taruma/hidrokit'
 EMAIL = 'hi@taruma.info'
 AUTHOR = 'Taruma'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = None
+VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -23,7 +24,7 @@ REQUIRED = [
 
 # What packages are optional?
 EXTRAS = {
-    # 
+    # "openpyxl", "xlrd", "xlwt"
 }
 
 # The rest you shouldn't have to touch too much :)
@@ -44,7 +45,7 @@ except FileNotFoundError:
 # Load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(here, NAME, '__version__.py')) as f:
+    with open(os.path.join(here, NAME_PACKAGE, '__version__.py')) as f:
         exec(f.read(), about)
 else:
     about['__version__'] = VERSION
@@ -98,17 +99,18 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=['hidrokit'],
+    packages=[NAME_PACKAGE],
     install_requires=REQUIRED,
     extras_require=EXTRAS,
     include_package_data=True,
     license='MIT',
     classifiers=[
-        'License :: OSI Approved :: MIT License',
+        'Intended Audience :: Science/Research',
+		'License :: OSI Approved :: MIT License',
+		'Natural Language :: Indonesian', 
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-		'Natural Language :: Indonesian'
+        'Programming Language :: Python :: 3.6'
     ],
     # $ setup.py publish support.
     cmdclass={
