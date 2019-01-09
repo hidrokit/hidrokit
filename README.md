@@ -34,7 +34,7 @@ Lihat _notebook_ untuk melihat penggunaan `hidrokit.prepkit`.
 Berikut _notebook_ yang telah tersedia: 
 
 - [Demo Pos Hujan](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_pos_hujan.ipynb): Penggunaan dan penjelasan fungsi dalam modul `prepkit` (disinggung juga penggunaan `viewkit`)
-- [Demo Jawa Barat](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_jawa_barat.ipynb): Penggunaan _pandas_ untuk mengolah data harian dari bmkg online untuk satu provinsi. Dalam _notebook_ ini fokus dalam eksplorasi data di Jawa Barat.
+- [Demo Jawa Barat](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_data_jawa_barat.ipynb): Penggunaan _pandas_ untuk mengolah data harian dari bmkg online untuk satu provinsi. Dalam _notebook_ ini fokus dalam eksplorasi data di Jawa Barat.
 - [Demo Metadata BMKG](https://nbviewer.jupyter.org/github/taruma/hidrokit/blob/master/notebook/demo_metadata_bmkg.ipynb): Dilakukan eksplorasi metadata (informasi stasiun) untuk seluruh wilayah Indonesia yang diperoleh dari BMKG online. 
 
 ## Untuk Kontributor
