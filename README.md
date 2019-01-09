@@ -1,4 +1,4 @@
-![](https://img.shields.io/github/release-pre/taruma/hidrokit.svg) ![](https://img.shields.io/github/release-date-pre/taruma/hidrokit.svg) ![](https://img.shields.io/github/last-commit/taruma/hidrokit.svg) [![](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github/taruma/hidrokit/blob/master/LICENSE)
+![](https://img.shields.io/github/release-pre/taruma/hidrokit.svg) ![](https://img.shields.io/github/release-date-pre/taruma/hidrokit.svg) ![](https://img.shields.io/github/last-commit/taruma/hidrokit.svg) [![](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github/taruma/hidrokit/blob/master/LICENSE) ![](https://img.shields.io/github/contributors/taruma/hidrokit.svg)
 
 [![](https://img.shields.io/github/issues/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/issues) ![](https://img.shields.io/github/issues-pr/taruma/hidrokit.svg)
 
@@ -9,7 +9,7 @@ Hidrokit adalah paket python yang dapat digunakan untuk membantu proses analisis
 
 ## Memulai
 
-Untuk memudahkan penggunaan, pengguna disarankan menggunakan Anaconda3 sebagai distribusi Python karena sudah memiliki standar paket saintifik. Download Anaconda3 [disini](https://www.anaconda.com/download/)
+Untuk memudahkan penggunaan, pengguna disarankan menggunakan Anaconda3 sebagai distribusi Python karena sudah memiliki standar paket saintifik. Download Anaconda3 [disini](https://www.anaconda.com/download/).
 
 ### Persiapan
 
