@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 ## Fungsi membuat grafik
 def plot_dataset(dataset, ncols=3, nrows=5, figsize=None):
@@ -46,13 +47,95 @@ def single_column_timesteps(array, index_col=0, n_timesteps=2, first_col=True):
         
     return np.array(x).transpose()
 
-def multi_column_timesteps(array, n_timesteps=2, first_col=True):
+def multi_column_timesteps(array, idx_col=None, n_timesteps=2, first_col=True):
     row, col = array.shape
+    col = range(col)
+
     x = []
     
-    for c in range(col):
+    for c in col:
         arr = array[:, c].reshape(-1,1)
-        x.append(single_column_timesteps(arr, n_timesteps=n_timesteps,
-                                         first_col=first_col))
+        if idx_col is None:
+            x.append(single_column_timesteps(arr, n_timesteps=n_timesteps,
+                                             first_col=first_col))
+        elif c in idx_col:
+            x.append(single_column_timesteps(arr, n_timesteps=n_timesteps,
+                                             first_col=first_col))
+        else:
+            x.append(arr[n_timesteps:])
     
     return np.concatenate(x, axis=1)
+
+
+# dataset
+dataset = pd.read_csv('../testdata/test_loss_date.csv', index_col=0, parse_dates=[0])
+dataset = dataset.interpolate(limit_direction='both')
+dataset = dataset.round()
+
+# parameter
+n_timesteps = 2
+first_col = False
+columns_timesteps = ['num1', 'num2', 'num4']
+
+# from dataset
+columns_name = list(dataset.columns)
+new_index = dataset.index[n_timesteps:]
+
+# kolom nama baru
+new_columns_name = []
+for column in columns_name:
+    if columns_timesteps is None:
+        for i in range(n_timesteps+1):
+            new_columns_name.append(f"{column}_tmin{i}")
+    elif column in columns_timesteps:
+        for i in range(n_timesteps+1):
+            new_columns_name.append(f"{column}_tmin{i}")
+    else:
+        new_columns_name.append(column)
+
+if first_col is False:
+    for column in new_columns_name:
+        if column.endswith("_tmin0"):
+            new_columns_name.remove(column)
+
+# Index kolom timesteps (kalau tidak None)
+index_columns_timesteps = []
+if columns_timesteps is not None:
+    for column in columns_timesteps:
+        index_columns_timesteps.append(columns_name.index(column))
+else:
+    index_columns_timesteps = None
+
+# Transform kolom
+columns_values = dataset.values
+columns_timesteps_values = multi_column_timesteps(columns_values,
+                                                  idx_col=index_columns_timesteps,
+                                                  first_col=first_col,
+                                                  n_timesteps=n_timesteps)        
+
+df_timesteps = pd.DataFrame(data=columns_timesteps_values,
+                            index=new_index,
+                            columns=new_columns_name)
+        
+
+class TableTransformer():
+    def __init__(self, dataset):
+        self.dataset = dataset
+        self.array = table.values
+        self.column_name_ = list(table.columns)
+        
+        
+    def add_ts(self, column=None, id_column=None, 
+               n_timesteps=2, first_col=True):
+        
+        if (id_column is None) and (column is not None):
+            col = 
+        
+        
+
+        pass
+    
+    def plot_table(self, ncols=3, nrows=5, figsize=(15,15)):
+        return plot_dataset(self.table, ncols=ncols, nrows=nrows, figsize=figsize)
+    
+    pass
