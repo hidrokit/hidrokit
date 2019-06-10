@@ -48,7 +48,7 @@ def single_column_timesteps(array, index_col=0, n_timesteps=2, first_col=True):
     return np.array(x).transpose()
 
 def multi_column_timesteps(array, idx_col=None, n_timesteps=2, first_col=True):
-    row, col = array.shape
+    _, col = array.shape
     col = range(col)
 
     x = []
