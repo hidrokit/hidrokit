@@ -6,29 +6,29 @@ Sesuai minat kami untuk membuat lingkungan yang terbuka dan ramah, kami sebagai 
 
 ## Standar Kami
 
-Kejadian perilaku yang berkontribusi untuk menciptakan sebuah lingkungan yang positif meliputi :
-* Memakai bahasa yang ramah dan inklusif
-* Menghormati sudut pandang dan pengalaman yang berbeda
-* Menerima kritik konstruktif dengan baik
-* Fokus terhadap apa yang terbaik bagi komunitas
-* Menunjukkan empati kepada anggota komunitas yang lain
+Kejadian perilaku yang berkontribusi untuk menciptakan sebuah lingkungan yang positif meliputi:
+* Memakai bahasa yang ramah dan inklusif.
+* Menghormati sudut pandang dan pengalaman yang berbeda.
+* Menerima kritik konstruktif dengan baik.
+* Fokus terhadap apa yang terbaik bagi komunitas.
+* Menunjukkan empati kepada anggota komunitas yang lain.
 
-Contoh perilaku yang tidak dapat diterima oleh partisipan meliputi :
+Contoh perilaku yang tidak dapat diterima oleh partisipan meliputi:
 * Penggunaan bahasa atau citra seksual dan perhatian seksual yang tidak diinginkan.
 * _Trolling_, komentar menghina, dan serangan terhadap individual atau pandangan politik.
-* Pelecahan umum atau pribadi
+* Pelecahan umum atau pribadi.
 * Menerbitkan informasi pribadi orang lain, seperti alamat fisik atau elektronik, tanpa izin.
-* Perilaku lain yang dapat dianggap tidak sesuai dalam lingkungan profesional
+* Perilaku lain yang dapat dianggap tidak sesuai dalam lingkungan profesional.
 
 ## Tanggung Jawab Kami
 
 Pengelola proyek bertanggung jawab untuk mengklarifikasi standar perilaku yang dapat diterima dan diharapkan untuk melakukan tindakan korektif yang tepat dan adil dalam menanggapi kasus perilaku yang tidak dapat diterima.
 
-Pengelola proyek mempunyai hak dan tanggung jawab untuk menghapus, mengedit, atau menolak komentar, _commit_, kode, suntingan wiki, masalah, dan kontribusi lainnya yang tidak sesuai dengan Kode Etik ini, atau untuk melarang sementara atau secara permanen kontributor untuk perilaku lain yang mereka anggap tidak tepat, mengancam, menyinggung, atau berbahaya.
+Pengelola proyek mempunyai hak dan tanggung jawab untuk menghapus, mengubah, atau menolak komentar, _commit_, kode, suntingan wiki, masalah, dan kontribusi lainnya yang tidak sesuai dengan Kode Etik ini, atau untuk melarang sementara atau secara permanen kontributor untuk perilaku lain yang mereka anggap tidak tepat, mengancam, menyinggung, atau berbahaya.
 
 ## Cakupan
 
-Kode Etik ini berlaku baik di dalam proyek maupun di ruang publik ketika seseorang mewakili proyek atau komunitasnya. Contoh dari mewakili sebuah proyek atau komunitas termasuk menggunakan alamat email resmi proyek, posting melalui akun media sosial resmi, atau bertindak sebagai orang yang ditunjuk menjadi perwakilan di acara online atau offline. Representasi proyek mungkin selanjutnya didefinisikan dan diklarifikasi oleh pengelola proyek.
+Kode Etik ini berlaku baik di dalam proyek maupun di ruang publik ketika seseorang mewakili proyek atau komunitasnya. Contoh dari mewakili sebuah proyek atau komunitas termasuk menggunakan alamat email resmi proyek, posting melalui akun media sosial resmi, atau bertindak sebagai orang yang ditunjuk menjadi perwakilan di acara _online_ atau *offline*. Representasi proyek mungkin selanjutnya didefinisikan dan diklarifikasi oleh pengelola proyek.
 
 ## Penegakan
 
@@ -38,6 +38,4 @@ Rincian lebih lanjut tentang kebijakan penegakan khusus akan dipublikasikan seca
 
 ## Atribut
 
-Kode Etik ini diadaptasi dari [Contributor Covenant][homepage], versi 1.4, tersedia di [https://www.contributor-covenant.org/version/1/4/code-of-conduct.html](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html)
-
-[homepage]: [https://www.contributor-covenant.org](https://www.contributor-covenant.org)
+Kode Etik ini diadaptasi dari [Contributor Covenant](https://www.contributor-covenant.org), versi 1.4, tersedia di [https://www.contributor-covenant.org/version/1/4/code-of-conduct.html](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
