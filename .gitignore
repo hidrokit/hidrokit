@@ -105,3 +105,5 @@ venv.bak/
 testdata/
 
 docs/hidrokit\.scriv/
+
+hidrokit/__playground\.py
