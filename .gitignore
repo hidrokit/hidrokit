@@ -102,8 +102,3 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-testdata/
-
-docs/hidrokit\.scriv/
-
-hidrokit/__playground\.py
