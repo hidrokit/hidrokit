@@ -1,7 +1,7 @@
 ---
 name: "Wiki Issues"
 about: "Perubahan/Perbaikan Wiki"
-title: "Wiki: "
+title: "wiki: "
 
 ---
 

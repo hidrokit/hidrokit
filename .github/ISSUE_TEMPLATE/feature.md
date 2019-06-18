@@ -1,7 +1,7 @@
 ---
 name: "Feature request"
 about: "Permintaan fitur"
-title: "Fitur: "
+title: "feature: "
 
 ---
 
