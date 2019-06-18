@@ -2,7 +2,8 @@
 layout: default
 title: "Changelog"
 description: dokumentasi perubahan proyek hidrokit
-# show_add_button: false
+show_add_button: false
+show_button: false
 ---
 # Changelog
 Seluruh perubahan penting pada proyek ini akan didokumentasikan pada berkas ini.
