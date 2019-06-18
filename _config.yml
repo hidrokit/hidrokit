@@ -1,1 +1,16 @@
 theme: jekyll-theme-cayman
+
+title: hidrokit
+description: paket python untuk analisis hidrologi
+show_downloads: false
+
+# My Settings
+show_button: true
+show_add_button: true
+add_button:
+  - label: "Changelog"
+    url: "/changelog/"
+  - label: "Notebook"
+    url: "https://taruma.github.io/hidrokit-nb"
+
+
