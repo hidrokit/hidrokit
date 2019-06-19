@@ -1,4 +1,9 @@
-# bmkgkit contains database from bmkg online
+"""Module for reading BMKG's Microsoft Excel file. 
+
+.. deprecated:: 0.1.2
+   ``bmkgkit`` module will be removed in hidrokit 0.2.0, it will be
+   developed inside ``prepkit`` module if needed.
+"""
 
 import pandas as pd
 import pathlib
