@@ -9,7 +9,9 @@ Welcome to hidrokit's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
+   hidrokit
+   modules
 
 
 Indices and tables
