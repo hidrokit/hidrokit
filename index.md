@@ -2,8 +2,12 @@
 title: "hidrokit"
 description: paket python untuk analisis hidrologi
 ---
+<div align="center">
+  <img src="https://github.com/taruma/hidrokit/wiki/logo/hidrokit-400x100-trans.png"><br>
+</div>
+--------
 
-# Hidrokit
+# hidrokit: analisis hidrologi dengan python
 [![PyPI](https://img.shields.io/pypi/v/hidrokit.svg)](https://pypi.org/project/hidrokit/)
 [![GitHub](https://img.shields.io/github/license/taruma/hidrokit.svg)](/LICENSE)
 [![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](#hidrokit)
@@ -19,6 +23,7 @@ description: paket python untuk analisis hidrologi
 
 Status pengembangan `hidrokit` dan _roadmap_ tersedia di [**papan Trello**](https://trello.com/b/Ii8Z5BRm/hidrokit-project). Tertarik berkontribusi? Baca bagian [kontributor](#untuk-kontributor).
 
+--------
 # *Module* pada Hidrokit
 
 Hidrokit terdiri dari beberapa *module* yang memiliki fungsi masing-masing. Berikut *module* yang telah tersedia pada versi 0.1.2:
@@ -28,6 +33,7 @@ Hidrokit terdiri dari beberapa *module* yang memiliki fungsi masing-masing. Beri
 - `.viewkit`: Menampilkan *dataset* dalam bentuk grafik atau tabel tertentu.
 - `.bmkgkit`: Mengolah data dari situs bmkg. 
 
+--------
 # Memulai
 
 Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/).
@@ -64,6 +70,7 @@ from hidrokit.dlkit import table_timesteps
 
 Untuk contoh penggunaan baca bagian [_notebook_](#notebook).
 
+--------
 # Notebook
 
 Daftar contoh _notebook_ dapat diakses di halaman [hidrokit-nb](https://taruma.github.io/hidrokit-nb/) ([repo](https://github.com/taruma/hidrokit-nb)).
