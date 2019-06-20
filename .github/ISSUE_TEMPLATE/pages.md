@@ -1,5 +1,5 @@
 ---
-name: "Wiki Issues"
+name: "GH-Pages Issues"
 about: "Perubahan/Perbaikan GitHub Pages"
 title: "gh: "
 
