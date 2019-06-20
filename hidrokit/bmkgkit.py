@@ -1,10 +1,10 @@
-"""Module for reading BMKG's Microsoft Excel file. 
+"""Toolkit for reading BMKG's Microsoft Excel file. 
 
 .. deprecated:: 0.2.0
-   Use :py:mod:`prepkit` instead.
+   Use :mod:`prepkit` instead.
 
 .. seealso::
-   Module :py:mod:`prepkit`
+   Module :mod:`prepkit`
 """
 
 import pandas as pd

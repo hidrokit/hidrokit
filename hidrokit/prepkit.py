@@ -1,8 +1,8 @@
-"""Module for data preparation.
-
-Use this module for preparation data in modeling of deep learning.
+"""Toolkit for data preparation.
 """
 # New format 20181007
+# @todo Rombak module prepkit
+# @body Rombak fungsi dan metode untuk pembacaan bilah Excel. Tambah dokumentasinya juga.
 
 import pandas as pd
 import pathlib
@@ -41,7 +41,7 @@ def get_indextable(rawxl, format='phderi'):
     row_target = rawxl[col] == target
 
     index.append(rawxl[col][row_target].index.values.astype(int)[0])
-    kolom, baris = index
+    kolom, baris = tuple(index)  # pylint: disable=unbalanced-tuple-unpacking
     if rawxl.iloc[baris, kolom + 1] == check:
         rawxl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
     else:
@@ -54,7 +54,8 @@ def get_rawdf(singlefile, format='phderi'):
     singlefile = pathlib.Path(singlefile)
     if format == 'phderi' or format == 'pdderi':
         xl = pd.read_excel(singlefile, sheet_name=0, header=None)
-        kolom, baris = get_indextable(xl, format)
+        kolom, baris = get_indextable(  # pylint: disable=unbalanced-tuple-unpacking
+            xl, format)
         rawdf = xl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
         return rawdf
 

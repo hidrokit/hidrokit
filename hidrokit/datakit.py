@@ -1,22 +1,20 @@
-"""Module for data exploration.
-
-Use this module for exploration data such as count null values.
+"""Toolkit for data exploration.
 """
 
 
 def dict_null_data(dataset, date=True, date_format='%Y/%m/%d'):
-    """Retrieve information of null rows inside dataframe.
+    """Retrieve information of null rows inside DataFrame.
 
     Return dictionary contains columns name and list of the index
     null row. Index can be customized if index is
-    :class:`pandas.Timestamp` object.
+    pd.Timestamp object.
 
     Parameters
     ----------
-    dataset : :class:`pandas.DataFrame`
-        Dataframe contains some null values
+    dataset : DataFrame
+        DataFrame contains some null values
     date : bool, optional
-        Set True if index is :class:`pandas.Timestamp` object, by default
+        Set True if index is pd.Timestamp object, by default
         True
     date_format : str, optional
         Format index to strftime() style, by default '%Y/%m/%d'
@@ -28,7 +26,6 @@ def dict_null_data(dataset, date=True, date_format='%Y/%m/%d'):
 
     Examples
     --------
-
     Examples for non-date index:
 
     >>> A = pd.DataFrame(data=[[1, 3, 4, np.nan, 2, np.nan],
@@ -46,9 +43,6 @@ def dict_null_data(dataset, date=True, date_format='%Y/%m/%d'):
     Using date-index:
 
     >>> date_index = pd.date_range("20190617", "20190619")
-    ... date_index
-    DatetimeIndex(['2019-06-17', '2019-06-18', '2019-06-19'], dtype='datetime64[ns]', freq='D')
-
     >>> A.set_index(date_index, inplace=True)
     ... A
                   A    B  C    D  E    F    
@@ -66,12 +60,11 @@ def dict_null_data(dataset, date=True, date_format='%Y/%m/%d'):
     loss_row = {}
 
     for column in dataset.columns:
-
         if date:
             idx_null = dataset[dataset[column].isnull()].index.strftime(
                 date_format).values.tolist()
         else:
             idx_null = dataset[dataset[column].isnull()].index.values.tolist()
-
         loss_row[column] = idx_null
+
     return loss_row

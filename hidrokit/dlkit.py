@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-"""Module for deep learning.
-
-Use this module for preparation data in modeling of deep learning.
+"""Toolkit for deep learning.
 """
 
 
@@ -15,8 +12,8 @@ def plot_dataset(dataset, ncols=3, nrows=5, figsize=None):
 
     Parameters
     ----------
-    dataset : :class:`pandas.DataFrame`
-        Dataframe consist of numeric column only.
+    dataset : DataFrame
+        DataFrame consist of numeric column only.
     ncols : int, optional
         Number of column subplots, by default 3
     nrows : int, optional
@@ -32,7 +29,6 @@ def plot_dataset(dataset, ncols=3, nrows=5, figsize=None):
 
     for row in range(nrows):
         for col in range(ncols):
-
             if ncols == 1:
                 position = (row)
             else:
@@ -48,9 +44,8 @@ def plot_dataset(dataset, ncols=3, nrows=5, figsize=None):
                 break
 
     plt.tight_layout()
-    return fig, axes
 
-# Fungsi untuk membuat kolom tambahan sesuai timesteps
+    return fig, axes
 
 
 def single_column_timesteps(array, index_col=0, n_timesteps=2, first_col=True):
@@ -58,7 +53,7 @@ def single_column_timesteps(array, index_col=0, n_timesteps=2, first_col=True):
 
     Parameters
     ----------
-    array : :class:`np.ndarray`
+    array : array
         Single column two-dimensional array.
     index_col : int, optional
         Index column, by default 0
@@ -69,17 +64,19 @@ def single_column_timesteps(array, index_col=0, n_timesteps=2, first_col=True):
 
     Returns
     -------
-    :class:`np.ndarray`
+    array
         Return 2D array with timesteps.
     """
     if array.ndim == 1:
         array = array.reshape(-1, 1)
 
     x = []
+
     for i in range(n_timesteps + 1):
         start = n_timesteps - i
         end = -i if i > 0 else None
         x.append(array[start:end, index_col])
+
     if not first_col:
         x.pop(-1)
 
@@ -91,7 +88,7 @@ def multi_column_timesteps(array, idx_col=None, n_timesteps=2, first_col=True):
 
     Parameters
     ----------
-    array : :class:`np.ndarray`
+    array : array
         Multiple numeric column two-dimensional array.
     idx_col : list of int, optional
         List of columns index, by default None
@@ -102,12 +99,11 @@ def multi_column_timesteps(array, idx_col=None, n_timesteps=2, first_col=True):
 
     Returns
     -------
-    :class:`np.ndarray`
+    array
         Return 2D array with timesteps.
     """
     _, col = array.shape
     col = range(col)
-
     x = []
 
     for c in col:
@@ -127,11 +123,11 @@ def multi_column_timesteps(array, idx_col=None, n_timesteps=2, first_col=True):
 def table_timesteps(dataset,
                     columns_timesteps=None,
                     n_timesteps=2, first_col=True):
-    """Generate timesteps dataframe directly from :class:`pandas.DataFrame`.
+    """Generate timesteps directly from DataFrame.
 
     Parameters
     ----------
-    dataset : :class:`pandas.DataFrame`
+    dataset : DataFrame
         Dataframe consist of numeric-column only. 
     columns_timesteps : list of str, optional
         List of columns name to generate, by default None
@@ -142,8 +138,8 @@ def table_timesteps(dataset,
 
     Returns
     -------
-    :class:`pandas.DataFrame`
-        Dataframe with additional timesteps columns.
+    DataFrame
+        DataFrame with additional timesteps columns.
     """
     # Dataset parameter
     columns_name = list(dataset.columns)
@@ -179,7 +175,6 @@ def table_timesteps(dataset,
                                                       idx_col=index_columns_timesteps,
                                                       first_col=first_col,
                                                       n_timesteps=n_timesteps)
-
     df_timesteps = pd.DataFrame(data=columns_timesteps_values,
                                 index=new_index,
                                 columns=new_columns_name)

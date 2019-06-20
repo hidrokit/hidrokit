@@ -1,3 +1,6 @@
+"""hidrokit - analisis hidrologi dengan python
+"""
+
 import warnings
 
 from . import bmkgkit, datakit, dlkit, prepkit, viewkit
