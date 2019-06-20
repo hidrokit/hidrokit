@@ -1,8 +1,10 @@
 """Module for reading BMKG's Microsoft Excel file. 
 
-.. deprecated:: 0.1.2
-   ``bmkgkit`` module will be removed in hidrokit 0.2.0, it will be
-   developed inside ``prepkit`` module if needed.
+.. deprecated:: 0.2.0
+   Use :py:mod:`prepkit` instead.
+
+.. seealso::
+   Module :py:mod:`prepkit`
 """
 
 import pandas as pd
