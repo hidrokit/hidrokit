@@ -4,11 +4,12 @@ title: Berkontribusi
 permalink: /berkontribusi
 nav_order: 4
 has_children: true
+has_toc: false
 ---
 
 👋 Terima kasih sebelumnya dalam mempertimbangkan untuk berkontribusi di proyek hidrokit. hidrokit memerlukan bantuan dari Anda. Anda dapat berkontribusi dalam berbagai bentuk seperti ide, keahlian teknis, koreksi, diskusi, dan apapun yang menurut Anda bisa memajukan dan mengembangkan proyek ini.
 
-Sebelumnya, saya harap** setiap individu dalam komunitas ini mengikuti** [**kode etik yang berlaku**]({{site.baseurl}}{% link halaman/kontribusi/kode-etik.md %}). Mari buat lingkungan yang nyaman, bersahabat, dan kondusif dalam pengembangan proyek ini. Mari belajar bersama dari satu sama lain dalam membangun proyek ini. 
+Sebelumnya, saya harap **setiap individu dalam komunitas ini mengikuti** [**kode etik yang berlaku**]({{site.baseurl}}{% link halaman/kontribusi/kode-etik.md %}). Mari buat lingkungan yang nyaman, bersahabat, dan kondusif dalam pengembangan proyek ini. Mari belajar bersama dari satu sama lain dalam membangun proyek ini. 
 
 # Daftar isi
 {: .no_toc .text-delta }
@@ -28,7 +29,14 @@ Anda bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam mem
 
 ## Roadmap
 
-Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [Papan Trello](https://trello.com/b/Ii8Z5BRm/hidrokit-project) dan [Project Board Github](https://github.com/taruma/hidrokit/projects/5).
+Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [Papan Trello](https://trello.com/b/Ii8Z5BRm/hidrokit-project) dan [halaman isu di github](https://github.com/taruma/hidrokit/issues).
+
+<div align="center">
+<blockquote class="trello-board-compact">
+  <a href="https://trello.com/b/Ii8Z5BRm/hidrokit-project">Trello Board</a>
+</blockquote>
+<script src="https://p.trellocdn.com/embed.min.js"></script>
+</div>
 
 ## Kategori Kontribusi
 
@@ -48,48 +56,47 @@ Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halaman masing-ma
 
 ## Aturan
 
-Segala bentuk komunikasi harus mengikuti [Kode Etik](https://github.com/taruma/hidrokit/blob/master/CODE_OF_CONDUCT.md).
+Segala bentuk komunikasi harus mengikuti [**kode etik yang berlaku**]({{ site.baseurl }}{% link halaman/kontribusi/kode-etik.md %}).
 
-# Kontribusi Pertamamu
+---
+<div align="center" markdown="1">
+## Yang perlu Anda ketahui
+</div>
 
-Untuk memulai kontribusi, kamu bisa mengunjungi diskusi di *issue* berikut terkait pengembangan proyek ini.
+Berikut daftar yang sebaiknya Anda ketahui saat berkontribusi. Git dan Github memiliki tahapan awal *learning curve* yang lumayan (belum lagi python 😅), sehingga sangat diwajari jika suatu waktu Anda mentok/buntu. Diharapkan hal tersebut tidak membuat Anda mundur untuk memulai/melanjutkan berkontribusi. Jangan ragu untuk menanyakan atau menceritakan pengalaman Anda di komunitas hidrokit.
 
-- Terkait non-teknis dan umum (ide, saran, kritik) terkait pengembangan proyek hidrokit, kunjungi [***issue #2***](https://github.com/taruma/hidrokit/issues/2).
-- Terkait teknis dalam bidang keahlian keairan/sumberdaya air, kunjungi [***issue #3***](https://github.com/taruma/hidrokit/issues/3).
-- Terkait teknis dalam bidang komputer dan/atau informatika, bisa mengunjungi isu [***issue #4***](https://github.com/taruma/hidrokit/issues/4).
+<div align="justify" markdown="1">
+> "If everyone waited to become an expert before starting, no one would become an expert. To become an EXPERT, you must have EXPERIENCE. To get EXPERIENCE, you must EXPERIMENT! Stop waiting. Start stuff." - Richie Norton
+{: .text-delta}
+</div>
 
-Saat ini label yang tersedia dalam proyek ini antara lain:
+### Git
 
-- Idea: Isu mengenai diskusi ide.
-- Python: Isu mengenai hal implementasi teori (Hidro) ke dalam bentuk Python, dapat berupa perbaikan kode (struktur maupun dokumentasi).
-- Hidro: Isu mengenai hal sumberdaya air seperti teori yang digunakan, paper/jurnal referensi.
-
-Label akan ditambahkan sesuai kebutuhan proyek.
-
-# *Version Control*: Git
-
-Karena proyek ini menggunakan Git sebagai *version control* yang ditampung di GitHub, kontributor diharapkan memahami cara kerja berkontribusi menggunakan Git/Github. Jika ini pertama kalinya Anda menggunakan Git/Github, Anda bisa mengikuti kursus/latihan yang disediakan oleh Github di [Github Lab Training](https://lab.github.com/courses).
+Karena proyek ini menggunakan Git sebagai *version control* yang ditampung di GitHub, kontributor diharapkan memahami cara kerja berkontribusi menggunakan Git/Github. Jika ini pertama kalinya Anda menggunakan Git/Github, Anda bisa mengikuti kursus/latihan yang disediakan oleh Github di [Github Lab Training](https://lab.github.com/courses). Anda juga bisa mengunjungi masing-masing halaman kategori kontribusi untuk memperoleh panduan lebih detail. 
 
 Beberapa tutorial lainnya antara lain: [Make a Pull Request](http://makeapullrequest.com/) and [First Timer Only](http://www.firsttimersonly.com/)
 
 Jangan ragu untuk bertanya dan mendiskusikan jika mengalami kesulitan (baik pertanyaan terkait proyek, atau cara berkontribusi). 
 
-# Environment Python
+### Github
 
-Jika anda tidak menggunakan distribusi python Anaconda, berikut library yang digunakan:
-```
-- Python >= 3.6.8
-- Numpy >= 1.16.4
-- Pandas >= 0.24.2
-- Matplotlib >= 3.1.0
-```
+Proyek ini akan menggunakan wadah Github sebagai alat komunikasi utama, sehingga diharapkan untuk membiasakan dan menyesuaikan bentuk komunikasi. Github menggunakan sintaks penulisan _Markdown_. Oh 💡, penggunaan emoji 🙌 sangat dianjurkan. 🎉
 
-# Filosofi hidrokit
+Baca lebih lanjut:
+- [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
+- [https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
 
-Tujuan proyek hidrokit adalah mengembangkan alat yang sederhana untuk melakukan analisis hidrologi yang dimulai dari mengolah data mentah, melakukan perhitungan/analisis, hingga menampilkan hasil analisis. hidrokit dapat digunakan sebagai alternatif *Microsoft Excel* sebagai alat dalam analisis hidrologi. hidrokit juga akan memudahkan integrasi dalam analisis hidrologi.
+### Lisensi
 
-Filosofi dibentuknya proyek ini untuk membangun komunitas hidroinformatika di Indonesia. Dengan berkembangnya teknologi dan menumpuknya data yang dapat diolah, gabungan keahlian dalam sumber daya air dan informatika akan dibutuhkan dalam menghadapi permasalahan nyata pada di masa sekarang ataupun mendatang. hidrokit ini juga merupakan salah satu bentuk pemanfaatan *python* untuk permasalahan sumber daya air. 
+Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebuah produk yang dimasuk. Jika Anda menyertakan potongan kode, harap menyertakan lisensinya dan menyertakan pemiliknya. Lisensi proyek hidrokit sendiri mengikuti [lisensi MIT](https://choosealicense.com/licenses/mit/). Untuk sumber yang digunakan dalam proyek ini bisa dilihat di halaman [Sumber]({{ site.baseurl }}{% link halaman/serbaneka/sumber.md %}).
 
-Dan kami harap Anda merupakan salah satu orang yang ikut serta dalam pengembangan proyek dan komunitas ini.
+<div align="center" markdown="1">
+Tunggu apa lagi? 🤔 Ayo berkontribusi! 🏃‍♂️
+{: .text-delta .fs-5 .fw-500}
 
-Anda bisa mengunjungi tanya jawab yang seputar proyek ini di halaman wiki [Tanya Jawab]({{ site.baseurl }}{% link halaman/serbaneka/tanya-jawab-uma.md %}).
+[Dokumentasi]{: .btn .btn-purple}
+[Situs]{: .btn .btn-purple}
+[Hidrologi]{: .btn .btn-blue}
+[Python]{: .btn .btn-green}
+
+</div>
