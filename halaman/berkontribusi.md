@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Berkontribusi
-parent: Panduan
-permalink: /panduan/berkontribusi
+permalink: /berkontribusi
+nav_order: 4
+has_children: true
 ---
 
 # Pendahuluan

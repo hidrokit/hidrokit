@@ -2,8 +2,9 @@
 layout: default
 title: Tanya Jawab (UMA)
 description: Tanya jawab (taruma)
-parent: Serbaneka
+# parent: Serbaneka
 permalink: /serbaneka/tanya-jawab-uma
+nav_exclude: true
 ---
 
 Tanya jawab ini dibuat pada tanggal 9 Januari 2019.

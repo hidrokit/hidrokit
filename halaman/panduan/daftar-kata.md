@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Daftar Kata
-parent: Panduan
+parent: Serbaneka
 permalink: /panduan/daftar-kata
 ---
 
