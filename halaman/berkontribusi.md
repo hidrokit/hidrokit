@@ -6,57 +6,47 @@ nav_order: 4
 has_children: true
 ---
 
-# Pendahuluan
+👋 Terima kasih sebelumnya dalam mempertimbangkan untuk berkontribusi di proyek hidrokit. hidrokit memerlukan bantuan dari Anda. Anda dapat berkontribusi dalam berbagai bentuk seperti ide, keahlian teknis, koreksi, diskusi, dan apapun yang menurut Anda bisa memajukan dan mengembangkan proyek ini.
 
-Terima kasih sebelumnya dalam mempertimbangkan untuk berkontribusi di proyek `hidrokit`. `hidrokit` sangat memerlukan bantuan dari Anda. Anda dapat berkontribusi dalam bentuk apapun seperti ide, keahlian teknis, koreksi teori, diskusi, dan apapun yang menurut Anda bisa memajukan proyek ini.
+Sebelumnya, saya harap** setiap individu dalam komunitas ini mengikuti** [**kode etik yang berlaku**]({{site.baseurl}}{% link halaman/kontribusi/kode-etik.md %}). Mari buat lingkungan yang nyaman, bersahabat, dan kondusif dalam pengembangan proyek ini. Mari belajar bersama dari satu sama lain dalam membangun proyek ini. 
 
-Sebelumnya, saya harap setiap individu dalam komunitas ini mengikuti [**Kode Etik**](https://github.com/taruma/hidrokit/blob/master/CODE_OF_CONDUCT.md) yang berlaku. Mari buat lingkungan yang nyaman, bersahabat, dan kondusif dalam pengembangan proyek ini. Mari belajar bersama dari satu sama lain dalam membangun proyek ini. 
+# Daftar isi
+{: .no_toc .text-delta }
 
-Ini merupakan kesempatan Anda sebagai kontributor untuk ikut serta dalam pengembangan proyek ini. 
+1. TOC
+{:toc}
 
-# Siapapun bisa berkontribusi
+---
+## Siapapun bisa berkontribusi
 
-Perlu diingat, kontribusi `hidrokit` tidak selalu berbentuk implementasi kode. Kontribusi dapat berupa menulis panduan, mengajukan ide, ikut berdiskusi, mengusulkan fitur baru, memperbaiki tata cara penulisan, memperbaiki kode yang sudah ada, dll. Untuk saat ini, dari awal tahun 2019, akan lebih fokus ke pembangunan ide `hidrokit` dan memperjelas roadmap proyek ini. Dan hal ini terbuka untuk siapapun dengan latar belakang apapun.
+Kontribusi di hidrokit tidak selalu berbentuk implementasi kode. Kontribusi dapat berupa menulis panduan (dokumentasi), mengajukan ide, ikut berdiskusi, mengusulkan fitur baru, memperbaiki tata cara penulisan, memperbaiki kode yang sudah ada, dll. Sehingga proyek ini terbuka untuk siapapun dengan latar belakang apapun.
 
-Bagi yang memiliki wawasan pada bidang komputer dapat berkontribusi berupa mengusulkan tatacara pengembangan proyek ini dari sisi teknis kode, bagi yang memiliki wawasan hidrologi, bisa berkontribusi berupa pengusulan ide untuk analisis hidrologi, dan bagi yang memiliki ketertarikan dalam komunitas bisa ikut serta dalam bentuk perbaikan panduan, *triage*, ataupun membangun komunikasi kondusif. Sekecil apapun, itu lebih baik daripada tidak sama sekali. :)
 
-Anggap proyek ini sebagai latihan Anda dalam memulai kontribusi di proyek *open source*, membangun kepercayaan diri untuk komunikasi dan berbagi hasil karya Anda, mengasah komunikasi, dan membentuk komunitas yang memiliki tujuan yang sama meski dengan latar belakang yang bermacam-macam. 
+Bagi yang memiliki wawasan pada bidang komputer dapat berkontribusi berupa mengusulkan tatacara pengembangan proyek ini dari sisi teknis kode; bagi yang memiliki wawasan hidrologi, bisa berkontribusi berupa pengusulan ide untuk analisis hidrologi; dan bagi yang memiliki ketertarikan dalam komunitas bisa ikut serta dalam bentuk perbaikan panduan/dokumentasi, triase, ataupun membangun komunikasi kondusif. Sekecil apapun, itu lebih baik daripada tidak sama sekali. 😊
 
-# Roadmap
+Anda bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam memulai kontribusi di proyek *open source* demi membangun kepercayaan diri, mengasah berkomunikasi dan berbagi hasil karya Anda.
 
-Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [Papan Trello](https://trello.com/b/Ii8Z5BRm/hidrokit-project).
+## Roadmap
 
-# Struktur `hidrokit`
+Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [Papan Trello](https://trello.com/b/Ii8Z5BRm/hidrokit-project) dan [Project Board Github](https://github.com/taruma/hidrokit/projects/5).
 
-`hidrokit` terdiri dari beberapa modul yang memiliki fungsi masing-masing. Hal ini agar memudahkan dalam pengembangan terpisah lebih lanjut. Berikut module yang telah tersedia pada versi 0.1.2:
-- `.dlkit`: Membantu proses dalam persiapan pemodelan dalam _deep learning_ (dl). 
-- `.datakit`: Digunakan untuk mengeksplorasi dataset. 
-- `.prepkit`: Membaca berkas eksternal berupa excel dan mempersiapkan berkas untuk dapat diakses dalam Python. 
-- `.viewkit`: Menampilkan dataset dalam bentuk grafik atau tabel tertentu.
-- `.bmkgkit`: Mengolah data khusus untuk bmkgkit. 
+## Kategori Kontribusi
 
-## Gambaran Besar `hidrokit`
+Kami membagi kontribusi menjadi empat kategori utama yaitu:
+1. [Dokumentasi]\: koreksi dokumentasi, penerjemahan, penulisan/pengejaan, komunikasi, dan kerapihan, dll. Bertujuan untuk memudahkan pengguna dalam menggunakan produk.
+2. [Situs]\: pengembangan situs, koreksi penulisan/pengejaan, penambahan konten, memperbagus situs, dll. Bertujuan memudahkan pengguna mencari informasi melalui situs.
+3. [Hidrologi]\: mengusulkan ide pemodelan/metode, mengoreksi/memperjelas teori, dll. Bertujuan membahas aspek hidrologi/keairan/sumberdaya air dalam proyek. 
+4. [Python]\: testing, koreksi implementasi kode, dll. Bertujuan membahas aspek implementasi kode/pemrograman dalam proyek. 
 
-Rancangan gambaran besar dari `hidrokit` adalah mengembangkan _tool_ yang mampu membantu pada proses _data preparation_, _data analysis_, dan _data visualization_. Dalam mengembangkan fitur baru selalu menjawab tiga permasalahan tersebut. Berikut contohnya (dari versi 0.1.2):
+<!-- LINK -->
+[Dokumentasi]:  {{site.baseurl}}{% link halaman/kontribusi/dokumentasi.md %}
+[Situs]:        {{site.baseurl}}{% link halaman/kontribusi/situs.md %}
+[Hidrologi]:    {{site.baseurl}}{% link halaman/kontribusi/hidrologi.md %}
+[Python]:       {{site.baseurl}}{% link halaman/kontribusi/python.md %}
 
-- _data prepapration_ / persiapan data: `.dlkit`, `.datakit`, `.prepkit`, `.bmkgkit`.
-- _data analysis_ / analisis data: (belum ada)
-- _data visualization_ / visualisasi data: `.viewkit`.
+Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halaman masing-masing. 
 
-# Bentuk Kontribusi
-
-Saat ini bentuk kontribusi yang diharapkan adalah:
-
-1. Ide _Roadmap_ proyek.
-2. Mengevaluasi dan memperbaiki dokumentasi (koreksi penulisan, memperjelas kalimat, menambah informasi).
-3. Mengusulkan perbaikan dalam proses pengembangan proyek ini (workflow, versioning, packaging).
-4. Memberikan ide dalam pengembangan proyek ini dan ikut serta dalam diskusinya.
-5. Mengembangkan implementasi kode dari teori yang digunakan.
-6. Mencoba kode yang sudah ada dan memeriksa kegunaannya.
-
-Bentuk kontribusi yang tidak tertera pada daftar diatas bukan berarti tidak dibutuhkan, jika ada bentuk kontribusi selain yang disebutkan jangan ragu untuk membuat isu/diskusi. 
-
-# Aturan
+## Aturan
 
 Segala bentuk komunikasi harus mengikuti [Kode Etik](https://github.com/taruma/hidrokit/blob/master/CODE_OF_CONDUCT.md).
 
@@ -96,9 +86,9 @@ Jika anda tidak menggunakan distribusi python Anaconda, berikut library yang dig
 
 # Filosofi hidrokit
 
-Tujuan proyek `hidrokit` adalah mengembangkan alat yang sederhana untuk melakukan analisis hidrologi yang dimulai dari mengolah data mentah, melakukan perhitungan/analisis, hingga menampilkan hasil analisis. `hidrokit` dapat digunakan sebagai alternatif *Microsoft Excel* sebagai alat dalam analisis hidrologi. `hidrokit` juga akan memudahkan integrasi dalam analisis hidrologi.
+Tujuan proyek hidrokit adalah mengembangkan alat yang sederhana untuk melakukan analisis hidrologi yang dimulai dari mengolah data mentah, melakukan perhitungan/analisis, hingga menampilkan hasil analisis. hidrokit dapat digunakan sebagai alternatif *Microsoft Excel* sebagai alat dalam analisis hidrologi. hidrokit juga akan memudahkan integrasi dalam analisis hidrologi.
 
-Filosofi dibentuknya proyek ini untuk membangun komunitas hidroinformatika di Indonesia. Dengan berkembangnya teknologi dan menumpuknya data yang dapat diolah, gabungan keahlian dalam sumber daya air dan informatika akan dibutuhkan dalam menghadapi permasalahan nyata pada di masa sekarang ataupun mendatang. `hidrokit` ini juga merupakan salah satu bentuk pemanfaatan *python* untuk permasalahan sumber daya air. 
+Filosofi dibentuknya proyek ini untuk membangun komunitas hidroinformatika di Indonesia. Dengan berkembangnya teknologi dan menumpuknya data yang dapat diolah, gabungan keahlian dalam sumber daya air dan informatika akan dibutuhkan dalam menghadapi permasalahan nyata pada di masa sekarang ataupun mendatang. hidrokit ini juga merupakan salah satu bentuk pemanfaatan *python* untuk permasalahan sumber daya air. 
 
 Dan kami harap Anda merupakan salah satu orang yang ikut serta dalam pengembangan proyek dan komunitas ini.
 
