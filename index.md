@@ -1,80 +1,63 @@
 ---
-title: "hidrokit"
-description: paket python untuk analisis hidrologi
+layout: default
+title: Home
+# nav_order: 1
+permalink: /
 ---
 <div align="center">
-  <img src="https://github.com/taruma/hidrokit/wiki/logo/hidrokit-400x100-trans.png"><br>
+  <img src="{{ site.baseurl }}/assets/images/presskit/hidrokit-800x200.jpg" alt="hidrokit banner"><br>
 </div>
---------
+<div align="justify" markdown="1">
 
-# hidrokit: analisis hidrologi dengan python
-[![PyPI](https://img.shields.io/pypi/v/hidrokit.svg)](https://pypi.org/project/hidrokit/)
-[![GitHub](https://img.shields.io/github/license/taruma/hidrokit.svg)](/LICENSE)
-[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](#hidrokit)
+>  **hidrokit** adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi seperti pengolahan data, analisis data, dan visualisasi data.
+{: .fs-5 .fw-400}
+</div>
 
-`hidrokit` adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data, analisis data, dan visualisasi data.
+<div align="center" markdown="1">
+[Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Instalasi dan Penggunaan]({{ site.baseurl }}{% link halaman/panduan/instalasi.md %}){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }
+</div>
 
-# Status Pengembangan
-[![GitHub release](https://img.shields.io/github/release/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/taruma/hidrokit.svg)](#status-pengembangan)
-[![GitHub last commit](https://img.shields.io/github/last-commit/taruma/hidrokit.svg)](#status-pengembangan)
-[![GitHub issues](https://img.shields.io/github/issues/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/pulls)
+---
+<div align="center" markdown="1">
+**PACKAGE STATUS**
+{: .label .label-red .fs-2 .fw-300 .text-delta}
 
-Status pengembangan `hidrokit` dan _roadmap_ tersedia di [**papan Trello**](https://trello.com/b/Ii8Z5BRm/hidrokit-project). Tertarik berkontribusi? Baca bagian [kontributor](#untuk-kontributor).
+![PyPI](https://img.shields.io/pypi/v/hidrokit.svg?label=on%20PyPI&style=flat-square)
+![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg?label=PyPI%20status&style=flat-square)
+![GitHub release](https://img.shields.io/github/release/taruma/hidrokit.svg?label=on%20GitHub&style=flat-square)
+![GitHub Release Date](https://img.shields.io/github/release-date/taruma/hidrokit.svg?label=date&style=flat-square)
+![GitHub release](https://img.shields.io/github/release-pre/taruma/hidrokit.svg?label=on%20GitHub%20%28pre%29&style=flat-square)
+![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/taruma/hidrokit.svg?label=date%20%28pre%29&style=flat-square)
 
---------
-# *Module* pada Hidrokit
+</div>
 
-Hidrokit terdiri dari beberapa *module* yang memiliki fungsi masing-masing. Berikut *module* yang telah tersedia pada versi 0.1.2:
-- `.dlkit`: Membantu persiapan pemodelan dalam _deep learning_ / _artificial neural networks_. 
-- `.datakit`: Digunakan untuk mengeksplorasi dataset. 
-- `.prepkit`: Membaca berkas eksternal. 
-- `.viewkit`: Menampilkan *dataset* dalam bentuk grafik atau tabel tertentu.
-- `.bmkgkit`: Mengolah data dari situs bmkg. 
+<div align="center" markdown="1">
+**GITHUB STATUS**
+{: .label .label-yellow .fs-2 .fw-300 .text-delta}
 
---------
-# Memulai
+![GitHub last commit](https://img.shields.io/github/last-commit/taruma/hidrokit.svg?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/taruma/hidrokit.svg?style=flat-square)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/taruma/hidrokit.svg?style=flat-square)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/taruma/hidrokit.svg?style=flat-square)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/taruma/hidrokit.svg?style=flat-square)
 
-Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/).
+</div>
 
-## Syarat
-Paket ini menggunakan `Python 3.6.x` ke atas. Berikut daftar paket yang diperlukan untuk menjalankan `hidrokit`:
-```
-- pandas==0.24.2
-- matplotlib==3.1.0
-- numpy==1.16.4
-```
-*(daftar diatas dibuat menggunakan [pipreqs](https://github.com/bndr/pipreqs))*
+<div align="center" markdown="1">
+**SITE/PAGES STATUS**
+{: .label .label-purple .fs-2 .fw-300 .text-delta}
 
-# Instalasi / Pemasangan
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/taruma/hidrokit/gh-pages.svg?style=flat-square)
+![GitHub issues by-label](https://img.shields.io/github/issues/taruma/hidrokit/gh-pages.svg?style=flat-square)
+![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/taruma/hidrokit/gh-pages.svg?style=flat-square)
+</div>
 
-`hidrokit` didistribusikan melalui [PyPI](https://pypi.org/). Pemasangan dilakukan dengan perintah pada _(Anaconda) command prompt_:
+---
+<div align="center" markdown="1">
+THANKS TO
+{: .label .label-green .fs-2 .fw-300 .text-delta}
 
-```
-pip install hidrokit
-```
-*(akses internet diperlukan saat melakukan pemasangan)*
-
-Gunakan perintah ```pip install git+https://github.com/taruma/hidrokit.git``` jika ingin menggunakan versi rilis terakhir dari github. 
-
-# Penggunaan
-
-Untuk memulai penggunaan, gunakan perintah `import`. Contoh:
-
-```python
-import hidrokit
-from hidrokit import datakit as dk
-from hidrokit.dlkit import table_timesteps
-```
-
-Untuk contoh penggunaan baca bagian [_notebook_](#notebook).
-
---------
-# Notebook
-
-Daftar contoh _notebook_ dapat diakses di halaman [hidrokit-nb](https://taruma.github.io/hidrokit-nb/) ([repo](https://github.com/taruma/hidrokit-nb)).
-
-# Untuk Kontributor
-
-Tertarik menjadi kontributor? Baca [**berkontribusi**](https://github.com/taruma/hidrokit/wiki/Berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dengan berbagai latar belakang.
+![GitHub contributors](https://img.shields.io/github/contributors/taruma/hidrokit.svg?style=flat-square)
+![Sponsor](https://img.shields.io/badge/sponsored%20by-LKO-green.svg?style=flat-square)
+</div>
