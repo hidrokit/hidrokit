@@ -1,14 +1,14 @@
-# Site setting
+# Site Setting
 title: hidrokit
 description: analisis hidrologi dengan python
 
-# Remote Setting
-baseurl: "/hidrokit"
-# url: "http://taruma.github.com"
+# Local Setting
+baseurl: ""
+url: ""
 
 # Theme
-# theme: "just-the-docs"
-remote_theme: pmarsceill/just-the-docs
+theme: "just-the-docs"
+# remote_theme: pmarsceill/just-the-docs
 
 # Theme settings
 # Color scheme currently only supports "dark" or nil (default)
