@@ -49,6 +49,7 @@ permalink: /
 **SITE/PAGES STATUS**
 {: .label .label-purple .fs-2 .fw-300 .text-delta}
 
+![Travis (.org) branch](https://img.shields.io/travis/taruma/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/taruma/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub issues by-label](https://img.shields.io/github/issues/taruma/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/taruma/hidrokit/gh-pages.svg?style=flat-square)
