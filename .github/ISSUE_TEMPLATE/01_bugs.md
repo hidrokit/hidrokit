@@ -2,7 +2,7 @@
 name: "Bug report"
 about: "Lapor permasalahan/kerusakan"
 title: "bug: "
-
+label: bug
 ---
 
 ### Sistem
@@ -15,7 +15,7 @@ title: "bug: "
 Berikan deskripsi permasalahan yang terjadi.
 Jelaskan apa yang terjadi, yang bermasalah, dan yang seharusnya terjadi.
 
-### Langkah yang telah dilakukan
+### Langkah yang telah dilakukan dan hasil yang diharapkan
 
 ```
 Salin perintah yang diekseskusi dan hasil keluarannya.

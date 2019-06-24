@@ -41,5 +41,11 @@ checkPullRequestTemplate: true
 #   - hiimbex
 #   - bexo
 
+# TODO Configuration
 todo:
+  keyword: ['@todo', 'TODO']
+  bodykeyword: ['@body', 'BODY']
   autoAssign: false
+  blobLines: 5
+  label: true
+  reopenClosed: true

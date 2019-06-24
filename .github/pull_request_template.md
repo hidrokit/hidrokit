@@ -1,15 +1,15 @@
-### Ringkasan Permintaan Penggabungan (_Pull Request_ (PR))
+### Ringkasan _Pull Request_
 
-Ringkasan PR.
+Jelaskan dengan ringkas maksud dari PR ini.
 
 ### Perbaikan/Fitur
 
-Memperbaiki/Penambahan Fitur isu #.
-Resolves #.
+Gunakan `close #issue` untuk menutup isu secara otomatis
+close #.
 
 ### Penggunaan
 
-Berikan contoh sederhana terkait perbaikan/penambahan fitur.
+Berikan contoh sederhana terkait perubahan dari PR ini.
 
 ### Catatan
 
