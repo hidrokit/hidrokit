@@ -4,12 +4,18 @@ title: Tentang hidrokit
 nav_order: 1
 ---
 
-<div align="center">
+<!-- <div align="center">
 <img src="{{ site.baseurl }}/assets/images/presskit/hidrokit-600x125-main.jpg" alt="hidrokit main">
+</div> -->
+
+<div align="center">
+<img src="{{ site.baseurl }}/assets/images/presskit/hidrokit-800x200.jpg" alt="Hidrokit" width="40%" height="40%">
+<img src="https://github.com/taruma/hidrokit-nb/raw/master/docs/assets/images/hidrokit-nb-800x200.jpg" alt="Hidrokit Notebook" width="40%" height="40%"><br>
 </div>
 
 <div align="justify" markdown="1">
 > **hidrokit** adalah proyek *open source* paket python yang dapat digunakan untuk membantu proses analisis hidrologi seperti pengolahan data, analisis data, dan visualisasi data.
+> **hidrokit-nb** adalah kumpulan penggunaan *jupyter notebook* yang dapat digunakan dalam bidang hidrologi dan contoh penggunaan hidrokit.
 {: .fs-5}
 </div>
 
@@ -25,12 +31,15 @@ nav_order: 1
 
 
 <div align="justify" markdown="1">
-Dengan berkembangnya teknologi dan bertumpuknya data, gabungan keahlian dalam sumber daya air dan informatika akan dibutuhkan dalam menghadapi permasalahan nyata dalam bidang hidrologi pada di masa sekarang ataupun mendatang. Hidrokit sendiri adalah merupakan salah satu bentuk gabungan proyek multi-disiplin antara hidrologi dan informatika yang  masa depan. 
+Dengan berkembangnya teknologi dan bertumpuknya data, gabungan keahlian dalam sumber daya air dan informatika akan dibutuhkan dalam menghadapi permasalahan nyata dalam bidang hidrologi pada di masa sekarang ataupun mendatang. Hidrokit merupakan salah satu bentuk gabungan proyek multi-disiplin antara hidrologi dan informatika. 
 
-Hidrokit memanfaatkan bahasa pemrograman python yang sangat populer untuk membantu mengembangkan alat bantu dalam memecahkan permasalahan yang akan dihadapi oleh para praktisi dan akademisi di bidang hidrologi. Hidrokit juga menerapkan konsep _open-source_ yang memiliki daya tarik akhir-akhir ini. Dengan _open-source_, diharapkan komunitas hidroinformatika, khususnya Indonesia, berkembang dengan saling berkontribusi demi mencapai tujuan yang sama, yaitu masa depan yang lebih baik. 
+Hidrokit memanfaatkan bahasa pemrograman python yang populer untuk membantu mengembangkan alat bantu dalam memecahkan permasalahan yang dihadapi oleh para praktisi dan/atau akademisi di bidang hidrologi. Hidrokit juga menerapkan konsep _open-source_ yang memiliki daya tarik akhir-akhir ini. Dengan _open-source_, diharapkan komunitas hidroinformatika, khususnya Indonesia, berkembang dengan saling berkontribusi demi mencapai tujuan yang sama, yaitu masa depan yang lebih baik. 
 
-Hidrokit sendiri bukan sekedar barisan kode python, melainkan komunitas yang menggabungkan antara python dan jupyter notebook dalam membuat solusi. Saat ini, hidrokit-nb merupakan proyek kumpulan jupyter notebook yang mendemonstrasikan kegunaan python dan jupyter notebook.
+Hidrokit sendiri bukan hanya barisan kode python, melainkan komunitas yang menggabungkan antara python dan jupyter notebook dalam membuat solusi. Saat ini, hidrokit-nb merupakan proyek kumpulan jupyter notebook yang mendemonstrasikan kegunaan python dan jupyter notebook.
 </div>
+
+
+---
 
 <div align="center" markdown="1">
 ## Tujuan hidrokit
@@ -50,13 +59,15 @@ Tujuan dari proyek hidrokit antara lain:
 
 ---
 
-<div align="center">
-<img src="https://github.com/taruma/hidrokit-nb/raw/master/docs/assets/images/hidrokit-nb-800x200.jpg" alt="Hidrokit Notebook" width="50%" height="50%">
-</div>
+---
 <div align="center" markdown="1">
-[Kunjungi Hidrokit Notebook](https://taruma.github.io/hidrokit-nb){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }
-</div>
+**Tunggu apa lagi? 🤔 Ayo langsung buat _issue_ atau _pull request_! 🏃‍♂️**
+{: .text-delta .fs-4 .fw-500}
 
+[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+
+</div>
 
 ---
 <div align="left" markdown="1">

@@ -46,17 +46,28 @@ Kami membagi kontribusi menjadi empat kategori utama yaitu:
 3. [Hidrologi]\: mengusulkan ide pemodelan/metode, mengoreksi/memperjelas teori, dll. Bertujuan membahas aspek hidrologi/keairan/sumberdaya air dalam proyek. 
 4. [Python]\: testing, koreksi implementasi kode, dll. Bertujuan membahas aspek implementasi kode/pemrograman dalam proyek. 
 
-<!-- LINK -->
-[Dokumentasi]:  {{site.baseurl}}{% link halaman/kontribusi/dokumentasi.md %}
-[Situs]:        {{site.baseurl}}{% link halaman/kontribusi/situs.md %}
-[Hidrologi]:    {{site.baseurl}}{% link halaman/kontribusi/hidrologi.md %}
-[Python]:       {{site.baseurl}}{% link halaman/kontribusi/python.md %}
-
 Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halaman masing-masing. 
+
+## Mulai berkontribusi
+
+Ada dua istilah yang biasa digunakan dalam proyek ini yaitu isu (_issue_) dan _pull request_ (PR) saat berbicara berkontribusi. Isu bisa dibilang seperti tiket, yang dibuat untuk membahas suatu ide/masalah. Ketika isu dibuat, orang lain bisa melihat isu Anda. Jika ada kontributor yang tertarik mengatasi isu Anda, kontributor akan _forking_ _repo_ utama dan mulai mengubah kode/data untuk menyelesaikan isu Anda. Setelah kontributor selesai dengan perubahannya, kontributor akan meminta _pull request_ atau PR untuk menggabungkan hasil kerjaan kontributor ke _repo_ utama.
+
+<div align="center" markdown="1">
+**Langsung ada ide? 🙀 Buruan buat _isu_ / _pull request_ sebelum idenya terbang. 💸💸 ️**
+{: .text-delta .fs-2 .fw-500}
+
+[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+
+</div>
 
 ## Aturan
 
 Segala bentuk komunikasi harus mengikuti [**kode etik yang berlaku**]({{ site.baseurl }}{% link halaman/kontribusi/kode-etik.md %}).
+
+## Bacaan lebih lanjut
+
+- [How to contribute](https://opensource.guide/how-to-contribute/)
 
 ---
 <div align="center" markdown="1">
@@ -83,20 +94,42 @@ Jangan ragu untuk bertanya dan mendiskusikan jika mengalami kesulitan (baik pert
 Proyek ini akan menggunakan wadah Github sebagai alat komunikasi utama, sehingga diharapkan untuk membiasakan dan menyesuaikan bentuk komunikasi. Github menggunakan sintaks penulisan _Markdown_. Oh 💡, penggunaan emoji 🙌 sangat dianjurkan. 🎉
 
 Baca lebih lanjut:
-- [https://guides.github.com/features/mastering-markdown/](https://guides.github.com/features/mastering-markdown/)
-- [https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
+- [Github - Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+- [ikatyang - Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
+
+Males baca? Ada tontonannya juga:
+- [Web Programming UNPAS - #1 Apa itu Git dan Github](https://www.youtube.com/watch?v=lTMZxWMjXQU)
 
 ### Lisensi
 
 Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebuah produk yang dimasuk. Jika Anda menyertakan potongan kode, harap menyertakan lisensinya dan menyertakan pemiliknya. Lisensi proyek hidrokit sendiri mengikuti [lisensi MIT](https://choosealicense.com/licenses/mit/). Untuk sumber yang digunakan dalam proyek ini bisa dilihat di halaman [Sumber]({{ site.baseurl }}{% link halaman/serbaneka/sumber.md %}).
 
+---
+
 <div align="center" markdown="1">
-Tunggu apa lagi? 🤔 Ayo berkontribusi! 🏃‍♂️
-{: .text-delta .fs-5 .fw-500}
+**Tunggu apa lagi? 🤔 Ayo langsung buat _issue_ atau _pull request_! 🏃‍♂️**
+{: .text-delta .fs-2 .fw-500}
+
+[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+
+</div>
+
+---
+
+<div align="center" markdown="1">
+Mau baca lagi? 😲 Saya kasih yang lebih detail! 😉
+{: .text-delta .fs-2 .fw-500}
 
 [Dokumentasi]{: .btn .btn-purple}
 [Situs]{: .btn .btn-purple}
 [Hidrologi]{: .btn .btn-blue}
 [Python]{: .btn .btn-green}
+
+<!-- LINK -->
+[Dokumentasi]:  {{site.baseurl}}{% link halaman/kontribusi/dokumentasi.md %}
+[Situs]:        {{site.baseurl}}{% link halaman/kontribusi/situs.md %}
+[Hidrologi]:    {{site.baseurl}}{% link halaman/kontribusi/hidrologi.md %}
+[Python]:       {{site.baseurl}}{% link halaman/kontribusi/python.md %}
 
 </div>
