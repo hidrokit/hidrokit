@@ -5,7 +5,14 @@ parent: Berkontribusi
 permalink: /berkontribusi/python
 nav_order: 5
 ---
+<div align="justify" markdown="1">
+> "One of my most productive days was throwing away 1000 lines of code." - Ken Thompson.
+{: .text-delta}
+</div>
 
+Halaman ini berisi hal-hal yang perlu diketahui dalam berkontribusi dalam Python.
+
+---
 # Struktur hidrokit
 
 hidrokit terdiri dari beberapa modul yang memiliki fungsi masing-masing. Hal ini agar memudahkan dalam pengembangan terpisah lebih lanjut. Berikut module yang telah tersedia pada versi 0.1.2:
