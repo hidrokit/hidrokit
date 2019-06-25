@@ -32,7 +32,7 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source hidrokit2 setup.py test
+	coverage run --source hidrokit setup.py test
 	coverage report -m
 	coverage html
 	open htmlcov/index.html

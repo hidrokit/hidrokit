@@ -1,6 +1,7 @@
 # Config file for automatic testing at travis-ci.org
-
+dist: xenial
 language: python
+cache: pip
 
 python:
   - "3.7"
@@ -10,7 +11,13 @@ python:
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: 
   - pip install -r requirements.txt
+  - pip install codecov
+  - pip install pytest-cov
 
 # command to run tests, e.g. python setup.py test
 script:
-  - py.test
+  # - py.test
+  - pytest --cov-config=.coveragerc --cov=hidrokit
+
+after_success:
+  - codecov

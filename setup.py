@@ -4,10 +4,8 @@
 
 import io
 import os
-import sys
-from shutil import rmtree
 
-from setuptools import Command, find_packages, setup
+from setuptools import find_packages, setup
 
 # Package meta-data.
 NAME = 'hidrokit'
@@ -27,11 +25,6 @@ REQUIRED = [
 EXTRAS = {
     'excel': ['openpyxl', 'xlrd', 'xlwt'],
 }
-
-# The rest you shouldn't have to touch too much :)
-# ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the Trove Classifier for that!
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -67,7 +60,8 @@ setup(
 
     # Packages settings
     packages=find_packages(
-        exclude=["tests", "*.tests", "*.tests.*", "tests.*", "docs"]),
+        exclude=["tests", "*.tests", "*.tests.*", "tests.*", "docs"]
+    ),
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
 
