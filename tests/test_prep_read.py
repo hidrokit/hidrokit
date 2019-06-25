@@ -22,10 +22,10 @@ res_A_date = {'A': ['0618'], 'B': ['0619'], 'C': [],
 
 
 def test_read_number():
-    test = read.null_row(A, date_index=False)
+    test = read.missing_row(A, date_index=False)
     assert test.items() == res_A_number.items()
 
 
 def test_read_date():
-    test = read.null_row(A_date, date_format="%m%d")
+    test = read.missing_row(A_date, date_format="%m%d")
     assert test.items() == res_A_date.items()

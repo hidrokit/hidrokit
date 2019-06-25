@@ -122,12 +122,16 @@ def timestep_table(dataframe,
 
     # Generate Dataframe column with timesteps
     columns_values = dataframe.values
-    columns_values = _timestep_multi(columns_values,
-                                     index=index_columns,
-                                     keep_first=keep_first,
-                                     timesteps=timesteps)
-    df_timesteps = pd.DataFrame(data=columns_values,
-                                index=new_index,
-                                columns=new_columns_name)
+    columns_values = _timestep_multi(
+        columns_values,
+        index=index_columns,
+        keep_first=keep_first,
+        timesteps=timesteps
+    )
+    timestep_dataframe = pd.DataFrame(
+        data=columns_values,
+        index=new_index,
+        columns=new_columns_name
+    )
 
-    return df_timesteps
+    return timestep_dataframe

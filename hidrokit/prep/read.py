@@ -4,7 +4,7 @@ Gain additional information from dataframe.
 """
 
 
-def null_row(dataframe, date_index=True, date_format='%Y/%m/%d'):
+def missing_row(dataframe, date_index=True, date_format='%Y/%m/%d'):
     """Return dictionary of missing values dataframe.
 
     Return dictionary contains columns name and list of the index
@@ -38,7 +38,7 @@ def null_row(dataframe, date_index=True, date_format='%Y/%m/%d'):
     0  1.0  3.0  4  NaN  2  NaN
     1  NaN  2.0  3  NaN  1  4.0
     2  2.0  NaN  1  3.0  4  NaN
-    >>> null_row(A, date_index=False)
+    >>> missing_row(A, date_index=False)
     {'A': [1], 'B': [2], 'C': [], 'D': [0, 1], 'E': [], 'F': [0, 2]}
 
     Index is timestamp:
@@ -50,7 +50,7 @@ def null_row(dataframe, date_index=True, date_format='%Y/%m/%d'):
     2019-06-17  1.0  3.0  4  NaN  2  NaN
     2019-06-18  NaN  2.0  3  NaN  1  4.0
     2019-06-19  2.0  NaN  1  3.0  4  NaN
-    >>> null_row(A, date_format="%m%d")
+    >>> missing_row(A, date_format="%m%d")
     {'A': ['0618'],
     'B': ['0619'],
     'C': [],
