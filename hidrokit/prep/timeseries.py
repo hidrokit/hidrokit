@@ -17,6 +17,7 @@ def _timestep_single(array, index=0, timesteps=2, keep_first=True):
         Number of timesteps, by default 2
     keep_first : bool, optional
         Include original array if set True, by default True
+
     Returns
     -------
     array
@@ -40,6 +41,7 @@ def _timestep_single(array, index=0, timesteps=2, keep_first=True):
 
 def _timestep_multi(array, index=None, timesteps=2, keep_first=True):
     """Add timesteps array for multiple column array.
+
     Parameters
     ----------
     array : array
@@ -50,6 +52,7 @@ def _timestep_multi(array, index=None, timesteps=2, keep_first=True):
         Number of timesteps, by default 2
     keep_first : bool, optional
         Include original column if set True, by default True
+
     Returns
     -------
     array
@@ -77,6 +80,7 @@ def timestep_table(dataframe,
                    columns=None,
                    timesteps=2, keep_first=True):
     """Generate timesteps directly from DataFrame.
+
     Parameters
     ----------
     dataframe : DataFrame
@@ -87,6 +91,7 @@ def timestep_table(dataframe,
         Number of timesteps, by default 2
     keep_first : bool, optional
         Column _tmin0 will be included if set True, by default True
+
     Returns
     -------
     DataFrame
