@@ -1,4 +1,11 @@
-# bmkgkit contains database from bmkg online
+"""Toolkit for reading BMKG's Microsoft Excel file. 
+
+.. deprecated:: 0.2.0
+   Use :mod:`prepkit` instead.
+
+.. seealso::
+   Module :mod:`prepkit`
+"""
 
 import pandas as pd
 import pathlib

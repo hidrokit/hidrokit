@@ -1,18 +1,23 @@
+"""Toolkit for data preparation.
+"""
 # New format 20181007
+# @todo Rombak module prepkit
+# @body Rombak fungsi dan metode untuk pembacaan bilah Excel. Tambah dokumentasinya juga.
 
 import pandas as pd
 import pathlib
 from calendar import monthrange
 
-## CHECK AND WARNING
+# CHECK AND WARNING
 
 
-## STAGE SCANNING
+# STAGE SCANNING
 def sc_getyear(file, format='phderi'):
     file = pathlib.Path(file)
     if format == 'phderi':
         return int(file.stem.split()[0])
     return None
+
 
 def sc_getname(file, format='phderi', ixn=-2):
     file = pathlib.Path(file)
@@ -20,21 +25,23 @@ def sc_getname(file, format='phderi', ixn=-2):
         return ''.join(file.stem.split()[ixn:])
     return None
 
-## STAGE GET
+# STAGE GET
+
+
 def get_indextable(rawxl, format='phderi'):
-    targetdict = {'phderi': ['Jan', 'Feb'], 
+    targetdict = {'phderi': ['Jan', 'Feb'],
                   'pdderi': ['JAN', 'FEB']}
     target, check = targetdict[format]
     index = []
     for col in rawxl:
-        if rawxl[col].astype(str).str.contains('^'+target+'$').sum():
+        if rawxl[col].astype(str).str.contains('^' + target + '$').sum():
             index.append(col)
             break
     col = index[0]
     row_target = rawxl[col] == target
-    
+
     index.append(rawxl[col][row_target].index.values.astype(int)[0])
-    kolom, baris = index
+    kolom, baris = tuple(index)  # pylint: disable=unbalanced-tuple-unpacking
     if rawxl.iloc[baris, kolom + 1] == check:
         rawxl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
     else:
@@ -47,12 +54,13 @@ def get_rawdf(singlefile, format='phderi'):
     singlefile = pathlib.Path(singlefile)
     if format == 'phderi' or format == 'pdderi':
         xl = pd.read_excel(singlefile, sheet_name=0, header=None)
-        kolom, baris = get_indextable(xl, format)
+        kolom, baris = get_indextable(  # pylint: disable=unbalanced-tuple-unpacking
+            xl, format)
         rawdf = xl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
         return rawdf
 
 
-## STAGE TRANSFORM
+# STAGE TRANSFORM
 def tf_emptydf(year):
     """ Creating emptydf with index of date in single year """
     start, end = map(pd.Timestamp, f'{year}0101 {year}1231'.split())
@@ -85,4 +93,4 @@ def tf_rawdf(rawdf, year, name='ch'):
     return maindf
 
 
-## STAGE JOIN
+# STAGE JOIN
