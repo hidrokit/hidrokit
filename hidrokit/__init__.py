@@ -1,3 +1,3 @@
-from . import prepkit
-from . import viewkit
-from . import dlkit
+
+__author__ = 'Taruma Sakti Megariansyah'
+__email__ = 'hi@taruma.info'
