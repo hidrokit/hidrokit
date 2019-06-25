@@ -53,7 +53,6 @@ html_theme = 'alabaster'
 # Configuration theme
 html_theme_options = {
     'logo': 'hidrokit-logo-300x300.jpg',
-    'logo_name': 'true',
     'github_user': 'taruma',
     'github_repo': 'hidrokit',
     'description': 'analisis hidrologi dengan python',
