@@ -15,3 +15,5 @@ ignore_errors = True
 omit =
     tests/*
 skip_covered = False
+
+[xml]
