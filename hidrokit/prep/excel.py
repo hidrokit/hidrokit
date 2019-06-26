@@ -8,92 +8,153 @@ import pandas as pd
 import pathlib
 from calendar import monthrange
 
-# CHECK AND WARNING
+# # STAGE SCANNING
+# def _file_year(file, template='phderi'):
+#     file = pathlib.Path(file)
+#     if template == 'phderi':
+#         return int(file.stem.split()[0])
 
 
-# STAGE SCANNING
-def _file_year(file, template='phderi'):
-    file = pathlib.Path(file)
-    if template == 'phderi':
-        return int(file.stem.split()[0])
-    return None
+# def _file_name(file, template='phderi', ixn=-2):
+#     file = pathlib.Path(file)
+#     if template == 'phderi':
+#         return ''.join(file.stem.split()[ixn:])
 
 
-def _file_name(file, template='phderi', ixn=-2):
-    file = pathlib.Path(file)
-    if template == 'phderi':
-        return ''.join(file.stem.split()[ixn:])
-    return None
+def _cell_index(dataframe, template='phderi'):
+    """Return cell index (column, row) of first value on pivot.
 
-# STAGE GET
+    Parameters
+    ----------
+    dataframe : DataFrame
+        Raw dataframe imported from excel
+    template : str, optional
+        Template, by default 'phderi'
 
+    Returns
+    -------
+    list
+        Return [column index, row index]
 
-def _table_index(dataframe_raw, template='phderi'):
+    Raises
+    ------
+    Exception
+        Not match with template.
+    """
     template_check = {'phderi': ['Jan', 'Feb'],
                       'pdderi': ['JAN', 'FEB']}
     target, check = template_check[template]
-    index = []
-    for column in dataframe_raw:
-        target_status = dataframe_raw[column].astype(str).str.contains(
+    cell_index = []
+    for column in dataframe:
+        target_status = dataframe[column].astype(str).str.contains(
             '^' + target + '$'
         ).sum()
         if target_status:
-            index.append(column)
+            cell_index.append(column)
             break
-    column = index[0]
-    row_target = dataframe_raw[column] == target
+    column = cell_index[0]
+    row_target = dataframe[column] == target
 
-    index.append(dataframe_raw[column][row_target].index.values.astype(int)[0])
-    kolom, baris = index[0], index[1]
-    if dataframe_raw.iloc[baris, kolom + 1] == check:
-        dataframe_raw.iloc[baris + 1:baris + 32, kolom:kolom + 12]
+    cell_index.append(dataframe[column]
+                      [row_target].index.values.astype(int)[0])
+    column, row = cell_index[0], cell_index[1]
+    if dataframe.iloc[row, column + 1] == check:
+        return cell_index
     else:
         raise Exception(f'Format tidak sesuai dengan {format}')
 
-    return index
 
+def _file_single_pivot(file, template='phderi'):
+    """Return pivot table inside file
 
-def get_rawdf(singlefile, template='phderi'):
-    singlefile = pathlib.Path(singlefile)
+    Parameters
+    ----------
+    file : str
+        File path
+    template : str, optional
+        Template, by default 'phderi'
+
+    Returns
+    -------
+    Dataframe
+        Pivot table
+    """
+    file = pathlib.Path(file)
     if template == 'phderi' or template == 'pdderi':
-        xl = pd.read_excel(singlefile, sheet_name=0, header=None)
-        table_index = _table_index(xl, template)
-        kolom, baris = table_index[0], table_index[1]
-        rawdf = xl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
-        return rawdf
+        dataframe = pd.read_excel(file, sheet_name=0, header=None)
+        cell_index = _cell_index(dataframe, template)
+        column, row = cell_index[0], cell_index[1]
+        pivot = dataframe.iloc[row + 1:row + 32, column:column + 12]
+        return pivot
 
 
-# STAGE TRANSFORM
-def tf_emptydf(year):
-    """ Creating emptydf with index of date in single year """
+def _dataframe_year(year):
+    """Return empty dataframe with date index
+
+    Parameters
+    ----------
+    year : int
+        Year
+
+    Returns
+    -------
+    Dataframe
+        Empty dataframe with date index
+    """
+
     start, end = map(pd.Timestamp, f'{year}0101 {year}1231'.split())
 
-    df = pd.DataFrame()
-    df['date'] = pd.date_range(start, end)
-    df.set_index('date', inplace=True)
-    return df
+    return pd.DataFrame(index=pd.date_range(start, end))
 
 
-def tf_column(tabledf, year):
-    """ Return in single column """
+def _dataframe_data(pivot, year):
+    """Transform pivot table to list
+
+    Parameters
+    ----------
+    pivot : DataFrame
+        Pivot table
+    year : int
+        Year
+
+    Returns
+    -------
+    list
+        Return list of data
+    """
     month = 1
-    data_column = []
+    data = []
 
-    for column in tabledf:
+    for column in pivot:
         days = monthrange(year, month)[1]
         end = 31 if (days == 31) else (days - 31)
-        data_column += tabledf[column][:end].tolist()
+        data += pivot[column][:end].tolist()
         month += 1
-
-    return data_column
-
-
-def tf_rawdf(rawdf, year, name='ch'):
-    """ Transform rawdf to single column dataframe"""
-    maindf = tf_emptydf(year)
-    data = tf_column(rawdf, year)
-    maindf[name] = data
-    return maindf
+    return data
 
 
-# STAGE JOIN
+def _dataframe_table(pivot, year, name='ch'):
+    """Transform pivot table to single column dataframe.
+
+    Parameters
+    ----------
+    pivot : DataFrame
+        Pivot table
+    year : int
+        Year
+    name : str, optional
+        Column name, by default 'ch'
+
+    Returns
+    -------
+    DataFrame
+        Dataframe
+    """
+    table = _dataframe_year(year)
+    data = _dataframe_data(pivot, year)
+    table[name] = data
+    return table
+
+# @todo reshape pivot table
+# @body cari tahu fungsi untuk mengubah pivot table, jadi fungsi diatas tidak
+# @body diperlukan.
