@@ -14,22 +14,35 @@ from pandas.testing import assert_index_equal
 
 def test__timestep_single():
     # Transpose to save spaces
+    array_single = np.array(
+        [10, 20, 30, 40, 50, 60, 70]
+    )
+
     array = np.array(
         [
-            [10, 20, 30, 40, 50, 60, 70]
+            [10],
+            [20],
+            [30],
+            [40],
+            [50],
+            [60],
+            [70]
         ]
-    ).T
+    )
 
     array_result = np.array(
         [
-            [30, 40, 50, 60, 70],
-            [20, 30, 40, 50, 60],
-            [10, 20, 30, 40, 50]
+            [30, 20, 10],
+            [40, 30, 20],
+            [50, 40, 30],
+            [60, 50, 40],
+            [70, 60, 50]
         ]
-    ).T
+    )
 
     func = timeseries._timestep_single
     assert_equal(array_result, func(array))
+    assert_equal(array_result, func(array_single))
 
 
 def test__timestep_multi():
