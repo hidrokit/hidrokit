@@ -8,11 +8,13 @@ import pandas as pd
 import pathlib
 from calendar import monthrange
 
-# # STAGE SCANNING
-# def _file_year(file, template='phderi'):
-#     file = pathlib.Path(file)
-#     if template == 'phderi':
-#         return int(file.stem.split()[0])
+# STAGE SCANNING
+
+
+def _file_year(file, template='phderi'):
+    file = pathlib.Path(file)
+    if template == 'phderi':
+        return int(file.stem.split()[0])
 
 
 # def _file_name(file, template='phderi', ixn=-2):
