@@ -12,49 +12,53 @@ from calendar import monthrange
 
 
 # STAGE SCANNING
-def sc_getyear(file, format='phderi'):
+def _file_year(file, template='phderi'):
     file = pathlib.Path(file)
-    if format == 'phderi':
+    if template == 'phderi':
         return int(file.stem.split()[0])
     return None
 
 
-def sc_getname(file, format='phderi', ixn=-2):
+def _file_name(file, template='phderi', ixn=-2):
     file = pathlib.Path(file)
-    if format == 'phderi':
+    if template == 'phderi':
         return ''.join(file.stem.split()[ixn:])
     return None
 
 # STAGE GET
 
 
-def get_indextable(rawxl, format='phderi'):
-    targetdict = {'phderi': ['Jan', 'Feb'],
-                  'pdderi': ['JAN', 'FEB']}
-    target, check = targetdict[format]
+def _table_index(dataframe_raw, template='phderi'):
+    template_check = {'phderi': ['Jan', 'Feb'],
+                      'pdderi': ['JAN', 'FEB']}
+    target, check = template_check[template]
     index = []
-    for col in rawxl:
-        if rawxl[col].astype(str).str.contains('^' + target + '$').sum():
-            index.append(col)
+    for column in dataframe_raw:
+        target_status = dataframe_raw[column].astype(str).str.contains(
+            '^' + target + '$'
+        ).sum()
+        if target_status:
+            index.append(column)
             break
-    col = index[0]
-    row_target = rawxl[col] == target
+    column = index[0]
+    row_target = dataframe_raw[column] == target
 
-    index.append(rawxl[col][row_target].index.values.astype(int)[0])
-    kolom, baris = index
-    if rawxl.iloc[baris, kolom + 1] == check:
-        rawxl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
+    index.append(dataframe_raw[column][row_target].index.values.astype(int)[0])
+    kolom, baris = index[0], index[1]
+    if dataframe_raw.iloc[baris, kolom + 1] == check:
+        dataframe_raw.iloc[baris + 1:baris + 32, kolom:kolom + 12]
     else:
         raise Exception(f'Format tidak sesuai dengan {format}')
 
     return index
 
 
-def get_rawdf(singlefile, format='phderi'):
+def get_rawdf(singlefile, template='phderi'):
     singlefile = pathlib.Path(singlefile)
-    if format == 'phderi' or format == 'pdderi':
+    if template == 'phderi' or template == 'pdderi':
         xl = pd.read_excel(singlefile, sheet_name=0, header=None)
-        kolom, baris = get_indextable(xl, format)
+        table_index = _table_index(xl, template)
+        kolom, baris = table_index[0], table_index[1]
         rawdf = xl.iloc[baris + 1:baris + 32, kolom:kolom + 12]
         return rawdf
 
@@ -75,10 +79,10 @@ def tf_column(tabledf, year):
     month = 1
     data_column = []
 
-    for col in tabledf:
+    for column in tabledf:
         days = monthrange(year, month)[1]
         end = 31 if (days == 31) else (days - 31)
-        data_column += tabledf[col][:end].tolist()
+        data_column += tabledf[column][:end].tolist()
         month += 1
 
     return data_column
