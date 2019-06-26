@@ -1,10 +1,5 @@
 """hidrokit - analisis hidrologi dengan python
 """
 
-import warnings
-
-from . import bmkgkit, datakit, dlkit, prepkit, viewkit
-
-warnings.warn("bmkgkit will be removed in version 0.2.0, "
-              "use prepkit instead",
-              DeprecationWarning, stacklevel=2)
+__author__ = 'Taruma Sakti Megariansyah'
+__email__ = 'hi@taruma.info'

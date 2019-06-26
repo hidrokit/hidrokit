@@ -20,12 +20,11 @@ For non-technical or Bahasa Indonesia documentation please refer to `hidrokit si
 .. _hidrokit site: https://taruma.github.io/hidrokit
 .. _here: https://github.com/taruma/hidrokit/issues
 
+Table of Content
+----------------
+
 .. toctree::
    
-   api
-
-
-
-.. automodule:: prepkit
-   :noindex:
-
+   prep
+   analysis
+   viz
