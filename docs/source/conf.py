@@ -59,12 +59,12 @@ html_theme_options = {
     'github_user': 'taruma',
     'github_repo': 'hidrokit',
     'description': 'analisis hidrologi dengan python',
-    'logo_name': 'hidrokit',
+    'logo_name': True,
     'page_width': '940px',
     'badge_branch': 'master',
-    'github_banner': 'true',
-    'github_button': 'false',
-    'sidebar_collapse': 'true',
+    'github_banner': True,
+    'github_button': False,
+    'sidebar_collapse': False,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
