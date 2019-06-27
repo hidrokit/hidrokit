@@ -48,9 +48,9 @@ Ini merupakan perubahan sangat signifikan dari versi sebelumnya dan dimulainya p
 [codacy]: https://www.codacy.com/
 
 ### 25 Juni 2019 - v0.1.3
-Versi ini fokus ke dokumentasi teknis. Dari versi ini, hidrokit memiliki dokumentasi teknis otomatis yang dibuat menggunakan sphinx dan readthedocs. Situsnya adalah [hidrokit.readthedocs.io](hidrokit.readthedocs.io).
+Versi ini fokus ke dokumentasi teknis. Dari versi ini, hidrokit memiliki dokumentasi teknis otomatis yang dibuat menggunakan sphinx dan readthedocs. Situsnya adalah [hidrokit.readthedocs.io].
 - **Penambahan**
-  - Situs dokumentasi teknis di [readthedocs](hidrokit.readthedocs.io).
+  - Situs dokumentasi teknis di [readthedocs](https://hidrokit.rtfd.io).
   - `docstring` untuk setiap metode.
 
 ### 10 Juni 2019 - v0.1.2
