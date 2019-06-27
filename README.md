@@ -1,40 +1,70 @@
-# Hidrokit
-[![PyPI](https://img.shields.io/pypi/v/hidrokit.svg)](https://pypi.org/project/hidrokit/)
-[![GitHub](https://img.shields.io/github/license/taruma/hidrokit.svg)](/LICENSE)
-[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](#hidrokit)
+
+<div align="center">
+<img src="https://taruma.github.io/hidrokit/assets/images/presskit/hidrokit-800x200.jpg" alt="logo hidrokit"><br>
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
+[![GitHub license](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/blob/master/LICENSE)
+</div>
+<!-- STATUS PROJECT -->
 
 `hidrokit` adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data, analisis data, dan visualisasi data.
 
-# Status Pengembangan
-[![GitHub release](https://img.shields.io/github/release/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/taruma/hidrokit.svg)](#status-pengembangan)
-[![GitHub last commit](https://img.shields.io/github/last-commit/taruma/hidrokit.svg)](#status-pengembangan)
-[![GitHub issues](https://img.shields.io/github/issues/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/pulls)
+## Release
 
-Status pengembangan `hidrokit` dan _roadmap_ tersedia di [**papan Trello**](https://trello.com/b/Ii8Z5BRm/hidrokit-project). Tertarik berkontribusi? Baca bagian [kontributor](#untuk-kontributor).
+<table>
+  <tr align="center">
+    <th>Release</th>
+    <th>PyPI</th>
+    <th>Github</th>
+    <th>Github (Pre-release)</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td><img alt="PyPI" src="https://img.shields.io/pypi/v/hidrokit.svg?logo=pypi"></td>
+    <td><img alt="GitHub release" src="https://img.shields.io/github/release/taruma/hidrokit.svg?logo=github"></td>
+    <td><img alt="GitHub release" src="https://img.shields.io/github/release-pre/taruma/hidrokit.svg?logo=github"></td>
+  </tr>
+</table>
 
-# *Module* pada Hidrokit
 
-Hidrokit terdiri dari beberapa *module* yang memiliki fungsi masing-masing. Berikut *module* yang telah tersedia pada versi 0.1.2:
-- `.dlkit`: Membantu persiapan pemodelan dalam _deep learning_ / _artificial neural networks_. 
-- `.datakit`: Digunakan untuk mengeksplorasi dataset. 
-- `.prepkit`: Membaca berkas eksternal. 
-- `.viewkit`: Menampilkan *dataset* dalam bentuk grafik atau tabel tertentu.
-- `.bmkgkit`: Mengolah data dari situs bmkg. 
+## Status
+
+<table>
+  <tr align="center">
+    <th>Branch</th>
+    <th>master</th>
+    <th>latest</th>
+    <th>gh-pages</th>
+  </tr>
+  <tr>
+    <td><b>Services</b></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Travis-ci</td>
+    <td><img alt="master" src="https://img.shields.io/travis/taruma/hidrokit/master.svg?label=build&logo=travis"></td>
+    <td><img alt="latest" src="https://img.shields.io/travis/taruma/hidrokit/latest.svg?label=build&logo=travis"></td>
+    <td><img alt="gh-pages" src="https://img.shields.io/travis/taruma/hidrokit/gh-pages.svg?label=build&logo=travis"></td>
+  </tr>
+  <tr>
+    <td>Codecov</td>
+    <td><img alt="master" src="https://img.shields.io/codecov/c/github/taruma/hidrokit/master.svg?logo=codecov"></td>
+    <td><img alt="latest" src="https://img.shields.io/codecov/c/github/taruma/hidrokit/latest.svg?logo=codecov"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Codacy</td>
+    <td><img alt="master" src="https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?logo=codacy"></td>
+    <td><img alt="Codacy branch grade" src="https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/latest.svg?logo=codacy"></td>
+    <td></td>
+  </tr>
+</table>
 
 # Memulai
 
 Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/).
-
-## Syarat
-Paket ini menggunakan `Python 3.6.x` ke atas. Berikut daftar paket yang diperlukan untuk menjalankan `hidrokit`:
-```
-- pandas==0.24.2
-- matplotlib==3.1.0
-- numpy==1.16.4
-```
-*(daftar diatas dibuat menggunakan [pipreqs](https://github.com/bndr/pipreqs))*
 
 # Instalasi / Pemasangan
 
@@ -45,7 +75,12 @@ pip install hidrokit
 ```
 *(akses internet diperlukan saat melakukan pemasangan)*
 
-Gunakan perintah ```pip install git+https://github.com/taruma/hidrokit.git``` jika ingin menggunakan versi rilis terakhir dari github. 
+Gunakan perintah ```pip install -e git+https://github.com/taruma/hidrokit.git@latest``` jika ingin menggunakan versi rilis terakhir dari github. 
+
+## Catatan penting
+- hidrokit hanya mendukung python versi 3.6 ke atas.
+- Instalasi `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
+- Versi 0.2.0 tidak memiliki *backward-compatibility* dengan versi 0.1.x.
 
 # Penggunaan
 
@@ -59,7 +94,7 @@ from hidrokit.dlkit import table_timesteps
 
 Untuk contoh penggunaan baca bagian [_notebook_](#notebook).
 
-# Notebook
+# Hidrokit Notebook
 
 Kumpulan contoh _notebook_ dapat diakses di halaman [hidrokit-nb](https://taruma.github.io/hidrokit-nb/) ([repo](https://github.com/taruma/hidrokit-nb)).
 
