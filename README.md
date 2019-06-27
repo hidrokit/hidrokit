@@ -1,11 +1,12 @@
 
 <div align="center">
-<img src="https://taruma.github.io/hidrokit/assets/images/presskit/hidrokit-800x200.jpg" alt="logo hidrokit"><br>
+<a href="https://taruma.github.io/hidrokit"><img src="https://taruma.github.io/hidrokit/assets/images/presskit/hidrokit-800x200.jpg" alt="logo hidrokit"></a><br>
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 [![GitHub license](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/blob/master/LICENSE)
+
+<a href="https://taruma.github.io/hidrokit"><b>Kunjungi situs resmi hidrokit.</b></a>
 </div>
-<!-- STATUS PROJECT -->
 
 `hidrokit` adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data, analisis data, dan visualisasi data.
 
