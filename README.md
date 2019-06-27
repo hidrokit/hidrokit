@@ -63,42 +63,51 @@
   </tr>
 </table>
 
-# Memulai
+## Memulai
 
 Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/).
 
-# Instalasi / Pemasangan
+## Instalasi / Pemasangan
 
 `hidrokit` didistribusikan melalui [PyPI](https://pypi.org/). Pemasangan dilakukan dengan perintah pada _(Anaconda) command prompt_:
 
-```
+```bash
 pip install hidrokit
 ```
 *(akses internet diperlukan saat melakukan pemasangan)*
 
-Gunakan perintah ```pip install -e git+https://github.com/taruma/hidrokit.git@latest``` jika ingin menggunakan versi rilis terakhir dari github. 
+### Versi terbaru (_unstable_/_latest_)
+
+Untuk versi bisa melakukan pemasangan berdasarkan cabang _latest_.
+```bash
+pip install -e git+https://github.com/taruma/hidrokit.git@latest
+```
 
 ## Catatan penting
 - hidrokit hanya mendukung python versi 3.6 ke atas.
 - Instalasi `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
 - Versi 0.2.0 tidak memiliki *backward-compatibility* dengan versi 0.1.x.
 
-# Penggunaan
+## Penggunaan
 
 Untuk memulai penggunaan, gunakan perintah `import`. Contoh:
 
 ```python
-import hidrokit
-from hidrokit import datakit as dk
-from hidrokit.dlkit import table_timesteps
+from hidrokit.prep import read
+from hidrokit.prep.read import missing_row
+from hidrokit.viz import graph
 ```
 
-Untuk contoh penggunaan baca bagian [_notebook_](#notebook).
+Untuk contoh penggunaan baca bagian [_notebook_](#hidrokit-notebook).
 
-# Hidrokit Notebook
+## Hidrokit Notebook
 
-Kumpulan contoh _notebook_ dapat diakses di halaman [hidrokit-nb](https://taruma.github.io/hidrokit-nb/) ([repo](https://github.com/taruma/hidrokit-nb)).
+Kumpulan contoh _notebook_ dapat diakses di halaman [Hidrokit Notebook](https://taruma.github.io/hidrokit-nb/).
 
-# Untuk Kontributor
+<div align="center">
+<a href="https://taruma.github.io/hidrokit-nb"><img src="https://taruma.github.io/hidrokit-nb/assets/images/hidrokit-nb-800x200.jpg" width="50%"></a>
+</div>
+
+## Untuk Kontributor
 
 Tertarik menjadi kontributor? Baca [**berkontribusi**](https://github.com/taruma/hidrokit/wiki/Berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dengan berbagai latar belakang.
