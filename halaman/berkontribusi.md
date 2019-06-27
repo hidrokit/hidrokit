@@ -7,6 +7,12 @@ has_children: true
 has_toc: false
 ---
 
+<div align="center" markdown="1">
+> "Discussion is welcome. Judgement is not"
+{: .text-delta}
+</div>
+
+---
 👋 Terima kasih sebelumnya dalam mempertimbangkan untuk berkontribusi di proyek hidrokit. hidrokit memerlukan bantuan dari Anda. Anda dapat berkontribusi dalam berbagai bentuk seperti ide, keahlian teknis, koreksi, diskusi, dan apapun yang menurut Anda bisa memajukan dan mengembangkan proyek ini.
 
 Sebelumnya, saya harap **setiap individu dalam komunitas ini mengikuti** [**kode etik yang berlaku**]({{site.baseurl}}{% link halaman/kontribusi/kode-etik.md %}). Mari buat lingkungan yang nyaman, bersahabat, dan kondusif dalam pengembangan proyek ini. Mari belajar bersama dari satu sama lain dalam membangun proyek ini. 
@@ -22,10 +28,9 @@ Sebelumnya, saya harap **setiap individu dalam komunitas ini mengikuti** [**kode
 
 Kontribusi di hidrokit tidak selalu berbentuk implementasi kode. Kontribusi dapat berupa menulis panduan (dokumentasi), mengajukan ide, ikut berdiskusi, mengusulkan fitur baru, memperbaiki tata cara penulisan, memperbaiki kode yang sudah ada, dll. Sehingga proyek ini terbuka untuk siapapun dengan latar belakang apapun.
 
+Baca [How to contribute - What it means to contribute](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute) untuk mendapatkan gambaran besar apa yang bisa kontribusikan dalam proyek ini. 
 
-Bagi yang memiliki wawasan pada bidang komputer dapat berkontribusi berupa mengusulkan tatacara pengembangan proyek ini dari sisi teknis kode; bagi yang memiliki wawasan hidrologi, bisa berkontribusi berupa pengusulan ide untuk analisis hidrologi; dan bagi yang memiliki ketertarikan dalam komunitas bisa ikut serta dalam bentuk perbaikan panduan/dokumentasi, triase, ataupun membangun komunikasi kondusif. Sekecil apapun, itu lebih baik daripada tidak sama sekali. 😊
-
-Anda bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam memulai kontribusi di proyek *open source* demi membangun kepercayaan diri, mengasah berkomunikasi dan berbagi hasil karya Anda.
+Anda juga bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam memulai kontribusi di proyek *open source* demi membangun kepercayaan diri, mengasah berkomunikasi dan keahlian Anda, dan berbagi hasil karya Anda.
 
 ## Roadmap
 
