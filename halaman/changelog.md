@@ -47,6 +47,8 @@ Ini merupakan perubahan sangat signifikan dari versi sebelumnya dan dimulainya p
 [codecov]: https://codecov.io/
 [codacy]: https://www.codacy.com/
 
+---
+
 ### 25 Juni 2019 - v0.1.3
 Versi ini fokus ke dokumentasi teknis. Dari versi ini, hidrokit memiliki dokumentasi teknis otomatis yang dibuat menggunakan sphinx dan readthedocs. Situsnya adalah [hidrokit.readthedocs.io].
 - **Penambahan**
@@ -64,13 +66,11 @@ Modul baru `.datakit` digunakan untuk analisis dan penambahan fungsi `.dlkit.tab
   - tambah dokumen _changelog_.
   - memindahkan _notebook_ ke _repo_ [`hidrokit-nb`](https://github.com/taruma/hidrokit-nb).
 
----
 ### 14 Mei 2019 - v0.1.1
 Ditambahnya modul baru bernama `dlkit` untuk membantu proses _deep learning_ pada permasalahan _time series_. Modul ini digunakan dalam membuat tabel _timesteps_. 
 - **Penambahan**
   - modul `.dlkit`.
 
----
 ### 9 Januari 2019 - v0.1.0
 Mengikuti standar distribusi paket Python (PyPI). Memperbaiki dokumentasi komunitas (README, Kode etik). Mengalihkan dokumentasi non-teknis ke halaman wiki.
 - **Penambahan**
@@ -82,7 +82,6 @@ Mengikuti standar distribusi paket Python (PyPI). Memperbaiki dokumentasi komuni
   - Kode etik menggunakan _Contributor Covenant_ berbahasa Indonesia.
   - Mengacu halaman wiki untuk panduan kontribusi.
 
----
 ### 5 Januari 2019 - v0.0.0
 Memulai menandai pengembangan awal `hidrokit` yang masih berupa _module_ python. 
 - **Penambahan**
@@ -90,7 +89,6 @@ Memulai menandai pengembangan awal `hidrokit` yang masih berupa _module_ python.
   - Dokumentasi proyek (readme, contributing, etc.).
   - _notebook_ penggunaan `hidrokit`.
 
----
 ### 20 Oktober 2018 - n/a
 Dibuatnya _repository_ `hidrokit`.
 - **Penambahan**
