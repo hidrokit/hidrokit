@@ -58,13 +58,9 @@ Semoga dengan dimulainya proyek _open-source_ ini, banyak individu yang tertarik
 Tujuan dari proyek hidrokit antara lain:
 - Mengembangkan alat yang sederhana untuk melakukan analisis hidrologi. 
 - Memperkenalkan alternatif pengolahan data dari berbasis _spreadsheet_ ke _notebook_ (*literate programming*).
-- Membangun komunitas pengguna python dan para praktisi dan akademisi dalam bidang hidrologi.
+- Membangun komunitas pengguna python dan para praktisi atau akademisi dalam bidang hidrologi.
 - Memperkenalkan dan memahami keuntungan proyek _open source_.
-- Membuka kesempatan untuk berkolaborasi dan diskusi.
-
-<!-- Bacaan lebih lanjut:
-- [READ](https://www.nature.com/articles/d41586-018-07196-1) - Nature - Why Jupyter is data scientists' computational notebook of choice
-- [READ](https://en.wikipedia.org/wiki/Literate_programming) - Wikipedia - Literate Programming -->
+- Membuka kesempatan untuk berkolaborasi dan diskusi bagi siapapun.
 
 ---
 

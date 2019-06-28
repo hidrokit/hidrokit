@@ -14,9 +14,9 @@ permalink: /
 </div>
 
 <div align="center" markdown="1">
-[Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Instalasi dan Penggunaan]({{ site.baseurl }}{% link halaman/panduan/instalasi.md %}){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }
-[Lihat di GitHub](//github.com/taruma/hidrokit){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }
+[Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-4 }
+[Instalasi]({{ site.baseurl }}{% link halaman/panduan/instalasi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
+[Lihat di GitHub](//github.com/taruma/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
 </div>
 
 ---
