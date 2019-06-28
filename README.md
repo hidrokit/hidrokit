@@ -8,7 +8,7 @@
 <a href="https://taruma.github.io/hidrokit"><b>Kunjungi situs resmi hidrokit.</b></a>
 </div>
 
-`hidrokit` adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data, analisis data, dan visualisasi data.
+`hidrokit` adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data, analisis data, dan visualisasi data. [Baca lebih lanjut mengenai hidrokit](https://taruma.github.io/hidrokit/tentang-hidrokit).
 
 ## Release
 
@@ -78,15 +78,15 @@ pip install hidrokit
 
 ### Versi terbaru (_unstable_/_latest_)
 
-Untuk versi bisa melakukan pemasangan berdasarkan cabang _latest_.
+Untuk versi paling terbaru bisa melakukan pemasangan berdasarkan cabang _latest_.
 ```bash
 pip install -e git+https://github.com/taruma/hidrokit.git@latest
 ```
 
 ## Catatan penting
 - hidrokit hanya mendukung python versi 3.6 ke atas.
-- Instalasi `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
-- Versi 0.2.0 tidak memiliki *backward-compatibility* dengan versi 0.1.x.
+- Pemasangan `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
+- Versi 0.2.x tidak memiliki *backward-compatibility* dengan versi 0.1.x.
 
 ## Penggunaan
 
@@ -98,7 +98,7 @@ from hidrokit.prep.read import missing_row
 from hidrokit.viz import graph
 ```
 
-Untuk contoh penggunaan baca bagian [_notebook_](#hidrokit-notebook).
+Untuk penggunaan baca halaman [pemasangan dan penggunaan](https://taruma.github.io/hidrokit/panduan/instalasi-dan-penggunaan).
 
 ## Hidrokit Notebook
 
@@ -111,3 +111,7 @@ Kumpulan contoh _notebook_ dapat diakses di halaman [Hidrokit Notebook](https://
 ## Untuk Kontributor
 
 Tertarik menjadi kontributor? Baca [**berkontribusi**](https://github.com/taruma/hidrokit/wiki/Berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dengan berbagai latar belakang.
+
+## Lisensi
+
+Paket hidrokit berlisensi [lisensi MIT](LICENSE.txt)
