@@ -96,7 +96,7 @@ pip install git+https://github.com/taruma/hidrokit.git@latest
 - hidrokit hanya mendukung python versi 3.6 ke atas.
 - Pemasangan `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
 - Versi 0.2.x tidak memiliki *backward-compatibility* dengan versi 0.1.x.
-- Baca halaman [pemasangan untuk lebih detail](https://taruma.github.io/hidrokit/panduan/pemasangan).
+- Baca halaman [pemasangan untuk lebih detail](https://taruma.github.io/hidrokit/panduan/instalasi).
 
 ## Penggunaan
 
