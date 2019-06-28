@@ -2,7 +2,8 @@
 layout: default
 title: Daftar Kata
 parent: Serbaneka
-permalink: /panduan/daftar-kata
+permalink: /serbaneka/daftar-kata
+nav_exclude: true
 ---
 
 Daftar kata yang digunakan dalam berkas proyek ini:
