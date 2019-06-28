@@ -2,8 +2,10 @@
 <div align="center">
 <a href="https://taruma.github.io/hidrokit"><img src="https://taruma.github.io/hidrokit/assets/images/presskit/hidrokit-800x200.jpg" alt="logo hidrokit"></a><br>
 
+![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 [![GitHub license](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/blob/master/LICENSE)
+![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/taruma/hidrokit.svg?label=recent%20version)
 
 <a href="https://taruma.github.io/hidrokit"><b>Kunjungi situs resmi hidrokit.</b></a>
 </div>
@@ -25,6 +27,13 @@
     <td><img alt="GitHub release" src="https://img.shields.io/github/release/taruma/hidrokit.svg?logo=github"></td>
     <td><img alt="GitHub release" src="https://img.shields.io/github/release-pre/taruma/hidrokit.svg?logo=github"></td>
   </tr>
+  <tr>
+    <td>Date</td>
+    <td></td>
+    <td><img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/taruma/hidrokit.svg?logo=github"></td>
+    <td><img alt="GitHub (Pre-)Release Date" src="https://img.shields.io/github/release-date-pre/taruma/hidrokit.svg?logo=github"></td>
+  </tr>
+
 </table>
 
 
