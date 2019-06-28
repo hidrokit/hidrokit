@@ -74,7 +74,7 @@
 
 ## Memulai
 
-Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/).
+Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/). 
 
 ## Instalasi / Pemasangan
 
@@ -89,13 +89,14 @@ pip install hidrokit
 
 Untuk versi paling terbaru bisa melakukan pemasangan berdasarkan cabang _latest_.
 ```bash
-pip install -e git+https://github.com/taruma/hidrokit.git@latest
+pip install git+https://github.com/taruma/hidrokit.git@latest
 ```
 
 ## Catatan penting
 - hidrokit hanya mendukung python versi 3.6 ke atas.
 - Pemasangan `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
 - Versi 0.2.x tidak memiliki *backward-compatibility* dengan versi 0.1.x.
+- Baca halaman [pemasangan untuk lebih detail](https://taruma.github.io/hidrokit/panduan/pemasangan).
 
 ## Penggunaan
 
@@ -107,7 +108,7 @@ from hidrokit.prep.read import missing_row
 from hidrokit.viz import graph
 ```
 
-Untuk penggunaan baca halaman [pemasangan dan penggunaan](https://taruma.github.io/hidrokit/panduan/instalasi-dan-penggunaan).
+Untuk penggunaan baca halaman [penggunaan](https://taruma.github.io/hidrokit/panduan/penggunaan).
 
 ## Hidrokit Notebook
 
@@ -119,7 +120,7 @@ Kumpulan contoh _notebook_ dapat diakses di halaman [Hidrokit Notebook](https://
 
 ## Untuk Kontributor
 
-Tertarik menjadi kontributor? Baca [**berkontribusi**](https://github.com/taruma/hidrokit/wiki/Berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dengan berbagai latar belakang.
+Tertarik menjadi kontributor? Baca [**berkontribusi**](https://taruma.github.io/hidrokit/berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dengan berbagai latar belakang.
 
 ## Lisensi
 
