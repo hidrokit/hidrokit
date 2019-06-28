@@ -114,4 +114,4 @@ Tertarik menjadi kontributor? Baca [**berkontribusi**](https://github.com/taruma
 
 ## Lisensi
 
-Paket hidrokit berlisensi [lisensi MIT](LICENSE.txt)
+Paket hidrokit menggunakan [lisensi MIT](LICENSE.txt). Dokumentasi yang disertai pada proyek ini menggunakan lisensi [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/deed.id). 
