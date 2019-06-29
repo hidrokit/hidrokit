@@ -32,7 +32,6 @@ permalink: /tentang-hidrokit
 
 ![Open Source](https://img.shields.io/badge/project-open%20source-brightgreen.svg?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/taruma/hidrokit.svg?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/taruma/hidrokit.svg?style=flat-square)
 </div>
 
 <div align="justify" markdown="1">
@@ -49,6 +48,19 @@ Semoga dengan dimulainya proyek _open-source_ ini, banyak individu yang tertarik
 [jupyter-notebook]: https://jupyter.org/
 
 ---
+<div align="center">
+Video ini menginspirasi kami untuk membuat dan membagikan hidrokit/hidrokit-nb. 😊 <br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HzZxcfVn_08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+</div>
+
+<div align="center" markdown="1">
+
+> "Every day, there are millions of futures waiting to be built. Each one starts with a spark, a moment of inspiration, slowing growing brighter over time."
+{: .text-delta .fs-3}
+
+</div>
+
+---
 
 <div align="center" markdown="1">
 ## Tujuan hidrokit
@@ -59,8 +71,8 @@ Tujuan dari proyek hidrokit antara lain:
 - Mengembangkan alat yang sederhana untuk melakukan analisis hidrologi. 
 - Memperkenalkan alternatif pengolahan data dari berbasis _spreadsheet_ ke _notebook_ (*literate programming*).
 - Membangun komunitas pengguna python dan para praktisi atau akademisi dalam bidang hidrologi.
-- Memperkenalkan dan memahami keuntungan proyek _open source_.
-- Membuka kesempatan untuk berkolaborasi dan diskusi bagi siapapun.
+- Memperkenalkan dan memahami keuntungan proyek _open source_ dan Github.
+- Membuka kesempatan untuk berkolaborasi dan berdiskusi.
 
 ---
 
@@ -77,7 +89,15 @@ Tidak lengkap proyek _open source_ tanpa kata **berkolaborasi**. Anda bisa baca 
 
 Untuk penjelasan lebih lanjut mengenai kontribusi, Anda bisa membacanya di halaman [berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}). Jika ada pertanyaan, Anda bisa langsung membuat isu. 
 
-Saat ini, proyek ini membutuhkan pengelola dan kontributor, jadi jika Anda tertarik bisa menghubungi [@taruma]. 
+<div align="center" markdown="1">
+[Mulai berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-primary}
+</div>
+
+---
+Butuh video motivasi lagi untuk berkontribusi? :)
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/afvT1c1ii0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ---
 <div align="left" markdown="1">
