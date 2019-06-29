@@ -21,4 +21,5 @@ permalink: /serbaneka/sumber
 
 ## Python
 
-- File `setup.py` merupakan modifikasi dari [template kennethreitz](https://github.com/kennethreitz/setup.py) berlisensi MIT.
+- File `setup.py` merupakan modifikasi dari [template kennethreitz](https://github.com/kennethreitz/setup.py) berlisensi MIT. (Versi 0.1.x)
+- File `setup.py` merupakan modifikasi dari [cookiecutter oleh nekroze](https://github.com/Nekroze/cookiecutter-pypackage) dan [sample project oleh pypa](https://github.com/pypa/sampleproject). (Versi 0.2.x ke atas)

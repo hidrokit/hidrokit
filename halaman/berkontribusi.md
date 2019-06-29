@@ -2,11 +2,17 @@
 layout: default
 title: Berkontribusi
 permalink: /berkontribusi
-nav_order: 4
+nav_order: 2
 has_children: true
 has_toc: false
 ---
 
+<div align="center" markdown="1">
+> "Discussion is welcome. Judgement is not"
+{: .text-delta}
+</div>
+
+---
 👋 Terima kasih sebelumnya dalam mempertimbangkan untuk berkontribusi di proyek hidrokit. hidrokit memerlukan bantuan dari Anda. Anda dapat berkontribusi dalam berbagai bentuk seperti ide, keahlian teknis, koreksi, diskusi, dan apapun yang menurut Anda bisa memajukan dan mengembangkan proyek ini.
 
 Sebelumnya, saya harap **setiap individu dalam komunitas ini mengikuti** [**kode etik yang berlaku**]({{site.baseurl}}{% link halaman/kontribusi/kode-etik.md %}). Mari buat lingkungan yang nyaman, bersahabat, dan kondusif dalam pengembangan proyek ini. Mari belajar bersama dari satu sama lain dalam membangun proyek ini. 
@@ -22,21 +28,13 @@ Sebelumnya, saya harap **setiap individu dalam komunitas ini mengikuti** [**kode
 
 Kontribusi di hidrokit tidak selalu berbentuk implementasi kode. Kontribusi dapat berupa menulis panduan (dokumentasi), mengajukan ide, ikut berdiskusi, mengusulkan fitur baru, memperbaiki tata cara penulisan, memperbaiki kode yang sudah ada, dll. Sehingga proyek ini terbuka untuk siapapun dengan latar belakang apapun.
 
+Baca [How to contribute - What it means to contribute](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute) untuk mendapatkan gambaran besar apa yang bisa kontribusikan dalam proyek ini. 
 
-Bagi yang memiliki wawasan pada bidang komputer dapat berkontribusi berupa mengusulkan tatacara pengembangan proyek ini dari sisi teknis kode; bagi yang memiliki wawasan hidrologi, bisa berkontribusi berupa pengusulan ide untuk analisis hidrologi; dan bagi yang memiliki ketertarikan dalam komunitas bisa ikut serta dalam bentuk perbaikan panduan/dokumentasi, triase, ataupun membangun komunikasi kondusif. Sekecil apapun, itu lebih baik daripada tidak sama sekali. 😊
-
-Anda bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam memulai kontribusi di proyek *open source* demi membangun kepercayaan diri, mengasah berkomunikasi dan berbagi hasil karya Anda.
+Anda juga bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam memulai kontribusi di proyek *open source* demi membangun kepercayaan diri, mengasah berkomunikasi dan keahlian Anda, dan berbagi hasil karya Anda.
 
 ## Roadmap
 
-Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [Papan Trello](https://trello.com/b/Ii8Z5BRm/hidrokit-project) dan [halaman isu di github](https://github.com/taruma/hidrokit/issues).
-
-<div align="center">
-<blockquote class="trello-board-compact">
-  <a href="https://trello.com/b/Ii8Z5BRm/hidrokit-project">Trello Board</a>
-</blockquote>
-<script src="https://p.trellocdn.com/embed.min.js"></script>
-</div>
+Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/taruma/hidrokit/issues) dan [halaman _project_ github](https://github.com/taruma/hidrokit/projects).
 
 ## Kategori Kontribusi
 
@@ -48,9 +46,13 @@ Kami membagi kontribusi menjadi empat kategori utama yaitu:
 
 Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halaman masing-masing. 
 
-## Mulai berkontribusi
+## _Issue_ dan _Pull request_
 
-Ada dua istilah yang biasa digunakan dalam proyek ini yaitu isu (_issue_) dan _pull request_ (PR) saat berbicara berkontribusi. Isu bisa dibilang seperti tiket, yang dibuat untuk membahas suatu ide/masalah. Ketika isu dibuat, orang lain bisa melihat isu Anda. Jika ada kontributor yang tertarik mengatasi isu Anda, kontributor akan _forking_ _repo_ utama dan mulai mengubah kode/data untuk menyelesaikan isu Anda. Setelah kontributor selesai dengan perubahannya, kontributor akan meminta _pull request_ atau PR untuk menggabungkan hasil kerjaan kontributor ke _repo_ utama.
+Ada dua istilah yang biasa digunakan dalam proyek ini yaitu isu (_issue_) dan _pull request_ (PR) saat berbicara berkontribusi. Isu bisa dibilang seperti tiket, yang dibuat untuk membahas suatu ide/masalah. Ketika isu dibuat, orang lain bisa melihat isu Anda. Jika ada kontributor yang tertarik mengatasi isu Anda, kontributor akan _forking_ _repo_ utama dan mulai mengubah kode/data untuk menyelesaikan isu Anda. Setelah kontributor selesai dengan perubahannya, kontributor akan meminta _pull request_ atau PR untuk menggabungkan hasil kerjaan kontributor ke _repo_ utama. Ilustrasi proses ini bisa dilihat di video berikut:
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w3jLJU7DT5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div><br>
 
 <div align="center" markdown="1">
 **Langsung ada ide? 🙀 Buruan buat _isu_ / _pull request_ sebelum idenya terbang. 💸💸 ️**

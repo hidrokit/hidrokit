@@ -83,9 +83,9 @@ Berikut panduan dokumentasi yang digunakan sebagai acuan di proyek ini:
 Mata masih melek? 🔆 KLIK TOMBOL DIBAWAH INI, ANDA AKAN TERKEJUT!? 😉
 {: .text-delta .fs-2 .fw-500}
 
-[Situs]{: .btn .btn-purple}
-[Hidrologi]{: .btn .btn-blue}
-[Python]{: .btn .btn-green}
+[Situs]{: .btn .btn-outline}
+[Hidrologi]{: .btn .btn-outline}
+[Python]{: .btn .btn-outline}
 
 <!-- LINK -->
 [Situs]:        {{site.baseurl}}{% link halaman/kontribusi/situs.md %}

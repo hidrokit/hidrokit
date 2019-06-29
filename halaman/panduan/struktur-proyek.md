@@ -3,11 +3,13 @@ layout: default
 title: Struktur Proyek
 parent: Panduan
 permalink: /panduan/struktur-proyek
+nav_order: 1
 ---
 
-Proyek hidrokit memiliki dua cabang utama yaitu `master` dan `gh-pages`. Cabang `master` merupakan cabang pengembangan paket python, sedang cabang `gh-pages` bertanggung jawab untuk membuat situs. 
+Proyek hidrokit memiliki tiga cabang utama yaitu `master`, `latest` dan `gh-pages`. Cabang `master` dan `latest` merupakan cabang untuk paket python, sedangkan cabang `gh-pages` bertanggung jawab untuk membuat situs. 
+Cabang `master` digunakan sebagai versi _stable_ dan cabang `latest` digunakan sebagai versi _unstable_ atau cabang untuk _developer_.
 
-## Cabang **master**
+## Cabang **master** / **latest**
 ```
 hidrokit@master
 |   CHANGELOG.md                        # 
@@ -27,7 +29,9 @@ hidrokit@master
 |                                       
 +---docs                                # direktori dokumentasi sphinx
 |
-\---hidrokit                            # direktori paket python
++---hidrokit                            # direktori paket python
+|                                       
+\---tests                               # direktori test untuk paket hidrokit
 ```
 
 
@@ -58,12 +62,12 @@ hidrokit@gh-pages
     |       situs.md                    #
     |                                   
     +---panduan                         # direktori halaman /panduan/
-    |       daftar-kata.md              #
     |       instalasi.md                #
     |      *panduan.md                  # <parent page>
     |       struktur-proyek.md          #
     |                                   
     \---serbaneka                       # direktori halaman /serbaneka/
+            daftar-kata.md              #
            *serbaneka.md                # <parent page>
             sumber.md                   #
             tanya-jawab-uma.md          #

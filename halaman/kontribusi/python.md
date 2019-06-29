@@ -13,29 +13,70 @@ nav_order: 5
 Halaman ini berisi hal-hal yang perlu diketahui dalam berkontribusi dalam Python.
 
 ---
-# Struktur hidrokit
 
-hidrokit terdiri dari beberapa modul yang memiliki fungsi masing-masing. Hal ini agar memudahkan dalam pengembangan terpisah lebih lanjut. Berikut module yang telah tersedia pada versi 0.1.2:
-- `.dlkit`: Membantu proses dalam persiapan pemodelan dalam _deep learning_ (dl). 
-- `.datakit`: Digunakan untuk mengeksplorasi dataset. 
-- `.prepkit`: Membaca berkas eksternal berupa excel dan mempersiapkan berkas untuk dapat diakses dalam Python. 
-- `.viewkit`: Menampilkan dataset dalam bentuk grafik atau tabel tertentu.
-- `.bmkgkit`: Mengolah data khusus untuk bmkgkit. 
+# DAFTAR ISI
+{: .no_toc .text-delta}
 
-## Gambaran Besar hidrokit
+1. TOC
+{:toc}
 
-Rancangan gambaran besar dari hidrokit adalah mengembangkan _tool_ yang mampu membantu pada proses _data preparation_, _data analysis_, dan _data visualization_. Dalam mengembangkan fitur baru selalu menjawab tiga permasalahan tersebut. Berikut contohnya (dari versi 0.1.2):
+---
 
-- _data prepapration_ / persiapan data: `.dlkit`, `.datakit`, `.prepkit`, `.bmkgkit`.
-- _data analysis_ / analisis data: (belum ada)
-- _data visualization_ / visualisasi data: `.viewkit`.
+## Standar dan Rekomendasi
 
-## Environment Python
+### Penulisan Kode/Dokumentasi (_docstring_)
+- Usahakan menulis se-Python mungkin (*pythonic way*). 
+- Untuk penulisan _docstring_, proyek ini menggunakan format numpydoc. Baca [panduan penulisannya](https://numpydoc.readthedocs.io/en/latest/format.html).
+- Jika anda menggunakan Visual Studio Code, gunakan extension [AutoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring) dengan pengaturan untuk numpydoc.
+- Menggunakan standar gaya tulis (style) [PEP 8](https://www.python.org/dev/peps/pep-0008/). Proyek ini di periksa dengan _linting_ autopep8 dan flake8. (Belum diintegrasikan dengan travis-ci)
+- Kualitas kode diperiksa juga menggunakan [Codacy](https://www.codacy.com/). Pemeriksaan hanya berlaku pada direktori hidrokit (direktori tests tidak dievaluasi).
 
-Jika anda tidak menggunakan distribusi python Anaconda, berikut library yang digunakan:
+### Pengembangan (Developer)
+- Disarankan menggunakan _conda_ sebagai _virtual environment_. Anda bisa menggunakan instalasi menggunakan `environment.yml` di dalam direktori proyek ini.
+- Testing menggunakan [pytest](https://docs.pytest.org/en/latest/).
+
+### Layanan integrasi
+- [Travis-ci](https://travis-ci.com/). Travis-ci digunakan untuk testing berdasarkan pytest dan menyampaikan informasi _code coverage_ ke codecov dan codacy.
+- [Codacy](https://www.codacy.com/). Codacy digunakan untuk mengevaluasi kualitas kode. Ditargetkan untuk memperoleh nilai A.
+- [Codecov](https://codecov.io/). Codecov digunakan untuk melihat _code coverage_ dalam proyek ini. 
+- Untuk proses _pull request_ berhasil, hasil dari travis-ci harus berhasil. 
+
+## Struktur hidrokit
+
 ```
-- Python >= 3.6.8
-- Numpy >= 1.16.4
-- Pandas >= 0.24.2
-- Matplotlib >= 3.1.0
+hidrokit@master/hidrokit
+|   __init__.py
+|   __version__.py
+|   
++---analysis            # direktori khusus kumpulan modul data analysis
+|       __init__.py
+|       
++---prep                # direktori khusus kumpulan modul data preparation
+|       excel.py        
+|       read.py
+|       timeseries.py
+|       __init__.py
+|           
+\---viz                 # direktori khusus kumpulan modul data visualization
+        graph.py
+        table.py
+        __init__.py
 ```
+
+Perubahan pada direktori dimungkinkan jika diperlukan. 
+
+---
+<div align="center" markdown="1">
+Masih mau baca tentang cara berkontribusi? 
+{: .text-delta .fs-2 .fw-500}
+
+[Dokumentasi]{: .btn .btn-outline}
+[Situs]{: .btn .btn-outline}
+[Hidrologi]{: .btn .btn-outline}
+
+<!-- LINK -->
+[Dokumentasi]:  {{site.baseurl}}{% link halaman/kontribusi/dokumentasi.md %}
+[Situs]:        {{site.baseurl}}{% link halaman/kontribusi/situs.md %}
+[Hidrologi]:    {{site.baseurl}}{% link halaman/kontribusi/hidrologi.md %}
+
+</div>
