@@ -51,7 +51,7 @@ Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halaman masing-ma
 Ada dua istilah yang biasa digunakan dalam proyek ini yaitu isu (_issue_) dan _pull request_ (PR) saat berbicara berkontribusi. Isu bisa dibilang seperti tiket, yang dibuat untuk membahas suatu ide/masalah. Ketika isu dibuat, orang lain bisa melihat isu Anda. Jika ada kontributor yang tertarik mengatasi isu Anda, kontributor akan _forking_ _repo_ utama dan mulai mengubah kode/data untuk menyelesaikan isu Anda. Setelah kontributor selesai dengan perubahannya, kontributor akan meminta _pull request_ atau PR untuk menggabungkan hasil kerjaan kontributor ke _repo_ utama. Ilustrasi proses ini bisa dilihat di video berikut:
 
 <div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w3jLJU7DT5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/w3jLJU7DT5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div><br>
 
 <div align="center" markdown="1">

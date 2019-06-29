@@ -50,7 +50,7 @@ Semoga dengan dimulainya proyek _open-source_ ini, banyak individu yang tertarik
 ---
 <div align="center">
 Video ini menginspirasi kami untuk membuat dan membagikan hidrokit/hidrokit-nb. 😊 <br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HzZxcfVn_08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/HzZxcfVn_08" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
 
 <div align="center" markdown="1">
@@ -97,7 +97,7 @@ Untuk penjelasan lebih lanjut mengenai kontribusi, Anda bisa membacanya di halam
 Butuh video motivasi lagi untuk berkontribusi? :)
 
 <div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/afvT1c1ii0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/afvT1c1ii0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ---
 <div align="left" markdown="1">
