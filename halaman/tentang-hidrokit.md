@@ -16,7 +16,7 @@ permalink: /tentang-hidrokit
 
 <div align="justify" markdown="1">
 
-> **[hidrokit]** adalah proyek *open source* paket python yang dapat digunakan untuk membantu proses analisis hidrologi seperti pengolahan data, analisis data, dan visualisasi data.
+> **[hidrokit]** adalah proyek *open source* paket python yang dapat digunakan untuk membantu proses analisis hidrologi berupa pengolahan data, analisis data, dan visualisasi data.
 {: .fs-5}
 
 > **[hidrokit-nb]** adalah kumpulan penggunaan *jupyter notebook* yang dapat digunakan dalam bidang hidrologi dan contoh penggunaan hidrokit.
