@@ -2,5 +2,5 @@
 exclude_paths:
   - '*.md'
   - 'docs/**'
-  - 'test/**'
+  - 'tests/**'
   - '*.*'
