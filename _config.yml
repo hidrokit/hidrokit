@@ -4,7 +4,7 @@ description: analisis hidrologi dengan python
 
 # Remote Setting
 baseurl: ""
-url: ""
+# url: ""
 
 # Theme
 # theme: "just-the-docs"
