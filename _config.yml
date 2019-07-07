@@ -3,8 +3,8 @@ title: hidrokit
 description: analisis hidrologi dengan python
 
 # Remote Setting
-# baseurl: "/hidrokit"
-# url: "http://taruma.github.com"
+baseurl: ""
+url: ""
 
 # Theme
 # theme: "just-the-docs"
