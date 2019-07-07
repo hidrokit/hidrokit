@@ -8,15 +8,18 @@ Excel module
 
 .. automodule:: prep.excel
    :members:
+   :private-members:
 
 Read module
 -----------
 
 .. automodule:: prep.read
    :members:
+   :private-members:
 
 Time Series module
 ------------------
 
 .. automodule:: prep.timeseries
    :members:
+   :private-members:

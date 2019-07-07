@@ -8,9 +8,11 @@ Graph module
 
 .. automodule:: viz.graph
    :members:
+   :private-members:
 
 Table module
 ------------
 
 .. automodule:: viz.table
    :members:
+   :private-members:

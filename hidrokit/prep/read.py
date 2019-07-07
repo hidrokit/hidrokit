@@ -1,6 +1,4 @@
 """Module for reading data.
-
-Gain additional information from dataframe.
 """
 
 

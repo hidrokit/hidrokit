@@ -1,6 +1,4 @@
-"""Module for data preparation.
-
-Use this module for preparation data in modeling of deep learning.
+"""Module for reading excel files.
 """
 # New format 20181007
 
