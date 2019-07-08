@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tentang hidrokit
+title: Abstrak hidrokit
 nav_order: 1
 permalink: /tentang-hidrokit
 ---
@@ -27,7 +27,7 @@ permalink: /tentang-hidrokit
 [hidrokit-nb]: https://taruma.github.io/hidrokit-nb
 
 <div align="center" markdown="1">
-## Tentang hidrokit
+## Abstrak hidrokit
 {: .no_toc .text-delta .fs-6}
 
 ![Open Source](https://img.shields.io/badge/project-open%20source-brightgreen.svg?style=flat-square)

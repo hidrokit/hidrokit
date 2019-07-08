@@ -22,12 +22,16 @@ permalink: /
 
 <div align="center" markdown="1">
 
-[Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
+[Instalasi]({{ site.baseurl }}{% link halaman/panduan/instalasi.md %}){: .btn .fs-4 .mb-4 .mb-md-0 }
+[Penggunaan]({{ site.baseurl }}{% link halaman/panduan/penggunaan.md %}){: .btn .fs-4 .mb-4 .mb-md-0 }
+
+----
+
+[Abstrak hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 [Berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
 [Lihat di GitHub](//github.com/taruma/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
 
-[Instalasi]({{ site.baseurl }}{% link halaman/panduan/instalasi.md %}){: .btn .btn-outline .fs-4 .mb-4 .mb-md-0 }
-[Penggunaan]({{ site.baseurl }}{% link halaman/panduan/penggunaan.md %}){: .btn .btn-outline .fs-4 .mb-4 .mb-md-0 }
+
 
 </div>
 
@@ -46,10 +50,10 @@ permalink: /
 {: .label .label-green .fs-2 .fw-300 .text-delta}
 
 ![Travis (.org) branch](https://img.shields.io/travis/taruma/hidrokit/master.svg?label=master&logo=travis&style=flat-square)
-![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?label=master&logo=codacy)
+![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?label=master&logo=codacy&style=flat-square)
 ![Codecov branch](https://img.shields.io/codecov/c/github/taruma/hidrokit/master.svg?label=master&logo=codecov&style=flat-square)
 ![Travis (.org) branch](https://img.shields.io/travis/taruma/hidrokit/latest.svg?label=latest&logo=travis&style=flat-square)
-![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/latest.svg?label=latest&logo=codacy)
+![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/latest.svg?label=latest&logo=codacy&style=flat-square)
 ![Codecov branch](https://img.shields.io/codecov/c/github/taruma/hidrokit/latest.svg?label=latest&logo=codecov&style=flat-square)
 
 </div>
