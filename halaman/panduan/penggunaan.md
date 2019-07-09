@@ -20,7 +20,7 @@ Halaman ini menjelaskan bagaimana menggunakan paket hidrokit.
 
 Penggunaan paket hidrokit sama dengan penggunaan paket python pada umumnya. 
 
-## Praktek
+## Contoh
 
 ```python
 from hidrokit.prep import read

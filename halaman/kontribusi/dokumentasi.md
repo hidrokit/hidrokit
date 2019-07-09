@@ -16,8 +16,8 @@ Halaman ini berisi hal-hal yang perlu diketahui dalam berkontribusi dalam dokume
 ---
 
 Proyek [hidrokit] (dan [hidrokit-nb]) memiliki berbagai jenis dokumentasi antara lain:
-1. ***Github community health file***: dokumentasi yang digunakan untuk Github menyampaikan informasi seperti dokumen README, CONTRIBUTING, CODE_of_CONDUCT, Issue Template, dll. Jenis ini lebih fokus bagaimana interaksi yang terjadi saat menggunakan Github.
-2. **Situs ([hidrokit])**: dokumentasi ini membicarakan konten yang ada di situs proyek ini seperti halaman yang sedang anda baca, halaman tentang hidrokit, berkontribusi, dll. Dokumentasi situs lebih diutamakan karena target pengguna ataupun peminat bisa jadi tidak terbiasa dengan membaca dokumentasi melalui Github.
+1. ***Github community health file***: dokumentasi yang digunakan untuk Github menyampaikan informasi berupa dokumen README, CONTRIBUTING, CODE_of_CONDUCT, Issue Template, dll. Jenis ini lebih fokus bagaimana interaksi yang terjadi saat menggunakan Github.
+2. **Situs ([hidrokit])**: dokumentasi ini membicarakan konten yang ada di situs proyek ini berupa halaman yang sedang anda baca, halaman tentang hidrokit, berkontribusi, dll. Dokumentasi situs lebih diutamakan karena target pengguna ataupun peminat bisa jadi tidak terbiasa dengan membaca dokumentasi melalui Github.
 3. **Situs ([hidrokit-nb])**: serupa dengan nomor 2, akan tetapi proyek yang dimaksud adalah proyek hidrokit-nb (Hidrokit Notebook).
 4. **[readthedocs] / API (Python)**: dokumentasi teknis berbahasa inggris yang dibuat berdasarkan *docstring* dalam kode python. Dokumentasi ini ditujukan untuk pengembangan kode python.
 
@@ -59,7 +59,7 @@ Untuk perubahan kecil seperti mengoreksi ejaan dapat dilakukan melalui tampilan 
 
 [travis-ci]: https://travis-ci.com/
 
-## Panduan dokumentasi
+## Panduan berdokumentasi
 
 Berikut panduan dokumentasi yang digunakan sebagai acuan di proyek ini:
 

@@ -67,7 +67,7 @@ Direktori/files bisa ditambahkan jika diperlukan.
 
 ## Instalasi lokal
 
-Langkah ini tidak jauh berbeda dengan yang ada di halaman [Just the Docs](https://pmarsceill.github.io/just-the-docs/). Diasumsikan bahwa Ruby beserta Jekyll dan Bundler sudah terinstalasi, jika belum baca [Quickstart](https://jekyllrb.com/docs/) untuk informasi lebih lanjut.
+Langkah ini tidak jauh berbeda dengan yang ada di halaman [Just the Docs](https://pmarsceill.github.io/just-the-docs/). Diasumsikan bahwa Ruby beserta Jekyll dan Bundler sudah terinstalasi, jika belum, baca [Quickstart](https://jekyllrb.com/docs/) untuk informasi lebih lanjut.
 
 - Buka *command prompt/terminal*, pastikan sudah berada di direktori `hidrokit` cabang `gh-pages` atau `hidrokit-nb/docs/`. Masukan perintah berikut untuk melakukan instalasi:
 

@@ -51,9 +51,9 @@ pip install git+https://github.com/taruma/hidrokit.git
 pip install git+https://github.com/taruma/hidrokit.git@latest
 ```
 
-### Instalasi melalui Jupyter Notebook (Google Colab/Azure Notebook)
+### Melalui Jupyter Notebook
 
-Tambah tanda seru (`!`) di depan perintah `pip` seperti:
+Anda dapat melakukan instalasi langsung melalui Jupyter Notebook (Google Colab/Azure Notebook) dengan menambah tanda seru (`!`) di depan perintah `pip` seperti:
 ```
 !pip install git+https://github.com/taruma/hidrokit.git@latest
 ```
