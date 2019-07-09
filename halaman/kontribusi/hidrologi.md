@@ -23,7 +23,7 @@ Halaman ini berisi hal-hal yang perlu diketahui dalam berkontribusi dalam hidrol
 
 ---
 
-Mungkin ada yang berpikir "bagaimana seorang teknik sipil bidang air bisa membantu proyek yang bernuansa "orang komputer"?". Jawabannya adalah banyak cara untuk berkontribusi dalam proyek ini meski Anda tidak tahu sama sekali bagaimana menggunakan proyek ini. Bahkan, Anda memiliki peran penting dalam proyek ini. Roadmap di arahkan oleh para praktisi/akademisi.
+Mungkin ada yang berpikir "bagaimana seorang teknik sipil bidang sumberdaya air bisa membantu proyek yang fokus pada komputer/informatika?". Jawabannya adalah banyak cara untuk berkontribusi dalam proyek ini meski Anda tidak tahu sama sekali bagaimana menggunakan python atau menulis kode. Bahkan, Anda memiliki peran penting dalam proyek ini. Penambahan fitur diarahkan oleh para praktisi/akademisi.
 
 ## Bentuk kontribusi
 
@@ -34,7 +34,7 @@ Berikut bentuk kontribusi jika Anda seorang praktisi/akademisi di dalam bidang h
 - Dokumentasi
 
 ### Ide
-Jika Anda seorang praktisi/akademisi, Anda bisa menyarankan fitur/ide yang cocok dalam pengembangan proyek ini. Contohnya, "Implementasi pemodelan NRECA". Anda bisa menjabarkan bagaimana pemodelan NRECA pada umumnya. Jangan lupa disertakan dengan referensi yang relevan. 
+Jika Anda seorang praktisi/akademisi, Anda bisa menyarankan fitur/ide yang cocok dalam pengembangan proyek ini. Contohnya, "Implementasi pemodelan NRECA". Anda bisa menjabarkan bagaimana pemodelan NRECA pada umumnya. Jangan lupa disertakan dengan referensi yang relevan. Berikut contoh dalam memberikan ide:
 
 <div align="center">
     <img src="{{site.baseurl}}/assets/images/hidrologi_00.png" alt="idea for project">
@@ -47,7 +47,7 @@ Tentunya tidak semua orang memiliki tingkat pengalaman yang sama. Sehingga jika 
 Target dari proyek ini adalah Anda, sebagai _end-user_ produk ini. _Feedback_ / umpan balik dari Anda sangat berarti dalam pengembangan proyek ini. Jika Anda menemui kesulitan, jangan ragu untuk menyampaikannya melalui isu. Jika ternyata proyek ini tidak sesuai dengan harapan Anda, kami meminta waktu Anda untuk mengirimkan umpan balik Anda. 
 
 ### Dokumentasi
-Jika Anda memiliki ide dokumentasi berupa halaman jangan ragu untuk disampaikan. Dokumentasi bisa berupa menambahkan/memperbaiki halaman khusus untuk daftar peraturan yang digunakan dalam bidang hidrologi. Atau segala ide dokumentasi yang bersifat transparan dan publik yang dapat bermanfaat bagi para praktisi/akademisi di bidang hidrologi. 
+Jika Anda memiliki ide dokumentasi berupa penambahan halaman (seperti ide menambahkan halaman peraturan tentang X), jangan ragu untuk menyampaikannya melalui isu. Kontribusi dalam dokumentasi juga bisa berupa memperbaiki halaman yang berhubungan dengan bidang hidrologi. 
 
 ---
 <div align="center" markdown="1">

@@ -27,7 +27,7 @@ permalink: /
 
 ----
 
-[Abstrak hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
+[Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 [Berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
 [Lihat di GitHub](//github.com/taruma/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
 
@@ -88,3 +88,11 @@ THANKS TO
 ![GitHub contributors](https://img.shields.io/github/contributors/taruma/hidrokit.svg?style=flat-square)
 ![Sponsor](https://img.shields.io/badge/sponsored%20by-LKO-green.svg?style=flat-square)
 </div>
+
+---
+<div align="left" markdown="1">
+Proyek hidrokit dan hidrokit-nb dikelola oleh [@taruma]
+{: .no_toc .text-delta .fs-2}
+</div>
+
+[@taruma]: https://taruma.github.io

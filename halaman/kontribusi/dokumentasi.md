@@ -59,7 +59,7 @@ Untuk perubahan kecil seperti mengoreksi ejaan dapat dilakukan melalui tampilan 
 
 [travis-ci]: https://travis-ci.com/
 
-## Panduan dokumentasi
+## Panduan berdokumentasi
 
 Berikut panduan dokumentasi yang digunakan sebagai acuan di proyek ini:
 

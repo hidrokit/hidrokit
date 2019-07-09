@@ -28,13 +28,13 @@ Sebelumnya, kami harap **setiap individu dalam komunitas ini mengikuti** [**kode
 
 Kontribusi di hidrokit tidak selalu berbentuk implementasi kode. Kontribusi dapat berupa menulis panduan (dokumentasi), mengajukan ide, ikut berdiskusi, mengusulkan fitur baru, memperbaiki tata cara penulisan, memperbaiki kode yang sudah ada, dll. Sehingga proyek ini terbuka untuk siapapun dengan latar belakang apapun.
 
-Baca [How to contribute - What it means to contribute](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute) untuk mendapatkan gambaran besar apa yang bisa kontribusikan dalam proyek ini. 
+Halaman [*How to Contribute to Open Source*](https://opensource.guide/how-to-contribute) menjelaskan secara umum dan detail apa saja yang bisa kamu kontribusikan dalam proyek open-source dan manfaatnya bagi Anda. 
 
 Anda juga bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dalam memulai kontribusi di proyek *open source* demi membangun kepercayaan diri, mengasah berkomunikasi dan keahlian Anda, dan berbagi hasil karya Anda.
 
 ## Roadmap
 
-Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/taruma/hidrokit/issues) dan [halaman _project_ github](https://github.com/taruma/hidrokit/projects).
+Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/taruma/hidrokit/issues) atau [halaman _project_ github](https://github.com/taruma/hidrokit/projects).
 
 ## Kategori Kontribusi
 
@@ -44,11 +44,11 @@ Kami membagi kontribusi menjadi empat kategori utama yaitu:
 3. [Hidrologi]\: mengusulkan ide pemodelan/metode, mengoreksi/memperjelas teori, dll. Bertujuan membahas aspek hidrologi/keairan/sumberdaya air dalam proyek. 
 4. [Python]\: testing, koreksi implementasi kode, dll. Bertujuan membahas aspek implementasi kode/pemrograman dalam proyek. 
 
-Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halaman masing-masing. 
+Untuk panduan berkontribusi yang lebih detail bisa mengunjungi halamannya masing-masing. 
 
 ## _Issue_ dan _Pull request_
 
-Ada dua istilah yang biasa digunakan dalam proyek ini yaitu isu (_issue_) dan _pull request_ (PR) saat berbicara berkontribusi. Isu bisa dibilang seperti tiket, yang dibuat untuk membahas suatu ide/masalah. Ketika isu dibuat, orang lain bisa melihat isu Anda. Jika ada kontributor yang tertarik mengatasi isu Anda, kontributor akan _forking_ _repo_ utama dan mulai mengubah kode/data untuk menyelesaikan isu Anda. Setelah kontributor selesai dengan perubahannya, kontributor akan meminta _pull request_ atau PR untuk menggabungkan hasil kerjaan kontributor ke _repo_ utama. Ilustrasi proses ini bisa dilihat di video berikut:
+Ada dua istilah yang akan sering digunakan dalam proyek ini yaitu isu (_issue_) dan _pull request_ (PR) saat berbicara berkontribusi. Isu bisa dibilang seperti tiket, yang dibuat untuk membahas suatu ide/masalah. Ketika isu dibuat, orang lain bisa melihat isu Anda. Jika ada kontributor yang tertarik mengatasi isu Anda, kontributor akan _forking_ _repo_ utama dan mulai mengubah kode/data untuk menyelesaikan isu Anda. Setelah kontributor selesai dengan perubahannya, kontributor akan meminta _pull request_ atau PR untuk menggabungkan hasil kerjaan kontributor ke _repo_ utama. Ilustrasi proses ini bisa dilihat di video berikut:
 
 <div align="center">
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/w3jLJU7DT5E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -63,13 +63,17 @@ Ada dua istilah yang biasa digunakan dalam proyek ini yaitu isu (_issue_) dan _p
 
 </div>
 
+---
+<div align="center" markdown="1">
 ## Aturan
+</div>
 
-Segala bentuk komunikasi harus mengikuti [**kode etik yang berlaku**]({{ site.baseurl }}{% link halaman/kontribusi/kode-etik.md %}).
+**Segala bentuk komunikasi harus mengikuti** [**kode etik yang berlaku**]({{ site.baseurl }}{% link halaman/kontribusi/kode-etik.md %}).
 
-## Bacaan lebih lanjut
-
-- [How to contribute](https://opensource.guide/how-to-contribute/)
+Kami **menyarankan** mengikuti beberapa saran berikut ini saat berkomunikasi di Github dan/atau di dalam komunitas hidrokit:
+- Menggunakan bahasa Indonesia atau bahasa Inggris (utamakan bahasa yang Anda kuasai). Penggunaan bahasa Indonesia sangat dianjurkan.
+- Hindari menggunakan bahasa daerah, bahasa gaul, atau menyingkat kata/kalimat yang tidak umum.
+- Menggunakan panggilan netral dan inklusif. Hindari menggunakan panggilan seperti pak/bu/kak/mas/bos. (Dinyatakan pada [kode etik]({{ site.baseurl }}{% link halaman/kontribusi/kode-etik.md %}) paragraf pertama bagian janji kami)
 
 ---
 <div align="center" markdown="1">
@@ -87,7 +91,10 @@ Berikut daftar yang sebaiknya Anda ketahui saat berkontribusi. Git dan Github me
 
 Karena proyek ini menggunakan Git sebagai *version control* yang ditampung di GitHub, kontributor diharapkan memahami cara kerja berkontribusi menggunakan Git/Github. Jika ini pertama kalinya Anda menggunakan Git/Github, Anda bisa mengikuti kursus/latihan yang disediakan oleh Github di [Github Lab Training](https://lab.github.com/courses). Anda juga bisa mengunjungi masing-masing halaman kategori kontribusi untuk memperoleh panduan lebih detail. 
 
-Beberapa tutorial lainnya antara lain: [Make a Pull Request](http://makeapullrequest.com/) and [First Timer Only](http://www.firsttimersonly.com/)
+Bacaan lebih lanjut:
+- [Github Lab Training](https://lab.github.com/courses)
+- [Make a Pull Request](http://makeapullrequest.com/)
+- [First Timer Only](http://www.firsttimersonly.com/)
 
 Jangan ragu untuk bertanya dan mendiskusikan jika mengalami kesulitan (baik pertanyaan terkait proyek, atau cara berkontribusi). 
 
@@ -98,9 +105,6 @@ Proyek ini akan menggunakan wadah Github sebagai alat komunikasi utama, sehingga
 Baca lebih lanjut:
 - [Github - Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 - [ikatyang - Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
-
-Males baca? Ada tontonannya juga:
-- [Web Programming UNPAS - #1 Apa itu Git dan Github](https://www.youtube.com/watch?v=lTMZxWMjXQU)
 
 ### Lisensi
 
@@ -123,10 +127,10 @@ Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebua
 Mau baca lagi? 😲 Saya kasih yang lebih detail! 😉
 {: .text-delta .fs-2 .fw-500}
 
-[Dokumentasi]{: .btn .btn-purple}
-[Situs]{: .btn .btn-purple}
-[Hidrologi]{: .btn .btn-blue}
-[Python]{: .btn .btn-green}
+[Dokumentasi]{: .btn .btn-outline}
+[Situs]{: .btn .btn-outline}
+[Hidrologi]{: .btn .btn-outline}
+[Python]{: .btn .btn-outline}
 
 <!-- LINK -->
 [Dokumentasi]:  {{site.baseurl}}{% link halaman/kontribusi/dokumentasi.md %}
