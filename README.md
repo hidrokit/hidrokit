@@ -6,6 +6,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 [![GitHub license](https://img.shields.io/github/license/taruma/hidrokit.svg)](https://github.com/taruma/hidrokit/blob/master/LICENSE)
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/taruma/hidrokit.svg?label=recent%20version)
+[![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
 
 <a href="https://taruma.github.io/hidrokit"><b>Kunjungi situs resmi hidrokit.</b></a>
 </div>
@@ -78,7 +79,7 @@ Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distri
 
 ## Instalasi / Pemasangan
 
-`hidrokit` didistribusikan melalui [PyPI](https://pypi.org/). Pemasangan dilakukan dengan perintah pada _(Anaconda) command prompt_:
+`hidrokit` didistribusikan melalui [PyPI](https://pypi.org/). Pemasangan dilakukan dengan perintah `pip` pada _(Anaconda) command prompt_:
 
 ```bash
 pip install hidrokit
