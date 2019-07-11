@@ -74,7 +74,7 @@
 
 ## Memulai
 
-Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/). 
+Untuk memudahkan penggunaan, disarankan menggunakan **Anaconda3** sebagai distribusi *python*. Download **Anaconda3** [disini](https://www.anaconda.com/download/). Baca panduan di halaman [instalasi untuk lebih detail](https://taruma.github.io/hidrokit/panduan/instalasi).
 
 ## Instalasi / Pemasangan
 
