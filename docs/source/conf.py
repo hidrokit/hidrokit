@@ -27,9 +27,12 @@ author = 'Taruma Sakti Megariansyah'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
-              'numpydoc',
-              ]
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.todo',
+    'numpydoc',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -56,12 +59,12 @@ html_theme_options = {
     'github_user': 'taruma',
     'github_repo': 'hidrokit',
     'description': 'analisis hidrologi dengan python',
-    'logo_name': 'hidrokit',
+    'logo_name': True,
     'page_width': '940px',
     'badge_branch': 'master',
-    'github_banner': 'true',
-    'github_button': 'false',
-    'sidebar_collapse': 'true',
+    'github_banner': True,
+    'github_button': False,
+    'sidebar_collapse': False,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
