@@ -12,6 +12,7 @@ permalink: /
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 ![GitHub license](https://img.shields.io/github/license/taruma/hidrokit.svg)
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/taruma/hidrokit.svg?label=recent%20version)
+[![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
 </div>
 
 <div align="justify" markdown="1">
