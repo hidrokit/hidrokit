@@ -2,7 +2,7 @@
 name: "Site/Pages Issues"
 about: "Perubahan/Perbaikan Situs"
 title: "site: "
-label: site
+labels: site
 ---
 
 ### Ringkasan

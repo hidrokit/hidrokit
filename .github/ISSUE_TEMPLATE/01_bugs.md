@@ -2,7 +2,7 @@
 name: "Bug report"
 about: "Lapor permasalahan/kerusakan"
 title: "bug: "
-label: bug
+labels: bug
 ---
 
 ### Sistem
