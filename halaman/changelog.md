@@ -22,7 +22,7 @@ Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.
 ---
 
 ## Telah Rilis
-### 01 Juli 2019 - v0.2.0
+### 11 Juli 2019 - v0.2.0
 Ini merupakan perubahan sangat signifikan dari versi sebelumnya dan dimulainya penggunaan layanan integrasi dan _code review_. Perubahan nama fungsi dan modul sangat signifikan sehingga fungsi/metode yang digunakan sebelumnya tidak berfungsi sama sekali (***no backward-compatibility***). Rilis ini disertakan dengan dirilisnya website untuk [hidrokit] dan [hidrokit-nb]. 
 
 **Baru**
