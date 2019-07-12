@@ -2,7 +2,7 @@
 name: "Request"
 about: "Permintaan fitur/ide"
 title: "request: "
-label: request
+labels: request
 ---
 
 ### Permintaan fitur/ide
