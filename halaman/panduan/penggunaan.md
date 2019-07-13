@@ -47,4 +47,4 @@ Dokumentasi lengkap daftar modul dan fungsi bisa dilihat di [dokumentasi teknis 
 
 ## Contoh penggunaan
 
-Untuk contoh penggunaan dalam jupyter notebook bisa dilihat pada situs [Hidrokit Notebook](https://taruma.github.io/hidrokit-nb).
+Untuk contoh penggunaan dalam jupyter notebook bisa dilihat pada situs [Hidrokit Notebook](https://taruma.github.io/hidrokit-nb/kumpulan-notebook#hidrokit-).
