@@ -1,5 +1,21 @@
+name-template: 'v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+categories:
+  - title: '🚀 Fitur'
+    labels:
+      - 'feature'
+      - 'enhancement'
+      - 'request'
+  - title: '🐛 Perbaikan'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+change-template: '- (#$NUMBER) | $TITLE @$AUTHOR'
+exclude-labels:
+  - 'ask'
+
 template: |
-  ## What’s Changed
+  ## Perubahan
 
   $CHANGES
-  
