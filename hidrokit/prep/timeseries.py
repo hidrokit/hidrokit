@@ -78,7 +78,8 @@ def _timestep_multi(array, index=None, timesteps=2, keep_first=True):
 
 def timestep_table(dataframe,
                    columns=None,
-                   timesteps=2, keep_first=True):
+                   timesteps=2, keep_first=True,
+                   template="{column}_tmin{i}"):
     """Generate timesteps directly from DataFrame.
 
     Parameters
@@ -91,6 +92,8 @@ def timestep_table(dataframe,
         Number of timesteps, by default 2
     keep_first : bool, optional
         Column _tmin0 will be included if set True, by default True
+    template : str
+        Format column name, by default "{column}_tmin{i}"
 
     Returns
     -------
@@ -106,10 +109,10 @@ def timestep_table(dataframe,
     for column in columns_name:
         if columns is None:
             for i in range(timesteps + 1):
-                new_columns_name.append(f"{column}_tmin{i}")
+                new_columns_name.append(template.format(column=column, i=i))
         elif column in columns:
             for i in range(timesteps + 1):
-                new_columns_name.append(f"{column}_tmin{i}")
+                new_columns_name.append(template.format(column=column, i=i))
         else:
             new_columns_name.append(column)
     if keep_first is False:
