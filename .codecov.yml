@@ -1,0 +1,13 @@
+coverage:
+  status:
+    project:
+      default:
+        # basic
+        target: 75
+        threshold: null
+        base: auto 
+    patch: no
+    changes: no
+
+ignore:
+  - "tests/.*"  # ignore folders and all its contents

@@ -61,7 +61,8 @@ def _cell_index(dataframe, template='phderi'):
     if dataframe.iloc[row, column + 1] == check:
         return cell_index
     else:
-        raise Exception(f'Format tidak sesuai dengan {format}')
+        raise Exception(
+            'Template tidak sesuai dengan {template}'.format(template=template))
 
 
 def _file_single_pivot(file, template='phderi'):
@@ -102,7 +103,8 @@ def _dataframe_year(year):
         Empty dataframe with date index
     """
 
-    start, end = map(pd.Timestamp, f'{year}0101 {year}1231'.split())
+    start, end = map(
+        pd.Timestamp, '{year}0101 {year}1231'.format(year=year).split())
 
     return pd.DataFrame(index=pd.date_range(start, end))
 
