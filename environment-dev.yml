@@ -1,0 +1,22 @@
+name: hidrokit
+channels:
+  - defaults
+dependencies:
+  - python=3.6.8 # core
+  - numpy
+  - pandas
+  - matplotlib
+  - xlrd 
+  - ipykernel # conda environment
+  - spyder-kernels
+  - twine
+  - pytest # testing dependencies
+  - pytest-cov 
+  - coverage
+  - flake8 # vscode settings
+  - autopep8
+  - pylint
+  - sphinx # sphinx settings
+  - numpydoc
+  - pip # pip installation
+  
