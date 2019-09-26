@@ -6,4 +6,4 @@ __email__ = 'hi@taruma.info'
 
 from . import prep, analysis, viz
 
-__all__ = ['prep', 'analysis', 'viz', ]
+__all__ = ['prep', 'analysis', 'viz', 'contrib']
