@@ -14,6 +14,7 @@ exclude_lines =
 ignore_errors = True
 omit =
     tests/*
+    hidrokit/contrib/*
 skip_covered = False
 
 [xml]
