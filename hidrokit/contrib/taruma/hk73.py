@@ -1,3 +1,6 @@
+"""manual:
+https://gist.github.com/taruma/b00880905f297013f046dad95dc2e284"""
+
 import pandas as pd
 import numpy as np
 from operator import itemgetter

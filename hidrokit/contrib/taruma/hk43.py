@@ -1,3 +1,6 @@
+"""manual:
+https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50"""
+
 import pandas as pd
 import numpy as np
 from calendar import isleap
