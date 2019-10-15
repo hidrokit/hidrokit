@@ -11,4 +11,4 @@ license: MIT
 message: "Jika menggunakan perangkat lunak ini, mohon sitasi menggunakan metadata ini."
 repository-code: "https://github.com/taruma/hidrokit"
 title: hidrokit
-version: "0.3.0"
+version: "0.3.2"
