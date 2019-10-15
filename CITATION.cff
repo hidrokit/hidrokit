@@ -1,0 +1,16 @@
+# YAML 1.2
+---
+abstract: "hidrokit adalah proyek open source paket python yang dapat digunakan untuk membantu proses analisis hidrologi berupa pengolahan data, analisis data, dan visualisasi data."
+authors: 
+  -
+    family-names: Megariansyah
+    given-names: Taruma
+cff-version: "1.0.3"
+date-released: 2019-10-15
+doi: "10.5281/zenodo.3276220"
+license: MIT
+message: "Jika menggunakan perangkat lunak ini, mohon sitasi menggunakan metadata ini."
+repository-code: "https://github.com/taruma/hidrokit"
+title: hidrokit
+version: "0.3.0"
+...
