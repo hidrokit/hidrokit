@@ -1,3 +1,6 @@
+"""manual:
+https://gist.github.com/taruma/50460ebfaab5a30c41e7f1a1ac0853e2"""
+
 import numpy as np
 
 
