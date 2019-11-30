@@ -62,7 +62,9 @@ def _cell_index(dataframe, template='phderi'):
         return cell_index
     else:
         raise Exception(
-            'Template tidak sesuai dengan {template}'.format(template=template))
+            'Template tidak sesuai dengan {template}'.format(
+                template=template)
+        )
 
 
 def _file_single_pivot(file, template='phderi'):
