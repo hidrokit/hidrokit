@@ -10,7 +10,10 @@ help:
 	@echo "release - package and upload a release"
 	@echo "sdist - package"
 
-clean: clean-build clean-pyc
+clean: clean-build clean-pyc clean-coverage
+
+clean-coverage:
+	rm -fr htmlcov/
 
 clean-build:
 	rm -fr build/
@@ -32,16 +35,13 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source hidrokit setup.py test
-	coverage report -m
-	coverage html
-	open htmlcov/index.html
+	pytest --cov=hidrokit 
+	pytest --cov=hidrokit --cov-report html
 
-release: clean
-	python setup.py sdist upload
-	python setup.py bdist_wheel upload
+build: clean
+	python setup.py sdist bdist_wheel
+	python setup.py bdist_wheel
+	twine check dist/*
 
-sdist: clean
-	python setup.py sdist
-	python setup.py bdist_wheel upload
-	ls -l dist
+publish: build
+	twine upload dist/*
