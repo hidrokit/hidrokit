@@ -1,3 +1,7 @@
+"""manual:
+https://gist.github.com/taruma/906e1577111208291e0725229c7d0a76
+"""
+
 from itertools import product
 import pandas as pd
 
