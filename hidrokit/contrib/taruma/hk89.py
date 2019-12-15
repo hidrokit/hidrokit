@@ -1,3 +1,7 @@
+"""manual:
+https://gist.github.com/taruma/1502a7aa67cf074969d806cd3ffdf35c
+"""
+
 import numpy as np
 import pandas as pd
 

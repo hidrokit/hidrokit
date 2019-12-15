@@ -1,3 +1,7 @@
+"""manual:
+https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
+"""
+
 from calendar import isleap
 import pandas as pd
 

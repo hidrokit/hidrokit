@@ -1,4 +1,4 @@
 VERSION = (0, 3, 5)
-DEV_STATUS = "-beta.2"
+DEV_STATUS = "-beta.3"
 
 __version__ = '.'.join(map(str, VERSION)) + DEV_STATUS
