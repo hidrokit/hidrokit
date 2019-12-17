@@ -61,6 +61,6 @@ def read_workbook(io, stations, as_df=True):
         data.append(_data_from_sheet(df, station))
 
     if as_df:
-        return pd.concat(data, sort=True)
+        return pd.concat(data, sort=True, axis=1)
     else:
         return data
