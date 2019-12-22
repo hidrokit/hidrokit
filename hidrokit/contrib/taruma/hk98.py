@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 
-def summary_station(dataset, column, ufunc, ufunc_col, n_days='M'):
+def summary_station(dataset, column, ufunc, ufunc_col, n_days='MS'):
     grouped = [dataset.index.year, dataset.index.month]
 
     ufunc = ufunc if isinstance(ufunc, (list, tuple)) else (ufunc,)
@@ -27,7 +27,7 @@ def summary_station(dataset, column, ufunc, ufunc_col, n_days='M'):
     )
 
 
-def summary_all(dataset, ufunc, ufunc_col, columns=None, n_days='M'):
+def summary_all(dataset, ufunc, ufunc_col, columns=None, n_days='MS'):
     res = []
 
     columns = columns if columns is not None else list(dataset.columns)
