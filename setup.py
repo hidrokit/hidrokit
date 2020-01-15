@@ -97,8 +97,8 @@ setup(
 
     project_urls={
         'Documentation': 'https://taruma.github.io/hidrokit',
+        'ReadTheDocs': 'https://hidrokit.readthedocs.io/en/stable/',
         'Bug Reports': 'https://github.com/taruma/hidrokit/issues',
-        'Say Thanks!': 'http://saythanks.io/to/taruma',
         'Source': 'https://github.com/taruma/hidrokit/',
     },
 )
