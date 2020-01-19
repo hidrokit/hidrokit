@@ -28,6 +28,13 @@ permalink: /
 
 ----
 
+<div align="justify" markdown="1">
+**Versi 0.3.5 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus dikarenakan tidak memiliki pengelola. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@taruma/hidrokit-pada-tahun-2020-c00cd8860c0e).**
+{: .label .label-yellow .fs-3}
+</div>
+
+----
+
 [Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 [Berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
 [Lihat di GitHub](//github.com/taruma/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
@@ -53,9 +60,6 @@ permalink: /
 ![Travis (.org) branch](https://img.shields.io/travis/taruma/hidrokit/master.svg?label=master&logo=travis&style=flat-square)
 ![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?label=master&logo=codacy&style=flat-square)
 ![Codecov branch](https://img.shields.io/codecov/c/github/taruma/hidrokit/master.svg?label=master&logo=codecov&style=flat-square)
-![Travis (.org) branch](https://img.shields.io/travis/taruma/hidrokit/latest.svg?label=latest&logo=travis&style=flat-square)
-![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/latest.svg?label=latest&logo=codacy&style=flat-square)
-![Codecov branch](https://img.shields.io/codecov/c/github/taruma/hidrokit/latest.svg?label=latest&logo=codecov&style=flat-square)
 
 </div>
 
@@ -92,7 +96,7 @@ THANKS TO
 
 ---
 <div align="left" markdown="1">
-Proyek hidrokit dan hidrokit-nb dikelola oleh [@taruma]
+Proyek hidrokit, hidrokit-nb, hidrokit-blog dikelola oleh [@taruma]
 {: .no_toc .text-delta .fs-2}
 </div>
 
