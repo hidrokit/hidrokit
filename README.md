@@ -13,6 +13,10 @@
 
 `hidrokit` adalah proyek _open source_ paket *python* yang dapat digunakan untuk membantu proses analisis hidrologi dimulai dari pengolahan data, analisis data, dan visualisasi data. [Baca lebih lanjut mengenai hidrokit](https://taruma.github.io/hidrokit/tentang-hidrokit).
 
+## PENGUMUMAN
+
+**Versi 0.3.5 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus dikarenakan tidak memiliki pengelola. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@taruma/hidrokit-pada-tahun-2020-c00cd8860c0e).**
+
 ## Release
 
 <table>
@@ -44,7 +48,6 @@
   <tr align="center">
     <th>Branch</th>
     <th>master</th>
-    <th>latest</th>
     <th>gh-pages</th>
   </tr>
   <tr>
@@ -56,19 +59,16 @@
   <tr>
     <td>Travis-ci</td>
     <td><img alt="master" src="https://img.shields.io/travis/taruma/hidrokit/master.svg?label=build&logo=travis"></td>
-    <td><img alt="latest" src="https://img.shields.io/travis/taruma/hidrokit/latest.svg?label=build&logo=travis"></td>
     <td><img alt="gh-pages" src="https://img.shields.io/travis/taruma/hidrokit/gh-pages.svg?label=build&logo=travis"></td>
   </tr>
   <tr>
     <td>Codecov</td>
     <td><img alt="master" src="https://img.shields.io/codecov/c/github/taruma/hidrokit/master.svg?logo=codecov"></td>
-    <td><img alt="latest" src="https://img.shields.io/codecov/c/github/taruma/hidrokit/latest.svg?logo=codecov"></td>
     <td></td>
   </tr>
   <tr>
     <td>Codacy</td>
     <td><img alt="master" src="https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?logo=codacy"></td>
-    <td><img alt="Codacy branch grade" src="https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/latest.svg?logo=codacy"></td>
     <td></td>
   </tr>
 </table>
@@ -94,7 +94,7 @@ pip install git+https://github.com/taruma/hidrokit.git@latest
 ```
 
 ## Catatan penting
-- hidrokit hanya mendukung python versi 3.6 ke atas.
+- hidrokit hanya mendukung python versi 3.5 ke atas.
 - Pemasangan `xlrd` dibutuhkan jika menggunakan module `excel` untuk membaca bilah _Excel_.
 - Versi 0.2.x tidak memiliki *backward-compatibility* dengan versi 0.1.x.
 - Baca halaman [pemasangan untuk lebih detail](https://taruma.github.io/hidrokit/panduan/instalasi).
