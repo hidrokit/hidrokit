@@ -96,9 +96,9 @@ setup(
     ],
 
     project_urls={
-        'Documentation': 'https://taruma.github.io/hidrokit',
+        'Documentation': 'https://hidrokit.github.io/hidrokit',
         'ReadTheDocs': 'https://hidrokit.readthedocs.io/en/stable/',
-        'Bug Reports': 'https://github.com/taruma/hidrokit/issues',
-        'Source': 'https://github.com/taruma/hidrokit/',
+        'Bug Reports': 'https://github.com/hidrokit/hidrokit/issues',
+        'Source': 'https://github.com/hidrokit/hidrokit/',
     },
 )
