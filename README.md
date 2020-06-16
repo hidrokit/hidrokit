@@ -17,7 +17,7 @@
 
 <div align="center">
 
-**Versi 0.3.5 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus dikarenakan tidak memiliki pengelola. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@hidrokit/hidrokit-pada-tahun-2020-c00cd8860c0e).**
+**Versi 0.3.5 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus dikarenakan tidak memiliki pengelola. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@taruma/hidrokit-pada-tahun-2020-c00cd8860c0e).**
 
 
 **_Repository hidrokit dialihkan ke hidrokit/hidrokit dari taruma/hidrokit di github._**
@@ -51,6 +51,8 @@
 
 ## Status
 
+Status diperoleh dari repo taruma/hidrokit.
+
 <table>
   <tr align="center">
     <th>Branch</th>
@@ -64,12 +66,12 @@
   </tr>
   <tr>
     <td>Travis-ci</td>
-    <td><img alt="master" src="https://img.shields.io/travis/hidrokit/hidrokit/master.svg?label=build&logo=travis"></td>
-    <td><img alt="gh-pages" src="https://img.shields.io/travis/hidrokit/hidrokit/gh-pages.svg?label=build&logo=travis"></td>
+    <td><img alt="master" src="https://img.shields.io/travis/taruma/hidrokit/master.svg?label=build&logo=travis"></td>
+    <td><img alt="gh-pages" src="https://img.shields.io/travis/taruma/hidrokit/gh-pages.svg?label=build&logo=travis"></td>
   </tr>
   <tr>
     <td>Codecov</td>
-    <td><img alt="master" src="https://img.shields.io/codecov/c/github/hidrokit/hidrokit/master.svg?logo=codecov"></td>
+    <td><img alt="master" src="https://img.shields.io/codecov/c/github/taruma/hidrokit/master.svg?logo=codecov"></td>
     <td></td>
   </tr>
   <tr>
