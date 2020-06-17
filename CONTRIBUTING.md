@@ -1,4 +1,4 @@
 # Berkontribusi
 
-Untuk berkontribusi, kunjungi halaman [Berkontribusi](https://taruma.github.io/hidrokit/berkontribusi).
+Untuk berkontribusi, kunjungi halaman [Berkontribusi](https://hidrokit.github.io/hidrokit/berkontribusi).
 
