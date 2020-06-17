@@ -10,9 +10,9 @@ from setuptools import find_packages, setup
 # Package meta-data.
 NAME = 'hidrokit'
 DESCRIPTION = 'analisis hidrologi dengan python'
-URL = 'https://github.com/taruma/hidrokit'
-EMAIL = 'hi@taruma.info'
-AUTHOR = 'Taruma Sakti Megariansyah'
+URL = 'https://github.com/hidrokit/hidrokit'
+EMAIL = 'timhidrokit@gmail.com'
+AUTHOR = 'Hidrokit'
 REQUIRES_PYTHON = '>=3.5.0'
 VERSION = ''
 
