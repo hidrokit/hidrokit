@@ -51,8 +51,6 @@
 
 ## Status
 
-Status diperoleh dari repo taruma/hidrokit.
-
 <table>
   <tr align="center">
     <th>Branch</th>
@@ -66,17 +64,17 @@ Status diperoleh dari repo taruma/hidrokit.
   </tr>
   <tr>
     <td>Travis-ci</td>
-    <td><img alt="master" src="https://img.shields.io/travis/taruma/hidrokit/master.svg?label=build&logo=travis"></td>
-    <td><img alt="gh-pages" src="https://img.shields.io/travis/taruma/hidrokit/gh-pages.svg?label=build&logo=travis"></td>
+    <td><img alt="master" src="https://img.shields.io/travis/hidrokit/hidrokit/master.svg?label=build&logo=travis"></td>
+    <td><img alt="gh-pages" src="https://img.shields.io/travis/hidrokit/hidrokit/gh-pages.svg?label=build&logo=travis"></td>
   </tr>
   <tr>
     <td>Codecov</td>
-    <td><img alt="master" src="https://img.shields.io/codecov/c/github/taruma/hidrokit/master.svg?logo=codecov"></td>
+    <td><img alt="master" src="https://img.shields.io/codecov/c/github/hidrokit/hidrokit/master.svg?logo=codecov"></td>
     <td></td>
   </tr>
   <tr>
     <td>Codacy</td>
-    <td><img alt="master" src="https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?logo=codacy"></td>
+    <td><img alt="master" src="https://img.shields.io/codacy/grade/63d10854d6d14c79b6162cae547dc594/master.svg?logo=codacy"></td>
     <td></td>
   </tr>
 </table>
