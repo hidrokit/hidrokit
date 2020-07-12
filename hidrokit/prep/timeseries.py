@@ -34,7 +34,7 @@ def _timestep_single(array, index=0, timesteps=2, keep_first=True):
         x.append(array[start:end, index])
 
     if not keep_first:
-        print(x.pop(0))
+        x.pop(0)
 
     return np.array(x).transpose()
 
