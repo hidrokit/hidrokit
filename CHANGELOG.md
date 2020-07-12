@@ -1,6 +1,8 @@
 # Changelog
 Seluruh perubahan penting pada proyek ini akan didokumentasikan pada bilah ini. Dokumentasi ini hanya untuk perubahan pada paket python.
 
+Changelog ini sudah kadaluarsa dan belum diperbarui lagi.
+
 Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.0.0/), dan proyek ini menggunakan penomoran [versi Semantik](https://semver.org/lang/id/spec/v2.0.0.html). 
 
 ---
