@@ -9,6 +9,6 @@ date-released: 2020-01-15
 doi: 10.5281/zenodo.3276220
 license: MIT
 message: "Jika menggunakan perangkat lunak ini, mohon sitasi menggunakan metadata ini."
-repository-code: "https://github.com/taruma/hidrokit"
+repository-code: "https://github.com/hidrokit/hidrokit"
 title: "hidrokit: Analisis Hidrologi dengan Python"
-version: "0.3.5"
+version: "0.3.6"
