@@ -3,12 +3,12 @@ title: hidrokit
 description: analisis hidrologi dengan python
 
 # Remote Setting
-baseurl: ""
-# url: ""
+baseurl: "/hidrokit"
+url: "https://hidrokit.github.io"
 
 # Theme
-theme: "just-the-docs"
-# remote_theme: pmarsceill/just-the-docs
+# theme: "just-the-docs"
+remote_theme: pmarsceill/just-the-docs@v0.2.5
 
 # Theme settings
 # Color scheme currently only supports "dark" or nil (default)
