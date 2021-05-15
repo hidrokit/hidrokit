@@ -30,10 +30,10 @@ permalink: /
 
 <div align="center" markdown="1">
 
-__Situs ini telah kadaluwarsa dan belum disesuaikan dengan versi hidrokit 0.3.5.__
+__Situs ini telah kadaluwarsa dan belum disesuaikan dengan versi hidrokit 0.3.6.__
 {: .label .label-yellow .fs-3}
 
-**Versi 0.3.5 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus dikarenakan tidak memiliki pengelola. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@taruma/hidrokit-pada-tahun-2020-c00cd8860c0e).**
+**Versi 0.3.6 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@taruma/hidrokit-pada-tahun-2020-c00cd8860c0e).**
 {: .label .label-yellow .fs-2}
 
 _Repository hidrokit telah dialihkan ke hidrokit/hidrokit dari taruma/hidrokit di github._
