@@ -11,4 +11,4 @@ license: MIT
 message: "Jika menggunakan perangkat lunak ini, mohon sitasi menggunakan metadata ini."
 repository-code: "https://github.com/hidrokit/hidrokit"
 title: "hidrokit: Analisis Hidrologi dengan Python"
-version: "0.3.6"
+version: "0.3.7"
