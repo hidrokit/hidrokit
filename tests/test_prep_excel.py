@@ -64,5 +64,5 @@ def test__dataframe_table():
     result = pd.read_csv('tests/data/2013 DUGAAIR.csv',
                          index_col=0, parse_dates=True)
     assert_frame_equal(
-        result, dataframe
+        result, dataframe, check_like=True
     )
