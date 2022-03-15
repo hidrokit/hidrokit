@@ -289,3 +289,31 @@ def freq_logpearson3(
     return pd.DataFrame(
         data=arr, index=return_period, columns=[col_name]
     )
+
+dict_table_source = {
+    'soewarno': t_pearson3_sw,
+    'soetopo': t_pearson3_st,
+    'limantara': t_pearson3_lm
+}
+
+def _find_prob_in_table(k, skew_log, table):
+    func_table = _func_interp_bivariate(table)
+    y = table.columns
+    x = func_table(skew_log, y, grid=False)
+    func_prob = interpolate.interp1d(x, y, kind='linear')
+    return _as_value(func_prob(k))
+
+def _calc_prob_in_table(k, skew_log, source='soewarno'):
+    if source.lower() in dict_table_source.keys():
+        return 1 - _find_prob_in_table(
+            k, skew_log, dict_table_source[source.lower()]
+        )
+    
+def calc_prob(k, skew_log, source='scipy'):
+    if source.lower() == 'scipy':
+        if skew_log >= 0:
+            return 1 - (1 - stats.pearson3.cdf(k, skew_log))
+        else:
+            return 1 - stats.pearson3.cdf(k, skew_log)
+    if source.lower() in dict_table_source.keys():
+        return _calc_prob_in_table(k, skew_log, source.lower())

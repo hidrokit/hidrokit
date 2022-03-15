@@ -409,3 +409,29 @@ def freq_gumbel(
     return pd.DataFrame(
         data=arr, index=return_period, columns=[col_name]
     )
+
+def _calc_T(P):
+    return 1 / (1-np.exp(-np.exp(-P)))
+
+def _calc_prob_from_table(k, n, source='gumbel'):
+    yn, sn = find_coef(n, source=source)
+    P = k * sn + yn
+    T = _calc_T(P)
+    return np.around(1-1/T, 3)
+
+def calc_prob(k, n, source='gumbel'):
+    if source.lower() == 'gumbel':
+        return _calc_prob_from_table(k, n, source=source)
+    if source.lower() == 'soewarno':
+        return _calc_prob_from_table(k, n, source=source)
+    if source.lower() == 'soetopo':
+        return _calc_prob_from_table(k, n, source=source)
+    if source.lower() == 'scipy':
+        return stats.gumbel_r.cdf(k)
+    if source.lower() == 'powell':
+        # persamaan ini ditemukan menggunakan wolfram alpha
+        # x = e^(e^(-(π K)/sqrt(6) - p))/(e^(e^(-(π K)/sqrt(6) - p)) - 1)
+        _top = np.exp(np.exp(-(np.pi*k)/np.sqrt(6)-np.euler_gamma))
+        _bot = _top - 1
+        T = _top / _bot
+        return 1-1/T

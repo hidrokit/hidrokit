@@ -84,3 +84,15 @@ def freq_normal(
     return pd.DataFrame(
         data=arr, index=return_period, columns=[col_name]
     )
+
+def _calc_prob_in_table(k, table):
+    x = table.k
+    y = table.peluang
+    return np.interp(k, x, y)
+
+def calc_prob(k, source='scipy'):
+    if source.lower() == 'soewarno':
+        k = np.array(k)
+        return _calc_prob_in_table(k, t_normal_sw)
+    elif source.lower() == 'scipy':
+        return 1 - stats.norm.cdf(k)
