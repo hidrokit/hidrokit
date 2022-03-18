@@ -51,16 +51,25 @@ def _data_from_sheet(df, station_name, as_df=True):
         return frames
 
 
-def read_workbook(io, stations, as_df=True):
-    """Read dataset from single file based on stations"""
+def read_workbook(io, stations=None, ignore_str='_', as_df=True):
+    """Read dataset from workbook"""
     excel = pd.ExcelFile(io)
 
-    data = []
+    data = {}
+    sheet_names = excel.sheet_names
+    if stations is None:
+        stations = []
+        for sheet in sheet_names:
+            if not sheet.startswith(ignore_str):
+                stations.append(sheet)
+    else:
+        stations = [stations] if isinstance(stations, str) else stations
+
     for station in stations:
-        df = pd.read_excel(excel, sheet_name=station, header=None)
-        data.append(_data_from_sheet(df, station))
+        df = excel.parse(sheet_name=station, header=None)
+        data[station] = _data_from_sheet(df, station)
 
     if as_df:
-        return pd.concat(data, sort=True, axis=1)
+        return pd.concat(data.values(), sort=True, axis=1)
     else:
         return data
