@@ -9,26 +9,26 @@ Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.
 
 **Added/Ditambahkan**
 - Penambahan modul `.contrib.taruma`:
-  - `hk102`: upsampling dataset
-  - `hk151`: uji outlier
-  - `hk158`: perhitungan parameter statistik
+  - #102 `hk102`: upsampling dataset
+  - #151 `hk151`: uji outlier
+  - #158 `hk158`: perhitungan parameter statistik
   - Modul Uji Kecocokan Distribusi:
-    - `hk140`: uji kolmogorov-smirnov
-    - `hk141`: uji chi-square
+    - #140 `hk140`: uji kolmogorov-smirnov
+    - #141 `hk141`: uji chi-square
   - Modul Analisis Frekuensi:
-    - `hk124`: distribusi log normal 2 parameter
-    - `hk126`: distribusi log pearson tipe III
-    - `hk127`: distribusi gumbel
-    - `hk172`: distribusi normal
-  - fungsi CDF `.calc_prob()` untuk setiap analisis frekuensi
+    - #124 `hk124`: distribusi log normal 2 parameter
+    - #126 `hk126`: distribusi log pearson tipe III
+    - #127 `hk127`: distribusi gumbel
+    - #172 `hk172`: distribusi normal
+  - #179 Fungsi CDF `.calc_prob()` untuk setiap analisis frekuensi.
 
 **Fixed/Diperbaiki**
-- Perbaikan fungsi test `test_prep_excel.test__dataframe_table()`. #169
-- Penambahan argumen `verbose=False` pada modul `.contrib.taruma.hk98`
-- Pembaruan fungsi `.contrib.taruma.hk88.read_workbook()` untuk membaca seluruh _sheet_ tanpa memasukan nama stasiun/_sheet_. 
+- #169 Perbaikan fungsi test `test_prep_excel.test__dataframe_table()`.
+- #115 Penambahan argumen `verbose=False` pada modul `.contrib.taruma.hk98`.
+- #162 Pembaruan fungsi `.contrib.taruma.hk88.read_workbook()` untuk membaca seluruh _sheet_ tanpa memasukan nama stasiun/_sheet_. 
 
 **Changed/Diubah**
-- Luaran argumen `as_df=False` pada fungsi `.contrib.taruma.hk88.read_workbook()` berubah dari luaran berupa `list` menjadi `dictionary`. 
+- #162 Luaran argumen `as_df=False` pada fungsi `.contrib.taruma.hk88.read_workbook()` berubah dari luaran berupa `list` menjadi `dictionary`. 
 
 ---
 
