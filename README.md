@@ -86,4 +86,5 @@ Tertarik menjadi kontributor? Baca [**berkontribusi**](https://hidrokit.github.i
 Paket hidrokit menggunakan [lisensi MIT](LICENSE.txt). Dokumentasi yang disertai pada proyek ini menggunakan lisensi [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/deed.id). 
 ## Acknowledgement
 
-Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022. 
+- Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022.
+- Terima kasih untuk **LKO** yang telah mensponsori proyek ini sejak versi 0.2.x hingga 0.3.6. 
