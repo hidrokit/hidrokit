@@ -1,14 +1,14 @@
 --- 
+cff-version: 1.2.0
+message: "Jika menggunakan perangkat lunak ini, mohon sitasi menggunakan metadata ini."
 abstract: "hidrokit adalah proyek open source paket python yang dapat digunakan untuk membantu proses analisis hidrologi berupa pengolahan data, analisis data, dan visualisasi data."
 authors: 
-  - 
-    family-names: Megariansyah
-    given-names: Taruma
-cff-version: "1.0.3"
-date-released: 2020-01-15
+  - family-names: "Megariansyah"
+    given-names: "Taruma"
+    orcid: "https://orcid.org/0000-0002-1551-7673"
+title: "hidrokit: Analisis Hidrologi dengan Python"
+date-released: 2022-04-05
+version: "0.3.7"
 doi: 10.5281/zenodo.3276220
 license: MIT
-message: "Jika menggunakan perangkat lunak ini, mohon sitasi menggunakan metadata ini."
 repository-code: "https://github.com/hidrokit/hidrokit"
-title: "hidrokit: Analisis Hidrologi dengan Python"
-version: "0.3.7"
