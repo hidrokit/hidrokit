@@ -1,7 +1,7 @@
 ---
 name: "Github Issues"
 about: "Permintaan/Permasalahan layanan Github"
-title: "gh: "
+title: ""
 labels: github
 ---
 

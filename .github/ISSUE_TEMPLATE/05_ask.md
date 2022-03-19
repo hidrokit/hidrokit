@@ -1,7 +1,7 @@
 ---
 name: "Question"
 about: "Pertanyaan/Diskusi"
-title: "ask: "
+title: ""
 labels: ask
 ---
 
