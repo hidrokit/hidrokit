@@ -7,6 +7,7 @@
 [![GitHub license](https://img.shields.io/github/license/hidrokit/hidrokit.svg)](https://github.com/hidrokit/hidrokit/blob/master/LICENSE)
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/hidrokit/hidrokit.svg?label=recent%20version)
 [![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
+[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/sponsored%20by-PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
 
 <a href="https://hidrokit.github.io/hidrokit"><b>Kunjungi situs resmi hidrokit.</b></a>
 </div>
@@ -69,8 +70,9 @@ Untuk memulai penggunaan, gunakan perintah `import`. Contoh:
 
 ```python
 from hidrokit.prep import read
-from hidrokit.prep.read import missing_row
-from hidrokit.viz import graph
+
+# untuk penggunaan subpaket .contrib
+from hidrokit.contrib.taruma import anfrek
 ```
 
 Untuk penggunaan baca halaman [penggunaan](https://hidrokit.github.io/hidrokit/panduan/penggunaan).
@@ -82,3 +84,6 @@ Tertarik menjadi kontributor? Baca [**berkontribusi**](https://hidrokit.github.i
 ## Lisensi
 
 Paket hidrokit menggunakan [lisensi MIT](LICENSE.txt). Dokumentasi yang disertai pada proyek ini menggunakan lisensi [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/deed.id). 
+## Acknowledgement
+
+Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022. 
