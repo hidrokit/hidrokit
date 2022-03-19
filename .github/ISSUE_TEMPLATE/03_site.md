@@ -1,7 +1,7 @@
 ---
 name: "Site/Pages Issues"
 about: "Perubahan/Perbaikan Situs"
-title: "site: "
+title: ""
 labels: site
 ---
 
