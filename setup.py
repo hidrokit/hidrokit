@@ -1,3 +1,7 @@
+"""
+Setup files
+"""
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -11,9 +15,9 @@ from setuptools import find_packages, setup
 NAME = 'hidrokit'
 DESCRIPTION = 'analisis hidrologi dengan python'
 URL = 'https://github.com/hidrokit/hidrokit'
-EMAIL = 'timhidrokit@gmail.com'
-AUTHOR = 'Hidrokit'
-REQUIRES_PYTHON = '>=3.5.0'
+EMAIL = 'hi@taruma.info'
+AUTHOR = 'Taruma Sakti Megariansyah'
+REQUIRES_PYTHON = '>=3.6.0'
 VERSION = ''
 
 # What packages are required for this module to be executed?
@@ -90,7 +94,6 @@ setup(
         # Python Version
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
