@@ -1,7 +1,7 @@
 ---
 name: "Request"
 about: "Permintaan fitur/ide"
-title: "request: "
+title: ""
 labels: request
 ---
 

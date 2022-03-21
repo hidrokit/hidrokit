@@ -1,7 +1,7 @@
 ---
 name: "Bug report"
 about: "Lapor permasalahan/kerusakan"
-title: "bug: "
+title: ""
 labels: bug
 ---
 
