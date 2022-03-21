@@ -9,18 +9,19 @@ Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.
 
 **Added/Ditambahkan**
 - Penambahan modul `.contrib.taruma`:
-  - #102 `hk102`: upsampling dataset
-  - #151 `hk151`: uji outlier
-  - #158 `hk158`: perhitungan parameter statistik
+  - #102 `hk102`: upsampling dataset.
+  - #151 `hk151`: uji outlier.
+  - #158 `hk158`: perhitungan parameter statistik.
   - Modul Uji Kecocokan Distribusi:
-    - #140 `hk140`: uji kolmogorov-smirnov
-    - #141 `hk141`: uji chi-square
+    - #140 `hk140`: uji kolmogorov-smirnov.
+    - #141 `hk141`: uji chi-square.
   - Modul Analisis Frekuensi:
-    - #124 `hk124`: distribusi log normal 2 parameter
-    - #126 `hk126`: distribusi log pearson tipe III
-    - #127 `hk127`: distribusi gumbel
-    - #172 `hk172`: distribusi normal
+    - #124 `hk124`: distribusi log normal 2 parameter.
+    - #126 `hk126`: distribusi log pearson tipe III.
+    - #127 `hk127`: distribusi gumbel.
+    - #172 `hk172`: distribusi normal.
   - #179 Fungsi CDF `.calc_prob()` untuk setiap analisis frekuensi.
+  - #194 `anfrek`: modul kumpulan fungsi analisis frekuensi.
 
 **Fixed/Diperbaiki**
 - #169 Perbaikan fungsi test `test_prep_excel.test__dataframe_table()`.

@@ -79,6 +79,18 @@ from hidrokit.contrib.taruma import hk88, hk102
 
 Untuk penggunaan baca halaman [penggunaan](https://hidrokit.github.io/hidrokit/panduan/penggunaan).
 
+### Laporan Implementasi
+
+Penggunaan hidrokit juga bisa dilihat dari [_Laporan Implementasi_](https://taruma.github.io/vivaldi/laporan-implementasi). Berikut daftar laporan implementasi yang telah dibuat:
+
+no laporan | tanggal | versi hidrokit | judul | lihat (nbviewer) | pdf
+:- | :- | :- | :- | :- | :-
+**LI-04** | 11 Februari 2020 | `0.3.5` | Perbandingan Model Variasi _Recurrent Neural Networks_ Pada Kasus Prediksi Debit Aliran | [nbviewer](https://nbviewer.org/gist/taruma/9d1ef5c6d629c792bed0c3f68b324675) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoVm7i0EuKdPkPlzVg?e=rjXNpf) 
+**LI-03** | 16 Januari 2020 | `0.3.5` | Analisis Hidrologi Menggunakan hidrokit | [nbviewer](https://nbviewer.jupyter.org/gist/taruma/4c1ed1212290965ecda056f45d7aaea2) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoU3ehyoy45_RG6hjA?e=5wUb8d)
+**LI-02** | 22 Oktober 2019 | `0.3.2` | Prediksi Debit Aliran Menggunakan Long Short-Term Memory (LSTM) | [nbviewer](https://nbviewer.jupyter.org/gist/taruma/8186dba212875f6b3f1677a5e2f9a70f) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoU1sISX0gc4BammwQ?e=MGHcwT)
+**LI-01** | 13 Juli 2019 | `0.2.0` | Prediksi Kualitas Air Menggunakan Artificial Neural Networks | [nbviewer](https://nbviewer.jupyter.org/gist/taruma/12bf06ab7307340525eecf5b3c8beb9c) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoU27FZ3pMHVvWeMsA?e=ouC2KK)
+
+
 ## Untuk Kontributor
 
 Tertarik menjadi kontributor? Baca [**berkontribusi**](https://hidrokit.github.io/hidrokit/berkontribusi) untuk kode etik, melakukan _pull request_, dan penjelasan lebih rinci hal lainnya. Proyek _open-source_ ini terbuka untuk siapa saja dengan berbagai latar belakang.
