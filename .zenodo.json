@@ -1,12 +1,18 @@
 {
     "creators": [
         {
-            "name": "Megariansyah, Taruma"
+            "name": "Megariansyah, Taruma",
+            "orcid": "0000-0002-1551-7673"
         }
     ],
     "description": "hidrokit adalah proyek open source paket python yang dapat digunakan untuk membantu proses analisis hidrologi berupa pengolahan data, analisis data, dan visualisasi data.",
+    "keywords": [
+        "analisis",
+        "hidrologi",
+        "python"
+    ],
     "license": {
         "id": "MIT"
     },
-    "title": "hidrokit: analisis hidrologi dengan python"
+    "title": "hidrokit"
 }
