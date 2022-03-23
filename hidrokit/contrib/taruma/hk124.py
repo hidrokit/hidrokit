@@ -73,7 +73,7 @@ def calc_x_lognormal(x, return_period=[5], source='scipy', show_stat=False):
 def freq_lognormal(
     df, col=None,
     return_period=[2, 5, 10, 20, 25, 50, 100], show_stat=False, source='scipy',
-    col_name='Log Normal'):
+    col_name='Log Normal', index_name='Kala Ulang'):
 
     col = df.columns[0] if col is None else col
 
@@ -82,9 +82,12 @@ def freq_lognormal(
     arr = calc_x_lognormal(
         x, return_period=return_period, show_stat=show_stat, source=source)
 
-    return pd.DataFrame(
+    result = pd.DataFrame(
         data=arr, index=return_period, columns=[col_name]
     )
+
+    result.index.name = index_name
+    return result
 
 def _calc_prob_in_table(k, table):
     x = table.k

@@ -395,7 +395,7 @@ def calc_x_gumbel(x, return_period=[5], source='gumbel', show_stat=False):
 def freq_gumbel(
     df, col=None,
     return_period=[2, 5, 10, 20, 25, 50, 100], source='gumbel', show_stat=False,
-    col_name='Gumbel'):
+    col_name='Gumbel', index_name='Kala Ulang'):
 
     col = df.columns[0] if col is None else col
 
@@ -406,9 +406,12 @@ def freq_gumbel(
         source=source
     )
 
-    return pd.DataFrame(
+    result = pd.DataFrame(
         data=arr, index=return_period, columns=[col_name]
     )
+
+    result.index.name = index_name
+    return result
 
 def _calc_T(P):
     return 1 / (1-np.exp(-np.exp(-P)))
