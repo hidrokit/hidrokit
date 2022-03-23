@@ -274,7 +274,7 @@ def calc_x_lp3(x, return_period=[5], source='scipy', show_stat=False):
 def freq_logpearson3(
     df, col=None, 
     return_period=[2, 5, 10, 20, 25, 50, 100], source='scipy', show_stat=False,
-    col_name='Log Pearson III'
+    col_name='Log Pearson III', index_name='Kala Ulang'
     ):
 
     col = df.columns[0] if col is None else col
@@ -286,9 +286,12 @@ def freq_logpearson3(
         source=source
     )
 
-    return pd.DataFrame(
+    result = pd.DataFrame(
         data=arr, index=return_period, columns=[col_name]
     )
+
+    result.index.name = index_name
+    return result
 
 dict_table_source = {
     'soewarno': t_pearson3_sw,
