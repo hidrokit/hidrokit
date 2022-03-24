@@ -30,7 +30,7 @@ def calc_coef(x):
     """Return (Cv, Cs, Ck)"""
     return (_Cv(x), _skew(x), _kurt(x))
 
-def check_distribution(x, show_stat=False):
+def check_distribution(x, show_stat=False, show_detail=False):
 
     Cv, Cs, Ck = calc_coef(x)
 
@@ -56,3 +56,22 @@ def check_distribution(x, show_stat=False):
         f'{"Log Pearson Tipe III":<20}: {_kriteria(b_logpearson)}',
         sep='\n', end='\n'
     )
+
+    if show_detail:
+        print(
+            '-----------------------------------------------',
+            '> Distribusi Normal [syarat](nilai)',
+            f'[Cs ~ 0](Cs = {Cs:.5f})',
+            f'[Ck ~ 3](Ck = {Ck:.5f})',
+            '> Log Normal',
+            f'[Cs ~ 3](Cs = {Cs:.5f})',
+            f'[Cs > 0](Cs = {Cs:.5f})',
+            f'[Cs ~ 3Cv](Cs = {Cs:.5f} ~ 3Cv = {3*Cv:.5f})',
+            '> Gumbel Tipe I',
+            f'[Cs ~ 1.1396](Cs = {Cs:.5f})',
+            f'[Ck ~ 5.4002](Ck = {Ck:.5f})',
+            '> Log Pearson Tipe III',
+            'Tidak memiliki ciri khas (Cs/Ck/Cv = Bebas)',
+            '-----------------------------------------------',
+            sep='\n', end='\n'
+        )
