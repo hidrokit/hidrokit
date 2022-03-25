@@ -4,6 +4,7 @@ title: Struktur Proyek
 parent: Panduan
 permalink: /panduan/struktur-proyek
 nav_order: 1
+last_modified_date: 2019-06-29
 ---
 
 Proyek hidrokit memiliki tiga cabang utama yaitu `master`, `latest` dan `gh-pages`. Cabang `master` dan `latest` merupakan cabang untuk paket python, sedangkan cabang `gh-pages` bertanggung jawab untuk membuat situs. 

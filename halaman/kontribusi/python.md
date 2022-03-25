@@ -4,6 +4,7 @@ title: Python
 parent: Berkontribusi
 permalink: /berkontribusi/python
 nav_order: 5
+last_modified_date: 2019-06-29
 ---
 <div align="justify" markdown="1">
 > "One of my most productive days was throwing away 1000 lines of code." - Ken Thompson.

@@ -4,6 +4,7 @@ title: Daftar Kata
 parent: Serbaneka
 permalink: /serbaneka/daftar-kata
 nav_exclude: true
+last_modified_date: 2019-06-29
 ---
 
 Daftar kata yang digunakan dalam berkas proyek ini:

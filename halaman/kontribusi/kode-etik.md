@@ -4,6 +4,7 @@ title: Kode Etik
 parent: Berkontribusi
 nav_order: 1
 permalink: /berkontribusi/kode-etik
+last_modified_date: 2019-06-24
 ---
 <div align="center" markdown="1">
 # Kode Etik Contributor Covenant

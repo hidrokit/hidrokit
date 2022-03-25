@@ -4,6 +4,7 @@ title: Changelog
 description: dokumentasi perubahan proyek hidrokit
 nav_order: 2
 permalink: /changelog
+last_modified_date: 2022-03-25
 ---
 Seluruh perubahan penting pada proyek ini akan didokumentasikan pada berkas ini. Dokumentasi ini hanya untuk perubahan pada paket python.
 

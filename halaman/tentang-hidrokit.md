@@ -3,6 +3,7 @@ layout: default
 title: Tentang hidrokit
 nav_order: 1
 permalink: /tentang-hidrokit
+last_modified_date: 2019-07-09
 ---
 
 <!-- <div align="center">

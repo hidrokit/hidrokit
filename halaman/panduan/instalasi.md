@@ -4,6 +4,7 @@ title: Instalasi
 parent: Panduan
 permalink: /panduan/instalasi
 nav_order: 2
+last_modified_date: 2019-07-09
 ---
 
 Halaman ini menjelaskan bagaimana memasang/instalasi paket hidrokit.

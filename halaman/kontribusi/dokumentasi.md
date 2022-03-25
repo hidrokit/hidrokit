@@ -4,6 +4,7 @@ title: Dokumentasi
 parent: Berkontribusi
 permalink: /berkontribusi/dokumentasi
 nav_order: 2
+last_modified_date: 2019-07-09
 ---
 
 <div align="justify" markdown="1">
