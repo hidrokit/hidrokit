@@ -23,3 +23,17 @@ search_enabled: true
 aux_links:
   "View on GitHub":
     - "//github.com/hidrokit/hidrokit"
+aux_links_new_tab: true
+
+heading_anchors: true
+
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Ubah halaman ini di GitHub."
+gh_edit_repository: "https://github.com/hidrokit" # the github URL for your repo
+gh_edit_branch: "gh-pages" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
