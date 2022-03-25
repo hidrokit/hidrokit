@@ -78,7 +78,7 @@ THANKS TO
 
 ---
 <div align="left" markdown="1">
-Proyek hidrokit, hidrokit-nb, hidrokit-blog dikelola oleh tim [@hidrokit]
+Proyek hidrokit, hidrokit/notebook, hidrokit/blog dikelola oleh tim [@hidrokit]
 {: .no_toc .text-delta .fs-2}
 </div>
 
