@@ -28,20 +28,6 @@ permalink: /
 
 ----
 
-<div align="center" markdown="1">
-
-__Situs ini telah kadaluwarsa dan belum disesuaikan dengan versi hidrokit 0.3.6.__
-{: .label .label-yellow .fs-3}
-
-**Versi 0.3.6 merupakan versi terakhir hidrokit. Pengembangan hidrokit dalam kondisi hiatus. Untuk informasi lebih lanjut baca [tulisan ini](https://medium.com/@taruma/hidrokit-pada-tahun-2020-c00cd8860c0e).**
-{: .label .label-yellow .fs-2}
-
-_Repository hidrokit telah dialihkan ke hidrokit/hidrokit dari taruma/hidrokit di github._
-{: .label .label-red .fs-2}
-</div>
-
-----
-
 [Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 [Berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
 [Lihat di GitHub](//github.com/hidrokit/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
@@ -61,16 +47,6 @@ _Repository hidrokit telah dialihkan ke hidrokit/hidrokit dari taruma/hidrokit d
 </div>
 
 <div align="center" markdown="1">
-**BRANCH STATUS**
-{: .label .label-green .fs-2 .fw-300 .text-delta}
-
-![Travis (.org) branch](https://img.shields.io/travis/hidrokit/hidrokit/master.svg?label=master&logo=travis&style=flat-square)
-![Codacy branch grade](https://img.shields.io/codacy/grade/4e7531e009dc49d682b4e1049be7971c/master.svg?label=master&logo=codacy&style=flat-square)
-![Codecov branch](https://img.shields.io/codecov/c/github/hidrokit/hidrokit/master.svg?label=master&logo=codecov&style=flat-square)
-
-</div>
-
-<div align="center" markdown="1">
 **GITHUB STATUS**
 {: .label .label-yellow .fs-2 .fw-300 .text-delta}
 
@@ -79,14 +55,12 @@ _Repository hidrokit telah dialihkan ke hidrokit/hidrokit dari taruma/hidrokit d
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/hidrokit/hidrokit.svg?style=flat-square)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/hidrokit/hidrokit.svg?style=flat-square)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/hidrokit/hidrokit.svg?style=flat-square)
-
 </div>
 
 <div align="center" markdown="1">
 **SITE/PAGES STATUS**
 {: .label .label-purple .fs-2 .fw-300 .text-delta}
 
-![Travis (.org) branch](https://img.shields.io/travis/hidrokit/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hidrokit/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub issues by-label](https://img.shields.io/github/issues/hidrokit/hidrokit/site.svg?style=flat-square)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/hidrokit/hidrokit/site.svg?style=flat-square)
@@ -99,6 +73,7 @@ THANKS TO
 
 ![GitHub contributors](https://img.shields.io/github/contributors/hidrokit/hidrokit.svg?style=flat-square)
 ![Sponsor](https://img.shields.io/badge/sponsored%20by-LKO-green.svg?style=flat-square)
+[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/sponsored%20by-PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
 </div>
 
 ---
