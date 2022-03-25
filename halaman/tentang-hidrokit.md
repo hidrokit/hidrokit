@@ -12,7 +12,7 @@ last_modified_date: 2019-07-09
 
 <div align="center">
 <img src="{{ site.baseurl }}/assets/images/presskit/hidrokit-800x200.jpg" alt="Hidrokit" width="40%" height="40%">
-<img src="https://github.com/taruma/hidrokit-nb/raw/master/docs/assets/images/hidrokit-nb-800x200.jpg" alt="Hidrokit Notebook" width="40%" height="40%"><br><br>
+<img src="https://github.com/hidrokit/notebook/raw/master/docs/assets/images/hidrokit-nb-800x200.jpg" alt="Hidrokit Notebook" width="40%" height="40%"><br><br>
 </div>
 
 <div align="justify" markdown="1">
@@ -24,8 +24,8 @@ last_modified_date: 2019-07-09
 {: .fs-5}
 </div>
 
-[hidrokit]: https://taruma.github.io/hidrokit
-[hidrokit-nb]: https://taruma.github.io/hidrokit-nb
+[hidrokit]: https://hidrokit.github.io/hidrokit
+[hidrokit-nb]: https://hidrokit.github.io/notebook
 
 <div align="center" markdown="1">
 ## Abstrak hidrokit
@@ -86,7 +86,7 @@ Tujuan dari proyek hidrokit antara lain:
 Tidak lengkap proyek _open source_ tanpa kata **berkolaborasi** dan **berkontribusi**. Anda bisa membaca halaman [*how to contribute*](https://opensource.guide/how-to-contribute/) untuk mengetahui hal apa saja yang bisa anda berikan dalam proyek open-source. Segala latar belakang apapun, Anda tetap bisa berkontribusi. Jika ada yang mau disampaikan sekarang, jangan ragu untuk langsung menekan tombol dibawah ini untuk membuat *issue* dan memulai diskusi.
 
 <div align="center" markdown="1">
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
 </div>
 
 Untuk penjelasan lebih lanjut mengenai kontribusi di proyek ini, Anda bisa membacanya di halaman [berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}). Jika ada pertanyaan, Anda bisa langsung membuat isu. 

@@ -144,7 +144,7 @@ Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.
 **Dokumentasi - d0.1.2**
 - Changed/Diubah templat untuk isu dan PR.
 - tambah dokumen _changelog_.
-- memindahkan _notebook_ ke _repo_ [`hidrokit-nb`](https://github.com/taruma/hidrokit-nb).
+- memindahkan _notebook_ ke _repo_ [`hidrokit-nb`](https://github.com/hidrokit/notebook).
 
 ### 2019-05-14 - v0.1.1
 

@@ -35,7 +35,7 @@ Anda juga bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dala
 
 ## Roadmap
 
-Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/taruma/hidrokit/issues) atau [halaman _project_ github](https://github.com/taruma/hidrokit/projects).
+Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/hidrokit/hidrokit/issues) atau [halaman _project_ github](https://github.com/hidrokit/hidrokit/projects).
 
 ## Kategori Kontribusi
 
@@ -59,8 +59,8 @@ Ada dua istilah yang akan sering digunakan dalam proyek ini yaitu isu (_issue_) 
 **Langsung ada ide? 🙀 Buruan buat _isu_ / _pull request_ sebelum idenya terbang. 💸💸 ️**
 {: .text-delta .fs-2 .fw-500}
 
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
-[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/hidrokit/hidrokit/compare){: .btn .btn-green}
 
 </div>
 
@@ -117,8 +117,8 @@ Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebua
 **Tunggu apa lagi? 🤔 Ayo langsung buat _issue_ atau _pull request_! 🏃‍♂️**
 {: .text-delta .fs-2 .fw-500}
 
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
-[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/hidrokit/hidrokit/compare){: .btn .btn-green}
 
 </div>
 
