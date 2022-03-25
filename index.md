@@ -8,11 +8,13 @@ permalink: /
   <img src="{{ site.baseurl }}/assets/images/presskit/hidrokit-800x200.jpg" alt="hidrokit banner"><br>
 </div>
 <div align="center" markdown="1">
+
 ![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 ![GitHub license](https://img.shields.io/github/license/hidrokit/hidrokit.svg)
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/hidrokit/hidrokit.svg?label=recent%20version)
 [![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
+
 </div>
 
 <div align="justify" markdown="1">
@@ -61,6 +63,7 @@ permalink: /
 **SITE/PAGES STATUS**
 {: .label .label-purple .fs-2 .fw-300 .text-delta}
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Jekyll%20Build%20Pages?logo=jekyll)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hidrokit/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub issues by-label](https://img.shields.io/github/issues/hidrokit/hidrokit/site.svg?style=flat-square)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/hidrokit/hidrokit/site.svg?style=flat-square)
