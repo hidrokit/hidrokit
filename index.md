@@ -11,6 +11,7 @@ permalink: /
 
 ![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Pytest)
 ![GitHub license](https://img.shields.io/github/license/hidrokit/hidrokit.svg)
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/hidrokit/hidrokit.svg?label=recent%20version)
 [![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
