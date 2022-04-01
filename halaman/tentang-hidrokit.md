@@ -100,11 +100,3 @@ Butuh video motivasi lagi untuk berkontribusi? :)
 
 <div align="center">
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/afvT1c1ii0c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
-
----
-<div align="left" markdown="1">
-Proyek hidrokit dan hidrokit-nb dikelola oleh [@taruma]
-{: .no_toc .text-delta .fs-2}
-</div>
-
-[@taruma]: https://taruma.github.io
