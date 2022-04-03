@@ -4,6 +4,7 @@ title: Hidrologi
 parent: Berkontribusi
 permalink: /berkontribusi/hidrologi
 nav_order: 4
+last_modified_date: 2019-07-09
 ---
 
 <div align="justify" markdown="1">
@@ -54,8 +55,8 @@ Jika Anda memiliki ide dokumentasi berupa penambahan halaman (seperti ide menamb
 **Ayo langsung buat isu atau _pull request_**
 {: .text-delta .fs-2 .fw-500}
 
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
-[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/hidrokit/hidrokit/compare){: .btn .btn-green}
 
 </div>
 

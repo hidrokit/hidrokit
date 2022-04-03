@@ -4,6 +4,7 @@ title: Dokumentasi
 parent: Berkontribusi
 permalink: /berkontribusi/dokumentasi
 nav_order: 2
+last_modified_date: 2019-07-09
 ---
 
 <div align="justify" markdown="1">
@@ -22,8 +23,8 @@ Proyek [hidrokit] (dan [hidrokit-nb]) memiliki berbagai jenis dokumentasi antara
 4. **[readthedocs] / API (Python)**: dokumentasi teknis berbahasa inggris yang dibuat berdasarkan *docstring* dalam kode python. Dokumentasi ini ditujukan untuk pengembangan kode python.
 
 <!-- LINK -->
-[hidrokit]: https://taruma.github.io/hidrokit
-[hidrokit-nb]: https://taruma.github.io/hidrokit-nb
+[hidrokit]: https://hidrokit.github.io/hidrokit
+[hidrokit-nb]: https://hidrokit.github.io/notebook
 [readthedocs]: https://hidrokit.readthedocs.io
 
 ---
@@ -72,8 +73,8 @@ Berikut panduan dokumentasi yang digunakan sebagai acuan di proyek ini:
 **Nemu yang keliru di dokumen? 😳 Gak usah ragu buat isu / PR 🦹‍♀️🦹‍♂️**
 {: .text-delta .fs-2 .fw-500}
 
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
-[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/hidrokit/hidrokit/compare){: .btn .btn-green}
 
 </div>
 

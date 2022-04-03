@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Home
-# nav_order: 1
+nav_order: 1
 permalink: /
+last_modified_date: 2022-04-01
 ---
 <div align="center">
   <img src="{{ site.baseurl }}/assets/images/presskit/hidrokit-800x200.jpg" alt="hidrokit banner"><br>
@@ -11,6 +12,7 @@ permalink: /
 
 ![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Pytest)
 ![GitHub license](https://img.shields.io/github/license/hidrokit/hidrokit.svg)
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/hidrokit/hidrokit.svg?label=recent%20version)
 [![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
@@ -32,9 +34,11 @@ permalink: /
 
 [Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 [Berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
-[Lihat di GitHub](//github.com/hidrokit/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
 
 
+<a href="https://github.com/hidrokit/hidrokit/discussions" target="_blank">
+_Forum Diskusi_{: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
+</a>
 
 </div>
 
@@ -42,6 +46,9 @@ permalink: /
 <div align="center" markdown="1">
 **PACKAGE RELEASE**
 {: .label .label-red .fs-2 .fw-300 .text-delta}
+
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Pytest/master?label=build%40master&logo=python&style=flat-square)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Pytest/latest?label=build%40latest&logo=python&style=flat-square)
 
 ![PyPI](https://img.shields.io/pypi/v/hidrokit.svg?label=on%20PyPI&style=flat-square)
 ![GitHub release](https://img.shields.io/github/release/hidrokit/hidrokit.svg?label=on%20GitHub&style=flat-square)
@@ -63,7 +70,7 @@ permalink: /
 **SITE/PAGES STATUS**
 {: .label .label-purple .fs-2 .fw-300 .text-delta}
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Jekyll%20Build%20Pages?logo=jekyll)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hidrokit/hidrokit/Jekyll%20Build%20Pages?logo=jekyll&style=flat-square)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hidrokit/hidrokit/gh-pages.svg?style=flat-square)
 ![GitHub issues by-label](https://img.shields.io/github/issues/hidrokit/hidrokit/site.svg?style=flat-square)
 ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/hidrokit/hidrokit/site.svg?style=flat-square)
@@ -74,15 +81,31 @@ permalink: /
 THANKS TO
 {: .label .label-green .fs-2 .fw-300 .text-delta}
 
-![GitHub contributors](https://img.shields.io/github/contributors/hidrokit/hidrokit.svg?style=flat-square)
-![Sponsor](https://img.shields.io/badge/sponsored%20by-LKO-green.svg?style=flat-square)
-[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/sponsored%20by-PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
+![GitHub contributors](https://img.shields.io/github/contributors/hidrokit/hidrokit.svg?label=kontributor)
+
+![Sponsor](https://img.shields.io/badge/LKO-green.svg)
+[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
+
 </div>
 
 ---
+
+<div align="center" markdown="1">
+SPONSOR
+{: .label .label-green .fs-2 .fw-300 .text-delta}
+
+</div>
+
+<div align="center">
+    <a href="http://www.fiako.co.id/" target="_blank"><img src="assets/images/logo_fiako.png" alt="PT. FIAKO Enjiniring Indonesia" width="200"></a>
+</div>
+
+
+---
 <div align="left" markdown="1">
-Proyek hidrokit, hidrokit/notebook, hidrokit/blog dikelola oleh tim [@hidrokit]
+Proyek [hidrokit] dikelola oleh [@taruma]
 {: .no_toc .text-delta .fs-2}
 </div>
 
-[@hidrokit]: https://hidrokit.github.io
+[hidrokit]: https://hidrokit.github.io
+[@taruma]: https://taruma.github.io

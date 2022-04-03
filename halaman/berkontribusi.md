@@ -5,6 +5,7 @@ permalink: /berkontribusi
 nav_order: 2
 has_children: true
 has_toc: false
+last_modified_date: 2022-04-03
 ---
 
 <div align="center" markdown="1">
@@ -34,7 +35,7 @@ Anda juga bisa menganggap proyek ini sebagai latihan Anda atau langkah awal dala
 
 ## Roadmap
 
-Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/taruma/hidrokit/issues) atau [halaman _project_ github](https://github.com/taruma/hidrokit/projects).
+Untuk memantau status pengembangan hidrokit, Anda bisa melihatnya pada [halaman isu di github](https://github.com/hidrokit/hidrokit/issues) atau [halaman _project_ github](https://github.com/hidrokit/hidrokit/projects?type=beta).
 
 ## Kategori Kontribusi
 
@@ -58,8 +59,8 @@ Ada dua istilah yang akan sering digunakan dalam proyek ini yaitu isu (_issue_) 
 **Langsung ada ide? 🙀 Buruan buat _isu_ / _pull request_ sebelum idenya terbang. 💸💸 ️**
 {: .text-delta .fs-2 .fw-500}
 
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
-[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/hidrokit/hidrokit/compare){: .btn .btn-green}
 
 </div>
 
@@ -73,7 +74,7 @@ Ada dua istilah yang akan sering digunakan dalam proyek ini yaitu isu (_issue_) 
 Kami **menyarankan** mengikuti beberapa saran berikut ini saat berkomunikasi di Github dan/atau di dalam komunitas hidrokit:
 - Menggunakan bahasa Indonesia atau bahasa Inggris (utamakan bahasa yang Anda kuasai). Penggunaan bahasa Indonesia sangat dianjurkan.
 - Hindari menggunakan bahasa daerah, bahasa gaul, atau menyingkat kata/kalimat yang tidak umum.
-- Menggunakan panggilan netral dan inklusif. Hindari menggunakan panggilan seperti pak/bu/kak/mas/bos. (Dinyatakan pada [kode etik]({{ site.baseurl }}{% link halaman/kontribusi/kode-etik.md %}) paragraf pertama bagian janji kami)
+- Menggunakan panggilan netral dan inklusif.
 
 ---
 <div align="center" markdown="1">
@@ -108,7 +109,7 @@ Baca lebih lanjut:
 
 ### Lisensi
 
-Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebuah produk yang dimasuk. Jika Anda menyertakan potongan kode, harap menyertakan lisensinya dan menyertakan pemiliknya. Lisensi proyek hidrokit sendiri mengikuti [lisensi MIT](https://choosealicense.com/licenses/mit/). Untuk sumber yang digunakan dalam proyek ini bisa dilihat di halaman [Sumber]({{ site.baseurl }}{% link halaman/serbaneka/sumber.md %}).
+Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebuah produk yang dimasukkan. Jika Anda menyertakan potongan kode, harap menyertakan lisensinya dan menyertakan pemiliknya. Lisensi proyek hidrokit sendiri mengikuti [lisensi MIT](https://choosealicense.com/licenses/mit/). Untuk sumber yang digunakan dalam proyek ini bisa dilihat di halaman [Sumber]({{ site.baseurl }}{% link halaman/serbaneka/sumber.md %}).
 
 ---
 
@@ -116,8 +117,8 @@ Dalam berkontribusi harap mengingat dan mematuhi lisensi yang berlaku pada sebua
 **Tunggu apa lagi? 🤔 Ayo langsung buat _issue_ atau _pull request_! 🏃‍♂️**
 {: .text-delta .fs-2 .fw-500}
 
-[Buat Isu](https://github.com/taruma/hidrokit/issues/new/choose){: .btn .btn-blue}
-[Buat _Pull Request_](https://github.com/taruma/hidrokit/compare){: .btn .btn-green}
+[Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
+[Buat _Pull Request_](https://github.com/hidrokit/hidrokit/compare){: .btn .btn-green}
 
 </div>
 

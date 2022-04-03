@@ -4,6 +4,7 @@ title: Instalasi
 parent: Panduan
 permalink: /panduan/instalasi
 nav_order: 2
+last_modified_date: 2019-07-09
 ---
 
 Halaman ini menjelaskan bagaimana memasang/instalasi paket hidrokit.
@@ -42,20 +43,20 @@ pip install hidrokit
 - Versi stabil (_stable_) pada cabang `master`.
 
 ```bash
-pip install git+https://github.com/taruma/hidrokit.git
+pip install git+https://github.com/hidrokit/hidrokit.git
 ```
 
 - Versi tidak stabil/pengembangan (_unstable_) pada cabang `latest`.
 
 ```bash
-pip install git+https://github.com/taruma/hidrokit.git@latest
+pip install git+https://github.com/hidrokit/hidrokit.git@latest
 ```
 
 ### Melalui Jupyter Notebook
 
 Anda dapat melakukan instalasi langsung melalui Jupyter Notebook (Google Colab/Azure Notebook) dengan menambah tanda seru (`!`) di depan perintah `pip` seperti:
 ```
-!pip install git+https://github.com/taruma/hidrokit.git@latest
+!pip install git+https://github.com/hidrokit/hidrokit.git@latest
 ```
 
 ## Penggunaan
