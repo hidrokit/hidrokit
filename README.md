@@ -2,12 +2,12 @@
 <div align="center">
 <a href="https://hidrokit.github.io/hidrokit"><img src="https://hidrokit.github.io/hidrokit/assets/images/presskit/hidrokit-800x200.jpg" alt="logo hidrokit"></a><br>
 
+[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/sponsored%20by-PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
+
 ![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 [![GitHub license](https://img.shields.io/github/license/hidrokit/hidrokit.svg)](https://github.com/hidrokit/hidrokit/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/145389179.svg)](https://zenodo.org/badge/latestdoi/145389179)
-
-[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/sponsored%20by-PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
 
 <a href="https://hidrokit.github.io/hidrokit"><b>Kunjungi situs resmi hidrokit.</b></a>
 </div>
@@ -77,19 +77,7 @@ from hidrokit.contrib.taruma import anfrek
 from hidrokit.contrib.taruma import hk88, hk102
 ```
 
-Untuk penggunaan baca halaman [penggunaan](https://hidrokit.github.io/hidrokit/panduan/penggunaan).
-
-### Laporan Implementasi
-
-Penggunaan hidrokit juga bisa dilihat dari [_Laporan Implementasi_](https://taruma.github.io/vivaldi/laporan-implementasi). Berikut daftar laporan implementasi yang telah dibuat:
-
-no laporan | tanggal | versi hidrokit | judul | lihat (nbviewer) | pdf
-:- | :- | :- | :- | :- | :-
-**LI-04** | 11 Februari 2020 | `0.3.5` | Perbandingan Model Variasi _Recurrent Neural Networks_ Pada Kasus Prediksi Debit Aliran | [nbviewer](https://nbviewer.org/gist/taruma/9d1ef5c6d629c792bed0c3f68b324675) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoVm7i0EuKdPkPlzVg?e=rjXNpf) 
-**LI-03** | 16 Januari 2020 | `0.3.5` | Analisis Hidrologi Menggunakan hidrokit | [nbviewer](https://nbviewer.jupyter.org/gist/taruma/4c1ed1212290965ecda056f45d7aaea2) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoU3ehyoy45_RG6hjA?e=5wUb8d)
-**LI-02** | 22 Oktober 2019 | `0.3.2` | Prediksi Debit Aliran Menggunakan Long Short-Term Memory (LSTM) | [nbviewer](https://nbviewer.jupyter.org/gist/taruma/8186dba212875f6b3f1677a5e2f9a70f) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoU1sISX0gc4BammwQ?e=MGHcwT)
-**LI-01** | 13 Juli 2019 | `0.2.0` | Prediksi Kualitas Air Menggunakan Artificial Neural Networks | [nbviewer](https://nbviewer.jupyter.org/gist/taruma/12bf06ab7307340525eecf5b3c8beb9c) | [pdf](https://1drv.ms/b/s!AmxSTa4UunElhoU27FZ3pMHVvWeMsA?e=ouC2KK)
-
+Untuk penggunaan baca halaman [penggunaan](https://hidrokit.github.io/hidrokit/panduan/penggunaan). Untuk contoh penggunaan paket hidrokit dan manual bisa lihat di [kumpulan notebook situs hidrokit/notebook](https://hidrokit.github.io/notebook/kumpulan-notebook).
 
 ## Untuk Kontributor
 
@@ -102,4 +90,4 @@ Paket hidrokit menggunakan [lisensi MIT](LICENSE.txt). Dokumentasi yang disertai
 
 - Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022.
 - Terima kasih untuk **LKO** yang telah mensponsori proyek ini sejak versi 0.2.x hingga 0.3.6.
-- Terima kasih untuk tim hidrokit (Cahya Suryadi, Christine Dorty Hadi, dan Dicky Muhammad Fadli) atas dukungannya dalam pengembangan hidrokit. 
+- Terima kasih untuk tim hidrokit-syndicate (_Cahya Suryadi_, _Christine Dorty Hadi_, dan _Dicky Muhammad Fadli_) atas dukungannya dalam pengembangan hidrokit. 
