@@ -4,7 +4,7 @@ title: Changelog
 description: dokumentasi perubahan proyek hidrokit
 nav_order: 2
 permalink: /changelog
-last_modified_date: 2022-03-25
+last_modified_date: 2022-04-03
 ---
 Seluruh perubahan penting pada proyek ini akan didokumentasikan pada berkas ini. Dokumentasi ini hanya untuk perubahan pada paket python.
 
@@ -17,6 +17,12 @@ Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.
 ---
 
 ## Belum Rilis
+
+---
+
+## Telah Rilis
+
+### 2022-04-05 - 0.4.0
 
 **Added/Ditambahkan**
 - Penambahan modul `.contrib.taruma`:
@@ -41,10 +47,6 @@ Penulisan diadaptasi dari [Keep a Changelog](https://keepachangelog.com/id-ID/1.
 
 **Changed/Diubah**
 - #162 Luaran argumen `as_df=False` pada fungsi `.contrib.taruma.hk88.read_workbook()` berubah dari luaran berupa `list` menjadi `dictionary`. 
-
----
-
-## Telah Rilis
 
 ### 2020-07-13 - 0.3.6
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-# nav_order: 1
+nav_order: 1
 permalink: /
 last_modified_date: 2022-04-01
 ---
@@ -34,7 +34,11 @@ last_modified_date: 2022-04-01
 
 [Tentang hidrokit]({{ site.baseurl }}{% link halaman/tentang-hidrokit.md %}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 [Berkontribusi]({{ site.baseurl }}{% link halaman/berkontribusi.md %}){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 }
-[Lihat di GitHub](//github.com/hidrokit/hidrokit){: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
+
+
+<a href="https://github.com/hidrokit/hidrokit/discussions" target="_blank">
+_Forum Diskusi_{: .btn .btn-blue .fs-5 .mb-4 .mb-md-0 }
+</a>
 
 </div>
 

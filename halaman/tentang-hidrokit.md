@@ -3,7 +3,7 @@ layout: default
 title: Tentang hidrokit
 nav_order: 1
 permalink: /tentang-hidrokit
-last_modified_date: 2019-07-09
+last_modified_date: 2022-04-03
 ---
 
 <!-- <div align="center">
@@ -86,6 +86,7 @@ Tujuan dari proyek hidrokit antara lain:
 Tidak lengkap proyek _open source_ tanpa kata **berkolaborasi** dan **berkontribusi**. Anda bisa membaca halaman [*how to contribute*](https://opensource.guide/how-to-contribute/) untuk mengetahui hal apa saja yang bisa anda berikan dalam proyek open-source. Segala latar belakang apapun, Anda tetap bisa berkontribusi. Jika ada yang mau disampaikan sekarang, jangan ragu untuk langsung menekan tombol dibawah ini untuk membuat *issue* dan memulai diskusi.
 
 <div align="center" markdown="1">
+[Memulai Diskusi](https://github.com/hidrokit/hidrokit/discussions/new){: .btn .btn-green}
 [Buat Isu](https://github.com/hidrokit/hidrokit/issues/new/choose){: .btn .btn-blue}
 </div>
 
