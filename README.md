@@ -91,3 +91,4 @@ Paket hidrokit menggunakan [lisensi MIT](LICENSE.txt). Dokumentasi yang disertai
 - Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022.
 - Terima kasih untuk **LKO** yang telah mensponsori proyek ini sejak versi 0.2.x hingga 0.3.6.
 - Terima kasih untuk tim hidrokit-syndicate (_Cahya Suryadi_, _Christine Dorty Hadi_, dan _Dicky Muhammad Fadli_) atas dukungannya dalam pengembangan hidrokit. 
+- Terima kasih untuk [@firmansennie](https://www.instagram.com/firmansenie/) untuk design logo hidrokit.
