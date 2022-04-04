@@ -19,4 +19,5 @@ dependencies:
   - sphinx # sphinx settings
   - numpydoc
   - pip # pip installation
+  - scipy
   

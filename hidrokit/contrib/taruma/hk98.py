@@ -27,14 +27,15 @@ def summary_station(dataset, column, ufunc, ufunc_col, n_days='MS'):
     )
 
 
-def summary_all(dataset, ufunc, ufunc_col, columns=None, n_days='MS'):
+def summary_all(dataset, ufunc, ufunc_col, columns=None, n_days='MS', verbose=False):
     res = []
 
     columns = columns if columns is not None else list(dataset.columns)
     columns = columns if isinstance(columns, (list, tuple)) else [columns]
 
     for column in columns:
-        print('PROCESSING:', column)
+        if verbose:
+            print('PROCESSING:', column)
         res.append(
             summary_station(dataset, column, ufunc, ufunc_col, n_days=n_days)
         )
