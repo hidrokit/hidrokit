@@ -100,11 +100,17 @@ def calc_xcr(alpha, dk, source='scipy'):
         return stats.chi2.isf(alpha, dk)
 
 def chisquare(
-    df, col=None, dist='normal', source_dist='scipy',
+    df, col=None, dist='normal', source_dist=None,
     alpha=0.05, source_xcr='scipy', show_stat=True,
     ):
 
-    source_dist = 'gumbel' if dist.lower() == 'gumbel' else source_dist
+    if source_dist is None:
+        source_dist = (
+            "scipy"
+            if dist.lower() in ["normal", "lognormal", "logpearson3"]
+            else "gumbel"
+        )
+
 
     col = df.columns[0] if col is None else col
     data = df[[col]].copy()

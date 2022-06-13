@@ -15,16 +15,22 @@ def summary_station(dataset, column, ufunc, ufunc_col, n_days='MS'):
     if len(ufunc) != len(ufunc_col):
         raise ValueError('length ufunc and ufunc_col are not matched.')
 
-    ix_month = []
-    val_month = []
-    for _, x in dataset[column].groupby(by=grouped):
-        each_month = x.groupby(pd.Grouper(freq=n_days)).agg(ufunc)
-        val_month.append(each_month.values)
-        ix_month += each_month.index
-    return pd.DataFrame(
-        data=np.vstack(val_month), index=ix_month,
-        columns=pd.MultiIndex.from_product([[column], ufunc_col])
-    )
+    if n_days.endswith("D") or n_days.endswith("MS") or n_days.endswith("M"):
+        ix_month = []
+        val_month = []
+        for _, x in dataset[column].groupby(by=grouped):
+            each_month = x.groupby(pd.Grouper(freq=n_days)).agg(ufunc)
+            val_month.append(each_month.values)
+            ix_month.append(each_month.index.to_numpy())
+        return pd.DataFrame(
+            data=np.vstack(val_month),
+            index=np.hstack(ix_month),
+            columns=pd.MultiIndex.from_product([[column], ufunc_col]),
+        ).rename_axis("DATE")
+    else:
+        summary = dataset[[column]].resample(n_days).agg(ufunc)
+        summary.columns = pd.MultiIndex.from_product([[column], ufunc_col])
+        return summary
 
 
 def summary_all(dataset, ufunc, ufunc_col, columns=None, n_days='MS', verbose=False):
