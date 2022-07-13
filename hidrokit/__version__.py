@@ -2,7 +2,7 @@
 hidrokit version
 """
 
-VERSION = (0, 4, 1)
+VERSION = (0, 5, 0)
 DEV_STATUS = ""
 
 __version__ = '.'.join(map(str, VERSION)) + DEV_STATUS
