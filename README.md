@@ -2,8 +2,6 @@
 <div align="center">
 <a href="https://hidrokit.github.io/hidrokit"><img src="https://hidrokit.github.io/hidrokit/assets/images/presskit/hidrokit-800x200-transparent.png" alt="logo hidrokit"></a><br>
 
-[![Sponsored by PT. FIAKO Enjiniring Indonesia](https://img.shields.io/badge/sponsored%20by-PT.%20FIAKO%20Enjiniring%20Indonesia-blue.svg)](http://www.fiako.co.id/)
-
 ![PyPI - Status](https://img.shields.io/pypi/status/hidrokit.svg)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hidrokit.svg)
 [![GitHub license](https://img.shields.io/github/license/hidrokit/hidrokit.svg)](https://github.com/hidrokit/hidrokit/blob/master/LICENSE)
@@ -88,7 +86,7 @@ Tertarik menjadi kontributor? Baca [**berkontribusi**](https://hidrokit.github.i
 Paket hidrokit menggunakan [lisensi MIT](LICENSE.txt). Dokumentasi yang disertai pada proyek ini menggunakan lisensi [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/deed.id). 
 ## Acknowledgement
 
-- Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022.
+- Terima kasih untuk [PT. FIAKO Enjiniring Indonesia](http://www.fiako.co.id/) (FIAKO ENGINEERING) yang telah mensponsori proyek ini sejak Februari 2022 hingga Februari 2024.
 - Terima kasih untuk **LKO** yang telah mensponsori proyek ini sejak versi 0.2.x hingga 0.3.6.
 - Terima kasih untuk tim hidrokit-syndicate (_Cahya Suryadi_, _Christine Dorty Hadi_, dan _Dicky Muhammad Fadli_) atas dukungannya dalam pengembangan hidrokit. 
 - Terima kasih untuk [@firmansennie](https://www.instagram.com/firmansenie/) untuk design logo hidrokit.
