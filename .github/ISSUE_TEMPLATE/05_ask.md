@@ -1,11 +1,10 @@
 ---
 name: "Question"
-about: "Pertanyaan/Diskusi"
+about: "Question/Discussion"
 title: ""
 labels: ask
 ---
 
-### Ringkasan
+### Summary
 
-Tulis apa yang ingin didiskusikan dan ditanyakan. 
-
+Write what you want to discuss and ask.

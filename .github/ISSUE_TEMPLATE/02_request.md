@@ -1,14 +1,14 @@
 ---
 name: "Request"
-about: "Permintaan fitur/ide"
+about: "Feature/Idea Request"
 title: ""
 labels: request
 ---
 
-### Permintaan fitur/ide
+### Feature/Idea Request
 
-Jelaskan dengan ringkas permintaan fitur yang diharapkan. 
+Briefly explain the desired feature request.
 
-### Alasan/Sumber
+### Reason/Source
 
-Sertakan alasan/sumber permintaan fitur.
+Include the reason/source for the feature request.

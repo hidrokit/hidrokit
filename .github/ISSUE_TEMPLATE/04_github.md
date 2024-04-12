@@ -1,11 +1,10 @@
 ---
 name: "Github Issues"
-about: "Permintaan/Permasalahan layanan Github"
+about: "Request/Issue with Github service"
 title: ""
 labels: github
 ---
 
-### Ringkasan
+### Summary
 
-Jelaskan dengan ringkas permintaan/permasalahan pada situs GitHub. 
-
+Briefly explain the request/issue on the GitHub site.
