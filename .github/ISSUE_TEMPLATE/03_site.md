@@ -1,11 +1,10 @@
 ---
 name: "Site/Pages Issues"
-about: "Perubahan/Perbaikan Situs"
+about: "Changes/Improvements to the Website"
 title: ""
 labels: site
 ---
 
-### Ringkasan
+### Summary
 
-Jelaskan dengan ringkas perubahan/permintaan pada GitHub Pages/Situs hidrokit. 
-
+Briefly explain the changes/requests regarding GitHub Pages/hidrokit site.

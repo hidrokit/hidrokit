@@ -1,20 +1,20 @@
 name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
 categories:
-  - title: '🚀 Fitur Baru'
+  - title: '🚀 New Features'
     labels:
       - 'feature'
-  - title: '✨ Pembaruan'
+  - title: '✨ Enhancements'
     labels:
       - 'enhancement'
-  - title: '🐛 Perbaikan'
+  - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
-  - title: '📃 Dokumentasi'
+  - title: '📃 Documentation'
     labels:
       - 'docs'
       - 'documentation'
-  - title: '🖥️ Situs'
+  - title: '🖥️ Website'
     labels:
       - 'site'
   - title: '📎 Github'
@@ -39,8 +39,8 @@ version-resolver:
   default: patch
 
 template: |
-  ## Perubahan
+  ## Changes
   $CHANGES
 
-  ## Daftar Kontributor
+  ## Contributors
   $CONTRIBUTORS
