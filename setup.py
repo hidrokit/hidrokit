@@ -17,12 +17,16 @@ DESCRIPTION = 'analisis hidrologi dengan python'
 URL = 'https://github.com/hidrokit/hidrokit'
 EMAIL = 'hi@taruma.info'
 AUTHOR = 'Taruma Sakti Megariansyah'
-REQUIRES_PYTHON = '>=3.6.0'
+REQUIRES_PYTHON = '>=3.9.0'
 VERSION = ''
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'numpy', 'pandas', 'matplotlib',
+    'matplotlib==3.8.0',
+    'numpy==1.26.4',
+    'pandas==2.2.2',
+    'scipy==1.13.0',
+    'xlrd==2.0.1',
 ]
 
 # What packages are optional?
@@ -94,8 +98,9 @@ setup(
         # Python Version
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
 
     project_urls={
