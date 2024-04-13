@@ -5,6 +5,7 @@ from calendar import isleap
 from collections import defaultdict
 from pathlib import Path
 from typing import Callable, Any, Dict, Union, List
+import logging
 import pandas as pd
 import numpy as np
 from hidrokit.contrib.taruma.utils import deprecated
@@ -196,25 +197,54 @@ def _check_invalid(array, validation_func=float):
     return invalid_elements_indices if invalid_elements_indices is not None else None
 
 
-def read_folder(dataset_path, pattern, fmt, prefix="", invalid=False):
+def read_folder(
+    dataset_path: str,
+    filename_pattern: str,
+    data_format: str,
+    station_name_prefix: str = "",
+    check_for_invalid_data: bool = False,
+) -> Union[Dict[str, np.ndarray], Dict[str, np.ndarray], Dict[str, List[int]]]:
+    """
+    Read files from a folder and extract data for each station.
+
+    Args:
+        dataset_path (str): The path to the dataset folder.
+        filename_pattern (str): The pattern to match the filenames.
+        data_format (str): The format of the data in the files.
+        station_name_prefix (str, optional): The prefix to add to the station names. 
+            Defaults to "".
+        check_for_invalid_data (bool, optional): Whether to check for invalid data. 
+            Defaults to False.
+
+    Returns:
+        dict: A dictionary containing the extracted data for each station.
+            If `check_for_invalid_data` is True, 
+            it also returns a dictionary of invalid data for each station.
+    """
     dataset_path = Path(dataset_path)
-    total_files = len(list(dataset_path.glob(pattern)))
-    print(f"Found {total_files} file(s)")
+    all_files = list(dataset_path.rglob(filename_pattern))
+    total_files = len(all_files)
 
-    data_allstation = {}
-    data_invalid = {}
+    if total_files == 0:
+        logging.warning("No files found that match the pattern %s", filename_pattern)
+        return {}
 
-    for counter, file in enumerate(dataset_path.glob(pattern)):
-        print(f":: {counter + 1:^4}:\t{file.name:s}")
-        station_name = prefix + "_".join(file.stem.split("_")[1:-2])
-        data_each_station = _get_data_all_year(file, data_format=fmt)
-        data_allstation[station_name] = data_each_station
-        if invalid:
-            data_invalid[station_name] = _check_invalid(data_each_station)
+    logging.info("Found %d file(s)", total_files)
 
-    if invalid:
-        return data_allstation, data_invalid
-    return data_allstation
+    all_station_data = {}
+    invalid_data = {}
+
+    for counter, file in enumerate(dataset_path.glob(filename_pattern)):
+        logging.info(":: %4d:\t%s", counter, file.name)
+        station_name = station_name_prefix + "_".join(file.stem.split("_")[1:-2])
+        each_station_data = _get_data_all_year(file, data_format=data_format)
+        all_station_data[station_name] = each_station_data
+        if check_for_invalid_data:
+            invalid_data[station_name] = _check_invalid(each_station_data)
+
+    if check_for_invalid_data:
+        return all_station_data, invalid_data
+    return all_station_data
 
 
 @deprecated("_extract_years_from_excel")
