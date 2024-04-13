@@ -1,11 +1,11 @@
 """manual:
 https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50"""
 
-import pandas as pd
-import numpy as np
 from calendar import isleap
 from collections import defaultdict
 from pathlib import Path
+import pandas as pd
+import numpy as np
 
 
 def _get_years(io):
@@ -40,8 +40,7 @@ def _get_data_oneyear(io, year, fmt):
     data = pivot_table.melt().drop('variable', axis=1)
     if isleap(year):
         return data['value'].drop(_drop_leap).values
-    else:
-        return data['value'].drop(_drop).values
+    return data['value'].drop(_drop).values
 
 
 def _get_data_allyear(io, fmt, aslist=False):
