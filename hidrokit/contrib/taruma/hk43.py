@@ -163,7 +163,7 @@ def _get_invalid_elements_indices(
     return invalid_element_indices
 
 
-def _have_invalid(array: List[Any], validation_func: Callable[[Any], Any]) -> bool:
+def have_invalid(array: List[Any], validation_func: Callable[[Any], Any]) -> bool:
     """
     Check if the given array has any invalid elements based on the provided validation function.
 
