@@ -39,7 +39,7 @@ from operator import itemgetter
 from typing import List
 import pandas as pd
 import numpy as np
-from hidrokit.contrib.taruma.deprecated_func import deprecated
+from hidrokit.contrib.taruma.utils import deprecated
 
 
 def read_bmkg_excel(io):
