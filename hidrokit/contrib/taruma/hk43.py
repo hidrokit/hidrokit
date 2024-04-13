@@ -84,13 +84,13 @@ def _check_invalid(array, check=np.float):
 def read_folder(dataset_path, pattern, fmt, prefix='', invalid=False):
     dataset_path = Path(dataset_path)
     total_files = len(list(dataset_path.glob(pattern)))
-    print('Found {} file(s)'.format(total_files))
+    print(f'Found {total_files} file(s)')
 
     data_allstation = {}
     data_invalid = {}
 
     for counter, file in enumerate(dataset_path.glob(pattern)):
-        print(':: {:^4}:\t{:s}'.format(counter + 1, file.name))
+        print(f':: {counter + 1:^4}:\t{file.name:s}')
         station_name = prefix + '_'.join(file.stem.split('_')[1:-2])
         data_each_station = _get_data_allyear(file, fmt=fmt)
         data_allstation[station_name] = data_each_station
