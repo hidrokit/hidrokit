@@ -99,5 +99,4 @@ def read_folder(dataset_path, pattern, fmt, prefix='', invalid=False):
 
     if invalid:
         return data_allstation, data_invalid
-    else:
-        return data_allstation
+    return data_allstation
