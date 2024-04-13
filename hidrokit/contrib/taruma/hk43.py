@@ -9,18 +9,21 @@ import pandas as pd
 import numpy as np
 from hidrokit.contrib.taruma.utils import deprecated
 
+DROP_INDICES = [59, 60, 61, 123, 185, 278, 340]
+DROP_INDICES_LEAP = [60, 61, 123, 185, 278, 340]
 
-def _extract_years_from_excel(io: str) -> List[int]:
+
+def _extract_years_from_excel(file_path: str) -> List[int]:
     """
     Get a list of years from an Excel file.
 
-    Args:
-        io (str): The path to the Excel file.
+    Parameters:
+        file_path (str): The path to the Excel file.
 
     Returns:
         List[int]: A sorted list of years found in the Excel file.
     """
-    excel = pd.ExcelFile(io)
+    excel = pd.ExcelFile(file_path)
     years = []
     for sheet in excel.sheet_names:
         if sheet.isdigit():
@@ -61,15 +64,37 @@ def _get_pivot_from_excel(excel_file: str, year: int, data_format: str) -> pd.Da
     return df.iloc[start_row:end_row, :]
 
 
-def _get_data_oneyear(io, year, fmt):
-    _drop = [59, 60, 61, 123, 185, 278, 340]
-    _drop_leap = [60, 61, 123, 185, 278, 340]
+def _get_data_for_year(file_path, year, data_format):
+    """
+    Get data for a specific year from a file and return it as a single vector numpy array.
 
-    pivot_table = _get_pivot_from_excel(io, str(year), data_format=fmt)
-    data = pivot_table.melt().drop("variable", axis=1)
+    Parameters:
+        file_path (str): The path to the file.
+        year (int): The year for which to retrieve the data.
+        data_format (str): The format of the data.
+
+    Returns:
+        numpy.ndarray: The data for the specified year.
+
+    Raises:
+        ValueError: If the year is not a positive integer.
+        IOError: If the file cannot be read.
+    """
+    if not isinstance(year, int) or year < 0:
+        raise ValueError("Year must be a positive integer.")
+
+    try:
+        pivot_table = _get_pivot_from_excel(
+            file_path, str(year), data_format=data_format
+        )
+    except Exception as e:
+        raise IOError("Could not read file: " + str(e)) from e
+
+    reshaped_data = pivot_table.melt().drop("variable", axis=1)
+
     if isleap(year):
-        return data["value"].drop(_drop_leap).values
-    return data["value"].drop(_drop).values
+        return reshaped_data["value"].drop(DROP_INDICES_LEAP).values
+    return reshaped_data["value"].drop(DROP_INDICES).values
 
 
 def _get_data_allyear(io, fmt, aslist=False):
@@ -78,7 +103,7 @@ def _get_data_allyear(io, fmt, aslist=False):
     data_each_year = []
 
     for year in list_years:
-        data = _get_data_oneyear(io, year=year, fmt=fmt)
+        data = _get_data_for_year(io, year=year, data_format=fmt)
         data_each_year.append(data)
 
     if aslist:
@@ -139,3 +164,8 @@ def _get_years(io: str) -> List[int]:
 @deprecated("_get_pivot_from_excel")
 def _get_pivot(io, year, fmt):
     return _get_pivot_from_excel(io, year, fmt)
+
+
+@deprecated("_get_data_for_year")
+def _get_data_oneyear(io, year, fmt):
+    return _get_data_for_year(io, year, fmt)
