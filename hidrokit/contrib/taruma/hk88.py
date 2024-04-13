@@ -46,10 +46,22 @@ def _generate_date_range_for_year(year):
     return pd.date_range(start_date, end_date, inclusive="left")
 
 
-def _yearly_df(df, year, station_name):
-    """Create dataframe for one year"""
+def _create_yearly_dataframe(
+    dataframe: pd.DataFrame, year: int, station_name: str
+) -> pd.DataFrame:
+    """
+    Create a DataFrame for one year.
+
+    Parameters:
+        df (DataFrame): The original DataFrame.
+        year (int): The year to filter the DataFrame.
+        station_name (str): The name of the station.
+
+    Returns:
+        DataFrame: A new DataFrame with data for the specified year and station.
+    """
     return pd.DataFrame(
-        data=_melt_to_year_vector(df, year),
+        data=_melt_to_year_vector(dataframe, year),
         index=_generate_date_range_for_year(year),
         columns=[station_name],
     )
@@ -63,7 +75,7 @@ def _data_from_sheet(df, station_name, as_df=True):
     for i in range(2, n_years * 33, 33):
         year = int(df.iloc[i, 1])
         pivot = df.iloc[i : i + 31, 4:16]
-        data = _yearly_df(pivot, year, station_name)
+        data = _create_yearly_dataframe(pivot, year, station_name)
         frames.append(data)
 
     if as_df:
