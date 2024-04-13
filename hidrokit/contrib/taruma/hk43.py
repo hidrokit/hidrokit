@@ -106,7 +106,8 @@ def _get_data_allyear(
     Args:
         file_path (Union[str, Path]): The path to the file.
         data_format (str): The format of the data.
-        return_as_list (bool, optional): Whether to return the data as a list of arrays. Defaults to False.
+        return_as_list (bool, optional): Whether to return the data as a list of arrays. 
+            Defaults to False.
 
     Returns:
         Union[List[np.ndarray], np.ndarray]: The data for all years.
