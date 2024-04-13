@@ -15,17 +15,15 @@ Functions:
 - read_hidrokit_workbook(
     file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True): 
     Read data from an hidrokit Excel workbook and return it as a dictionary or a pandas DataFrame.
-- _melt_to_year_vector(dataframe: pd.DataFrame, year: int) -> np.ndarray:
+- _melt_to_year_vector(dataframe, year):
     Melt a pandas DataFrame to a 1D numpy array for a specific year.
-- _generate_date_range_for_year(year) -> pd.DatetimeIndex:
+- _generate_date_range_for_year(year):
     Return DateTimeIndex object for one year.
-- _create_yearly_dataframe(dataframe: pd.DataFrame, year: int, station_name: str) -> pd.DataFrame:
+- _create_yearly_dataframe(dataframe, year, station_name):
     Create a DataFrame for one year.
-- _extract_data_from_sheet(
-    dataframe: pd.DataFrame, station: str, return_as_dataframe: bool = True
-    ) -> Union[pd.DataFrame, List[pd.DataFrame]]:
-        Extracts data from a sheet in the given dataframe and returns it 
-        as a dataframe or a list of dataframes.
+- _extract_data_from_sheet(dataframe, station, return_as_dataframe=True):
+    Extracts data from a sheet in the given dataframe and returns it 
+    as a dataframe or a list of dataframes.
         
 Deprecated Functions:
 - _melt_to_array(*args, **kwargs):
@@ -42,7 +40,7 @@ Deprecated Functions:
 """
 
 from calendar import isleap
-from typing import List, Union
+from typing import List, Union, Dict
 import pandas as pd
 import numpy as np
 from hidrokit.contrib.taruma.utils import deprecated
@@ -73,7 +71,7 @@ def _melt_to_year_vector(dataframe: pd.DataFrame, year: int) -> np.ndarray:
     return melted_data["value"].drop(_drop).values
 
 
-def _generate_date_range_for_year(year):
+def _generate_date_range_for_year(year: int) -> pd.DatetimeIndex:
     """Return DateTimeIndex object for one year.
 
     Args:
@@ -141,8 +139,11 @@ def _extract_data_from_sheet(
 
 
 def read_hidrokit_workbook(
-    file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True
-):
+    file_path: str,
+    station_names: Union[List[str], str] = None,
+    ignore_prefix: str = "_",
+    return_as_dataframe: bool = True,
+) -> Union[Dict[str, pd.DataFrame], pd.DataFrame]:
     """
     Read data from an hidrokit Excel workbook.
 
