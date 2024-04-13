@@ -4,11 +4,22 @@ https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50"""
 from calendar import isleap
 from collections import defaultdict
 from pathlib import Path
+from typing import List
 import pandas as pd
 import numpy as np
+from hidrokit.contrib.taruma.utils import deprecated
 
 
-def _get_years(io):
+def _extract_years_from_excel(io: str) -> List[int]:
+    """
+    Get a list of years from an Excel file.
+
+    Args:
+        io (str): The path to the Excel file.
+
+    Returns:
+        List[int]: A sorted list of years found in the Excel file.
+    """
     excel = pd.ExcelFile(io)
     years = []
     for sheet in excel.sheet_names:
@@ -44,7 +55,7 @@ def _get_data_oneyear(io, year, fmt):
 
 
 def _get_data_allyear(io, fmt, aslist=False):
-    list_years = _get_years(io)
+    list_years = _extract_years_from_excel(io)
 
     data_each_year = []
 
@@ -100,3 +111,7 @@ def read_folder(dataset_path, pattern, fmt, prefix='', invalid=False):
     if invalid:
         return data_allstation, data_invalid
     return data_allstation
+
+@deprecated('_extract_years_from_excel')
+def _get_years(io: str) -> List[int]:
+    return _extract_years_from_excel(io)
