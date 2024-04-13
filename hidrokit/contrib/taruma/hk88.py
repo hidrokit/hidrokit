@@ -1,5 +1,30 @@
-"""manual:
-https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
+"""
+This module provides functions for reading and 
+    manipulating hydrological data from an Excel workbook.
+
+The functions in this module allow you to 
+    extract data from specific sheets in the workbook, 
+    filter the data by year and station, 
+    and return the data as a pandas DataFrame or a list of DataFrames.
+
+manual:
+    https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
+
+Functions:
+- read_workbook(file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True): 
+    Read data from an Excel workbook and return it as a dictionary or a pandas DataFrame.
+- _melt_to_year_vector(dataframe: pd.DataFrame, year: int) -> np.ndarray:
+    Melt a pandas DataFrame to a 1D numpy array for a specific year.
+- _generate_date_range_for_year(year) -> pd.DatetimeIndex:
+    Return DateTimeIndex object for one year.
+- _create_yearly_dataframe(dataframe: pd.DataFrame, year: int, station_name: str) -> pd.DataFrame:
+    Create a DataFrame for one year.
+- _extract_data_from_sheet(
+    dataframe: pd.DataFrame, station: str, return_as_dataframe: bool = True
+    ) -> Union[pd.DataFrame, List[pd.DataFrame]]:
+        Extracts data from a sheet in the given dataframe and returns it 
+        as a dataframe or a list of dataframes.
+
 """
 
 from calendar import isleap
