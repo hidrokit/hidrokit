@@ -4,7 +4,7 @@ https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50"""
 from calendar import isleap
 from collections import defaultdict
 from pathlib import Path
-from typing import List
+from typing import Union, List
 import pandas as pd
 import numpy as np
 from hidrokit.contrib.taruma.utils import deprecated
@@ -64,7 +64,7 @@ def _get_pivot_from_excel(excel_file: str, year: int, data_format: str) -> pd.Da
     return df.iloc[start_row:end_row, :]
 
 
-def _get_data_for_year(file_path, year, data_format):
+def _get_data_for_year(file_path: str, year: int, data_format: str) -> np.ndarray:
     """
     Get data for a specific year from a file and return it as a single vector numpy array.
 
@@ -97,7 +97,28 @@ def _get_data_for_year(file_path, year, data_format):
     return reshaped_data["value"].drop(DROP_INDICES).values
 
 
-def _get_data_allyear(file_path, data_format, return_as_list=False):
+def _get_data_allyear(
+    file_path: Union[str, Path], data_format: str, return_as_list: bool = False
+) -> Union[List[np.ndarray], np.ndarray]:
+    """
+    Get data for all years from a given file.
+
+    Args:
+        file_path (Union[str, Path]): The path to the file.
+        data_format (str): The format of the data.
+        return_as_list (bool, optional): Whether to return the data as a list of arrays. Defaults to False.
+
+    Returns:
+        Union[List[np.ndarray], np.ndarray]: The data for all years.
+
+    Raises:
+        FileNotFoundError: If the file does not exist.
+    """
+    file_path = Path(file_path)
+
+    if not file_path.exists():
+        raise FileNotFoundError(f"No such file or directory: '{file_path}'")
+
     list_years = _extract_years_from_excel(file_path)
 
     data_each_year = []
