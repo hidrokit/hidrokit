@@ -28,30 +28,48 @@ def _extract_years_from_excel(io: str) -> List[int]:
     return sorted(years)
 
 
-def _get_pivot(io, year, fmt):
+def _get_pivot_from_excel(excel_file, year, data_format):
+    """
+    Get a pivot table from an Excel file.
 
-    if fmt == 'uma.debit':
-        return pd.read_excel(
-            io, sheet_name=str(year),
-            header=None, usecols='AN:AY'
-        ).iloc[16:47, :]
+    Parameters:
+        excel_file (str): The path to the Excel file.
+        year (int): The year of the data to retrieve.
+        data_format (str): The format of the data to retrieve.
 
-    if fmt == 'uma.hujan':
-        return pd.read_excel(
-            io, sheet_name=str(year),
-            header=None, usecols='B:M'
-        ).iloc[19:50, :]
+    Returns:
+        pandas.DataFrame: The pivot table containing the data.
+
+    Raises:
+        ValueError: If the data format is unknown.
+    """
+    # Map data formats to parameters
+    formats = {
+        "uma.debit": ("AN:AY", 16, 47),
+        "uma.hujan": ("B:M", 19, 50),
+    }
+
+    if data_format not in formats:
+        raise ValueError(f"Unknown data format: {data_format}")
+
+    usecols, start_row, end_row = formats[data_format]
+
+    # Read the Excel data
+    df = pd.read_excel(excel_file, sheet_name=str(year), header=None, usecols=usecols)
+
+    # Return the pivot
+    return df.iloc[start_row:end_row, :]
 
 
 def _get_data_oneyear(io, year, fmt):
     _drop = [59, 60, 61, 123, 185, 278, 340]
     _drop_leap = [60, 61, 123, 185, 278, 340]
 
-    pivot_table = _get_pivot(io, str(year), fmt=fmt)
-    data = pivot_table.melt().drop('variable', axis=1)
+    pivot_table = _get_pivot_from_excel(io, str(year), data_format=fmt)
+    data = pivot_table.melt().drop("variable", axis=1)
     if isleap(year):
-        return data['value'].drop(_drop_leap).values
-    return data['value'].drop(_drop).values
+        return data["value"].drop(_drop_leap).values
+    return data["value"].drop(_drop).values
 
 
 def _get_data_allyear(io, fmt, aslist=False):
@@ -75,7 +93,7 @@ def _get_invalid(array, check):
         try:
             check(element)
             if np.isnan(check(element)):
-                dict_invalid['NaN'] += [index]
+                dict_invalid["NaN"] += [index]
         except ValueError:
             dict_invalid[element] += [index]
 
@@ -92,17 +110,17 @@ def _check_invalid(array, check=float):
     return None
 
 
-def read_folder(dataset_path, pattern, fmt, prefix='', invalid=False):
+def read_folder(dataset_path, pattern, fmt, prefix="", invalid=False):
     dataset_path = Path(dataset_path)
     total_files = len(list(dataset_path.glob(pattern)))
-    print(f'Found {total_files} file(s)')
+    print(f"Found {total_files} file(s)")
 
     data_allstation = {}
     data_invalid = {}
 
     for counter, file in enumerate(dataset_path.glob(pattern)):
-        print(f':: {counter + 1:^4}:\t{file.name:s}')
-        station_name = prefix + '_'.join(file.stem.split('_')[1:-2])
+        print(f":: {counter + 1:^4}:\t{file.name:s}")
+        station_name = prefix + "_".join(file.stem.split("_")[1:-2])
         data_each_station = _get_data_allyear(file, fmt=fmt)
         data_allstation[station_name] = data_each_station
         if invalid:
@@ -112,6 +130,11 @@ def read_folder(dataset_path, pattern, fmt, prefix='', invalid=False):
         return data_allstation, data_invalid
     return data_allstation
 
-@deprecated('_extract_years_from_excel')
+
+@deprecated("_extract_years_from_excel")
 def _get_years(io: str) -> List[int]:
     return _extract_years_from_excel(io)
+
+@deprecated("_get_pivot_from_excel")
+def _get_pivot(io, year, fmt):
+    return _get_pivot_from_excel(io, year, fmt)
