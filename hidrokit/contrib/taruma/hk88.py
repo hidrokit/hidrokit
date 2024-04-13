@@ -21,7 +21,7 @@ def _melt_to_array(df, year):
 
 def _index_daily(year):
     """Return DateTimeIndex object for one year"""
-    year_range = '{}0101 {}0101'.format(year, year + 1).split()
+    year_range = f'{year}0101 {year + 1}0101'.split()
     return pd.date_range(*year_range, closed='left')
 
 
