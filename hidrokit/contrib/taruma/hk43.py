@@ -75,7 +75,7 @@ def _have_invalid(array, check):
     return bool(_get_invalid(array, check=check))
 
 
-def _check_invalid(array, check=np.float):
+def _check_invalid(array, check=float):
     if _have_invalid(array, check=check):
         return _get_invalid(array, check=check)
     return None
