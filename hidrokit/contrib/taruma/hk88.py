@@ -12,8 +12,9 @@ manual:
     https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
 
 Functions:
-- read_workbook(file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True): 
-    Read data from an Excel workbook and return it as a dictionary or a pandas DataFrame.
+- read_hidrokit_workbook(
+    file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True): 
+    Read data from an hidrokit Excel workbook and return it as a dictionary or a pandas DataFrame.
 - _melt_to_year_vector(dataframe: pd.DataFrame, year: int) -> np.ndarray:
     Melt a pandas DataFrame to a 1D numpy array for a specific year.
 - _generate_date_range_for_year(year) -> pd.DatetimeIndex:
@@ -25,6 +26,18 @@ Functions:
     ) -> Union[pd.DataFrame, List[pd.DataFrame]]:
         Extracts data from a sheet in the given dataframe and returns it 
         as a dataframe or a list of dataframes.
+        
+Deprecated Functions:
+- _melt_to_array(*args, **kwargs):
+    Deprecated function. Use _melt_to_year_vector instead.
+- _index_daily(*args, **kwargs):
+    Deprecated function. Use _generate_date_range_for_year instead.
+- _yearly_df(*args, **kwargs):
+    Deprecated function. Use _create_yearly_dataframe instead.
+- _data_from_sheet(*args, **kwargs):
+    Deprecated function. Use _extract_data_from_sheet instead.
+- read_workbook(io, stations=None, ignore_str="_", as_df=True):
+    Deprecated function. Use read_hidrokit_workbook instead.
 
 """
 
@@ -127,23 +140,23 @@ def _extract_data_from_sheet(
     return yearly_dataframes
 
 
-def read_workbook(
+def read_hidrokit_workbook(
     file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True
 ):
     """
-    Read data from an Excel workbook.
+    Read data from an hidrokit Excel workbook.
 
     Parameters:
         file_path (str): The path to the Excel workbook file.
-        station_names (list or str, optional): The names of the sheets to read. 
+        station_names (list or str, optional): The names of the sheets to read.
             If not provided, all sheets will be read.
         ignore_prefix (str, optional): The prefix used to ignore sheets. Default is '_'.
-        return_as_dataframe (bool, optional): Whether to return the data as a pandas DataFrame. 
+        return_as_dataframe (bool, optional): Whether to return the data as a pandas DataFrame.
             Default is True.
 
     Returns:
-        dict or pandas.DataFrame: A dictionary containing the data from each sheet, 
-            with sheet names as keys. If `return_as_dataframe` is True, 
+        dict or pandas.DataFrame: A dictionary containing the data from each sheet,
+            with sheet names as keys. If `return_as_dataframe` is True,
             a pandas DataFrame is returned instead.
 
     """
@@ -193,3 +206,30 @@ def _yearly_df(*args, **kwargs):
 @deprecated("_extract_data_from_sheet")
 def _data_from_sheet(*args, **kwargs):
     return _extract_data_from_sheet(*args, **kwargs)
+
+
+@deprecated("read_hidrokit_workbook")
+def read_workbook(io, stations=None, ignore_str="_", as_df=True):
+    """
+    Read data from an hidrokit Excel workbook.
+
+    Parameters:
+        io (str): The path to the Excel workbook file.
+        stations (list or str, optional): The names of the sheets to read.
+            If not provided, all sheets will be read.
+        ignore_str (str, optional): The prefix used to ignore sheets. Default is '_'.
+        as_df (bool, optional): Whether to return the data as a pandas DataFrame.
+            Default is True.
+
+    Returns:
+        dict or pandas.DataFrame: A dictionary containing the data from each sheet,
+            with sheet names as keys. If `as_df` is True,
+            a pandas DataFrame is returned instead.
+
+    """
+    return read_hidrokit_workbook(
+        file_path=io,
+        station_names=stations,
+        ignore_prefix=ignore_str,
+        return_as_dataframe=as_df,
+    )
