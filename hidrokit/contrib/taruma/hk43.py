@@ -97,16 +97,16 @@ def _get_data_for_year(file_path, year, data_format):
     return reshaped_data["value"].drop(DROP_INDICES).values
 
 
-def _get_data_allyear(io, fmt, aslist=False):
-    list_years = _extract_years_from_excel(io)
+def _get_data_allyear(file_path, data_format, return_as_list=False):
+    list_years = _extract_years_from_excel(file_path)
 
     data_each_year = []
 
     for year in list_years:
-        data = _get_data_for_year(io, year=year, data_format=fmt)
+        data = _get_data_for_year(file_path, year=year, data_format=data_format)
         data_each_year.append(data)
 
-    if aslist:
+    if return_as_list:
         return data_each_year
 
     return np.hstack(data_each_year)
@@ -146,7 +146,7 @@ def read_folder(dataset_path, pattern, fmt, prefix="", invalid=False):
     for counter, file in enumerate(dataset_path.glob(pattern)):
         print(f":: {counter + 1:^4}:\t{file.name:s}")
         station_name = prefix + "_".join(file.stem.split("_")[1:-2])
-        data_each_station = _get_data_allyear(file, fmt=fmt)
+        data_each_station = _get_data_allyear(file, data_format=fmt)
         data_allstation[station_name] = data_each_station
         if invalid:
             data_invalid[station_name] = _check_invalid(data_each_station)
