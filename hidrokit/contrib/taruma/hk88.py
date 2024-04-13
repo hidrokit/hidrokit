@@ -101,28 +101,49 @@ def _extract_data_from_sheet(
     return yearly_dataframes
 
 
-def read_workbook(io, stations=None, ignore_str="_", as_df=True):
-    """Read dataset from workbook"""
-    excel = pd.ExcelFile(io)
+def read_workbook(
+    file_path, station_names=None, ignore_prefix="_", return_as_dataframe=True
+):
+    """
+    Read data from an Excel workbook.
 
-    data = {}
-    sheet_names = excel.sheet_names
-    if stations is None:
-        stations = []
-        for sheet in sheet_names:
-            if not sheet.startswith(ignore_str):
-                stations.append(sheet)
+    Parameters:
+        file_path (str): The path to the Excel workbook file.
+        station_names (list or str, optional): The names of the sheets to read. 
+            If not provided, all sheets will be read.
+        ignore_prefix (str, optional): The prefix used to ignore sheets. Default is '_'.
+        return_as_dataframe (bool, optional): Whether to return the data as a pandas DataFrame. 
+            Default is True.
+
+    Returns:
+        dict or pandas.DataFrame: A dictionary containing the data from each sheet, 
+            with sheet names as keys. If `return_as_dataframe` is True, 
+            a pandas DataFrame is returned instead.
+
+    """
+
+    excel_file = pd.ExcelFile(file_path)
+
+    station_data = {}
+    all_sheet_names = excel_file.sheet_names
+    if station_names is None:
+        station_names = []
+        for sheet_name in all_sheet_names:
+            if not sheet_name.startswith(ignore_prefix):
+                station_names.append(sheet_name)
     else:
-        stations = [stations] if isinstance(stations, str) else stations
+        station_names = (
+            [station_names] if isinstance(station_names, str) else station_names
+        )
 
-    for station in stations:
-        df = excel.parse(sheet_name=station, header=None)
-        data[station] = _extract_data_from_sheet(df, station)
+    for station_name in station_names:
+        dataframe = excel_file.parse(sheet_name=station_name, header=None)
+        station_data[station_name] = _extract_data_from_sheet(dataframe, station_name)
 
-    if as_df:
-        return pd.concat(data.values(), sort=True, axis=1)
-    else:
-        return data
+    if return_as_dataframe:
+        return pd.concat(station_data.values(), sort=True, axis=1)
+
+    return station_data
 
 
 ## Backward Compatibility (0.3.x - 0.4.x)
@@ -146,6 +167,3 @@ def _yearly_df(*args, **kwargs):
 @deprecated("_extract_data_from_sheet")
 def _data_from_sheet(*args, **kwargs):
     return _extract_data_from_sheet(*args, **kwargs)
-
-
-# read_workbook
