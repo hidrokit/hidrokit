@@ -1,4 +1,5 @@
 """
+hk88: hidrokit_excel_parser
 This module provides functions for reading and 
     manipulating hydrological data from an Excel workbook.
 
