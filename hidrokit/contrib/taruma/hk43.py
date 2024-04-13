@@ -1,5 +1,65 @@
-"""manual:
-https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50"""
+"""
+hk43: pamarayan_excel_data_extraction
+This module provides functions for reading and 
+    extracting data from Excel files in a specific format.
+
+Manual:
+https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50
+
+Functions:
+- _extract_years_from_excel(file_path: str) -> List[int]:
+    Get a list of years from an Excel file.
+
+- _get_pivot_from_excel(excel_file: str, year: int, data_format: str) -> pd.DataFrame:
+    Get a pivot table from an Excel file.
+
+- _get_data_for_year(file_path: str, year: int, data_format: str) -> np.ndarray:
+    Get data for a specific year from a file and return it as a single vector numpy array.
+
+- _get_data_all_year(
+    file_path: Union[str, Path], data_format: str, return_as_list: bool = False
+    ) -> Union[List[np.ndarray], np.ndarray]:
+        Get data for all years from a given file.
+
+- _get_invalid_elements_indices(
+    num_array: Any, validation_func: Callable[[Any], Any]
+    ) -> Dict[str, List[int]]:
+        Returns a dictionary containing the indices of invalid elements in the given `num_array`.
+
+- have_invalid(array: List[Any], validation_func: Callable[[Any], Any]) -> bool:
+    Check if the given array has any invalid elements based on the provided validation function.
+
+- _check_invalid(array, validation_func=float):
+    Check if there are any invalid elements in the array.
+
+- read_folder(
+    dataset_path: str,
+    filename_pattern: str,
+    data_format: str,
+    station_name_prefix: str = "",
+    check_for_invalid_data: bool = False
+) -> Union[Dict[str, np.ndarray], Dict[str, np.ndarray], Dict[str, List[int]]]:
+    Read files from a folder and extract data for each station.
+
+Deprecated Functions:
+- _get_years(io: str) -> List[int]:
+    Deprecated. Use _extract_years_from_excel instead.
+
+- _get_pivot(io, year, fmt):
+    Deprecated. Use _get_pivot_from_excel instead.
+
+- _get_data_oneyear(io, year, fmt):
+    Deprecated. Use _get_data_for_year instead.
+
+- _get_data_allyear(*args, **kwargs):
+    Deprecated. Use _get_data_all_year instead.
+
+- _get_invalid(*args, **kwargs):
+    Deprecated. Use _get_invalid_elements_indices instead.
+
+- _have_invalid(*args, **kwargs):
+    Deprecated. Use have_invalid instead.
+"""
 
 from calendar import isleap
 from collections import defaultdict
@@ -211,14 +271,14 @@ def read_folder(
         dataset_path (str): The path to the dataset folder.
         filename_pattern (str): The pattern to match the filenames.
         data_format (str): The format of the data in the files.
-        station_name_prefix (str, optional): The prefix to add to the station names. 
+        station_name_prefix (str, optional): The prefix to add to the station names.
             Defaults to "".
-        check_for_invalid_data (bool, optional): Whether to check for invalid data. 
+        check_for_invalid_data (bool, optional): Whether to check for invalid data.
             Defaults to False.
 
     Returns:
         dict: A dictionary containing the extracted data for each station.
-            If `check_for_invalid_data` is True, 
+            If `check_for_invalid_data` is True,
             it also returns a dictionary of invalid data for each station.
     """
     dataset_path = Path(dataset_path)
