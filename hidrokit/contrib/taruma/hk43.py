@@ -4,7 +4,7 @@ https://gist.github.com/taruma/a9dd4ea61db2526853b99600909e9c50"""
 from calendar import isleap
 from collections import defaultdict
 from pathlib import Path
-from typing import Union, List
+from typing import Callable, Any, Dict, Union, List
 import pandas as pd
 import numpy as np
 from hidrokit.contrib.taruma.utils import deprecated
@@ -97,7 +97,7 @@ def _get_data_for_year(file_path: str, year: int, data_format: str) -> np.ndarra
     return reshaped_data["value"].drop(DROP_INDICES).values
 
 
-def _get_data_allyear(
+def _get_data_all_year(
     file_path: Union[str, Path], data_format: str, return_as_list: bool = False
 ) -> Union[List[np.ndarray], np.ndarray]:
     """
@@ -106,7 +106,7 @@ def _get_data_allyear(
     Args:
         file_path (Union[str, Path]): The path to the file.
         data_format (str): The format of the data.
-        return_as_list (bool, optional): Whether to return the data as a list of arrays. 
+        return_as_list (bool, optional): Whether to return the data as a list of arrays.
             Defaults to False.
 
     Returns:
@@ -134,26 +134,42 @@ def _get_data_allyear(
     return np.hstack(data_each_year)
 
 
-def _get_invalid(array, check):
-    dict_invalid = defaultdict(list)
-    for index, element in enumerate(array):
-        try:
-            check(element)
-            if np.isnan(check(element)):
-                dict_invalid["NaN"] += [index]
-        except ValueError:
-            dict_invalid[element] += [index]
+def _get_invalid_elements_indices(
+    num_array: Any, validation_func: Callable[[Any], Any]
+) -> Dict[str, List[int]]:
+    """
+    Returns a dictionary containing the indices of invalid elements in the given `num_array`.
 
-    return dict(dict_invalid)
+    Parameters:
+    - num_array (array-like): The array containing the elements to be validated.
+    - validation_func (function): The validation function to be applied to each element.
+
+    Returns:
+    - invalid_element_indices (defaultdict): 
+        A defaultdict object containing the indices of invalid elements.
+        The keys of the dictionary represent the type of invalidity, 
+        such as "NaN" for elements that are NaN, and 
+        the values are lists of indices corresponding to each type of invalidity.
+    """
+    invalid_element_indices: Dict[str, List[int]] = defaultdict(list)
+    for index, element in enumerate(num_array):
+        try:
+            result = validation_func(element)
+            if np.isnan(result):
+                invalid_element_indices["NaN"].append(index)
+        except ValueError:
+            invalid_element_indices[str(element)].append(index)
+
+    return invalid_element_indices
 
 
 def _have_invalid(array, check):
-    return bool(_get_invalid(array, check=check))
+    return bool(_get_invalid_elements_indices(array, validation_func=check))
 
 
 def _check_invalid(array, check=float):
     if _have_invalid(array, check=check):
-        return _get_invalid(array, check=check)
+        return _get_invalid_elements_indices(array, validation_func=check)
     return None
 
 
@@ -168,7 +184,7 @@ def read_folder(dataset_path, pattern, fmt, prefix="", invalid=False):
     for counter, file in enumerate(dataset_path.glob(pattern)):
         print(f":: {counter + 1:^4}:\t{file.name:s}")
         station_name = prefix + "_".join(file.stem.split("_")[1:-2])
-        data_each_station = _get_data_allyear(file, data_format=fmt)
+        data_each_station = _get_data_all_year(file, data_format=fmt)
         data_allstation[station_name] = data_each_station
         if invalid:
             data_invalid[station_name] = _check_invalid(data_each_station)
@@ -191,3 +207,13 @@ def _get_pivot(io, year, fmt):
 @deprecated("_get_data_for_year")
 def _get_data_oneyear(io, year, fmt):
     return _get_data_for_year(io, year, fmt)
+
+
+@deprecated("_get_data_all_year")
+def _get_data_allyear(*args, **kwargs):
+    return _get_data_all_year(*args, **kwargs)
+
+
+@deprecated("_get_invalid_elements_indices")
+def _get_invalid(*args, **kwargs):
+    return _get_invalid_elements_indices(*args, **kwargs)
