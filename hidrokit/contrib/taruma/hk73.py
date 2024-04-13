@@ -33,7 +33,7 @@ def read_bmkg_excel(io):
     )
 
 
-def _has_nan_values(dataframe):
+def has_nan_values(dataframe):
     """
     Check if the given dataset contains any NaN values.
 
@@ -46,7 +46,7 @@ def _has_nan_values(dataframe):
     return bool(dataframe.isna().any().any())
 
 
-def _get_missing_data_indices(nan_indicator_vector):
+def get_missing_data_indices(nan_indicator_vector):
     """
     Get the indices of missing data in the given nan_indicator_vector.
 
@@ -61,7 +61,7 @@ def _get_missing_data_indices(nan_indicator_vector):
     )
 
 
-def _get_nan_indices_by_column(dataframe):
+def get_nan_indices_by_column(dataframe):
     """
     Get the indices of missing values (NaN) for each column in a DataFrame.
 
@@ -74,11 +74,11 @@ def _get_nan_indices_by_column(dataframe):
     """
     nan = {}
     for col in dataframe.columns:
-        nan[col] = _get_missing_data_indices(dataframe[col].isna().values).tolist()
+        nan[col] = get_missing_data_indices(dataframe[col].isna().values).tolist()
     return nan
 
 
-def _get_unrecorded_indices(dataframe):
+def get_unrecorded_indices(dataframe):
     """
     Get the indices of unrecorded data in the given dataframe.
 
@@ -93,12 +93,12 @@ def _get_unrecorded_indices(dataframe):
 
     for col in dataframe.columns:
         masking = (dataframe[col] == 8888) | (dataframe[col] == 9999)
-        unrecorded_indices[col] = _get_missing_data_indices(masking.values)
+        unrecorded_indices[col] = get_missing_data_indices(masking.values)
 
     return unrecorded_indices
 
 
-def _get_nan_indices_if_exists(dataframe):
+def get_nan_indices_if_exists(dataframe):
     """
     Returns the indices of NaN values in the given dataframe if NaN values exist.
 
@@ -109,17 +109,17 @@ def _get_nan_indices_if_exists(dataframe):
         dict or None: A dictionary with keys as column names and values as lists of
             indices where missing values occur, or None if no NaN values exist.
     """
-    if _has_nan_values(dataframe):
-        return _get_nan_indices_by_column(dataframe)
+    if has_nan_values(dataframe):
+        return get_nan_indices_by_column(dataframe)
     else:
         return None
 
 
-def _get_columns_with_nan_values(dataframe):
+def get_columns_with_nan_values(dataframe):
     return dataframe.columns[dataframe.isna().any()].tolist()
 
 
-def _group_consecutive_elements(input_list: List) -> List[List]:
+def group_consecutive_elements(input_list: List) -> List[List]:
     """
     Groups consecutive elements in the input list.
 
@@ -143,7 +143,7 @@ def _group_consecutive_elements(input_list: List) -> List[List]:
     return group_list
 
 
-def _format_group_indices(
+def format_group_indices(
     group_list, indices=None, format_date="%Y%m%d", date_range_format="{}-{}"
 ):
     """
@@ -191,39 +191,46 @@ def _read_bmkg(*args, **kwargs):
 
 @deprecated("_has_nan_values")
 def _have_nan(*args, **kwargs):
-    return _has_nan_values(*args, **kwargs)
+    return has_nan_values(*args, **kwargs)
 
 
 @deprecated("_get_missing_data_indices")
-def _get_index1D(*args, **kwargs): # pylint: disable=invalid-name
-    return _get_missing_data_indices(*args, **kwargs)
+def _get_index1D(*args, **kwargs):  # pylint: disable=invalid-name
+    return get_missing_data_indices(*args, **kwargs)
 
 
 @deprecated("_get_nan_indices_by_column")
 def _get_nan(*args, **kwargs):
-    return _get_nan_indices_by_column(*args, **kwargs)
+    return get_nan_indices_by_column(*args, **kwargs)
 
 
 @deprecated("_get_unrecorded_indices")
 def _get_missing(*args, **kwargs):
-    return _get_unrecorded_indices(*args, **kwargs)
+    return get_unrecorded_indices(*args, **kwargs)
 
 
 @deprecated("_get_nan_indices_if_exists")
 def _check_nan(*args, **kwargs):
-    return _get_nan_indices_if_exists(*args, **kwargs)
+    return get_nan_indices_if_exists(*args, **kwargs)
 
 
 @deprecated("_get_columns_with_nan_values")
 def _get_nan_columns(*args, **kwargs):
-    return _get_columns_with_nan_values(*args, **kwargs)
+    return get_columns_with_nan_values(*args, **kwargs)
 
 
 @deprecated("_group_consecutive_elements")
 def _group_as_list(*args, **kwargs):
-    return _group_consecutive_elements(*args, **kwargs)
+    return group_consecutive_elements(*args, **kwargs)
 
 
 @deprecated("_format_group_indices")
-def _group_as_index(*args, **kwargs):
-    return _format_group_indices(*args, **kwargs)
+def _group_as_index(
+    group_list, index=None, date_format="%Y%m%d", format_date="{}-{}"
+):
+    return format_group_indices(
+        group_list,
+        indices=index,
+        format_date=date_format,
+        date_range_format=format_date,
+    )
