@@ -195,7 +195,7 @@ def _have_nan(*args, **kwargs):
 
 
 @deprecated("_get_missing_data_indices")
-def _get_index1D(*args, **kwargs):
+def _get_index1D(*args, **kwargs): # pylint: disable=invalid-name
     return _get_missing_data_indices(*args, **kwargs)
 
 
