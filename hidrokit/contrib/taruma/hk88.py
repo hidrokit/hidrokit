@@ -5,6 +5,7 @@ https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
 from calendar import isleap
 import pandas as pd
 import numpy as np
+from hidrokit.contrib.taruma.utils import deprecated
 
 
 def _melt_to_year_vector(dataframe: pd.DataFrame, year: int) -> np.ndarray:
@@ -106,3 +107,22 @@ def read_workbook(io, stations=None, ignore_str="_", as_df=True):
         return pd.concat(data.values(), sort=True, axis=1)
     else:
         return data
+
+
+## Backward Compatibility
+
+
+@deprecated('_melt_to_year_vector')
+def _melt_to_array(*args, **kwargs):
+    return _melt_to_year_vector(*args, **kwargs)
+
+@deprecated('_generate_date_range_for_year')
+def _index_daily(*args, **kwargs):
+    return _generate_date_range_for_year(*args, **kwargs)
+
+@deprecated('_create_yearly_dataframe')
+def _yearly_df(*args, **kwargs):
+    return _create_yearly_dataframe(*args, **kwargs)
+
+# _data_from_sheet
+# read_workbook
