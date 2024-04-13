@@ -145,10 +145,10 @@ def _get_invalid_elements_indices(
     - validation_func (function): The validation function to be applied to each element.
 
     Returns:
-    - invalid_element_indices (defaultdict): 
+    - invalid_element_indices (defaultdict):
         A defaultdict object containing the indices of invalid elements.
-        The keys of the dictionary represent the type of invalidity, 
-        such as "NaN" for elements that are NaN, and 
+        The keys of the dictionary represent the type of invalidity,
+        such as "NaN" for elements that are NaN, and
         the values are lists of indices corresponding to each type of invalidity.
     """
     invalid_element_indices: Dict[str, List[int]] = defaultdict(list)
@@ -169,7 +169,7 @@ def have_invalid(array: List[Any], validation_func: Callable[[Any], Any]) -> boo
 
     Args:
         array (list): The array to check for invalid elements.
-        validation_func (function): The validation function used 
+        validation_func (function): The validation function used
             to determine if an element is invalid.
 
     Returns:
@@ -190,7 +190,9 @@ def _check_invalid(array, validation_func=float):
         dict or None: A dictionary with the indices of invalid elements,
             or None if there are no invalid elements.
     """
-    invalid_elements_indices = _get_invalid_elements_indices(array, validation_func=validation_func)
+    invalid_elements_indices = _get_invalid_elements_indices(
+        array, validation_func=validation_func
+    )
     return invalid_elements_indices if invalid_elements_indices is not None else None
 
 
@@ -238,3 +240,8 @@ def _get_data_allyear(*args, **kwargs):
 @deprecated("_get_invalid_elements_indices")
 def _get_invalid(*args, **kwargs):
     return _get_invalid_elements_indices(*args, **kwargs)
+
+
+@deprecated("have_invalid")
+def _have_invalid(*args, **kwargs):
+    return have_invalid(*args, **kwargs)
