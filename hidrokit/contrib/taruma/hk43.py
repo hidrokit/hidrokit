@@ -328,10 +328,10 @@ def _get_data_allyear(*args, **kwargs):
 
 
 @deprecated("_get_invalid_elements_indices")
-def _get_invalid(*args, **kwargs):
-    return _get_invalid_elements_indices(*args, **kwargs)
+def _get_invalid(array, check):
+    return _get_invalid_elements_indices(array, validation_func=check)
 
 
 @deprecated("have_invalid")
-def _have_invalid(*args, **kwargs):
-    return have_invalid(*args, **kwargs)
+def _have_invalid(array, check):
+    return have_invalid(array, validation_func=check)
