@@ -4,33 +4,54 @@ https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
 
 from calendar import isleap
 import pandas as pd
+import numpy as np
 
 
-def _melt_to_array(df, year):
-    """Melt dataframe to 1D array one year"""
-    # ref: hidrokit.contrib.taruma.hk43
+def _melt_to_year_vector(dataframe: pd.DataFrame, year: int) -> np.ndarray:
+    """
+    Melt a pandas DataFrame to a 1D numpy array for a specific year.
+
+    Args:
+        dataframe: The pandas DataFrame to melt.
+        year: The year to consider when melting the DataFrame.
+
+    Returns:
+        A 1D numpy array representing the melted DataFrame for the specified year.
+    """
+    if not isinstance(dataframe, pd.DataFrame):
+        raise ValueError("dataframe must be a pandas DataFrame.")
+    if not isinstance(year, int):
+        raise ValueError("year must be an integer.")
+
     _drop = [59, 60, 61, 123, 185, 278, 340]
     _drop_leap = [60, 61, 123, 185, 278, 340]
 
-    data = df.melt().drop('variable', axis=1)
+    melted_data = dataframe.melt().drop("variable", axis=1)
     if isleap(year):
-        return data['value'].drop(_drop_leap).values
-    else:
-        return data['value'].drop(_drop).values
+        return melted_data["value"].drop(_drop_leap).values
+    return melted_data["value"].drop(_drop).values
 
 
-def _index_daily(year):
-    """Return DateTimeIndex object for one year"""
-    year_range = f'{year}0101 {year + 1}0101'.split()
-    return pd.date_range(*year_range, closed='left')
+def _generate_date_range_for_year(year):
+    """Return DateTimeIndex object for one year.
+
+    Args:
+        year (int): The year for which to generate the date range.
+
+    Returns:
+        pd.DatetimeIndex: A DateTimeIndex object representing the date range for the specified year.
+    """
+    start_date = pd.Timestamp(year, 1, 1)
+    end_date = pd.Timestamp(year + 1, 1, 1)
+    return pd.date_range(start_date, end_date, inclusive="left")
 
 
 def _yearly_df(df, year, station_name):
     """Create dataframe for one year"""
     return pd.DataFrame(
-        data=_melt_to_array(df, year),
-        index=_index_daily(year),
-        columns=[station_name]
+        data=_melt_to_year_vector(df, year),
+        index=_generate_date_range_for_year(year),
+        columns=[station_name],
     )
 
 
@@ -41,7 +62,7 @@ def _data_from_sheet(df, station_name, as_df=True):
     frames = []
     for i in range(2, n_years * 33, 33):
         year = int(df.iloc[i, 1])
-        pivot = df.iloc[i:i + 31, 4:16]
+        pivot = df.iloc[i : i + 31, 4:16]
         data = _yearly_df(pivot, year, station_name)
         frames.append(data)
 
@@ -51,7 +72,7 @@ def _data_from_sheet(df, station_name, as_df=True):
         return frames
 
 
-def read_workbook(io, stations=None, ignore_str='_', as_df=True):
+def read_workbook(io, stations=None, ignore_str="_", as_df=True):
     """Read dataset from workbook"""
     excel = pd.ExcelFile(io)
 
