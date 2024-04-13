@@ -178,10 +178,20 @@ def _have_invalid(array: List[Any], validation_func: Callable[[Any], Any]) -> bo
     return bool(_get_invalid_elements_indices(array, validation_func=validation_func))
 
 
-def _check_invalid(array, check=float):
-    if _have_invalid(array, validation_func=check):
-        return _get_invalid_elements_indices(array, validation_func=check)
-    return None
+def _check_invalid(array, validation_func=float):
+    """
+    Check if there are any invalid elements in the array.
+
+    Parameters:
+        array (iterable): The array to check.
+        validation_func (callable): The validation function to use.
+
+    Returns:
+        dict or None: A dictionary with the indices of invalid elements,
+            or None if there are no invalid elements.
+    """
+    invalid_elements_indices = _get_invalid_elements_indices(array, validation_func=validation_func)
+    return invalid_elements_indices if invalid_elements_indices is not None else None
 
 
 def read_folder(dataset_path, pattern, fmt, prefix="", invalid=False):
