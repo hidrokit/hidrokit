@@ -237,10 +237,7 @@ def find_K(prob, skew_log, source='scipy'):
     prob = np.array(prob)
     if source.lower() == 'scipy':
         #ref: https://github.com/hidrokit/hidrokit/discussions/156
-        if skew_log >= 0:
-            return np.around(stats.pearson3.ppf(1-prob, skew_log), 4)
-        else:
-            return np.around(stats.pearson3.ppf(prob, skew_log), 4)
+        return np.around(stats.pearson3.ppf(1-prob, skew_log), 4)
     elif source.lower() == 'soetopo':
         func_pearson3_st = _func_interp_bivariate(t_pearson3_st)
         return _as_value(func_pearson3_st(skew_log, prob, grid=False))
@@ -314,10 +311,6 @@ def _calc_prob_in_table(k, skew_log, source='soewarno'):
    
 def calc_prob(k, skew_log, source='scipy'):
     if source.lower() == 'scipy':
-        # TODO: CHECK/TEST THIS CODE
-        if skew_log >= 0:
-            return stats.pearson3.cdf(k, skew_log)
-        else:
-            return stats.pearson3.cdf(k, skew_log)
+        return stats.pearson3.cdf(k, skew_log)
     if source.lower() in dict_table_source.keys():
         return _calc_prob_in_table(k, skew_log, source.lower())
