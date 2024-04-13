@@ -3,6 +3,7 @@ https://gist.github.com/taruma/6d48b3ec9d601019c15fb5833ae03730
 """
 
 from calendar import isleap
+from typing import List, Union
 import pandas as pd
 import numpy as np
 from hidrokit.contrib.taruma.utils import deprecated
@@ -68,21 +69,36 @@ def _create_yearly_dataframe(
     )
 
 
-def _data_from_sheet(df, station_name, as_df=True):
-    """Read dataset from single sheet as dataframe (or list of dataframe)"""
-    n_years = int(df.iloc[0, 1])
+def _extract_data_from_sheet(
+    dataframe: pd.DataFrame, station: str, return_as_dataframe: bool = True
+) -> Union[pd.DataFrame, List[pd.DataFrame]]:
+    """
+    Extracts data from a sheet in the given dataframe and returns it
+        as a dataframe or a list of dataframes.
 
-    frames = []
-    for i in range(2, n_years * 33, 33):
-        year = int(df.iloc[i, 1])
-        pivot = df.iloc[i : i + 31, 4:16]
-        data = _create_yearly_dataframe(pivot, year, station_name)
-        frames.append(data)
+    Parameters:
+        dataframe (pd.DataFrame): The dataframe containing the sheet data.
+        station (str): The name of the station.
+        return_as_dataframe (bool, optional): Whether to return the data
+            as a single dataframe or a list of dataframes. Defaults to True.
 
-    if as_df:
-        return pd.concat(frames, sort=True)
-    else:
-        return frames
+    Returns:
+        Union[pd.DataFrame, List[pd.DataFrame]]:
+            The extracted data as a dataframe or a list of dataframes.
+    """
+    total_years = int(dataframe.iloc[0, 1])
+
+    yearly_dataframes = []
+    for i in range(2, total_years * 33, 33):
+        current_year = int(dataframe.iloc[i, 1])
+        yearly_data = dataframe.iloc[i : i + 31, 4:16]
+        yearly_dataframe = _create_yearly_dataframe(yearly_data, current_year, station)
+        yearly_dataframes.append(yearly_dataframe)
+
+    if return_as_dataframe:
+        return pd.concat(yearly_dataframes, sort=True)
+
+    return yearly_dataframes
 
 
 def read_workbook(io, stations=None, ignore_str="_", as_df=True):
@@ -101,7 +117,7 @@ def read_workbook(io, stations=None, ignore_str="_", as_df=True):
 
     for station in stations:
         df = excel.parse(sheet_name=station, header=None)
-        data[station] = _data_from_sheet(df, station)
+        data[station] = _extract_data_from_sheet(df, station)
 
     if as_df:
         return pd.concat(data.values(), sort=True, axis=1)
@@ -109,20 +125,27 @@ def read_workbook(io, stations=None, ignore_str="_", as_df=True):
         return data
 
 
-## Backward Compatibility
+## Backward Compatibility (0.3.x - 0.4.x)
 
 
-@deprecated('_melt_to_year_vector')
+@deprecated("_melt_to_year_vector")
 def _melt_to_array(*args, **kwargs):
     return _melt_to_year_vector(*args, **kwargs)
 
-@deprecated('_generate_date_range_for_year')
+
+@deprecated("_generate_date_range_for_year")
 def _index_daily(*args, **kwargs):
     return _generate_date_range_for_year(*args, **kwargs)
 
-@deprecated('_create_yearly_dataframe')
+
+@deprecated("_create_yearly_dataframe")
 def _yearly_df(*args, **kwargs):
     return _create_yearly_dataframe(*args, **kwargs)
 
-# _data_from_sheet
+
+@deprecated("_extract_data_from_sheet")
+def _data_from_sheet(*args, **kwargs):
+    return _extract_data_from_sheet(*args, **kwargs)
+
+
 # read_workbook
