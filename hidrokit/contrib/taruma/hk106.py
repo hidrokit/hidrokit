@@ -1,19 +1,33 @@
 """
-hk106: evapotranspiration.py
+hk106: hk106.py
 
-This module provides functions for calculating evapotranspiration (ETo) 
-    using different methods: Blaney Criddle, Radiation, and Penman.
+This module provides functions for calculating evapotranspiration (ETo) using different methods: Blaney Criddle, Radiation, and Penman. It also includes data tables and utility functions for the calculations.
 
 Functions:
-    - ETo_BlaneyCriddle(df, temp_col, lat, as_df=True, report="ETo"): 
+    - eto_blaney_criddle(
+        dataframe, temperature_column, latitude, 
+        return_as_dataframe=True, report_type="ETo", **kwargs): 
         Calculates ETo using the Blaney Criddle method.
-    - ETo_Radiation(df, temp_col, sun_col, lat, as_df=True, report="ETo"): 
+    - eto_radiation(dataframe, temperature_column, 
+        sunlight_column, latitude, return_as_dataframe=True, 
+        report_type="ETo", **kwargs): 
         Calculates ETo using the Radiation method.
-    - ETo_Penman(df, temp_col, humid_col, wind_col, sun_col, lat, as_df=True, report="ETo"): 
+    - eto_penman(dataframe, temperature_column, 
+        humidity_column, wind_speed_column, sunlight_column, 
+        latitude, return_as_dataframe=True, report_type="ETo", **kwargs): 
         Calculates ETo using the Penman method.
 
-manual:
-    https://gist.github.com/taruma/7f81cf0fea5250cfe47942b4e16a8a65
+Data Tables:
+    - t_rel_P_LL: Relative humidity values for different latitudes and months.
+    - t_cor_C_BC: Correction factors for Blaney Criddle method.
+    - t_rel_T_W: Relative humidity values for different temperatures and wind speeds.
+    - t_cor_C_RAD: Correction factors for Radiation method.
+    - t_val_Rg: Solar radiation values for different latitudes and months.
+    - t_cor_C_PEN: Correction factors for Penman method.
+    - t_rel_T_PEN: Relative humidity values for different temperatures and vapor pressure.
+
+For more information, refer to the module's source code on GitHub:
+    https://github.com/hidrokit/hidrokit/blob/main/hidrokit/contrib/taruma/hk106.py
 """
 
 import numpy as np
