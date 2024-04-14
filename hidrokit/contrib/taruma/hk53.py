@@ -1,4 +1,7 @@
-"""This module provides functions for creating tensor arrays from pandas DataFrames.
+"""
+hk53: dataframe_to_tensor
+
+This module provides functions for creating tensor arrays from pandas DataFrames.
 
 This module contains the following functions:
 - `_columns_index`: Get the index of columns in a dataframe.
