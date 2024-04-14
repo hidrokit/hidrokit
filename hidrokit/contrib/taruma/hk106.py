@@ -411,15 +411,15 @@ def eto_radiation(
     - temperature_column (str): The name of the column in the dataframe that represents temperature.
     - sunlight_column (str): The name of the column in the dataframe that represents sunlight.
     - latitude (str): The latitude of the location.
-    - return_as_dataframe (bool, optional): Whether to return the result as a dataframe. 
+    - return_as_dataframe (bool, optional): Whether to return the result as a dataframe.
         Defaults to True.
-    - report_type (str, optional): The type of report to generate. 
+    - report_type (str, optional): The type of report to generate.
         Options are "ETo" (default), "full", or "eto".
     - **kwargs: Additional keyword arguments for backward compatibility.
 
     Returns:
     - If return_as_dataframe is True, returns a pandas DataFrame with the calculated ETo values.
-    - If return_as_dataframe is False, returns a numpy array or a single value 
+    - If return_as_dataframe is False, returns a numpy array or a single value
         (depending on the report_type).
 
     Note:
@@ -553,34 +553,100 @@ def _PEN_find_C(month, table=t_cor_C_PEN, col="C"):
     return table.loc[month, col]
 
 
-def ETo_Penman(
-    df, temp_col, humid_col, wind_col, sun_col, lat, as_df=True, report="ETo"
+def eto_penman(
+    dataframe,
+    temperature_column,
+    humidity_column,
+    wind_speed_column,
+    sunlight_column,
+    latitude,
+    return_as_dataframe=True,
+    report_type="ETo",
+    **kwargs
 ):
+    """
+    Calculate evapotranspiration (ETo) using the Penman method.
+
+    Parameters:
+        dataframe (pd.DataFrame): The input dataframe containing weather data.
+        temperature_column (str): The column name for temperature data in the dataframe.
+        humidity_column (str): The column name for humidity data in the dataframe.
+        wind_speed_column (str): The column name for wind speed data in the dataframe.
+        sunlight_column (str): The column name for sunlight data in the dataframe.
+        latitude (str): The latitude of the location.
+        return_as_dataframe (bool, optional): Whether to return the results as a dataframe. 
+            Defaults to True.
+        report_type (str, optional): The type of report to generate. Can be "ETo" or "full". 
+            Defaults to "ETo".
+        **kwargs: Additional keyword arguments for deprecated parameters.
+
+    Returns:
+        pd.DataFrame or np.ndarray: The calculated reference evapotranspiration (ETo) values.
+
+    Deprecated Parameters:
+        df (pd.DataFrame): Deprecated parameter for the input dataframe.
+        temp_col (str): Deprecated parameter for the temperature column name.
+        humid_col (str): Deprecated parameter for the humidity column name.
+        wind_col (str): Deprecated parameter for the wind speed column name.
+        sun_col (str): Deprecated parameter for the sunlight column name.
+        lat (str): Deprecated parameter for the latitude.
+        as_df (bool): Deprecated parameter for return_as_dataframe.
+        report (str): Deprecated parameter for report_type.
+    """
+
+    # handle deprecated parameters
+    dataframe = handle_deprecated_params(kwargs, "df", "dataframe") or dataframe
+    temperature_column = (
+        handle_deprecated_params(kwargs, "temp_col", "temperature_column")
+        or temperature_column
+    )
+    humidity_column = (
+        handle_deprecated_params(kwargs, "humid_col", "humidity_column")
+        or humidity_column
+    )
+    wind_speed_column = (
+        handle_deprecated_params(kwargs, "wind_col", "wind_speed_column")
+        or wind_speed_column
+    )
+    sunlight_column = (
+        handle_deprecated_params(kwargs, "sun_col", "sunlight_column")
+        or sunlight_column
+    )
+    latitude = handle_deprecated_params(kwargs, "lat", "latitude") or latitude
+    return_as_dataframe = (
+        handle_deprecated_params(kwargs, "as_df", "return_as_dataframe")
+        or return_as_dataframe
+    )
+    report_type = (
+        handle_deprecated_params(kwargs, "report", "report_type") or report_type
+    )
 
     # sub_df
-    data = df.loc[:, [temp_col, humid_col, wind_col, sun_col]]
-    data_array = data.values
+    weather_data = dataframe.loc[
+        :, [temperature_column, humidity_column, wind_speed_column, sunlight_column]
+    ]
+    weather_data_array = weather_data.values
 
     # info_df
-    nrows = data.shape[0]
+    num_rows = weather_data.shape[0]
 
     # initialization
     (e_g, w, ft, fed, e_d, Rg, Rs, fsun, fU, Rn1, C, ETo_x, ETo) = (
-        np.zeros(nrows) for _ in range(13)
+        np.zeros(num_rows) for _ in range(13)
     )
 
     # calculation
-    temp = data_array[:, 0]
-    RH = data_array[:, 1]
-    wind = data_array[:, 2]
-    sun = data_array[:, 3]
-    month = data.index.month.values
+    temp = weather_data_array[:, 0]
+    RH = weather_data_array[:, 1]
+    wind = weather_data_array[:, 2]
+    sun = weather_data_array[:, 3]
+    month = weather_data.index.month.values
 
-    for i in range(nrows):
+    for i in range(num_rows):
         e_g[i], w[i], ft[i] = _PEN_find_from_T(temp[i])
         e_d[i] = _PEN_e_d(e_g[i], RH[i])
         fed[i] = _PEN_fe_d(e_d[i])
-        Rg[i] = _PEN_find_Rg(lat, month[i])
+        Rg[i] = _PEN_find_Rg(latitude, month[i])
         Rs[i] = _PEN_Rs(sun[i], Rg[i])
         fsun[i] = _PEN_fsun(sun[i])
         fU[i] = _PEN_fU(wind[i])
@@ -589,7 +655,7 @@ def ETo_Penman(
         ETo_x[i] = _PEN_ETo_x(w[i], Rs[i], Rn1[i], fU[i], e_g[i], e_d[i])
         ETo[i] = _PEN_ETo(C[i], ETo_x[i])
 
-    if report.lower() == "full":
+    if report_type.lower() == "full":
         results = np.stack(
             (
                 month,
@@ -613,7 +679,7 @@ def ETo_Penman(
             ),
             axis=1,
         )
-        columns_name = [
+        column_names = [
             "Month",
             "Temp",
             "Humidity",
@@ -633,11 +699,17 @@ def ETo_Penman(
             "ETo_x",
             "ETo",
         ]
-    elif report.lower() == "eto":
+    elif report_type.lower() == "eto":
         results = ETo
-        columns_name = ["ETo"]
+        column_names = ["ETo"]
 
-    if as_df:
-        return pd.DataFrame(data=results, index=data.index, columns=columns_name)
+    if return_as_dataframe:
+        return pd.DataFrame(data=results, index=weather_data.index, columns=column_names)
 
     return results
+
+
+@deprecated('eto_penman')
+def ETo_Penman(*args, **kwargs):
+    """Calculate evapotranspiration (ETo) using the Penman method."""
+    return eto_penman(*args, **kwargs)
