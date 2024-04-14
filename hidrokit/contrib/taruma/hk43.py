@@ -92,6 +92,11 @@ def extract_years_from_excel(file_path: str) -> List[int]:
     return sorted(years)
 
 
+@deprecated("extract_years_from_excel")
+def _extract_years_from_excel(file_path: str) -> List[int]:
+    return extract_years_from_excel(file_path)
+
+
 def _get_pivot_from_excel(excel_file: str, year: int, data_format: str) -> pd.DataFrame:
     """
     Get a pivot table from an Excel file.
