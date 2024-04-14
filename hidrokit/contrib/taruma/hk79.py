@@ -1,5 +1,22 @@
-"""manual:
-https://gist.github.com/taruma/05dab67fac8313a94134ac02d0398897
+"""
+hk79: hidrokit_hourly_excel_parser
+
+This module contains functions for reading and 
+    manipulating hourly data from an hidrokit (hourly) Excel template file.
+
+Functions:
+- _index_hourly(year, freq="60min"): 
+    Create a DatetimeIndex with specific year or [year_start, year_end].
+- _melt_to_array(dataframe): Convert a DataFrame to a 1-dimensional array 
+    by melting it and extracting the 'value' column.
+- _get_array_in_month(dataframe, year, month): 
+    Get an array of data for a specific year and month from a dataframe.
+- _get_array_in_year(df, year): Get an array of data for a specific year from a DataFrame.
+- get_info(file, config_sheet=None): Retrieves information from an Excel file.
+- read_excel_hourly(file, station=None): Read hourly data from an Excel file.
+
+manual:
+    https://gist.github.com/taruma/05dab67fac8313a94134ac02d0398897
 """
 
 from calendar import monthrange
@@ -44,7 +61,7 @@ def _melt_to_array(dataframe):
         df (pandas.DataFrame): The DataFrame to be converted.
 
     Returns:
-        numpy.ndarray: A 1-dimensional array containing the values 
+        numpy.ndarray: A 1-dimensional array containing the values
             from the 'value' column of the melted DataFrame.
     """
     return dataframe.melt().drop("variable", axis=1)["value"].values
@@ -107,12 +124,12 @@ def get_info(file, config_sheet=None):
 
     Args:
         file (str): The path to the Excel file.
-        config_sheet (str, optional): The name of the sheet to read from. 
+        config_sheet (str, optional): The name of the sheet to read from.
             If not provided, the first sheet will be used.
 
     Returns:
-        dict: A dictionary containing the information retrieved from the Excel file. 
-            The keys are the lowercase values from the first column, 
+        dict: A dictionary containing the information retrieved from the Excel file.
+            The keys are the lowercase values from the first column,
             and the values are the corresponding values from the second column.
     """
     excel = pd.ExcelFile(file)
@@ -128,6 +145,7 @@ def get_info(file, config_sheet=None):
         info[str(key)] = value
 
     return info
+
 
 @deprecated("get_info")
 def _get_info(file, config_sheet=None):
