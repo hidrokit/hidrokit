@@ -1,5 +1,5 @@
-matplotlib
-numpy
-pandas
-scipy
-xlrd
+matplotlib>=3.7
+numpy>=1.25
+pandas>=2.0
+scipy>=1.11
+xlrd>=2.0
