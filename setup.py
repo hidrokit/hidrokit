@@ -22,11 +22,11 @@ VERSION = ''
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'matplotlib==3.8.0',
-    'numpy==1.26.4',
-    'pandas==2.2.2',
-    'scipy==1.13.0',
-    'xlrd==2.0.1',
+    'matplotlib>=3.7',
+    'numpy>=1.25',
+    'pandas>=2.0',
+    'scipy>=1.11',
+    'xlrd>=2.0',
 ]
 
 # What packages are optional?
