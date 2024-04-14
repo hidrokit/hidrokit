@@ -1,7 +1,7 @@
 """
 hk106: evapotranspiration.py
 
-This module provides functions for calculating reference evapotranspiration (ETo) 
+This module provides functions for calculating evapotranspiration (ETo) 
     using different methods: Blaney Criddle, Radiation, and Penman.
 
 Functions:
@@ -18,8 +18,9 @@ manual:
 
 import numpy as np
 import pandas as pd
+from hidrokit.contrib.taruma.utils import handle_deprecated_params, deprecated
 
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name, too-many-arguments
 
 t_rel_P_LL = pd.DataFrame(
     {
@@ -269,10 +270,62 @@ def _BC_find_C(month, table=t_cor_C_BC, col="C"):
     return table.loc[month, col]
 
 
-def ETo_BlaneyCriddle(df, temp_col, lat, as_df=True, report="ETo"):
+def eto_blaney_criddle(
+    dataframe,
+    temperature_column,
+    latitude,
+    return_as_dataframe=True,
+    report_type="ETo",
+    **kwargs
+):
+    """
+    Calculate evapotranspiration (ETo) using the Blaney-Criddle method.
+
+    Parameters:
+    - dataframe (pandas.DataFrame): The input dataframe containing the temperature data.
+    - temperature_column (str): The name of the column in the dataframe 
+        that contains the temperature data.
+    - latitude (str): The latitude of the location.
+    - return_as_dataframe (bool, optional): Whether to return the results as a dataframe. 
+        Default is True.
+    - report_type (str, optional): The type of report to generate. 
+        Valid values are "ETo" (default), "full", or "eto".
+    - **kwargs: Additional keyword arguments for deprecated parameters.
+        - df (pandas.DataFrame): Deprecated. Use dataframe instead.
+        - temp_col (str): Deprecated. Use temperature_column instead.
+        - lat (str): Deprecated. Use latitude instead.
+        - as_df (bool): Deprecated. Use return_as_dataframe instead.
+        - report (str): Deprecated. Use report_type instead.
+
+    Returns:
+    - If return_as_dataframe is True:
+        - pandas.DataFrame: A dataframe containing the calculated ETo values 
+            and other relevant information.
+    - If return_as_dataframe is False:
+        - numpy.ndarray: An array containing the calculated ETo values.
+
+    Note:
+    - The Blaney-Criddle method estimates ETo based on temperature and latitude.
+    - The function supports deprecated parameters for backward compatibility.
+    """
+
+    # handle deprecated params
+    dataframe = handle_deprecated_params(kwargs, "df", "dataframe") or dataframe
+    temperature_column = (
+        handle_deprecated_params(kwargs, "temp_col", "temperature_column")
+        or temperature_column
+    )
+    latitude = handle_deprecated_params(kwargs, "lat", "latitude") or latitude
+    return_as_dataframe = (
+        handle_deprecated_params(kwargs, "as_df", "return_as_dataframe")
+        or return_as_dataframe
+    )
+    report_type = (
+        handle_deprecated_params(kwargs, "report", "report_type") or report_type
+    )
 
     # sub_df
-    data = df.loc[:, [temp_col]]
+    data = dataframe.loc[:, [temperature_column]]
     data_array = data.values
 
     # info_df
@@ -286,22 +339,28 @@ def ETo_BlaneyCriddle(df, temp_col, lat, as_df=True, report="ETo"):
     month = data.index.month.values
 
     for i in range(nrows):
-        P[i] = _BC_find_P(lat, month[i])
+        P[i] = _BC_find_P(latitude, month[i])
         ETo_x[i] = _BC_ETo_x(P[i], temp[i])
         C[i] = _BC_find_C(month[i])
         ETo[i] = _BC_ETo(C[i], ETo_x[i])
 
-    if report.lower() == "full":
+    if report_type.lower() == "full":
         results = np.stack((month, temp, P, ETo_x, C, ETo), axis=1)
         columns_name = ["Month", "Temp", "P", "ETo_x", "C", "ETo"]
-    elif report.lower() == "eto":
+    elif report_type.lower() == "eto":
         results = ETo
         columns_name = ["ETo"]
 
-    if as_df:
+    if return_as_dataframe:
         return pd.DataFrame(data=results, index=data.index, columns=columns_name)
-    else:
-        return results
+
+    return results
+
+
+@deprecated("eto_blaney_criddle")
+def ETo_BlaneyCriddle(*args, **kwargs):
+    """Calculate evapotranspiration (ETo) using the Blaney-Criddle method."""
+    return eto_blaney_criddle(*args, **kwargs)
 
 
 # Radiation
@@ -369,8 +428,8 @@ def ETo_Radiation(df, temp_col, sun_col, lat, as_df=True, report="ETo"):
 
     if as_df:
         return pd.DataFrame(data=results, index=data.index, columns=columns_name)
-    else:
-        return results
+
+    return results
 
 
 # PENMAN
