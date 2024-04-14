@@ -1,5 +1,32 @@
-"""manual:
-https://gist.github.com/taruma/cad07f29ffc025ba9e7801e752be3444
+"""
+hk84: summary_hourly
+This module provides functions for generating a summary of hourly data from a DataFrame.
+
+Functions:
+- summary_hourly(
+    dataframe, column, n_hours=24, 
+    text_date=None, return_as_dataframe=True, 
+    date_format="%Y-%m-%d", hour_format="%H:%M"): 
+        Generate a summary of hourly data from a DataFrame.
+
+    Args:
+        dataframe (pandas.DataFrame): The input DataFrame.
+        column (str): The name of the column containing the hourly data.
+        n_hours (int, optional): The number of hours to group together. Defaults to 24.
+        text_date (list, optional): The list of column names to include in the summary. 
+            Defaults to ['date', 'hour'].
+        return_as_dataframe (bool, optional): Whether to return the summary as a DataFrame. 
+            Defaults to True.
+        date_format (str, optional): The date format string. Defaults to '%Y-%m-%d'.
+        hour_format (str, optional): The hour format string. Defaults to '%H:%M'.
+
+    Returns:
+        pandas.DataFrame or dict: The summary of hourly data. 
+            If `return_as_dataframe` is True, a DataFrame is returned. 
+            Otherwise, a dictionary is returned.
+
+manual:
+    https://gist.github.com/taruma/cad07f29ffc025ba9e7801e752be3444
 """
 
 import pandas as pd
