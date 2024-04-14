@@ -1,5 +1,14 @@
-"""manual:
-https://gist.github.com/taruma/96c321175ecac3e51350ef4c94f3d7d4"""
+"""
+hk102: upsampling.py
+
+This module provides a function for upsampling a given DataFrame to a specified frequency.
+
+The main function in this module is `upsampling()`, 
+    which takes a DataFrame as input and returns the upsampled DataFrame.
+
+For more information, refer to the manual:
+    https://gist.github.com/taruma/96c321175ecac3e51350ef4c94f3d7d4
+"""
 
 import pandas as pd
 from hidrokit.contrib.taruma.utils import handle_deprecated_params
@@ -29,7 +38,8 @@ def upsampling(
         use_interpolation (bool, optional): Whether to use interpolation for filling missing values.
             Defaults to False.
         interpolation_method (str, optional): The interpolation method to use. Defaults to "linear".
-        interpolation_args (dict, optional): Additional keyword arguments for the interpolation method.
+        interpolation_args (dict, optional): Additional keyword arguments for 
+            the interpolation method.
             Defaults to an empty dictionary.
         reindex (bool, optional): Whether to return the upsampled DataFrame without
             filling missing values.
