@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 from hidrokit.contrib.taruma.utils import handle_deprecated_params, deprecated
 
-# pylint: disable=invalid-name, too-many-arguments
+# pylint: disable=invalid-name, too-many-arguments, too-many-locals, too-many-statements
 
 t_rel_P_LL = pd.DataFrame(
     {
@@ -283,12 +283,12 @@ def eto_blaney_criddle(
 
     Parameters:
     - dataframe (pandas.DataFrame): The input dataframe containing the temperature data.
-    - temperature_column (str): The name of the column in the dataframe 
+    - temperature_column (str): The name of the column in the dataframe
         that contains the temperature data.
     - latitude (str): The latitude of the location.
-    - return_as_dataframe (bool, optional): Whether to return the results as a dataframe. 
+    - return_as_dataframe (bool, optional): Whether to return the results as a dataframe.
         Default is True.
-    - report_type (str, optional): The type of report to generate. 
+    - report_type (str, optional): The type of report to generate.
         Valid values are "ETo" (default), "full", or "eto".
     - **kwargs: Additional keyword arguments for deprecated parameters.
         - df (pandas.DataFrame): Deprecated. Use dataframe instead.
@@ -299,7 +299,7 @@ def eto_blaney_criddle(
 
     Returns:
     - If return_as_dataframe is True:
-        - pandas.DataFrame: A dataframe containing the calculated ETo values 
+        - pandas.DataFrame: A dataframe containing the calculated ETo values
             and other relevant information.
     - If return_as_dataframe is False:
         - numpy.ndarray: An array containing the calculated ETo values.
@@ -394,42 +394,109 @@ def _RAD_find_C(month, table=t_cor_C_RAD, col="C"):
     return table.loc[month, col]
 
 
-def ETo_Radiation(df, temp_col, sun_col, lat, as_df=True, report="ETo"):
+def eto_radiation(
+    dataframe,
+    temperature_column,
+    sunlight_column,
+    latitude,
+    return_as_dataframe=True,
+    report_type="ETo",
+    **kwargs
+):
+    """
+    Calculate evapotranspiration (ETo) using radiation-based method.
+
+    Parameters:
+    - dataframe (pd.DataFrame): The input dataframe containing weather data.
+    - temperature_column (str): The name of the column in the dataframe that represents temperature.
+    - sunlight_column (str): The name of the column in the dataframe that represents sunlight.
+    - latitude (str): The latitude of the location.
+    - return_as_dataframe (bool, optional): Whether to return the result as a dataframe. 
+        Defaults to True.
+    - report_type (str, optional): The type of report to generate. 
+        Options are "ETo" (default), "full", or "eto".
+    - **kwargs: Additional keyword arguments for backward compatibility.
+
+    Returns:
+    - If return_as_dataframe is True, returns a pandas DataFrame with the calculated ETo values.
+    - If return_as_dataframe is False, returns a numpy array or a single value 
+        (depending on the report_type).
+
+    Note:
+    - The input dataframe should contain columns for temperature and sunlight.
+    - The temperature should be in degrees Celsius.
+    - The sunlight should be in hours per day.
+    - The latitude should be in decimal degrees.
+
+    Deprecated Parameters:
+    - df (pd.DataFrame): Deprecated, use dataframe instead.
+    - temp_col (str): Deprecated, use temperature_column instead.
+    - sun_col (str): Deprecated, use sunlight_column instead.
+    - lat (str): Deprecated, use latitude instead.
+    - as_df (bool): Deprecated, use return_as_dataframe instead.
+    - report (str): Deprecated, use report_type instead.
+    """
+    # backward compatibility
+    dataframe = handle_deprecated_params(kwargs, "df", "dataframe") or dataframe
+    temperature_column = (
+        handle_deprecated_params(kwargs, "temp_col", "temperature_column")
+        or temperature_column
+    )
+    sunlight_column = (
+        handle_deprecated_params(kwargs, "sun_col", "sunlight_column")
+        or sunlight_column
+    )
+    latitude = handle_deprecated_params(kwargs, "lat", "latitude") or latitude
+    return_as_dataframe = (
+        handle_deprecated_params(kwargs, "as_df", "return_as_dataframe")
+        or return_as_dataframe
+    )
+    report_type = (
+        handle_deprecated_params(kwargs, "report", "report_type") or report_type
+    )
 
     # sub_df
-    data = df.loc[:, [temp_col, sun_col]]
-    data_array = data.values
+    weather_data = dataframe.loc[:, [temperature_column, sunlight_column]]
+    weather_data_array = weather_data.values
 
     # info_df
-    nrows = data.shape[0]
+    num_rows = weather_data.shape[0]
 
     # initialization
-    (w, Rg, Rs, ETo_x, C, ETo) = (np.zeros(nrows) for _ in range(6))
+    (w, Rg, Rs, ETo_x, C, ETo) = (np.zeros(num_rows) for _ in range(6))
 
     # calculation
-    temp = data_array[:, 0]
-    sun = data_array[:, 1]
-    month = data.index.month.values
+    temp = weather_data_array[:, 0]
+    sun = weather_data_array[:, 1]
+    month = weather_data.index.month.values
 
-    for i in range(nrows):
+    for i in range(num_rows):
         w[i] = _RAD_find_W(temp[i])
-        Rg[i] = _RAD_find_Rg(lat, month[i])
+        Rg[i] = _RAD_find_Rg(latitude, month[i])
         Rs[i] = _RAD_Rs(sun[i], Rg[i])
         ETo_x[i] = _RAD_ETo_x(w[i], Rs[i])
         C[i] = _RAD_find_C(month[i])
         ETo[i] = _RAD_ETo(C[i], ETo_x[i])
 
-    if report.lower() == "full":
+    if report_type.lower() == "full":
         results = np.stack((month, temp, sun, w, Rg, Rs, ETo_x, C, ETo), axis=1)
         columns_name = ["Month", "Temp", "Sun", "W", "R_G", "R_s", "ETo_x", "C", "ETo"]
-    elif report.lower() == "eto":
+    elif report_type.lower() == "eto":
         results = ETo
         columns_name = ["ETo"]
 
-    if as_df:
-        return pd.DataFrame(data=results, index=data.index, columns=columns_name)
+    if return_as_dataframe:
+        return pd.DataFrame(
+            data=results, index=weather_data.index, columns=columns_name
+        )
 
     return results
+
+
+@deprecated("eto_radiation")
+def ETo_Radiation(*args, **kwargs):
+    """Calculate evapotranspiration (ETo) using the Radiation method."""
+    return eto_radiation(*args, **kwargs)
 
 
 # PENMAN
