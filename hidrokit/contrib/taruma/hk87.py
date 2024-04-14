@@ -1,5 +1,19 @@
-"""manual: SNI 6738:2015
-https://gist.github.com/taruma/0b0ebf3ba12d4acf7cf11df905d2ec9c
+"""
+hk87: dependable_flow
+This module provides functions for calculating Weibull probability and 
+    dependable flow values based on a given dataframe and column name.
+    It also includes functions for calculating monthly dependable flow.
+
+Functions:
+- calculate_weibull_probability(shape, scale): Calculate the Weibull probability.
+- prob_weibull(m, n): Calculate Weibull probability (deprecated).
+- dependable_flow(dataframe, column_name, return_type=None, probabilities=None): 
+    Calculate the dependable flow values based on a given dataframe and column name.
+- monthly_dependable_flow(df, column, **kwargs): 
+    Calculate the monthly dependable flow for a given DataFrame and column.
+
+manual: SNI 6738:2015
+    https://gist.github.com/taruma/0b0ebf3ba12d4acf7cf11df905d2ec9c
 """
 
 import numpy as np
