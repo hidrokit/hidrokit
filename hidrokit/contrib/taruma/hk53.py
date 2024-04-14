@@ -1,10 +1,24 @@
-"""manual:
-https://gist.github.com/taruma/50460ebfaab5a30c41e7f1a1ac0853e2"""
+"""This module provides functions for creating tensor arrays from pandas DataFrames.
+
+Functions:
+- tensor_array(dataframe, timesteps, X_columns=None, y_out=False, y_columns=None): 
+  Creates a tensor array from the given DataFrame.
+  Args:
+    - dataframe: The input DataFrame.
+    - timesteps: The number of time steps to consider for each sample.
+    - X_columns: A list of column names to be used as input features. If None, all columns will be used.
+    - y_out: A boolean indicating whether to include the output labels in the tensor array. Default is False.
+    - y_columns: A list of column names to be used as output labels. Only applicable if y_out is True.
+  Returns:
+    - If y_out is False, returns the tensor array X.
+    - If y_out is True, returns a tuple (X, y) where X is the tensor array and y is the output labels array.
+"""
 
 import numpy as np
 
 
 def _columns_index(dataframe, columns):
+    """Get the column indices for the given column names in the DataFrame."""
     columns_name = dataframe.columns
     columns_index = []
 
@@ -14,6 +28,7 @@ def _columns_index(dataframe, columns):
 
 
 def _get_y(array, timesteps, columns_index):
+    """Get the output labels array from the input array."""
     y = []
     for col in columns_index:
         y.append(array[timesteps:, col])
@@ -25,6 +40,7 @@ def _get_y(array, timesteps, columns_index):
 
 
 def _get_x_tensor(array, timesteps, columns_index):
+    """Get the tensor array X from the input array."""
     X = []
     rows, _ = array.shape
 
@@ -40,6 +56,19 @@ def _get_x_tensor(array, timesteps, columns_index):
 def tensor_array(
     dataframe, timesteps, X_columns=None, y_out=False, y_columns=None
 ):
+    """Create a tensor array from the given DataFrame.
+
+    Args:
+        dataframe: The input DataFrame.
+        timesteps: The number of time steps to consider for each sample.
+        X_columns: A list of column names to be used as input features. If None, all columns will be used.
+        y_out: A boolean indicating whether to include the output labels in the tensor array. Default is False.
+        y_columns: A list of column names to be used as output labels. Only applicable if y_out is True.
+
+    Returns:
+        If y_out is False, returns the tensor array X.
+        If y_out is True, returns a tuple (X, y) where X is the tensor array and y is the output labels array.
+    """
     _, n_cols = dataframe.shape
     array = dataframe.values
 
