@@ -28,8 +28,8 @@ Data Tables:
     - t_cor_C_PEN: Correction factors for Penman method.
     - t_rel_T_PEN: Relative humidity values for different temperatures and vapor pressure.
 
-For more information, refer to the module's source code on GitHub:
-    https://github.com/hidrokit/hidrokit/blob/main/hidrokit/contrib/taruma/hk106.py
+For more information:
+    https://gist.github.com/taruma/7f81cf0fea5250cfe47942b4e16a8a65
 """
 
 import numpy as np
