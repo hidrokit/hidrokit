@@ -37,3 +37,24 @@ def deprecated(new_func_name):
         return wrapper
 
     return decorator
+
+
+def handle_deprecated_params(kwargs, old_param, new_param):
+    """
+    Handle deprecated parameters by issuing a warning and returning the value of the old parameter.
+
+    Args:
+        kwargs (dict): A dictionary of keyword arguments.
+        old_param (str): The name of the deprecated parameter.
+        new_param (str): The name of the new parameter to use instead.
+
+    Returns:
+        The value of the old parameter if it exists in the kwargs dictionary, otherwise None.
+    """
+    if old_param in kwargs:
+        warnings.warn(
+            f"The `{old_param}` parameter is deprecated. Please use `{new_param}` instead.",
+            DeprecationWarning,
+        )
+        return kwargs[old_param]
+    return None
