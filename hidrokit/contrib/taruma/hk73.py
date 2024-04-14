@@ -149,6 +149,15 @@ def get_nan_indices_if_exists(dataframe):
 
 
 def get_columns_with_nan_values(dataframe):
+    """
+    Returns a list of column names that contain NaN values in the given dataframe.
+
+    Parameters:
+    dataframe (pandas.DataFrame): The input dataframe.
+
+    Returns:
+    list: A list of column names that contain NaN values.
+    """
     return dataframe.columns[dataframe.isna().any()].tolist()
 
 
