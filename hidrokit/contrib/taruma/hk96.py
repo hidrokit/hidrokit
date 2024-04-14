@@ -1,10 +1,25 @@
-"""manual
-https://gist.github.com/taruma/ae5c0209ef19b088e3cd9dd22508af5c"""
+"""
+hk96: hydrological_model_FJMock 
+FJMock Model Hydrological Model.
+
+This module implements the FJMock model, 
+    which is a hydrological model used for performing calculations related to water flow and 
+    other hydrological parameters.
+
+The main function in this module is `model_FJMOCK`, 
+    which takes a DataFrame containing the necessary data and 
+    performs the calculations based on the FJMock model. 
+    The function returns the calculated results based on the specified report type.
+
+For more information about the FJMock model, refer to the following manual:
+- https://gist.github.com/taruma/ae5c0209ef19b088e3cd9dd22508af5c
+"""
 
 import numpy as np
 import pandas as pd
 
 
+# pylint: disable=invalid-name
 def _EPM(NDAYS, EP):
     return NDAYS * EP
 
@@ -81,9 +96,49 @@ def _FLOW(TRO, AREA, NDAYS):
     return (TRO / 1000) * AREA / (NDAYS * 24 * 3600)
 
 
-def model_FJMOCK(df, precip_col, ep_col, nrain_col, ndays_col,
-                 EXSURF, IF, K, PF, ISMC, GSOM, AREA,
-                 as_df=True, report='flow'):
+# pylint: disable=too-many-arguments, too-many-locals, too-many-branches, too-many-statements
+def model_FJMOCK(
+    df,
+    precip_col,
+    ep_col,
+    nrain_col,
+    ndays_col,
+    EXSURF,
+    IF,
+    K,
+    PF,
+    ISMC,
+    GSOM,
+    AREA,
+    as_df=True,
+    report="flow",
+):
+    """
+    Perform calculations based on the FJMOCK model.
+
+    Args:
+        df (pandas.DataFrame): The input DataFrame containing the data.
+        precip_col (str): The column name for precipitation data.
+        ep_col (str): The column name for evapotranspiration data.
+        nrain_col (str): The column name for total-rainfall data.
+        ndays_col (str): The column name for number of days data.
+        EXSURF (float): The EXSURF value.
+        IF (float): The IF value.
+        K (float): The K value.
+        PF (float): The PF value.
+        ISMC (float): The ISMC value.
+        GSOM (float): The GSOM value.
+        AREA (float): The AREA value.
+        as_df (bool, optional): Whether to return the results as a DataFrame.
+            Defaults to True.
+        report (str, optional):
+            The type of report to generate.
+            Can be 'full', 'partial', 'tro', or 'flow'. Defaults to 'flow'.
+
+    Returns:
+        pandas.DataFrame or numpy.ndarray:
+            The calculated results based on the specified report type.
+    """
 
     # sub_df
     data = df.loc[:, [precip_col, nrain_col, ndays_col, ep_col]]
@@ -94,8 +149,25 @@ def model_FJMOCK(df, precip_col, ep_col, nrain_col, ndays_col,
 
     # initialization
     (
-        epm, ratepm, deltae, ea, pea, sms, smc, ss, watsur,
-        i, cal0, calgs, gs, dgs, bflow, dro, sro, tro, flow
+        epm,
+        ratepm,
+        deltae,
+        ea,
+        pea,
+        sms,
+        smc,
+        ss,
+        watsur,
+        i,
+        cal0,
+        calgs,
+        gs,
+        dgs,
+        bflow,
+        dro,
+        sro,
+        tro,
+        flow,
     ) = (np.zeros(nrows) for _ in range(19))
 
     # calculation
@@ -143,41 +215,87 @@ def model_FJMOCK(df, precip_col, ep_col, nrain_col, ndays_col,
         flow[j] = _FLOW(tro[j], AREA, ndays[j])
 
     # results
-    if report.lower() == 'full':
-        results = np.stack((
-            precip, nrain, ndays, ep, epm, ratepm, deltae,
-            ea, pea, sms, smc, ss, watsur, i, cal0, calgs, gs,
-            dgs, bflow, dro, sro, tro, flow
-        ), axis=1)
+    if report.lower() == "full":
+        results = np.stack(
+            (
+                precip,
+                nrain,
+                ndays,
+                ep,
+                epm,
+                ratepm,
+                deltae,
+                ea,
+                pea,
+                sms,
+                smc,
+                ss,
+                watsur,
+                i,
+                cal0,
+                calgs,
+                gs,
+                dgs,
+                bflow,
+                dro,
+                sro,
+                tro,
+                flow,
+            ),
+            axis=1,
+        )
         columns_name = [
-            'PRECIP', 'NRAIN', 'NDAYS', 'EP', 'EPM', 'RATEPM',
-            'DELTAE', 'EA', 'PEA', 'SMS', 'SMC', 'SS', 'WATSUR', 'I',
-            'CAL0', 'CALGS', 'GS', 'DGS', 'BFLOW', 'DRO', 'SRO',
-            'TRO', 'FLOW'
+            "PRECIP",
+            "NRAIN",
+            "NDAYS",
+            "EP",
+            "EPM",
+            "RATEPM",
+            "DELTAE",
+            "EA",
+            "PEA",
+            "SMS",
+            "SMC",
+            "SS",
+            "WATSUR",
+            "I",
+            "CAL0",
+            "CALGS",
+            "GS",
+            "DGS",
+            "BFLOW",
+            "DRO",
+            "SRO",
+            "TRO",
+            "FLOW",
         ]
-    elif report.lower() == 'partial':
-        results = np.stack((
-            precip, nrain, ndays, ep, ea, sms, ss, gs, tro, flow
-        ), axis=1)
+    elif report.lower() == "partial":
+        results = np.stack(
+            (precip, nrain, ndays, ep, ea, sms, ss, gs, tro, flow), axis=1
+        )
         columns_name = [
-            'PRECIP', 'NRAIN', 'NDAYS', 'EP', 'EA', 'SMS', 'SS', 'GS',
-            'TRO', 'FLOW'
+            "PRECIP",
+            "NRAIN",
+            "NDAYS",
+            "EP",
+            "EA",
+            "SMS",
+            "SS",
+            "GS",
+            "TRO",
+            "FLOW",
         ]
-    elif report.lower() == 'tro':
+    elif report.lower() == "tro":
         results = tro
-        columns_name = ['TRO']
-    elif report.lower() == 'flow':
+        columns_name = ["TRO"]
+    elif report.lower() == "flow":
         results = flow
-        columns_name = ['FLOW']
+        columns_name = ["FLOW"]
     else:
         raise ValueError(
-            str(report) + ' not identified. ' +
-            'Use full / partial / tro / flow.'
+            str(report) + " not identified. " + "Use full / partial / tro / flow."
         )
 
     if as_df:
-        return pd.DataFrame(
-            data=results, index=data.index, columns=columns_name
-        )
-    else:
-        return results
+        return pd.DataFrame(data=results, index=data.index, columns=columns_name)
+    return results
