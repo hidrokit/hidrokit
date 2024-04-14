@@ -2,10 +2,10 @@
 https://gist.github.com/taruma/0b0ebf3ba12d4acf7cf11df905d2ec9c
 """
 
-
 import numpy as np
 import pandas as pd
 from hidrokit.contrib.taruma.utils import deprecated
+
 
 def calculate_weibull_probability(shape, scale):
     """
@@ -20,6 +20,11 @@ def calculate_weibull_probability(shape, scale):
     """
     return shape / (scale + 1) * 100
 
+
+@deprecated("calculate_weibull_probability")
+def prob_weibull(m, n):
+    """Calculate Weibull probability"""
+    return calculate_weibull_probability(m, n)
 
 def _array_weibull(n):
     return np.array([calculate_weibull_probability(i, n) for i in range(1, n + 1)])
@@ -60,29 +65,50 @@ def dependable_flow(dataframe, column_name, return_type=None, probabilities=None
     probabilities = [80, 90, 95] if probabilities is None else probabilities
     x_values, y_values = _fdc_xy(dataframe.loc[:, column_name])
 
-    if return_type.lower() == 'array':
+    if return_type.lower() == "array":
         return x_values, y_values
 
-    if return_type.lower() == 'prob':
+    if return_type.lower() == "prob":
         return _interpolate(probabilities, x_values, y_values)
 
     data = {
-        'index': dataframe.loc[:, column_name].sort_values(ascending=False).index,
-        'rank': list(range(1, len(dataframe.index) + 1)),
-        'probability': x_values,
-        'data': y_values,
+        "index": dataframe.loc[:, column_name].sort_values(ascending=False).index,
+        "rank": list(range(1, len(dataframe.index) + 1)),
+        "probability": x_values,
+        "data": y_values,
     }
     return pd.DataFrame(data)
 
 
 @deprecated("dependable_flow")
-def debit_andal(df, column, kind='table', prob=None):
+def debit_andal(df, column, kind="table", prob=None):
     """Calculate dependable flow based on SNI 6738:2015"""
     return dependable_flow(df, column, kind, prob)
 
 
-def debit_andal_bulanan(df, column, **kwargs):
+def monthly_dependable_flow(df, column, **kwargs):
+    """
+    Calculate the monthly dependable flow for a given DataFrame and column.
+
+    Parameters:
+    - df: DataFrame
+        The input DataFrame containing the data.
+    - column: str
+        The name of the column in the DataFrame to calculate the dependable flow.
+    - **kwargs: additional keyword arguments
+        Additional arguments to be passed to the `dependable_flow` function.
+
+    Returns:
+    - dict
+        A dictionary containing the monthly dependable flow for each month (1-12).
+    """
     return {
         m: dependable_flow(df[df.index.month == m], column, **kwargs)
         for m in range(1, 13)
     }
+
+
+@deprecated("monthly_dependable_flow")
+def debit_andal_bulanan(df, column, **kwargs):
+    """Calculate monthly dependable flow based on SNI 6738:2015"""
+    return monthly_dependable_flow(df, column, **kwargs)
