@@ -55,14 +55,14 @@ def _interpolate(probability, x, y):
     return {p: np.interp(p, x, y) for p in probability}
 
 
-def dependable_flow(dataframe, column_name, return_type=None, probabilities=None):
+def dependable_flow(dataframe, column_name, return_type='table', probabilities=None):
     """
     Calculate the dependable flow values based on a given dataframe and column name.
 
     Parameters:
         dataframe (pd.DataFrame): The input dataframe.
         column_name (str): The name of the column in the dataframe.
-        return_type (str, optional): The type of the return value. Default is None ('table').
+        return_type (str, optional): The type of the return value. Default is 'table'.
             Possible values are 'array', 'prob', and 'table'.
         probabilities (list, optional): The list of probabilities to calculate. Default is None.
             Only applicable when return_type is 'prob'.
