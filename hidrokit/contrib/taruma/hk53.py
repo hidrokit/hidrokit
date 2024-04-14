@@ -1,6 +1,14 @@
 """This module provides functions for creating tensor arrays from pandas DataFrames.
-manual:
-https://gist.github.com/taruma/50460ebfaab5a30c41e7f1a1ac0853e2
+
+This module contains the following functions:
+- `_columns_index`: Get the index of columns in a dataframe.
+- `_get_y`: Get the target variable(s) from the input array.
+- `_get_x_tensor`: Generate a tensor of input features for a given array.
+- `tensor_array`: Convert a pandas DataFrame into 
+    a tensor array for input to a machine learning model.
+
+For more information, refer to the manual: 
+    https://gist.github.com/taruma/50460ebfaab5a30c41e7f1a1ac0853e2
 """
 
 import numpy as np
@@ -84,11 +92,11 @@ def tensor_array(
     Args:
         dataframe (pandas.DataFrame): The input DataFrame containing the data.
         timesteps (int): The number of timesteps to consider for each sample.
-        X_columns (list, optional): The list of column names to be used as input features. 
+        X_columns (list, optional): The list of column names to be used as input features.
             If None, all columns will be used. Defaults to None.
-        y_out (bool, optional): Whether to include the output labels in the tensor array. 
+        y_out (bool, optional): Whether to include the output labels in the tensor array.
             Defaults to False.
-        y_columns (list, optional): The list of column names to be used as output labels. 
+        y_columns (list, optional): The list of column names to be used as output labels.
             Only applicable if y_out is True. Defaults to None.
 
     Returns:
