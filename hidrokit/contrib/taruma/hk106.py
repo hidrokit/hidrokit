@@ -1,7 +1,9 @@
 """
-hk106: hk106.py
+hk106: evapotranspiration.py
 
-This module provides functions for calculating evapotranspiration (ETo) using different methods: Blaney Criddle, Radiation, and Penman. It also includes data tables and utility functions for the calculations.
+This module provides functions for calculating evapotranspiration (ETo) using different methods: 
+    Blaney Criddle, Radiation, and Penman. 
+    It also includes data tables and utility functions for the calculations.
 
 Functions:
     - eto_blaney_criddle(
