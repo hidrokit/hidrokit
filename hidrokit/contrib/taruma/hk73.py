@@ -222,42 +222,42 @@ def _read_bmkg(*args, **kwargs):
     return read_bmkg_excel(*args, **kwargs)
 
 
-@deprecated("_has_nan_values")
+@deprecated("has_nan_values")
 def _have_nan(*args, **kwargs):
     return has_nan_values(*args, **kwargs)
 
 
-@deprecated("_get_missing_data_indices")
+@deprecated("get_missing_data_indices")
 def _get_index1D(*args, **kwargs):  # pylint: disable=invalid-name
     return get_missing_data_indices(*args, **kwargs)
 
 
-@deprecated("_get_nan_indices_by_column")
+@deprecated("get_nan_indices_by_column")
 def _get_nan(*args, **kwargs):
     return get_nan_indices_by_column(*args, **kwargs)
 
 
-@deprecated("_get_unrecorded_indices")
+@deprecated("get_unrecorded_indices")
 def _get_missing(*args, **kwargs):
     return get_unrecorded_indices(*args, **kwargs)
 
 
-@deprecated("_get_nan_indices_if_exists")
+@deprecated("get_nan_indices_if_exists")
 def _check_nan(*args, **kwargs):
     return get_nan_indices_if_exists(*args, **kwargs)
 
 
-@deprecated("_get_columns_with_nan_values")
+@deprecated("get_columns_with_nan_values")
 def _get_nan_columns(*args, **kwargs):
     return get_columns_with_nan_values(*args, **kwargs)
 
 
-@deprecated("_group_consecutive_elements")
+@deprecated("group_consecutive_elements")
 def _group_as_list(*args, **kwargs):
     return group_consecutive_elements(*args, **kwargs)
 
 
-@deprecated("_format_group_indices")
+@deprecated("format_group_indices")
 def _group_as_index(
     group_list, index=None, date_format="%Y%m%d", format_date="{}-{}"
 ):
