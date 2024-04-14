@@ -1,5 +1,19 @@
-"""manual
-https://gist.github.com/taruma/ae5c0209ef19b088e3cd9dd22508af5c"""
+"""
+hk96: hydrological_model_FJMock 
+FJMock Model Hydrological Model.
+
+This module implements the FJMock model, 
+    which is a hydrological model used for performing calculations related to water flow and 
+    other hydrological parameters.
+
+The main function in this module is `model_FJMOCK`, 
+    which takes a DataFrame containing the necessary data and 
+    performs the calculations based on the FJMock model. 
+    The function returns the calculated results based on the specified report type.
+
+For more information about the FJMock model, refer to the following manual:
+- https://gist.github.com/taruma/ae5c0209ef19b088e3cd9dd22508af5c
+"""
 
 import numpy as np
 import pandas as pd
@@ -115,14 +129,14 @@ def model_FJMOCK(
         ISMC (float): The ISMC value.
         GSOM (float): The GSOM value.
         AREA (float): The AREA value.
-        as_df (bool, optional): Whether to return the results as a DataFrame. 
+        as_df (bool, optional): Whether to return the results as a DataFrame.
             Defaults to True.
         report (str, optional):
             The type of report to generate.
             Can be 'full', 'partial', 'tro', or 'flow'. Defaults to 'flow'.
 
     Returns:
-        pandas.DataFrame or numpy.ndarray: 
+        pandas.DataFrame or numpy.ndarray:
             The calculated results based on the specified report type.
     """
 
