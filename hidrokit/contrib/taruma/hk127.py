@@ -4,11 +4,14 @@ https://gist.github.com/taruma/ffa77e6f50a19fa5d05ab10e27d3266a"""
 import numpy as np
 import pandas as pd
 from scipy import stats
+from hidrokit.contrib.taruma.utils import handle_deprecated_params
 
 # tabel dari gumbel
 # Statistics of Extremes oleh Gumbel p.228
 
 # KODE: GB
+
+# fmt: off
 
 _DATA_GB = [
     [0.48430, 0.90430],
@@ -323,35 +326,92 @@ t_gumbel_st = pd.DataFrame(
     data=_DATA_ST, index=_INDEX_ST, columns=_COL_ST
 )
 
+# fmt: on
+
+# pylint: disable=invalid-name
+
+
 def _find_in_table(val, table, y_col=None, x_col=None):
     x = table.index if x_col is None else table[x_col]
     y = table.iloc[:, 0] if y_col is None else table[y_col]
     return np.interp(val, x, y)
 
+
 def _find_Yn_Sn(n, table):
-    yn = _find_in_table(n, table, y_col='yn')
-    sn = _find_in_table(n, table, y_col='sn')
+    yn = _find_in_table(n, table, y_col="yn")
+    sn = _find_in_table(n, table, y_col="sn")
     return yn, sn
 
-def find_coef(n, source='gumbel'):
-    if source.lower() == 'gumbel':
+
+def find_coef(n, source="gumbel"):
+    """
+    Find the coefficient based on the given source.
+
+    Parameters:
+    - n (int): The coefficient value to find.
+    - source (str): The source to use for finding the coefficient. Default is "gumbel".
+
+    Returns:
+    - The coefficient value based on the given source.
+
+    Raises:
+    - ValueError: If the given source is not found.
+    """
+    if source.lower() == "gumbel":
         return _find_Yn_Sn(n, t_gumbel_gb)
-    if source.lower() == 'soewarno':
+    if source.lower() == "soewarno":
         return _find_Yn_Sn(n, t_gumbel_sw)
-    if source.lower() == 'soetopo':
+    if source.lower() == "soetopo":
         return _find_Yn_Sn(n, t_gumbel_st)
 
-def calc_K(n, return_period, source='gumbel', show_stat=False):
-    return_period = np.array(return_period)
+    raise ValueError(f"source '{source}' not found")
 
-    if source.lower() == 'scipy':
-        # todo: perhitungan probabilitasnya belum dapat dipastikan formulanya
-        prob = 1 - 1/return_period
+
+# def calc_K(n, return_period, source="gumbel", show_stat=False):
+
+
+def calc_K(
+    data_count=None, return_periods=None, source="gumbel", display_stat=False, **kwargs
+):
+    """
+    Calculate the K value using different methods based on the specified source.
+
+    Parameters:
+    - data_count (int): The number of data points.
+    - return_periods (list or array-like): The return periods.
+    - source (str): The source method to use for calculation. Options: 'gumbel', 'scipy', 'powell'.
+    - display_stat (bool): Whether to display the calculated statistics.
+
+    Returns:
+    - K (array-like): The calculated K values.
+
+    Raises:
+    - ValueError: If the specified source is not found.
+    """
+    # handle deprecated params
+    data_count = handle_deprecated_params(kwargs, "n", "data_count") or data_count
+    return_periods = (
+        handle_deprecated_params(kwargs, "return_period", "return_periods")
+        or return_periods
+    )
+    display_stat = (
+        handle_deprecated_params(kwargs, "show_stat", "display_stat") or display_stat
+    )
+
+    return_periods = np.array(return_periods)
+
+    if source.lower() == "scipy":
+        # perhitungan probabilitasnya belum dapat dipastikan formulanya
+        prob = 1 - 1 / return_periods
         # prob = 1 - np.log(return_period/(return_period-1))
         return stats.gumbel_r.ppf(prob)
-    elif source.lower() == 'powell':
-        return -np.sqrt(6)/np.pi *(np.euler_gamma+np.log(np.log(return_period/(return_period-1))))
-    else:
+    if source.lower() == "powell":
+        return (
+            -np.sqrt(6)
+            / np.pi
+            * (np.euler_gamma + np.log(np.log(return_periods / (return_periods - 1))))
+        )
+    if source.lower() == "gumbel":
         # dibuku Soewarno dinyatakan T>=20 menggunakan
         # ln(T), tapi dicontohnya tidak mengikuti formula tersebut
         # jadi yang digunakan rumus umumnya saja.
@@ -366,75 +426,84 @@ def calc_K(n, return_period, source='gumbel', show_stat=False):
         # else:
         #     yt = -np.log(-np.log((return_period - 1)/return_period))
 
-        yn, sn = find_coef(n, source=source)
-        yt = -np.log(-np.log((return_period - 1)/return_period))
+        yn, sn = find_coef(data_count, source=source)
+        yt = -np.log(-np.log((return_periods - 1) / return_periods))
         K = (yt - yn) / sn
 
-        if show_stat:
-            print(f'y_n = {yn}')
-            print(f's_n = {sn}')
-            print(f'y_t = {yt}')
+        if display_stat:
+            print(f"y_n = {yn}")
+            print(f"s_n = {sn}")
+            print(f"y_t = {yt}")
         return K
 
-def calc_x_gumbel(x, return_period=[5], source='gumbel', show_stat=False):
+    raise ValueError(f"source '{source}' not found")
+
+
+def calc_x_gumbel(x, return_period=[5], source="gumbel", show_stat=False):
 
     x_mean = np.mean(x)
     x_std = np.std(x, ddof=1)
     n = len(x)
 
-    k = calc_K(n, return_period, source=source, show_stat=show_stat)
+    k = calc_K(n, return_period, source=source, display_stat=show_stat)
 
     if show_stat:
-        print(f'x_mean = {x_mean:.5f}')
-        print(f'x_std = {x_std:.5f}')
-        print(f'k = {k}')
-    
+        print(f"x_mean = {x_mean:.5f}")
+        print(f"x_std = {x_std:.5f}")
+        print(f"k = {k}")
+
     val_x = x_mean + k * x_std
     return val_x
 
+
 def freq_gumbel(
-    df, col=None,
-    return_period=[2, 5, 10, 20, 25, 50, 100], source='gumbel', show_stat=False,
-    col_name='Gumbel', index_name='Kala Ulang'):
+    df,
+    col=None,
+    return_period=[2, 5, 10, 20, 25, 50, 100],
+    source="gumbel",
+    show_stat=False,
+    col_name="Gumbel",
+    index_name="Kala Ulang",
+):
 
     col = df.columns[0] if col is None else col
 
     x = df[col].copy()
 
     arr = calc_x_gumbel(
-        x, return_period=return_period, show_stat=show_stat,
-        source=source
+        x, return_period=return_period, show_stat=show_stat, source=source
     )
 
-    result = pd.DataFrame(
-        data=arr, index=return_period, columns=[col_name]
-    )
+    result = pd.DataFrame(data=arr, index=return_period, columns=[col_name])
 
     result.index.name = index_name
     return result
 
-def _calc_T(P):
-    return 1 / (1-np.exp(-np.exp(-P)))
 
-def _calc_prob_from_table(k, n, source='gumbel'):
+def _calc_T(P):
+    return 1 / (1 - np.exp(-np.exp(-P)))
+
+
+def _calc_prob_from_table(k, n, source="gumbel"):
     yn, sn = find_coef(n, source=source)
     P = k * sn + yn
     T = _calc_T(P)
-    return np.around(1-1/T, 3)
+    return np.around(1 - 1 / T, 3)
 
-def calc_prob(k, n, source='gumbel'):
-    if source.lower() == 'gumbel':
+
+def calc_prob(k, n, source="gumbel"):
+    if source.lower() == "gumbel":
         return _calc_prob_from_table(k, n, source=source)
-    if source.lower() == 'soewarno':
+    if source.lower() == "soewarno":
         return _calc_prob_from_table(k, n, source=source)
-    if source.lower() == 'soetopo':
+    if source.lower() == "soetopo":
         return _calc_prob_from_table(k, n, source=source)
-    if source.lower() == 'scipy':
+    if source.lower() == "scipy":
         return stats.gumbel_r.cdf(k)
-    if source.lower() == 'powell':
+    if source.lower() == "powell":
         # persamaan ini ditemukan menggunakan wolfram alpha
         # x = e^(e^(-(π K)/sqrt(6) - p))/(e^(e^(-(π K)/sqrt(6) - p)) - 1)
-        _top = np.exp(np.exp(-(np.pi*k)/np.sqrt(6)-np.euler_gamma))
+        _top = np.exp(np.exp(-(np.pi * k) / np.sqrt(6) - np.euler_gamma))
         _bot = _top - 1
         T = _top / _bot
-        return 1-1/T
+        return 1 - 1 / T
