@@ -1,5 +1,24 @@
-"""manual:
-https://gist.github.com/taruma/ffa77e6f50a19fa5d05ab10e27d3266a"""
+"""
+hk127: freq_gumbel.py
+
+Module for Gumbel distribution calculations.
+
+This module provides functions for calculating coefficients and K values based on the Gumbel distribution.
+It includes tables from different sources and methods for interpolation.
+
+Functions:
+- find_coef(n, source="gumbel"): Find the coefficient based on the given source.
+- calc_K(data_count=None, return_periods=None, source="gumbel", display_stat=False, **kwargs):
+    Calculate the K value using different methods based on the specified source.
+
+Tables:
+- t_gumbel_gb: Table of coefficients from Gumbel source (Gumbel, GB).
+- t_gumbel_sw: Table of coefficients from Soewarno source (Gumbel, GB).
+- t_gumbel_st: Table of coefficients from Soetopo source (Gumbel, GB).
+
+manual:
+    https://gist.github.com/taruma/ffa77e6f50a19fa5d05ab10e27d3266a
+"""
 
 import numpy as np
 import pandas as pd
@@ -218,7 +237,7 @@ t_gumbel_sw = pd.DataFrame(
 )
 
 # Tabel dari Soetopo hal. 98
-# Tabel 12.1 Yn dan Sn Gumbel 
+# Tabel 12.1 Yn dan Sn Gumbel
 
 # KODE: ST
 
@@ -449,7 +468,8 @@ def calc_x_gumbel(
         input_array (array-like): The input array of values.
         return_periods (list, optional): The list of return periods. Defaults to [5].
         source (str, optional): The source of the distribution. Defaults to "gumbel".
-        display_stat (bool, optional): Whether to display the calculated statistics. Defaults to False.
+        display_stat (bool, optional): Whether to display the calculated statistics.
+            Defaults to False.
         **kwargs: Additional keyword arguments for deprecated parameters.
 
     Returns:
@@ -483,27 +503,101 @@ def calc_x_gumbel(
     return x_values
 
 
+# def freq_gumbel(
+#     df,
+#     col=None,
+#     return_period=[2, 5, 10, 20, 25, 50, 100],
+#     source="gumbel",
+#     show_stat=False,
+#     col_name="Gumbel",
+#     index_name="Kala Ulang",
+# ):
+
+
 def freq_gumbel(
-    df,
-    col=None,
-    return_period=[2, 5, 10, 20, 25, 50, 100],
+    dataframe=None,
+    target_column=None,
+    return_periods=None,
+    display_stat=False,
     source="gumbel",
-    show_stat=False,
-    col_name="Gumbel",
-    index_name="Kala Ulang",
+    out_column_name="Gumbel",
+    out_index_name="Kala Ulang",
+    **kwargs,
 ):
+    """
+    Calculate the frequency analysis using the Gumbel distribution.
 
-    col = df.columns[0] if col is None else col
+    Parameters:
+    - dataframe (pandas.DataFrame): The input dataframe containing the data.
+    - target_column (str): The name of the column in the dataframe to be analyzed.
+        Default is None (first column of dataframe).
+    - return_periods (list): The list of return periods to calculate.
+        Default is None ([5]).
+    - display_stat (bool): Whether to display the statistical information.
+        Default is False.
+    - source (str): The source of the distribution.
+        Default is 'gumbel'.
+    - out_column_name (str): The name of the output column in the result dataframe.
+        Default is 'Gumbel'.
+    - out_index_name (str): The name of the index in the result dataframe.
+        Default is 'Kala Ulang'.
+    - **kwargs: Additional keyword arguments for deprecated parameters.
 
-    x = df[col].copy()
+    Deprecated Parameters:
+    - df (pandas.DataFrame):
+        Deprecated parameter for 'dataframe'. Use 'dataframe' instead.
+    - col (str):
+        Deprecated parameter for 'target_column'. Use 'target_column' instead.
+    - return_period (list):
+        Deprecated parameter for 'return_periods'. Use 'return_periods' instead.
+    - show_stat (bool):
+        Deprecated parameter for 'display_stat'. Use 'display_stat' instead.
+    - col_name (str):
+        Deprecated parameter for 'out_column_name'. Use 'out_column_name' instead.
+    - index_name (str):
+        Deprecated parameter for 'out_index_name'. Use 'out_index_name' instead.
 
-    arr = calc_x_gumbel(
-        x, return_periods=return_period, display_stat=show_stat, source=source
+    Returns:
+    - pandas.DataFrame: The result dataframe containing the calculated values.
+
+    """
+
+    # handle deprecated params
+    dataframe = handle_deprecated_params(kwargs, "df", "dataframe") or dataframe
+    target_column = (
+        handle_deprecated_params(kwargs, "col", "target_column") or target_column
+    )
+    return_periods = (
+        handle_deprecated_params(kwargs, "return_period", "return_periods")
+        or return_periods
+    )
+    display_stat = (
+        handle_deprecated_params(kwargs, "show_stat", "display_stat") or display_stat
+    )
+    out_column_name = (
+        handle_deprecated_params(kwargs, "col_name", "out_column_name")
+        or out_column_name
+    )
+    out_index_name = (
+        handle_deprecated_params(kwargs, "index_name", "out_index_name")
+        or out_index_name
     )
 
-    result = pd.DataFrame(data=arr, index=return_period, columns=[col_name])
+    return_periods = (
+        [2, 5, 10, 20, 25, 50, 100] if return_periods is None else return_periods
+    )
 
-    result.index.name = index_name
+    target_column = dataframe.columns[0] if target_column is None else target_column
+
+    x = dataframe[target_column].copy()
+
+    arr = calc_x_gumbel(
+        x, return_periods=return_periods, display_stat=display_stat, source=source
+    )
+
+    result = pd.DataFrame(data=arr, index=return_periods, columns=[out_column_name])
+
+    result.index.name = out_index_name
     return result
 
 
@@ -518,19 +612,43 @@ def _calc_prob_from_table(k, n, source="gumbel"):
     return np.around(1 - 1 / T, 3)
 
 
-def calc_prob(k, n, source="gumbel"):
+def calc_prob(k_values=None, data_count=None, source="gumbel", **kwargs):
+    """
+    Calculate the probability using different sources.
+
+    Parameters:
+        k_values (array-like): The values of k.
+        data_count (int): The count of data.
+        source (str): The source to calculate the probability from.
+                      Options: "gumbel", "soewarno", "soetopo", "scipy", "powell".
+                      Default is "gumbel".
+        **kwargs: Additional keyword arguments.
+
+    Returns:
+        The calculated probability.
+
+    Deprecated Parameters:
+        k (array-like): Deprecated. Use k_values instead.
+        n (int): Deprecated. Use data_count instead.
+    """
+
+    # handle deprecated params
+    k_values = handle_deprecated_params(kwargs, "k", "k_values") or k_values
+    data_count = handle_deprecated_params(kwargs, "n", "data_count") or data_count
+
     if source.lower() == "gumbel":
-        return _calc_prob_from_table(k, n, source=source)
+        return _calc_prob_from_table(k_values, data_count, source=source)
     if source.lower() == "soewarno":
-        return _calc_prob_from_table(k, n, source=source)
+        return _calc_prob_from_table(k_values, data_count, source=source)
     if source.lower() == "soetopo":
-        return _calc_prob_from_table(k, n, source=source)
+        return _calc_prob_from_table(k_values, data_count, source=source)
     if source.lower() == "scipy":
-        return stats.gumbel_r.cdf(k)
+        return stats.gumbel_r.cdf(k_values)
     if source.lower() == "powell":
         # persamaan ini ditemukan menggunakan wolfram alpha
         # x = e^(e^(-(π K)/sqrt(6) - p))/(e^(e^(-(π K)/sqrt(6) - p)) - 1)
-        _top = np.exp(np.exp(-(np.pi * k) / np.sqrt(6) - np.euler_gamma))
+        _top = np.exp(np.exp(-(np.pi * k_values) / np.sqrt(6) - np.euler_gamma))
         _bot = _top - 1
         T = _top / _bot
         return 1 - 1 / T
+    raise ValueError(f"source '{source}' not found")
