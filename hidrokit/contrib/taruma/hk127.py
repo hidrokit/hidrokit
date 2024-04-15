@@ -439,21 +439,48 @@ def calc_K(
     raise ValueError(f"source '{source}' not found")
 
 
-def calc_x_gumbel(x, return_period=[5], source="gumbel", show_stat=False):
+def calc_x_gumbel(
+    input_array=None, return_periods=None, source="gumbel", display_stat=False, **kwargs
+):
+    """
+    Calculate the Gumbel distribution parameter 'x' based on the input array.
 
-    x_mean = np.mean(x)
-    x_std = np.std(x, ddof=1)
-    n = len(x)
+    Args:
+        input_array (array-like): The input array of values.
+        return_periods (list, optional): The list of return periods. Defaults to [5].
+        source (str, optional): The source of the distribution. Defaults to "gumbel".
+        display_stat (bool, optional): Whether to display the calculated statistics. Defaults to False.
+        **kwargs: Additional keyword arguments for deprecated parameters.
 
-    k = calc_K(n, return_period, source=source, display_stat=show_stat)
+    Returns:
+        array-like: The calculated 'x' values based on the Gumbel distribution.
 
-    if show_stat:
-        print(f"x_mean = {x_mean:.5f}")
-        print(f"x_std = {x_std:.5f}")
+    """
+    # handle deprecated params
+    input_array = handle_deprecated_params(kwargs, "x", "input_array") or input_array
+    return_periods = (
+        handle_deprecated_params(kwargs, "return_period", "return_periods")
+        or return_periods
+    )
+    display_stat = (
+        handle_deprecated_params(kwargs, "show_stat", "display_stat") or display_stat
+    )
+
+    return_periods = [5] if return_periods is None else return_periods
+
+    data_mean = np.mean(input_array)
+    data_std = np.std(input_array, ddof=1)
+    data_count = len(input_array)
+
+    k = calc_K(data_count, return_periods, source=source, display_stat=display_stat)
+
+    if display_stat:
+        print(f"x_mean = {data_mean:.5f}")
+        print(f"x_std = {data_std:.5f}")
         print(f"k = {k}")
 
-    val_x = x_mean + k * x_std
-    return val_x
+    x_values = data_mean + k * data_std
+    return x_values
 
 
 def freq_gumbel(
@@ -471,7 +498,7 @@ def freq_gumbel(
     x = df[col].copy()
 
     arr = calc_x_gumbel(
-        x, return_period=return_period, show_stat=show_stat, source=source
+        x, return_periods=return_period, display_stat=show_stat, source=source
     )
 
     result = pd.DataFrame(data=arr, index=return_period, columns=[col_name])
