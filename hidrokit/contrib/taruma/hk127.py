@@ -1,10 +1,12 @@
 """
 hk127: freq_gumbel.py
+=====================
 
 Module for Gumbel distribution calculations.
 
-This module provides functions for calculating coefficients and K values based on the Gumbel distribution.
-It includes tables from different sources and methods for interpolation.
+This module provides functions for 
+    calculating coefficients and K values based on the Gumbel distribution.
+    It includes tables from different sources and methods for interpolation.
 
 Functions:
 - find_coef(n, source="gumbel"): Find the coefficient based on the given source.
