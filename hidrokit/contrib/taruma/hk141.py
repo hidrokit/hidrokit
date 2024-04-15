@@ -80,7 +80,7 @@ anfrek = {
     'normal': frek_normal.calc_x_normal,
     'lognormal': frek_lognormal.calc_x_lognormal,
     'gumbel': frek_gumbel.calc_x_gumbel,
-    'logpearson3': frek_logpearson3.calc_x_lp3,
+    'logpearson3': frek_logpearson3.calc_x_logpearson3,
 }
 
 def _calc_k(n):

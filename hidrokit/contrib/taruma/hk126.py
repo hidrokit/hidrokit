@@ -4,6 +4,7 @@ https://gist.github.com/taruma/60725ffca91dc6e741daee9a738a978b"""
 import numpy as np
 import pandas as pd
 from scipy import stats, interpolate
+from hidrokit.contrib.taruma.utils import handle_deprecated_params, deprecated
 
 # tabel dari Soewarno, hal. 219
 # lampiran tabel III-3, Nilai k Distribusi Pearson tipe III
@@ -11,6 +12,7 @@ from scipy import stats, interpolate
 
 # kode: SW
 
+# fmt: off
 _DATA_SW = np.array([
     [-0.360, 0.420, 1.180, 2.278, 3.152, 4.051, 4.970, 7.250],
     [-0.360, 0.518, 1.250, 2.262, 3.048, 3.845, 4.652, 6.600],
@@ -213,7 +215,10 @@ _COL_LM =  np.array([99, 95, 90, 80, 50, 20, 10, 4, 2, 1, 0.5])/100
 
 t_pearson3_lm = pd.DataFrame(data=_DATA_LM, index=_INDEX_LM, columns=_COL_LM)
 
+# fmt: on
+
 # KODE FUNGSI INTERPOLASI DARI TABEL
+
 
 def _func_interp_bivariate(df):
     "Membuat fungsi dari tabel untuk interpolasi bilinear"
@@ -227,90 +232,229 @@ def _func_interp_bivariate(df):
     # tidak menggunakan (cubic) spline interpolation
     return interpolate.RectBivariateSpline(x, y, z, kx=1, ky=1)
 
+
 def _as_value(x):
     x = np.around(x, 4)
     return x.flatten() if x.size > 1 else x.item()
 
 
-def find_K(prob, skew_log, source='scipy'):
-    "Mencari nilai K berdasarkan probabilitas dan skewness logaritmik"
-    prob = np.array(prob)
-    if source.lower() == 'scipy':
-        #ref: https://github.com/hidrokit/hidrokit/discussions/156
-        return np.around(stats.pearson3.ppf(1-prob, skew_log), 4)
-    elif source.lower() == 'soetopo':
-        func_pearson3_st = _func_interp_bivariate(t_pearson3_st)
-        return _as_value(func_pearson3_st(skew_log, prob, grid=False))
-    elif source.lower() == 'soewarno':
-        func_pearson3_sw = _func_interp_bivariate(t_pearson3_sw)
-        return _as_value(func_pearson3_sw(skew_log, prob, grid=False))
-    elif source.lower() == 'limantara':
-        func_pearson3_lm = _func_interp_bivariate(t_pearson3_lm)
-        return _as_value(func_pearson3_lm(skew_log, prob, grid=False))
+# pylint: disable=invalid-name
 
-def calc_x_lp3(x, return_period=[5], source='scipy', show_stat=False):
-    "Menghitung besar X dengan kala ulang tertentu"
-    y = np.log10(x)
+
+def find_K(probabilities=None, skewness_log=None, source="scipy", **kwargs):
+    """
+    Find the K values corresponding to given probabilities and skewness.
+
+    Parameters:
+    - probabilities (array-like): An array-like object containing the probabilities.
+    - skewness_log (array-like): An array-like object containing the logarithm of skewness values.
+    - source (str): The source of the K values.
+        Options are 'scipy', 'soetopo', 'soewarno', 'limantara'.
+        Default is 'scipy'.
+
+    Returns:
+    - k_values (array-like):
+        An array-like object containing the K values corresponding
+        to the given probabilities and skewness.
+
+    Raises:
+    - ValueError: If the specified source is not found.
+
+    """
+    # deprecated parameters
+    probabilities = (
+        handle_deprecated_params(kwargs, "prob", "probabilities") or probabilities
+    )
+    skewness_log = (
+        handle_deprecated_params(kwargs, "skew", "skewness_log") or skewness_log
+    )
+
+    probabilities = np.array(probabilities)
+    if source.lower() == "scipy":
+        # ref: https://github.com/hidrokit/hidrokit/discussions/156
+        k_values = np.around(stats.pearson3.ppf(1 - probabilities, skewness_log), 4)
+    elif source.lower() == "soetopo":
+        func_pearson3_st = _func_interp_bivariate(t_pearson3_st)
+        k_values = _as_value(func_pearson3_st(skewness_log, probabilities, grid=False))
+    elif source.lower() == "soewarno":
+        func_pearson3_sw = _func_interp_bivariate(t_pearson3_sw)
+        k_values = _as_value(func_pearson3_sw(skewness_log, probabilities, grid=False))
+    elif source.lower() == "limantara":
+        func_pearson3_lm = _func_interp_bivariate(t_pearson3_lm)
+        k_values = _as_value(func_pearson3_lm(skewness_log, probabilities, grid=False))
+    else:
+        raise ValueError(f"source '{source}' not found")
+
+    return k_values
+
+
+def calc_x_logpearson3(
+    input_array=None, return_periods=None, source="scipy", display_stat=False
+):
+    """
+    Calculate the value of x using the Log-Pearson Type III distribution.
+
+    Parameters:
+    - input_array (array-like): The input array of values.
+    - return_periods (list): The list of return periods. Default is [5].
+    - source (str): The source of the calculation method. Default is "scipy".
+    - display_stat (bool): Whether to display the calculated statistics. Default is False.
+
+    Returns:
+    - val_x (float): The calculated value of x.
+
+    """
+    return_periods = [5] if return_periods is None else return_periods
+
+    y = np.log10(input_array)
     y_mean = np.mean(y)
     y_std = np.std(y, ddof=1)
     y_skew = stats.skew(y, bias=False)
 
-    prob = 1 / np.array(return_period)
+    prob = 1 / np.array(return_periods)
     k = find_K(prob, y_skew, source=source)
 
-    if show_stat:
-        print(f'y_mean = {y_mean:.5f}')
-        print(f'y_std = {y_std:.5f}')
-        print(f'y_skew = {y_skew:.5f}')
-        print(f'k = {k}')
-    
+    if display_stat:
+        print(f"y_mean = {y_mean:.5f}")
+        print(f"y_std = {y_std:.5f}")
+        print(f"y_skew = {y_skew:.5f}")
+        print(f"k = {k}")
+
     val_y = y_mean + k * y_std
     val_x = np.power(10, val_y)
     return val_x
 
+
+@deprecated("calc_x_logpearson3")
+def calc_x_lp3(x, return_period=None, source="scipy", show_stat=False):
+    """Calculate the value of x using the Log-Pearson Type III distribution."""
+    return_period = [5] if return_period is None else return_period
+    return calc_x_logpearson3(
+        input_array=x,
+        return_periods=return_period,
+        source=source,
+        display_stat=show_stat,
+    )
+
+
+# pylint: disable=too-many-arguments
 def freq_logpearson3(
-    df, col=None, 
-    return_period=[2, 5, 10, 20, 25, 50, 100], source='scipy', show_stat=False,
-    col_name='Log Pearson III', index_name='Kala Ulang'
-    ):
+    dataframe=None,
+    target_column=None,
+    return_periods=None,
+    display_stat=False,
+    source="scipy",
+    out_column_name="Log Pearson III",
+    out_index_name="Kala Ulang",
+    **kwargs,
+):
+    """
+    Calculate the frequency analysis using the Log Pearson III method.
 
-    col = df.columns[0] if col is None else col
+    Parameters:
+    - dataframe: pandas DataFrame, optional (default=None)
+        The input data frame containing the target column.
+    - target_column: str, optional (default=None)
+        The name of the target column in the data frame.
+    - return_periods: list, optional (default=[2, 5, 10, 20, 25, 50, 100])
+        The return periods for which to calculate the frequency analysis.
+    - display_stat: bool, optional (default=False)
+        Whether to display the statistical parameters of the Log Pearson III distribution.
+    - source: str, optional (default="scipy")
+        The source of the Log Pearson III distribution parameters.
+    - out_column_name: str, optional (default="Log Pearson III")
+        The name of the output column in the result DataFrame.
+    - out_index_name: str, optional (default="Kala Ulang")
+        The name of the output index in the result DataFrame.
+    - **kwargs: dict, optional
+        Additional deprecated parameters.
 
-    x = df[col].copy()
+    Returns:
+    - result: pandas DataFrame
+        The result DataFrame containing the frequency analysis for the specified return periods.
+    """
 
-    arr = calc_x_lp3(
-        x, return_period=return_period, show_stat=show_stat,
-        source=source
+    # deprecated parameters
+    dataframe = handle_deprecated_params(kwargs, "df", "dataframe") or dataframe
+    target_column = (
+        handle_deprecated_params(kwargs, "col", "target_column") or target_column
+    )
+    return_periods = (
+        handle_deprecated_params(kwargs, "return_period", "return_periods")
+        or return_periods
+    )
+    display_stat = (
+        handle_deprecated_params(kwargs, "show_stat", "display_stat") or display_stat
+    )
+    out_column_name = (
+        handle_deprecated_params(kwargs, "col_name", "out_column_name")
+        or out_column_name
+    )
+    out_index_name = (
+        handle_deprecated_params(kwargs, "index_name", "out_index_name")
+        or out_index_name
     )
 
-    result = pd.DataFrame(
-        data=arr, index=return_period, columns=[col_name]
+    return_periods = (
+        [2, 5, 10, 20, 25, 50, 100] if return_periods is None else return_periods
     )
 
-    result.index.name = index_name
+    target_column = dataframe.columns[0] if target_column is None else target_column
+
+    x = dataframe[target_column].copy()
+
+    arr = calc_x_logpearson3(
+        x, return_periods=return_periods, display_stat=display_stat, source=source
+    )
+
+    result = pd.DataFrame(data=arr, index=return_periods, columns=[out_column_name])
+
+    result.index.name = out_index_name
     return result
 
+
 dict_table_source = {
-    'soewarno': t_pearson3_sw,
-    'soetopo': t_pearson3_st,
-    'limantara': t_pearson3_lm
+    "soewarno": t_pearson3_sw,
+    "soetopo": t_pearson3_st,
+    "limantara": t_pearson3_lm,
 }
+
 
 def _find_prob_in_table(k, skew_log, table):
     func_table = _func_interp_bivariate(table)
     y = table.columns
     x = func_table(skew_log, y, grid=False)
-    func_prob = interpolate.interp1d(x, y, kind='linear')
+    func_prob = interpolate.interp1d(x, y, kind="linear")
     return _as_value(func_prob(k))
 
-def _calc_prob_in_table(k, skew_log, source='soewarno'):
-    if source.lower() in dict_table_source.keys():
-        return 1 - _find_prob_in_table(
-            k, skew_log, dict_table_source[source.lower()]
-        )
-   
-def calc_prob(k, skew_log, source='scipy'):
-    if source.lower() == 'scipy':
-        return stats.pearson3.cdf(k, skew_log)
-    if source.lower() in dict_table_source.keys():
-        return _calc_prob_in_table(k, skew_log, source.lower())
+
+def _calc_prob_in_table(k, skew_log, source="soewarno"):
+    if source.lower() in dict_table_source:
+        return 1 - _find_prob_in_table(k, skew_log, dict_table_source[source.lower()])
+    return None
+
+
+def calc_prob(k, skew_log, source="scipy"):
+    """
+    Calculate the probability value for a given value of k and skew_log.
+
+    Parameters:
+    k (float): The value of k.
+    skew_log (float): The skew_log value.
+    source (str, optional): The source of the probability calculation. Defaults to "scipy".
+
+    Returns:
+    float: The calculated probability value.
+
+    Raises:
+    ValueError: If the source is not found in the available sources.
+
+    """
+    if source.lower() == "scipy":
+        prob_value = stats.pearson3.cdf(k, skew_log)
+    elif source.lower() in dict_table_source:
+        prob_value = _calc_prob_in_table(k, skew_log, source.lower())
+    else:
+        raise ValueError(f"source '{source}' not found")
+
+    return prob_value
