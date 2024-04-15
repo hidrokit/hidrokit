@@ -1,5 +1,39 @@
-"""manual:
-https://gist.github.com/taruma/60725ffca91dc6e741daee9a738a978b"""
+"""
+hk126: freq_logpearson3.py
+==========================
+
+This module provides functions for performing frequency analysis using 
+    the Log-Pearson Type III distribution.
+
+The Log-Pearson Type III distribution is a commonly used statistical 
+    distribution for modeling extreme events, such as floods, droughts, and rainfall. 
+
+**Key Functions:**
+
+* `find_K(probabilities, skewness_log, source='scipy')`:
+    Finds the K values (frequency factors) corresponding 
+        to given probabilities and skewness (logarithm of the skewness values).
+
+* `calc_x_logpearson3(input_array, return_periods=[5], source='scipy', display_stat=False)`:
+    Calculates the value of x (e.g., flood discharge) for given return periods 
+        using the Log-Pearson Type III distribution.
+
+* `freq_logpearson3(
+        dataframe, target_column, return_periods, display_stat=False, 
+        source='scipy', out_column_name='Log Pearson III', out_index_name='Kala Ulang')`:
+    Performs frequency analysis using the Log-Pearson Type III method 
+        on a pandas DataFrame.
+
+* `calc_prob(k, skew_log, source='scipy')`:
+    Calculates the probability value for a given K value and skew_log (logarithm of skewness).
+
+**Deprecated Functions:**
+
+* `calc_x_lp3`: Deprecated alias for `calc_x_logpearson3`.
+
+manual:
+    https://gist.github.com/taruma/60725ffca91dc6e741daee9a738a978b
+"""
 
 import numpy as np
 import pandas as pd
