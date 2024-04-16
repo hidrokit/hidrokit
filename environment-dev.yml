@@ -1,23 +1,27 @@
-name: hidrokit
+name: hidrokit-dev
 channels:
+  - conda-forge
   - defaults
 dependencies:
-  - python=3.6.8 # core
-  - numpy
-  - pandas
-  - matplotlib
-  - xlrd 
-  - ipykernel # conda environment
-  - spyder-kernels
-  - twine
-  - pytest # testing dependencies
-  - pytest-cov 
-  - coverage
-  - flake8 # vscode settings
-  - autopep8
-  - pylint
-  - sphinx # sphinx settings
-  - numpydoc
-  - pip # pip installation
-  - scipy
-  
+  - python=3.10 
+  # core
+  - matplotlib>=3.8
+  - numpy>=1.26
+  - pandas>=2.2
+  - scipy>=1.13
+  - xlrd>=2.0
+  # conda environment
+  - ipykernel>=6.28
+  - spyder-kernels>=2.5
+  - twine>=4.0
+  # testing dependencies
+  - pytest>=7.4
+  - pytest-cov>=3.10
+  - coverage>=7.2
+  # vscode settings
+  - flake8>=7.0
+  - autopep8>=2.0
+  - pylint>=2.16
+  # sphinx settings
+  - sphinx>=5.0
+  - numpydoc>=1.5

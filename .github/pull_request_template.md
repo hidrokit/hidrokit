@@ -1,21 +1,20 @@
-### Ringkasan _Pull Request_
+### Pull Request Summary
 
-Jelaskan dengan ringkas maksud dari PR ini.
+Briefly explain the purpose of this PR.
 
-### Perbaikan/Fitur
+### Fixes/Features
 
-Gunakan `close #issue` untuk menutup isu secara otomatis
+Use `close #issue` to automatically close the issue
 close #.
 
-### Penggunaan
+### Usage
 
-Berikan contoh sederhana terkait perubahan dari PR ini.
+Provide a simple example related to the changes made in this PR.
 
-### Catatan
+### Notes
 
-Catatan untuk pengembangan lebih lanjut. 
+Notes for further development.
 
-### Kabari
+### Notify
 
-Panggil @ untuk mengabari permintaan penggabungan ini.
-
+Mention @ to notify about this merge request.

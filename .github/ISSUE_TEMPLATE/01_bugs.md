@@ -1,22 +1,19 @@
 ---
 name: "Bug report"
-about: "Lapor permasalahan/kerusakan"
+about: "Report issues/bugs"
 title: ""
 labels: bug
 ---
 
-### Sistem
-* Versi hidrokit: 
-* Distribusi python:
-* Sistem operasi:
+### System
+* Hidrokit version: 
+* Python distribution:
+* Operating system:
 
-### Ringkasan Permasalahan
+### Issue Summary
 
-Berikan deskripsi permasalahan yang terjadi.
-Jelaskan apa yang terjadi, yang bermasalah, dan yang seharusnya terjadi.
+Provide a description of the issue.
+Explain what is happening, what is not working correctly, and what should be happening.
 
-### Langkah yang telah dilakukan dan hasil yang diharapkan
+### Steps taken and expected results
 
-```
-Salin perintah yang diekseskusi dan hasil keluarannya.
-```
