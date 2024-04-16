@@ -1,5 +1,5 @@
 """
-hk127: freq_gumbel.py
+hk127: gumbel.py
 =====================
 
 Module for Gumbel distribution calculations.

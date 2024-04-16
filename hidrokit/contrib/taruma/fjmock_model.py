@@ -1,5 +1,6 @@
 """
-hk96: hydrological_model_FJMock 
+hk96: fjmock_model.py
+
 FJMock Model Hydrological Model.
 
 This module implements the FJMock model, 

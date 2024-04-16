@@ -1,5 +1,5 @@
 """
-hk126: freq_logpearson3.py
+hk126: logpearson3.py
 ==========================
 
 This module provides functions for performing frequency analysis using 

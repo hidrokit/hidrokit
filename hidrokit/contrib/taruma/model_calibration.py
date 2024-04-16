@@ -1,5 +1,6 @@
 """
-hk90: calibration
+hk90: model_calibration.py
+
 This module provides a calibration function that iterates over a parameter grid 
     and evaluates the performance of a calibrated model using specified metrics.
 

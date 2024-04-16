@@ -1,5 +1,5 @@
 """
-hk124: freq_lognormal.py
+hk124: lognormal.py
 
 This module provides functions for calculating values related to hydrological analysis.
 

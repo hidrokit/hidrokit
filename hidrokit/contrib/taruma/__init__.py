@@ -1,4 +1,3 @@
-
 """
 0.3.2
 hk43 | Pivot Table
@@ -31,15 +30,71 @@ hk141 | Uji Chi-Square
 hk151 | Uji Outlier
 hk158 | Parameter Statistik
 hk172 | Anfrek: Normal
-
-anfrek | analisis frekuensi (normal, lognormal, logpearson3, gumbel)
 """
 
-__all__ = ([
-    'hk43', 'hk53', 'hk73', 'hk79', 'hk84',
-    'hk87', 'hk88', 'hk89', 'hk90', 'hk96',
-    'hk98', 'hk99', 'hk102', 'hk106',
-    'hk124', 'hk126', 'hk127', 'hk140', 'hk141',
-    'hk151', 'hk158', 'hk172',
-    'anfrek',
-])
+__all__ = [
+    "bmkg_utils",
+    "chi_square",
+    "dataframe_to_tensor",
+    "dependable_flow",
+    "evapotranspiration",
+    "fjmock_model",
+    "gumbel",
+    "hidrokit_excel_parser",
+    "hidrokit_hourly_excel_parser",
+    "kolmogorov_smirnov",
+    "lognormal",
+    "logpearson3",
+    "model_calibration",
+    "normal",
+    "nreca_model",
+    "outlier_hydrology",
+    "pamarayan_excel_data_extraction",
+    "statistical_coefficients",
+    "statistic_summary",
+    "summary_hourly",
+    "thiessen",
+    "upsampling",
+    "utils",
+]
+
+
+import warnings
+import importlib
+
+deprecated_modules = {
+    "hk43": "pamarayan_excel_data_extraction",
+    "hk53": "dataframe_to_tensor",
+    "hk73": "bmkg_utils",
+    "hk79": "hidrokit_hourly_excel_parser",
+    "hk84": "summary_hourly",
+    "hk87": "dependable_flow",
+    "hk88": "hidrokit_excel_parser",
+    "hk89": "nreca_model",
+    "hk90": "model_calibration",
+    "hk96": "fjmock_model",
+    "hk98": "statistic_summary",
+    "hk99": "thiessen_polygon",
+    "hk102": "upsampling",
+    "hk106": "evapotranspiration",
+    "hk124": "lognormal",
+    "hk126": "logpearson3",
+    "hk127": "gumbel",
+    "hk140": "kolmogorov_smirnov",
+    "hk141": "chi_square",
+    "hk151": "outlier_hydrology",
+    "hk158": "statistical_coefficients",
+    "hk172": "normal",
+}
+
+
+def __getattr__(name):
+    if name in deprecated_modules:
+        warnings.warn(
+            f"{name} is deprecated, use {deprecated_modules[name]} instead",
+            FutureWarning,
+        )
+        new_module_name = deprecated_modules[name]
+        new_module = importlib.import_module("." + new_module_name, __name__)
+        return new_module
+    raise AttributeError(f"module {__name__} has no attribute {name}")

@@ -30,7 +30,7 @@ def deprecated(new_func_name):
         def wrapper(*args, **kwargs):
             warnings.warn(
                 f"{func.__name__} is deprecated, use {new_func_name} instead",
-                DeprecationWarning,
+                FutureWarning,
             )
             return func(*args, **kwargs)
 
@@ -54,7 +54,7 @@ def handle_deprecated_params(kwargs, old_param, new_param):
     if old_param in kwargs:
         warnings.warn(
             f"The `{old_param}` parameter is deprecated. Please use `{new_param}` instead.",
-            DeprecationWarning,
+            FutureWarning,
         )
         return kwargs[old_param]
     return None

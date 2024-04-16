@@ -30,7 +30,7 @@ manual:
 """
 
 import pandas as pd
-from hidrokit.contrib.taruma import hk73
+from hidrokit.contrib.taruma import bmkg_utils
 
 
 def _time_grouped(df, index_grouped, col, date_fmt="%Y-%m-%d", hour_fmt="%H:%M"):
@@ -135,8 +135,8 @@ def summary_hourly(
 
     for i in range(0, nrows, n_hours):
         sub_df = dataframe.iloc[i : i + n_hours]
-        ix_array = hk73.get_missing_data_indices(~sub_df.iloc[:, col].isna().values)
-        ix_grouped = hk73.group_consecutive_elements(ix_array)
+        ix_array = bmkg_utils.get_missing_data_indices(~sub_df.iloc[:, col].isna().values)
+        ix_grouped = bmkg_utils.group_consecutive_elements(ix_array)
         date, hour = _time_grouped(
             sub_df, ix_grouped, col, date_fmt=date_format, hour_fmt=hour_format
         )
