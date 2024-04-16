@@ -17,8 +17,3 @@ freq_normal = normal.freq_normal
 freq_lognormal = lognormal.freq_lognormal
 freq_logpearson3 = logpearson3.freq_logpearson3
 freq_gumbel = gumbel.freq_gumbel
-
-normal = normal
-lognormal = lognormal
-logpearson3 = logpearson3
-gumbel = gumbel
