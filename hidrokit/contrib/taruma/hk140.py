@@ -161,6 +161,97 @@ def calc_dcr(alpha, n, source="scipy"):
     return calc_delta_critical(alpha, n, source)
 
 
+# pylint: disable=too-many-arguments
+
+
+# kolmogorov-smirnov test
+def kolmogorov_smirnov_test(
+    dataframe=None,
+    target_column=None,
+    distribution="normal",
+    distribution_source=None,
+    significance_level=0.05,
+    critical_value_source="scipy",
+    display_stat=True,
+    report_type="result",
+):
+    """
+    Perform the Kolmogorov-Smirnov test.
+
+    Parameters:
+    - dataframe (pandas.DataFrame): The input data.
+    - target_column (str): The name of the target column in the dataframe.
+        Default is first column of the dataframe.
+    - distribution (str): The distribution to test.
+        Options are 'normal', 'lognormal', 'gumbel', 'logpearson3'.
+    - distribution_source (str): The source of the distribution calculation.
+        Default is 'scipy'.
+    - significance_level (float): The significance level for the test.
+    - critical_value_source (str): The source of the critical value calculation.
+        Default is 'scipy'.
+    - display_stat (bool): Whether to display the test statistics.
+        Default is True.
+    - report_type (str): The type of report to generate.
+        Options are 'result', 'full'. Default is 'result'.
+
+    Returns:
+    - result (pandas.DataFrame or None): The result of the test.
+    """
+
+    if distribution_source is None:
+        distribution_source = (
+            "scipy"
+            if distribution.lower() in ["normal", "lognormal", "logpearson3"]
+            else "gumbel"
+        )
+
+    target_column = dataframe.columns[0] if target_column is None else target_column
+    data = dataframe[[target_column]].copy()
+    n = len(data)
+    data = data.rename({target_column: "x"}, axis=1)
+    data = data.sort_values("x")
+    data["no"] = np.arange(n) + 1
+
+    # w = weibull
+    data["p_w"] = data.no / (n + 1)
+
+    if distribution.lower() in ["normal", "gumbel"]:
+        data["k"] = _calc_k(data.x)
+    if distribution.lower() in ["lognormal", "logpearson3"]:
+        data["log_x"] = np.log10(data.x)
+        data["k"] = _calc_k(data.log_x)
+
+    func = frequency_analysis_methods[distribution.lower()]
+
+    if distribution.lower() in ["normal", "lognormal"]:
+        parameter = ()
+    elif distribution.lower() == "gumbel":
+        parameter = (n,)
+    elif distribution.lower() == "logpearson3":
+        parameter = (data.log_x.skew(),)
+
+    # d = distribusi
+    data["p_d"] = func.calc_prob(data.k, source=distribution_source, *parameter)
+    data["d"] = (data.p_w - data.p_d).abs()
+    dmax = data.d.max()
+    dcr = calc_delta_critical(significance_level, n, source=critical_value_source)
+    result = int(dmax < dcr)
+    result_text = ["Distribusi Tidak Diterima", "Distribusi Diterima"]
+
+    if display_stat:
+        print(f"Periksa Kecocokan Distribusi {distribution.title()}")
+        print(f"Delta Kritikal = {dcr:.5f}")
+        print(f"Delta Max = {dmax:.5f}")
+        print(f"Result (Dmax < Dcr) = {result_text[result]}")
+
+    if report_type.lower() == "result":
+        return data["no x p_w p_d d".split()]
+    if report_type.lower() == "full":
+        return data
+    return None
+
+
+@deprecated("kolmogorov_smirnov_test")
 def kstest(
     df,
     col=None,
@@ -171,54 +262,14 @@ def kstest(
     show_stat=True,
     report="result",
 ):
-
-    if source_dist is None:
-        source_dist = (
-            "scipy"
-            if dist.lower() in ["normal", "lognormal", "logpearson3"]
-            else "gumbel"
-        )
-
-    col = df.columns[0] if col is None else col
-    data = df[[col]].copy()
-    n = len(data)
-    data = data.rename({col: "x"}, axis=1)
-    data = data.sort_values("x")
-    data["no"] = np.arange(n) + 1
-
-    # w = weibull
-    data["p_w"] = data.no / (n + 1)
-
-    if dist.lower() in ["normal", "gumbel"]:
-        data["k"] = _calc_k(data.x)
-    if dist.lower() in ["lognormal", "logpearson3"]:
-        data["log_x"] = np.log10(data.x)
-        data["k"] = _calc_k(data.log_x)
-
-    func = frequency_analysis_methods[dist.lower()]
-
-    if dist.lower() in ["normal", "lognormal"]:
-        parameter = ()
-    elif dist.lower() == "gumbel":
-        parameter = (n,)
-    elif dist.lower() == "logpearson3":
-        parameter = (data.log_x.skew(),)
-
-    # d = distribusi
-    data["p_d"] = func.calc_prob(data.k, source=source_dist, *parameter)
-    data["d"] = (data.p_w - data.p_d).abs()
-    dmax = data.d.max()
-    dcr = calc_delta_critical(alpha, n, source=source_dcr)
-    result = int(dmax < dcr)
-    result_text = ["Distribusi Tidak Diterima", "Distribusi Diterima"]
-
-    if show_stat:
-        print(f"Periksa Kecocokan Distribusi {dist.title()}")
-        print(f"Delta Kritikal = {dcr:.5f}")
-        print(f"Delta Max = {dmax:.5f}")
-        print(f"Result (Dmax < Dcr) = {result_text[result]}")
-
-    if report.lower() == "result":
-        return data["no x p_w p_d d".split()]
-    elif report.lower() == "full":
-        return data
+    """Perform the Kolmogorov-Smirnov test."""
+    return kolmogorov_smirnov_test(
+        dataframe=df,
+        target_column=col,
+        distribution=dist,
+        distribution_source=source_dist,
+        significance_level=alpha,
+        critical_value_source=source_dcr,
+        display_stat=show_stat,
+        report_type=report,
+    )
