@@ -63,8 +63,6 @@ __all__ = [
 import warnings
 import importlib
 
-warnings.filterwarnings('default', category=DeprecationWarning)
-
 deprecated_modules = {
     "hk43": "pamarayan_excel_data_extraction",
 }
@@ -74,7 +72,7 @@ def __getattr__(name):
     if name in deprecated_modules:
         warnings.warn(
             f"{name} is deprecated, use {deprecated_modules[name]} instead",
-            DeprecationWarning,
+            FutureWarning,
         )
         new_module_name = deprecated_modules[name]
         new_module = importlib.import_module('.' + new_module_name, __name__)
