@@ -1,5 +1,5 @@
 """
-hk89: hydrological_model_nreca
+hk89: nreca_model
 
 This module contains the implementation of the NRECA hydrological model calculations.
 

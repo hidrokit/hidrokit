@@ -1,5 +1,5 @@
 """
-hk172: freq_normal.py
+hk172: normal.py
 ======================
 
 This module provides functions for calculating the 
