@@ -30,33 +30,32 @@ hk141 | Uji Chi-Square
 hk151 | Uji Outlier
 hk158 | Parameter Statistik
 hk172 | Anfrek: Normal
-
-anfrek | analisis frekuensi (normal, lognormal, logpearson3, gumbel)
 """
 
 __all__ = [
-    "hk89",
-    "hk90",
-    "hk96",
-    "hk98",
-    "hk99",
-    "hk102",
-    "hk106",
-    "hk124",
-    "hk126",
-    "hk127",
-    "hk140",
-    "hk141",
-    "hk151",
-    "hk158",
-    "hk172",
-    "pamarayan_excel_data_extraction",
-    "dependable_flow",
-    "dataframe_to_tensor",
     "bmkg_utils",
-    "hidrokit_hourly_excel_parser",
-    "summary_hourly",
+    "chi_square",
+    "dataframe_to_tensor",
+    "dependable_flow",
+    "evapotranspiration",
+    "fjmock_model",
+    "gumbel",
     "hidrokit_excel_parser",
+    "hidrokit_hourly_excel_parser",
+    "kolmogorov_smirnov",
+    "lognormal",
+    "logpearson3",
+    "model_calibration",
+    "normal",
+    "nreca_model",
+    "outlier_hydrology",
+    "pamarayan_excel_data_extraction",
+    "statistical_coefficients",
+    "statistic_summary",
+    "summary_hourly",
+    "thiessen",
+    "upsampling",
+    "utils",
 ]
 
 
@@ -71,6 +70,21 @@ deprecated_modules = {
     "hk84": "summary_hourly",
     "hk87": "dependable_flow",
     "hk88": "hidrokit_excel_parser",
+    "hk89": "nreca_model",
+    "hk90": "model_calibration",
+    "hk96": "fjmock_model",
+    "hk98": "statistic_summary",
+    "hk99": "thiessen_polygon",
+    "hk102": "upsampling",
+    "hk106": "evapotranspiration",
+    "hk124": "lognormal",
+    "hk126": "logpearson3",
+    "hk127": "gumbel",
+    "hk140": "kolmogorov_smirnov",
+    "hk141": "chi_square",
+    "hk151": "outlier_hydrology",
+    "hk158": "statistical_coefficients",
+    "hk172": "normal",
 }
 
 

@@ -17,10 +17,10 @@ manual:
 import numpy as np
 import pandas as pd
 from scipy import stats, interpolate
-from hidrokit.contrib.taruma import hk172, hk124, hk127, hk126
+from hidrokit.contrib.taruma import gumbel, lognormal, logpearson3, normal
 from hidrokit.contrib.taruma.utils import handle_deprecated_params, deprecated
 
-fa_normal, fa_lognormal, fa_gumbel, fa_logpearson3 = hk172, hk124, hk127, hk126
+fa_normal, fa_lognormal, fa_gumbel, fa_logpearson3 = normal, lognormal, gumbel, logpearson3
 
 # fmt: off
 
