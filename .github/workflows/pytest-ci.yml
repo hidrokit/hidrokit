@@ -3,8 +3,7 @@ name: Pytest
 on:
   push:
     branches:
-      - master
-      - latest
+      - main
   pull_request:
     types: [opened, reopened, synchronize]
 
