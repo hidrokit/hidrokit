@@ -1,4 +1,5 @@
 """
+hk140: kolmogorov_smirnov.py
 This module provides functions for performing the Kolmogorov-Smirnov test 
     and calculating critical values.
 
