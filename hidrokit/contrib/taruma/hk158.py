@@ -57,7 +57,7 @@ def calc_coef(x):
 # def check_distribution(x, show_stat=False, show_detail=False):
 # check if data fit with specific distribution
 def check_distribution(
-    input_array=None, display_stat=False, display_detail=False, **kwargs
+    input_array=None, display_stat=False, display_detail=True, **kwargs
 ):
     """
     Check the distribution of an input array.
@@ -67,13 +67,10 @@ def check_distribution(
     - display_stat (bool, optional): Whether to display the distribution statistics.
         Default is False.
     - display_detail (bool, optional): Whether to display the detailed information about
-        each distribution. Default is False.
+        each distribution. Default is True.
     - **kwargs: Additional keyword arguments.
         Deprecated parameters
             'x', 'show_stat', and 'show_detail' can be passed as keyword arguments.
-
-    Returns:
-    - None
 
     """
 
@@ -134,5 +131,3 @@ def check_distribution(
             sep="\n",
             end="\n",
         )
-
-    return None
