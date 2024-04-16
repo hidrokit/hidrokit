@@ -25,7 +25,7 @@ from calendar import monthrange
 from collections.abc import Sequence
 import pandas as pd
 import numpy as np
-from hidrokit.contrib.taruma import hk43
+from hidrokit.contrib.taruma import pamarayan_excel_data_extraction
 from hidrokit.contrib.taruma.utils import deprecated
 
 
@@ -167,7 +167,7 @@ def read_excel_hourly(file, station=None):
     excel = pd.ExcelFile(file)
 
     # CONFIG
-    years = hk43.extract_years_from_excel(excel)
+    years = pamarayan_excel_data_extraction.extract_years_from_excel(excel)
     station = "NA" if station is None else station
 
     # READ DATA

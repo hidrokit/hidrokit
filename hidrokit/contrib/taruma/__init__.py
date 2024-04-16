@@ -1,4 +1,3 @@
-
 """
 0.3.2
 hk43 | Pivot Table
@@ -35,11 +34,45 @@ hk172 | Anfrek: Normal
 anfrek | analisis frekuensi (normal, lognormal, logpearson3, gumbel)
 """
 
-__all__ = ([
-    'hk43', 'hk53', 'hk73', 'hk79', 'hk84',
-    'hk87', 'hk88', 'hk89', 'hk90', 'hk96',
-    'hk98', 'hk99', 'hk102', 'hk106',
-    'hk124', 'hk126', 'hk127', 'hk140', 'hk141',
-    'hk151', 'hk158', 'hk172',
-    'anfrek',
-])
+__all__ = [
+    "hk53",
+    "hk73",
+    "hk79",
+    "hk84",
+    "hk87",
+    "hk88",
+    "hk89",
+    "hk90",
+    "hk96",
+    "hk98",
+    "hk99",
+    "hk102",
+    "hk106",
+    "hk124",
+    "hk126",
+    "hk127",
+    "hk140",
+    "hk141",
+    "hk151",
+    "hk158",
+    "hk172",
+    "anfrek",
+]
+
+
+import warnings
+import sys
+
+deprecated_modules = {
+    "hk43": "pamarayan_excel_data_extraction",
+}
+
+
+def __getattr__(name):
+    if name in deprecated_modules:
+        warnings.warn(
+            f"{name} is deprecated, use {deprecated_modules[name]} instead",
+            DeprecationWarning,
+        )
+        return sys.modules[__name__].__dict__[deprecated_modules[name]]
+    raise AttributeError(f"module {__name__} has no attribute {name}")
