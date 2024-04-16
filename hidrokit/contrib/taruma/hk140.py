@@ -1,5 +1,17 @@
-"""manual:
-https://gist.github.com/taruma/5d16baf90016d8a08c6870b674226691"""
+"""
+This module provides functions for performing the Kolmogorov-Smirnov test 
+    and calculating critical values.
+
+Functions:
+- calc_delta_critical(significance_level, sample_size, source): 
+    Calculate the critical value of delta for a given significance level and sample size.
+- kolmogorov_smirnov_test(dataframe, target_column, distribution, distribution_source, 
+    significance_level, critical_value_source, display_stat, report_type): 
+    Perform the Kolmogorov-Smirnov test.
+
+manual:
+    https://gist.github.com/taruma/5d16baf90016d8a08c6870b674226691
+"""
 
 import numpy as np
 import pandas as pd
