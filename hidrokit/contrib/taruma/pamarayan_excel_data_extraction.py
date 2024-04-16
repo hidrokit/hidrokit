@@ -312,7 +312,7 @@ def read_folder(
     return all_station_data
 
 
-@deprecated("_extract_years_from_excel")
+@deprecated("extract_years_from_excel")
 def _get_years(io: str) -> List[int]:
     return extract_years_from_excel(io)
 
