@@ -35,10 +35,6 @@ anfrek | analisis frekuensi (normal, lognormal, logpearson3, gumbel)
 """
 
 __all__ = [
-    "hk79",
-    "hk84",
-    "hk87",
-    "hk88",
     "hk89",
     "hk90",
     "hk96",
@@ -55,6 +51,12 @@ __all__ = [
     "hk158",
     "hk172",
     "pamarayan_excel_data_extraction",
+    "dependable_flow",
+    "dataframe_to_tensor",
+    "bmkg_utils",
+    "hidrokit_hourly_excel_parser",
+    "summary_hourly",
+    "hidrokit_excel_parser",
 ]
 
 
@@ -64,7 +66,11 @@ import importlib
 deprecated_modules = {
     "hk43": "pamarayan_excel_data_extraction",
     "hk53": "dataframe_to_tensor",
-    "hk73": "bmkg_utils"
+    "hk73": "bmkg_utils",
+    "hk79": "hidrokit_hourly_excel_parser",
+    "hk84": "summary_hourly",
+    "hk87": "dependable_flow",
+    "hk88": "hidrokit_excel_parser",
 }
 
 
@@ -75,6 +81,6 @@ def __getattr__(name):
             FutureWarning,
         )
         new_module_name = deprecated_modules[name]
-        new_module = importlib.import_module('.' + new_module_name, __name__)
+        new_module = importlib.import_module("." + new_module_name, __name__)
         return new_module
     raise AttributeError(f"module {__name__} has no attribute {name}")
