@@ -1,18 +1,23 @@
 """
 hk141: chi_square.py
-This module provides functions for performing chi-square goodness-of-fit tests and calculating critical values
-for the chi-square distribution.
+
+This module provides functions for performing chi-square goodness-of-fit tests 
+    and calculating critical values for the chi-square distribution.
 
 Functions:
 - calc_chi_square_critical(significance_level, degrees_of_freedom, source="scipy"): 
-    Calculate the critical value of the chi-square distribution for a given significance level and degrees of freedom.
+    Calculate the critical value of the chi-square distribution 
+    for a given significance level and degrees of freedom.
 - chi_square_test(dataframe, target_column, distribution, distribution_source, significance_level, 
     critical_value_source, display_stat): 
-    Perform a chi-square goodness-of-fit test to determine the fit of a given distribution to a dataset.
+    Perform a chi-square goodness-of-fit test to determine the fit of 
+        a given distribution to a dataset.
 
 Deprecated Functions:
-- calc_xcr(alpha, dk, source="scipy"): Calculate Chi-Square Critical Values (deprecated, use calc_chi_square_critical)
-- chisquare(df, col, dist, source_dist, alpha, source_xcr, show_stat): Perform Chi-Square Test (deprecated, use chi_square_test)
+- calc_xcr(alpha, dk, source="scipy"): 
+    Calculate Chi-Square Critical Values (deprecated, use calc_chi_square_critical)
+- chisquare(df, col, dist, source_dist, alpha, source_xcr, show_stat): 
+    Perform Chi-Square Test (deprecated, use chi_square_test)
 
 manual:
     https://gist.github.com/taruma/e250ab2685ba5b4c8facbf498cfb5cd8
