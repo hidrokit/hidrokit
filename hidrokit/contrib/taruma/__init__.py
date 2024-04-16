@@ -78,3 +78,7 @@ def __getattr__(name):
         new_module = importlib.import_module('.' + new_module_name, __name__)
         return new_module
     raise AttributeError(f"module {__name__} has no attribute {name}")
+
+# make sure deprecation and future warning when user used this package
+warnings.simplefilter("always", DeprecationWarning)
+warnings.simplefilter("always", FutureWarning)
