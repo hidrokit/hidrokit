@@ -63,7 +63,7 @@ __all__ = [
 import warnings
 import importlib
 
-warnings.filterwarnings('default')
+warnings.filterwarnings('default', category=DeprecationWarning)
 
 deprecated_modules = {
     "hk43": "pamarayan_excel_data_extraction",
