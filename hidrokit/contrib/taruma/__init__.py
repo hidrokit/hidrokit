@@ -35,8 +35,6 @@ anfrek | analisis frekuensi (normal, lognormal, logpearson3, gumbel)
 """
 
 __all__ = [
-    "hk53",
-    "hk73",
     "hk79",
     "hk84",
     "hk87",
@@ -65,6 +63,8 @@ import importlib
 
 deprecated_modules = {
     "hk43": "pamarayan_excel_data_extraction",
+    "hk53": "dataframe_to_tensor",
+    "hk73": "bmkg_utils"
 }
 
 
