@@ -57,6 +57,7 @@ __all__ = [
     "hk158",
     "hk172",
     "anfrek",
+    "pamarayan_excel_data_extraction",
 ]
 
 
