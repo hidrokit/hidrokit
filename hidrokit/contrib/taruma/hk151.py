@@ -1,7 +1,17 @@
-# UJI OUTLIER
+"""
+hk151: outlier_hydrology.py
 
-"""manual:
-https://gist.github.com/taruma/7bf2e4e1601ab8390d9919043eb87682"""
+This module contains functions for performing outlier analysis and calculations based 
+    on the Ven Te Chow method.
+
+Functions:
+- find_Kn: Find the value of Kn (Kurva N) based on the given data count.
+- calc_boundary: Calculate the boundary values for a given target column in a dataframe.
+- find_outlier: Find outliers in a dataframe based on a target column.
+
+manual:
+    https://gist.github.com/taruma/7bf2e4e1601ab8390d9919043eb87682
+"""
 
 import numpy as np
 import pandas as pd
