@@ -62,7 +62,7 @@ __all__ = [
 
 
 import warnings
-import sys
+import importlib
 
 deprecated_modules = {
     "hk43": "pamarayan_excel_data_extraction",
@@ -75,5 +75,7 @@ def __getattr__(name):
             f"{name} is deprecated, use {deprecated_modules[name]} instead",
             DeprecationWarning,
         )
-        return sys.modules[__name__].__dict__[deprecated_modules[name]]
+        new_module_name = deprecated_modules[name]
+        new_module = importlib.import_module('.' + new_module_name, __name__)
+        return new_module
     raise AttributeError(f"module {__name__} has no attribute {name}")
