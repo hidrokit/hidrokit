@@ -218,7 +218,7 @@ def chi_square_test(
     func = frequency_analysis_methods[distribution.lower()]
 
     T = 1 / prob_seq
-    val_x = func(data.x, return_period=T, source=distribution_source)
+    val_x = func(data.x, return_periods=T, source=distribution_source)
 
     # Chi Square Table
     calc_df = pd.DataFrame()

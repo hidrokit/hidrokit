@@ -88,32 +88,45 @@ def find_K(return_period, source="scipy"):
     return k_values
 
 
-def calc_x_lognormal(x, return_period=None, source="scipy", show_stat=False):
+def calc_x_lognormal(
+    input_array, return_periods=None, source="scipy", display_stat=False, **kwargs
+):
     """
     Calculate the value of x for a given return period using the lognormal distribution.
 
     Parameters:
-        x (array-like): Input data array.
-        return_period (array-like, optional):
+        input_array (array-like): Input data array.
+        return_periods (array-like, optional):
             Return period(s) for which to calculate the value of x.
             Default is [5].
         source (str, optional): Source of the K factor.
             Default is "scipy".
-        show_stat (bool, optional): Whether to display the calculated statistics.
+        display_stat (bool, optional): Whether to display the calculated statistics.
             Default is False.
+        **kwargs: Additional keyword arguments for handling deprecated parameters.
 
     Returns:
         array-like: The calculated value(s) of x for the given return period(s).
     """
-    return_period = [5] if return_period is None else return_period
-    return_period = np.array(return_period)
-    y = np.log10(x)
+    # handle deprecated params
+    input_array = handle_deprecated_params(kwargs, "x", "input_array") or input_array
+    return_periods = (
+        handle_deprecated_params(kwargs, "return_period", "return_periods")
+        or return_periods
+    )
+    display_stat = (
+        handle_deprecated_params(kwargs, "show_stat", "display_stat") or display_stat
+    )
+
+    return_periods = [5] if return_periods is None else return_periods
+    return_periods = np.array(return_periods)
+    y = np.log10(input_array)
     y_mean = np.mean(y)
     y_std = np.std(y, ddof=1)
 
-    k = find_K(return_period, source=source)
+    k = find_K(return_periods, source=source)
 
-    if show_stat:
+    if display_stat:
         print(f"y_mean = {y_mean:.5f}")
         print(f"y_std = {y_std:.5f}")
         print(f"k = {k}")
@@ -184,7 +197,7 @@ def freq_lognormal(
     x = dataframe[target_column].copy()
 
     arr = calc_x_lognormal(
-        x, return_period=return_periods, show_stat=display_stat, source=source
+        x, return_periods=return_periods, display_stat=display_stat, source=source
     )
 
     result = pd.DataFrame(data=arr, index=return_periods, columns=[out_column_name])
