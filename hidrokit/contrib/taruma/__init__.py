@@ -74,7 +74,7 @@ deprecated_modules = {
     "hk90": "model_calibration",
     "hk96": "fjmock_model",
     "hk98": "statistic_summary",
-    "hk99": "thiessen_polygon",
+    "hk99": "thiessen",
     "hk102": "upsampling",
     "hk106": "evapotranspiration",
     "hk124": "lognormal",
